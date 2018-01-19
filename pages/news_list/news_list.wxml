@@ -1,0 +1,39 @@
+<!--pages/news_list/news_list.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view  bindtap="slideDown" style="display:flex;height:60rpx;">
+        <image animation="{{animationData}}" src="../../images/school_list/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" placeholder="搜索新闻" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+<!--筛选器display:flex;align-items:center;justify-content:space-between;-->
+
+
+
+
+<!--列表-->
+<view style="margin:20rpx">
+  <!--第一条-->
+  <view wx:for="{{news}}" data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='article_detail' style="border-bottom:1px solid #eee;margin-top:20rpx;margin-left:20rpx;margin-right:40rpx;padding-bottom:20rpx;font-family:黑体;text-align:left;vertical-align:middle;">
+    <view style="vertical-align:middle;display:inline-block">
+      <image src='https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}' style="width:100rpx;height:100rpx"></image>
+    </view>
+    <view style="vertical-align:middle;font-size:28rpx;display:inline-block;width:520rpx;color:#343434;margin-left:20rpx">{{item.title}}</view>
+  </view>
+
+
+</view>
+
+</view>
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align:center">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align:center" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+

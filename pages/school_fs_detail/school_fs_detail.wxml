@@ -1,0 +1,131 @@
+<!--pages/school_fs_detail/school_fs_detail.wxml-->
+
+<view style="font-family:黑体;margin-top:20rpx;text-align:center">{{yxname}}</view>
+<!--录取查询-->
+<view style="display:{{tag==1?'block':'none'}};margin:40rpx">
+    
+    <view style="font-family:黑体">往年录取分数线</view>
+    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
+        地区:四川
+    </view>
+        <view class="table">
+        <view class="tr">
+            <view class="th">年份</view>
+            <view class="th">2016</view>
+            <view class="th">2015</view>
+            <view class="th">2014</view>
+        </view>
+        <view class="tr" >
+            <view class="td">实际招生数</view>
+            <view class="td">{{yxlq.y1.szrs}}</view>
+            <view class="td">{{yxlq.y2.szrs}}</view>
+            <view class="td">{{yxlq.y3.szrs}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">批线上第一志愿报考数</view>
+            <view class="td">{{yxlq.y1.bkrs}}</view>
+            <view class="td">{{yxlq.y2.bkrs}}</view>
+            <view class="td">{{yxlq.y3.bkrs}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">第一志愿录取数</view>
+            <view class="td">{{yxlq.y1.dylq}}</view>
+            <view class="td">{{yxlq.y2.dylq}}</view>
+            <view class="td">{{yxlq.y3.dylq}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">其他志愿录取数</view>
+            <view class="td">{{yxlq.y1.qtlq}}</view>
+            <view class="td">{{yxlq.y2.qtlq}}</view>
+            <view class="td">{{yxlq.y3.qtlq}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">录取性质</view>
+            <view class="td">{{yxlq.y1.lqxz}}</view>
+            <view class="td">{{yxlq.y2.lqxz}}</view>
+            <view class="td">{{yxlq.y3.lqxz}}</view>
+        </view>
+    </view>
+  
+</view>
+
+
+<view style="display:{{tag==2?'block':'none'}};margin:40rpx">
+    <view style="font-family:黑体">往年录取分数线</view>
+    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
+        地区:四川
+    </view>
+        <view class="table">
+        <view class="tr">
+            <view class="th">年份</view>
+            <view class="th">2016</view>
+            <view class="th">2015</view>
+            <view class="th">2014</view>
+        </view>
+        <view class="tr" >
+            <view class="td">调档分数</view>
+            <view class="td">{{yxfs.y1.ddf==-1?'':yxfs.y1.ddf}}</view>
+            <view class="td">{{yxfs.y2.ddf==-1?'':yxfs.y2.ddf}}</view>
+            <view class="td">{{yxfs.y3.ddf==-1?'':yxfs.y3.ddf}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">调档平均分数</view>
+            <view class="td">{{yxfs.y1.ddpjf==-1?'':yxfs.y1.ddpjf}}</view>
+            <view class="td">{{yxfs.y2.ddpjf==-1?'':yxfs.y2.ddpjf}}</view>
+            <view class="td">{{yxfs.y3.ddpjf==-1?'':yxfs.y3.ddpjf}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">调档线差</view>
+            <view class="td">{{yxfs.y1.ddxc==-1?'':yxfs.y1.ddxc}}</view>
+            <view class="td">{{yxfs.y2.ddxc==-1?'':yxfs.y2.ddxc}}</view>
+            <view class="td">{{yxfs.y3.ddxc==-1?'':yxfs.y3.ddxc}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">平均线差</view>
+            <view class="td">{{yxfs.y1.pjxc==-1?'':yxfs.y1.pjxc}}</view>
+            <view class="td">{{yxfs.y2.pjxc==-1?'':yxfs.y2.pjxc}}</view>
+            <view class="td">{{yxfs.y3.pjxc==-1?'':yxfs.y3.pjxc}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">调档分位次</view>
+            <view class="td">{{yxfs.y1.ddfwc==-1?'':yxfs.y1.ddfwc}}</view>
+            <view class="td">{{yxfs.y2.ddfwc==-1?'':yxfs.y2.ddfwc}}</view>
+            <view class="td">{{yxfs.y3.ddfwc==-1?'':yxfs.y3.ddfwc}}</view>
+        </view>
+        <view class="tr" >
+            <view class="td">平均分位次</view>
+            <view class="td">{{yxfs.y1.pjfwc==-1?'':yxfs.y1.pjfwc}}</view>
+            <view class="td">{{yxfs.y2.pjfwc==-1?'':yxfs.y2.pjfwc}}</view>
+            <view class="td">{{yxfs.y3.pjfwc==-1?'':yxfs.y3.pjfwc}}</view>
+        </view>
+    </view>
+    
+  
+</view>
+
+
+
+<view style="display:{{tag==3?'block':'none'}};margin:40rpx">
+    <view style="font-family:黑体">往年录取分数线</view>
+    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
+        地区:四川
+    </view>
+        
+    <view class="table">
+        <view class="tr">
+            <view class="th">专业</view>
+            <view class="th">2016</view>
+            <view class="th">2015</view>
+            <view class="th">2014</view>
+        </view>
+        <view class="tr" wx:for="{{zyfs.zyfs}}">
+            <view class="td">{{item.name}}</view>
+            <view class="td">{{item.y1==-1?'':item.y1}}</view>
+            <view class="td">{{item.y2==-1?'':item.y2}}</view>
+            <view class="td">{{item.y3==-1?'':item.y3}}</view>
+        </view>
+    </view>
+  
+</view>
+
+

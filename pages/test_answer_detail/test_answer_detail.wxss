@@ -1,0 +1,6 @@
+/* pages/test_answer_detail/test_answer_detail.wxss */
+.df{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}

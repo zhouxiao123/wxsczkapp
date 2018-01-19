@@ -1,0 +1,51 @@
+<view style="display:{{disflag}};z-index:999;background-color:rgba(0,0,0,0.5);width:100%;height:120%;position:absolute;top:0" bindtap='close'>
+<image animation="{{animationData2}}" src="{{imgsrc}}" style="width:600rpx;position:fixed;left:75rpx;top:100rpx;z-index:999" mode='widthFix'></image>
+</view>
+<!--<button bindtap='trans'>点击</button>-->
+
+<view class="wrapper">
+
+	<view class="header">
+		<text class="header-title"> 幸运大抽奖 </text>
+		<text class="header-subtitle">  试一试，成为幸运星 </text> 
+	</view>
+
+	<view class="main">
+		<view class="canvas-container">
+			<view  animation="{{animationData}}"  class="canvas-content">
+				<!--<canvas style="width: 300px; height: 300px;" class="canvas-element" canvas-id="lotteryCanvas"></canvas>
+        <canvas style="width:390rpx;height:460rpx;position:fixed;top:20%;" canvas-id="imageCanvas"></canvas>-->
+
+				<view class="canvas-line">
+					<view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
+				</view>
+
+				<view class="canvas-list">
+					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+				  		<view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">{{item.award}}</view>
+					</view>
+				</view>
+
+				
+			</view>
+
+			<view bindtap="getLottery" class="canvas-btn {{btnDisabled}}">抽奖</view>		
+		</view>
+
+		<view class="main-container">
+			<view class="main-container-btn">
+				<!--<button bindtap="gotoList" type="primary">查看中奖</button>	-->
+        <text class="header-subtitle">中奖结果:<text class="header-subtitle" style="color:red;margin-left:40rpx">{{result}}</text></text> 
+			</view>
+			<view class="main-container-rule" style="font-size:28rpx">
+				<text class="main-rule-title">活动规则：</text>
+				<text class="main-rule-item">1. 每个注册账号可以抽奖一次。</text>
+				<text class="main-rule-item">2. 仅限当次活动参与人员进行抽奖，抽奖结束现场兑换奖励，活动结束后未兑换，自动失效。</text>	
+				<text class="main-rule-item">3. 本活动最终解释权归四川昭信教育咨询有限公司所有</text>	
+	
+			</view>	
+		</view>
+
+	</view>
+ 
+</view>

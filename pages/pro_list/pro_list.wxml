@@ -1,0 +1,130 @@
+<!--pro_list.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view  bindtap="slideDown" style="display:flex;height:60rpx">
+        <image animation="{{animationData}}" src="../../images/school_list/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" placeholder="搜索专业" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" catchtap="swichNav" >
+  <picker name="cengci" bindchange="bindCengciChange"  range="{{cengci}}">
+        <view class="picker radio-text">
+        {{zycc == '全部'?'专业层次':zycc}}
+        </view>
+  </picker>
+  
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" catchtap="swichNav" >
+  <picker mode="multiSelector" bindchange="bindMultiZymlChange" bindcolumnchange="bindZymlChange" value="{{multiIndex}}" range-key="{{'name'}}"  range="{{menglei}}">
+    <view class="picker">
+      {{zyml == '全部'?'专业门类':zyml}}
+    </view>
+  </picker>
+    </view>
+    
+
+</view>
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+<!--筛选器
+<view style="margin:20rpx;border-bottom:1px solid #aaa;padding-bottom:10rpx;">
+  <view  style="text-align:center;width:320rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#59c9b9;font-size:0.9rem">
+  <picker name="cengci" bindchange="bindCengciChange"  range="{{cengci}}">
+        <view class="picker radio-text">
+        {{zycc == '全部'?'专业层次':zycc}}
+        </view>
+  </picker>
+  
+  </view>
+  <view style="display:inline-block;font-size:0.8rem;color:#666">|</view>
+  <view  style="text-align:center;width:320rpx;display:inline-block;font-family:黑体;color:#59c9b9;font-size:0.9rem">
+  <picker mode="multiSelector" bindchange="bindMultiZymlChange" bindcolumnchange="bindZymlChange" value="{{multiIndex}}" range-key="{{'name'}}"  range="{{menglei}}">
+    <view class="picker">
+      {{zyml == '全部'?'专业门类':zyml}}
+    </view>
+  </picker>
+  </view>
+  
+</view>-->
+
+<!--<view style="display:{{tag==1?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box" catchtap='selectZycc' data-text='全部'><text class="select-text">全部</text></view>
+
+    <view class="select-box" catchtap='selectZycc' data-text='本科'><text class="select-text">本科</text></view>
+
+      <view class="select-box" catchtap='selectZycc' data-text='专科'><text class="select-text">专科</text></view>
+  
+
+</view>
+</view>
+
+<view style="display:{{tag==2?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box" style="width:230rpx" catchtap='selectZyml' data-text='全部'><text class="select-text">全部</text></view>
+    <view wx:for="{{mlList}}" class="select-box" style="width:230rpx" catchtap='selectZyml' data-id="{{item.id}}" data-text='{{item.name}}'><text class="select-text">{{item.name}}</text></view>
+  
+</view>
+</view>
+
+<view style="display:{{tag==3?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box" style="width:230rpx" catchtap='selectZyPml' data-text='全部'><text class="select-text">全部</text></view>
+
+  <view wx:for="{{pmlList}}" class="select-box" style="width:230rpx" catchtap='selectZyPml' data-text='{{item.name}}'><text class="select-text">{{item.name}}</text></view>
+  
+</view>
+</view>-->
+
+
+
+<!--列表-->
+<view style="margin:20rpx">
+  <!--第一条-->
+  <view wx:for="{{param.Zybgs}}" style="margin:20rpx" data-id="{{item.id}}" catchtap='zyDetail'>
+    <view style="">
+      <view style="width:440rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#494a4d;font-size:30rpx">
+        {{item.name}}
+      </view> 
+      <view style="width:180rpx;display:inline-block;color:#777;font-family:黑体;font-size:28rpx">
+        层次:{{item.zycc}}
+      </view>
+    </view> 
+    <view style="border-bottom:1rpx solid #aaa;padding-bottom:20rpx;margin-top:20rpx;">
+      <view style="color:#777;margin-left:40rpx;font-family:黑体;font-size:28rpx">
+        
+        {{item.zyml}}
+      </view>
+      <view  style="color:#777;margin-right:40rpx;font-family:黑体;font-size:0.8rem">
+        <!--专业代码:{{item.zydm}}-->
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+</view>
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+<!--  <import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->
+

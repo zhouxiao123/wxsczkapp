@@ -1,0 +1,7 @@
+/* pages/check_point/check_point.wxss */
+.df{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:40rpx
+}

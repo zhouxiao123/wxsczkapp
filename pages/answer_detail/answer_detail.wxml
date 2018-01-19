@@ -1,0 +1,120 @@
+<!--pages/answer_detail/answer_detail.wxml-->
+<view style="padding-bottom:130rpx">
+  <view class="df">
+    <image src="{{item.ask.issecret==1?'../../images/personal/-rtx@2x.png':item.ask.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.ask.issecret==1?'匿名用户':item.ask.u.nickName}}</text>
+
+  </view>
+  <view style="border-bottom: 1px solid #eee;padding-bottom:20rpx;margin-left:100rpx;margin-top:40rpx;margin-right:100rpx">
+    <text style="font-family:黑体">{{item.ask.askContent}}</text>
+
+  </view>
+          <view class="intro-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.ask.createTime}}</text>
+          <view class="intro-right-content">
+              <image src="../../images/eye71.png" style="width:30rpx" mode='widthFix'></image>
+              <text style="display:inline-block;height:30rpx;width:60rpx;margin-left:10rpx;font-size: 0.6rem;font-family:Microsoft YaHei;">{{item.ask.count}}</text>
+            </view>
+        </view>
+  <view class="answer-content">
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.answer.u.l.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <view class="listen-content" bindtap="listen" data-id="0">
+      <image  src="../../images/yjjxhs@2x.png" style="width:280rpx;height:60rpx"></image>
+
+      <view class="center-text">
+          <text class="img-text">{{item.answer.isfee==1?'十积分旁听':'免费旁听'}}</text>
+          <image src="../../images/{{img_url[0]}}" class="img-img"style="width:21rpx;height:27rpx"></image>
+      </view>
+    </view>
+    <text class="time-text">{{item.answer.answersec<60?item.answer.answersec+'"':(item.answer.answersec-item.answer.answersec%60)/60+"'"+item.answer.answersec%60+'"'}}</text>
+  </view>
+
+      <view>
+          <image wx:for="{{item.answer.ai}}" style="width:160rpx;margin-right:10rpx;margin-left:10rpx" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.path}}"  data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.path}}" mode="widthFix" bindtap="bigPic"></image>
+      </view>
+        <view class="intro-content">
+          <view>
+            <image src="../../images/st@2x.png" style="width:16rpx;height:16rpx;margin-left:12rpx"></image>
+            <!--<text class="number-text">{{item.ask.count}}</text>-->
+          </view>
+          <view>
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.answer.createtime}}</text>
+          </view>
+        </view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+  <view class="ldf">
+    <view style="width:80rpx;height:80rpx">
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.answer.u.l.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    </view>
+    <view class="lndf">
+      <text style="font-family:黑体">{{item.answer.u.l.lecturerName}}</text>
+      <text style="font-family:黑体;color:#a7a6a6;font-size: 0.8rem;">{{item.answer.u.l.lecturerDesc}}</text>
+    </view>
+  </view>
+
+<view style="width:100%;text-align:center;margin-top:40rpx">
+ 
+      <button   style="display:inline-block;width:140rpx;font-family:黑体;font-size:0.8rem;color:#fff;background-color:#59c9b9;margin-right:40rpx" data-id="{{item.answer.u.l.lecturerId}}" bindtap="ask">提问</button>
+
+
+
+
+
+      <button wx:if="{{collect==0}}"  style="display:inline-block;width:140rpx;font-family:黑体;font-size:0.8rem;color:#fff;background-color:#ffa979;" data-id="{{item.video.webLessonId}}" bindtap="collect">收藏</button>
+      <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="display:inline-block;width:180rpx;font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;">已收藏</button>
+
+</view>
+
+  <audio id="myAudio" bindended="voiceEnd"  src="https://wxsign.sczk.com.cn/wxsczkappback/vi/{{item.answer.answerurl}}"></audio>
+  
+
+  
+
+
+      </view>
+
+
+   
+
+      
+
+      
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+
+
+  <!--<view>
+
+    <view class="talk_back">
+      <view class="talk_box">
+          
+        <input bindinput="setValue" value="{{msg}}" placeholder="回复" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+        <button bindtap='sendMsg' style="height:60rpx;font-size:0.8rem;line-height:60rpx">发送</button>
+      </view>
+    </view> 
+  </view>-->
+ <!-- <import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->

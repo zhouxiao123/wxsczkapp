@@ -1,0 +1,139 @@
+<!--pages/live_video/live_video.wxml-->
+<view class="main-view">
+
+<view style="text-align:center;background-color:#000">
+ <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/{{item.video.webLessonType==2?(item.buy==null||item.buy==''?item.video.webLessonFreeUrl:item.video.webLessonUrl):item.video.webLessonUrl}}?" ></video>-->
+  <video  controls src="https://wxsign.sczk.com.cn/hls/mystream.m3u8" ></video>
+  <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/1/1.m3u8" ></video>-->
+</view>
+
+
+
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      简介
+    </view> 
+    <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
+      问答
+    </view>
+</view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+
+<!--简介-->
+<view style="display:{{tag==0?'block':'none'}}">
+
+<view style="margin:20rpx;display:flex;width:100%;align-items:center;justify-content:center">
+  <view style="padding:20rpx;">
+    <text style="font-family:黑体;color:#666">{{item.video.webLessonDesc}}</text>
+  </view>
+</view>
+
+  
+  <view wx:if="{{item.video.webLessonType==2}}" class="btn-area">
+    <view class="classname">
+      <text class="fee-text">￥{{item.video.webLessonPrice}}/{{item.video.webLessonPrice*10}}积分</text>
+    </view>
+    <view class="classname">
+      <text class="link-text" >免费试听1分钟</text>
+    </view>
+    <view class="classname">
+      <button wx:if="{{item.buy==null || item.buy==''}}"  style="font-family:黑体;font-size:0.8rem;color:#fff;background-color:#59c9b9;width:100%;" data-id="{{item.video.webLessonId}}" bindtap="toBuy">立即购买</button>
+      <button wx:if="{{item.buy!=null && item.buy!=''}}"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;">已经购买</button>
+
+
+    </view>
+  </view>
+
+    <view  class="btn-area" style='margin-top:40rpx'>
+    
+    <!--<view style="width:100%">
+      <button wx:if="{{appoint==0}}"  style="font-family:黑体;font-size:0.8rem;color:#fff;background-color:#59c9b9;width:100%;"  bindtap="appoint">预约</button>
+      <button wx:if="{{appoint==1}}" bindtap="cansleAppoint"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;">已预约</button>
+
+    </view>-->
+  </view>
+</view>
+
+
+
+<!--热评-->
+<view style="display:{{tag==2?'block':'none'}}">
+<view style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx" wx:if="{{isLecturer==1}}">
+<button bindtap='closeLive' wx:if="{{item.video.openlive==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">关闭直播</button>
+<button wx:else bindtap='startLive' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">开启直播</button>
+
+<button bindtap='closeAsk' wx:if="{{item.video.openask==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">关闭问答</button>
+<button wx:else bindtap='startAsk' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">开启问答</button>
+</view>
+
+<view style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx" wx:else>
+<!--<button bindtap='closeLive' wx:if="{{item.video.openlive==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">关闭直播</button>
+<button wx:else bindtap='startLive' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">开启直播</button>
+
+<button bindtap='closeAsk' wx:if="{{item.video.openask==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">关闭问答</button>
+<button wx:else bindtap='startAsk' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">开启问答</button>-->
+<!--<text style="color:red;margin-left:100rpx" wx:if="{{item.video.openlive==0}}">未开始</text>-->
+<text style="color:red;margin-left:100rpx" wx:if="{{item.video.openlive!=1}}">未直播</text>
+<text style="color:red;margin-left:100rpx" wx:if="{{item.video.openlive==1}}">直播中</text>
+<text style="color:green;margin-left:250rpx" wx:if="{{item.video.openask==1}}">可以发言</text>
+<text style="color:green;margin-left:250rpx" wx:else>禁止发言</text>
+</view>
+
+  <view>
+
+    <view class="talk_back">
+      <view class="talk_box">
+          
+        <input bindinput="setValue" value="{{msg}}" placeholder="提问" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+        <button bindtap='sendMsg' style="height:60rpx;font-size:0.8rem;line-height:60rpx">发送</button>
+      </view>
+    </view> 
+  </view>
+
+<view class="ask-content" >
+  <view wx:for="{{list.lessonask}}" class="ask-bar" data-id="{{item.id}}" data-lecturer="{{item.u.isLecturer}}" data-isanswer="{{item.isanswer}}" catchtap="ask_detail">
+        <view class="answer-content">
+          <image src="{{item.u.isLecturer!=1?item.u.headUrl:'https://wxsign.sczk.com.cn/wxsczkappback/img/'+item.u.l.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+          <!--<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.u.headUrl}}" style="width:52rpx;height:52rpx"></image>-->
+    
+          <text style="width:100rpx;color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.u.isLecturer!=1?item.u.nickName:item.u.l.lecturerName}}</text>
+
+          <text style="width:300rpx;color:#777;font-family:黑体;margin-left:200rpx;font-size:0.8rem">{{item.createtime}}</text>
+        </view>
+
+        <text class="ask-text">{{item.askcontent}}</text>
+
+        <view class="intro-content" wx:if="{{item.u.isLecturer!=1}}">
+          <text class="name-text" style="color:{{item.isanswer==0?'red':'green'}}">{{item.isanswer==0?'未回答':'已回答'}}</text>
+          
+        </view>
+
+      <view class="intro-content" wx:else>
+          <text class="detail-text">{{item.u.l.lecturerDesc}}</text>
+          
+        </view>
+
+        
+      </view>
+</view>
+
+</view>
+
+
+</view>
+
+
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+ <!-- <import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->

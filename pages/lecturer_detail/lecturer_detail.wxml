@@ -1,0 +1,118 @@
+<!--pages/lecturer_detail/lecturer_detail.wxml-->
+<view class="main-view">
+
+
+
+
+    <view  style="margin:20rpx;">
+<view >
+  <view style="margin-top:40rpx;margin-left:40rpx;">
+    <view style="float:left;display:inline-block;width:80rpx;height:80rpx">
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{lecturer.lecturer.headUrl}}"style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    </view>
+    <view style="float:left;display:inline-block;width:540rpx;margin-left:20rpx;margin-right:20rpx;">
+      <view style="width:540rpx">
+        <view style="display:inline-block;width:270rpx;font-family:黑体">{{lecturer.lecturer.lecturerName}}</view>
+        <view style="text-align:right;display:inline-block;width:240rpx;font-family:黑体;color:#59c9b9;font-size:0.8rem">
+                {{lecturer.lecturer.lecturerCount}}人已咨询
+        </view>
+      </view>  
+      <view style="font-family:黑体;color:#a7a6a6;font-size: 0.8rem;">{{lecturer.lecturer.lecturerDesc}}</view>
+    </view>
+    </view>
+  </view>
+
+    <view style="clear:both"></view>
+
+    <view style="width:100%;text-align:center;margin-top:40rpx">
+
+      <button   style="display:inline-block;width:140rpx;font-family:黑体;font-size:0.8rem;color:#fff;background-color:#59c9b9;margin-right:40rpx" data-id="{{lecturer.lecturer.lecturerId}}" bindtap="ask">提问</button>
+
+
+
+
+      <button wx:if="{{collect==0}}"  style="display:inline-block;width:140rpx;font-family:黑体;font-size:0.8rem;color:#fff;background-color:#ffa979;" data-id="{{item.video.webLessonId}}" bindtap="collect">收藏</button>
+      <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="display:inline-block;width:180rpx;font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;">已收藏</button>
+</view>
+
+ 
+    </view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+    <!--<view class="ask-content" style="display:{{tag==0?'block':'none'}}">
+<view wx:for="{{lecturer.asks}}" class="ask-bar" data-id="{{item.askId}}" bindtap="ask_detail">
+        <text class="ask-text">{{item.askContent}}</text>
+        <view class="answer-content">
+          <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.l.headUrl}}" style="width:52rpx;height:52rpx"></image>
+          <view class="listen-content" bindtap="listen" data-id="0">
+            <image  src="../../images/yjjxhs@2x.png" style="width:274rpx;height:50rpx"></image>
+            <view class="center-text">
+              <text class="img-text">旁听</text>
+              <image src="../../images/{{img_url[0]}}" class="img-img"style="width:21rpx;height:27rpx"></image>
+            </view>
+          </view>
+          <text class="time-text">{{item.answerSec<60?item.answerSec+'"':(item.answerSec-item.answerSec%60)/60+"'"+item.answerSec%60+'"'}}</text>
+        </view>
+        <view class="intro-content">
+          <text class="name-text">{{item.l.lecturerName}}</text>
+          <text class="sep-text">|</text>
+          <text class="detail-text">{{item.l.lecturerDesc}}</text>
+          <image src="../../images/st@2x.png" style="width:16rpx;height:16rpx;margin-left:12rpx"></image>
+          <text class="number-text">{{item.count}}</text>
+        </view>
+      </view>
+
+      
+    </view>-->
+
+        <view class="ask-content">
+      <view wx:for="{{answer}}" class="ask-bar" data-id="{{item.a.askId}}" bindtap="ask_detail">
+        <view class="answer-content">
+          <image src="{{item.a.issecret==1?'../../images/personal/-rtx@2x.png':item.a.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:28rpx">{{item.a.issecret==1?'匿名用户':item.a.u.nickName}}</text>
+
+        </view>
+        <text class="ask-text">{{item.a.askContent}}</text>
+
+<view class="intro-content">
+          <view class="intro-right-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.a.createTime}}</text>
+          </view>
+
+          <view class="intro-right-content">
+            <view class="intro-right-content">
+              <image src="../../images/eye71.png" style="width:30rpx" mode='widthFix'></image>
+              <text style="display:inline-block;height:30rpx;width:60rpx;margin-left:10rpx;font-size: 0.6rem;font-family:Microsoft YaHei;">{{item.a.count}}</text>
+            </view>  
+            <text class="number-text" style="margin-left:10rpx">回复({{item.a.answercount}})</text>
+          </view>
+        </view>
+
+
+
+      </view>
+</view>
+    
+
+
+ 
+  <!--</swiper>-->
+</view>
+
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+  <!--<import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->
+

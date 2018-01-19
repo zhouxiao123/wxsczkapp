@@ -1,0 +1,73 @@
+<!--pages/gaokaozhiyuan/gaokaozhiyuan.wxml-->
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      一诊试卷
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      问题咨询
+    </view>
+    <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
+      云程定制
+    </view>
+</view>
+
+<view style="background-color:#f0f0f0;height:20rpx">
+</view>
+
+<!--一诊考试答案-->
+<view style="display:{{tag==0?'block':'none'}}">
+<view style="display:{{tag2==0?'block':'none'}}">
+  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">请选择地区</view>
+  <button catchtap='typeList1' data-id="成都" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">成都</button>
+  
+</view>
+
+<view style="display:{{tag2==1?'block':'none'}}">
+  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">{{diqu}}</view>
+      <button catchtap='typeList2' data-id="重置" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">重新选择</button>
+  <button catchtap='typeList2' data-id="语文" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">语文</button>
+  <button catchtap='typeList2' data-id="理科数学" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">理科数学</button>
+    <button catchtap='typeList2' data-id="文科数学" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">文科数学</button>
+  <button catchtap='typeList2' data-id="英语" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">英语</button>
+  <button catchtap='typeList2' data-id="理综" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">理综</button>
+  <button catchtap='typeList2' data-id="文综" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">文综</button>
+</view>
+
+
+<view style="display:{{tag2==2?'block':'none'}}">
+  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">{{diqu}} {{fenlei}}</view>
+    <button catchtap='typeList3' data-id="重置" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">重新选择</button>
+  <button catchtap='typeList3' data-id="答案" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">答案</button>
+  <button catchtap='typeList3' data-id="试卷" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">试卷</button>
+
+</view>
+
+</view>
+
+
+<!--问题咨询-->
+<view style="text-align:center;display:{{tag==1?'block':'none'}};margin:40rpx;margin-top:140rpx;">
+  <text style="display:inline-block;width:500rpx;font-size:38rpx;color:red">有问题可通过平台提交，我们会在24小时进行回复。</text>
+  <button bindtap='toask'  style="margin-top:100rpx;background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">立即提问</button>
+</view>
+
+
+<!--云程定制-->
+<view style="display:{{tag==2?'block':'none'}};margin:40rpx;font-size:32rpx">
+<view style="text-indent:40rpx">
+  <text>云程高考志愿订制是昭信教育打造的高考升学品牌。为考生提供专业的志愿填报、生涯规划。
+</text>
+</view>
+<view style="text-indent:40rpx">
+  <text>昭信10多年来，一直专注于高考志愿科学填报的研究工作，在全国率先开创了高考志愿的计算机分析系统，建立了重庆、四川录取估分大数据模型，准确预测了每年高校的录取分数区间，为近万考生及家长提供最科学的高考志愿填报方案；每年举办的志愿填报咨询会、高校巡展，足迹遍布重庆、四川、贵州，得到考生、家长及各级教育机构的一致好评。</text>
+</view>
+
+<view style="text-indent:40rpx">
+<text>在重庆市高等教育学会普通高校招生专委会、重庆市教育学会学生生涯规划指导专委会及四川省各市州招办指导下，云程高考志愿订制每年受各中学邀请，如：成都七中、成都外国语学校、绵阳南山中学、绵阳中学、南充高级中学等重点高中开展升学指导公益讲座。</text>
+</view>
+
+<view style="text-indent:40rpx">
+<text>2018年，低保户子女，出具相关证明，我们将免费为您提供云程高考志愿订制。
+</text>
+</view>
+</view>

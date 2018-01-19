@@ -1,0 +1,70 @@
+<!--pages/ask_lecturer/ask_lecturer.wxml-->
+<view class="main-view">
+
+  
+
+
+
+
+
+
+    
+
+    <!--<swiper class="ask-content" current="{{tag}}" bindchange="bindChange">
+-->
+    <view  style="margin:20rpx;">
+    <form bindsubmit="formSubmit" >
+      <view style="padding :20rpx;margin:10rpx;border:1px solid #999;border-radius: 20rpx;">
+        <textarea  maxlength="500" placeholder="请详细描述你的问题，便于专家更准确的分析判断，四川招考网将确保您的隐私安全，仅供本次资讯使用" placeholder-style="font-family:黑体;font-size:0.8rem" style="width:100%;font-family:黑体;font-size:0.8rem;" name="text"></textarea>
+      </view>
+      
+      <view class="tag-view">
+      <radio-group name="issecret">
+        <radio value="0" checked="checked" id="li"/><label for="li" class="radio-text">直接提问</label>
+        <radio value="1"  id="wen"/><label for="wen" class="radio-text">匿名提问</label>
+      </radio-group>  
+    </view>
+
+      <view style="margin-left:40rpx;margin-right:40rpx;margin-top:200rpx">
+        <view class="classname" style="float:left;line-height:92rpx;display:inline-block;width:200rpx">
+          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">10积分</text>
+        </view>
+        <view class="classname" style="float:left;display:inline-block;width:400rpx;text-align:center">
+          <button formType="submit"  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">立即问专家</button>
+          <input hidden name="oid" value="{{oid}}"/>
+          <input hidden name="preid" value="{{preid}}"/>
+        </view>
+      </view>
+      </form>
+      <view style="clear:both"></view>
+<view style="display:{{showLecturer}};">
+  <view style="margin-top:40rpx;margin-left:40rpx;">
+    <view style="float:left;display:inline-block;width:80rpx;height:80rpx">
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{lecturer.headUrl}}"style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    </view>
+    <view style="float:left;display:inline-block;width:540rpx;margin-left:20rpx;margin-right:20rpx;">
+      <view style="width:540rpx">
+        <view style="display:inline-block;width:270rpx;font-family:黑体">{{lecturer.lecturerName}}</view>
+        <view style="text-align:right;display:inline-block;width:240rpx;font-family:黑体;color:#59c9b9;font-size:0.8rem">
+                {{lecturer.lecturerCount}}人已咨询
+        </view>
+      </view>  
+      <view style="font-family:黑体;color:#a7a6a6;font-size: 0.8rem;">{{lecturer.lecturerDesc}}</view>
+    </view>
+    </view>
+  </view>
+    </view>
+
+
+
+      
+  <!--</swiper>-->
+</view>
+
+
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+  <!--<import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->

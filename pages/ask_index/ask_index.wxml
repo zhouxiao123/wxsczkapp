@@ -1,0 +1,146 @@
+<!--lesson.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view style="display:flex;height:60rpx">
+        <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索问答" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image  bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      推荐问题
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      快速提问
+    </view>
+    <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
+      专家列表
+    </view>
+</view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+
+<view class="ask-content" style="display:{{tag==0?'block':'none'}}">
+<view wx:for="{{askList}}" class="ask-bar" data-id="{{item.askId}}" bindtap="ask_detail">
+        <view class="answer-content">
+          <image src="{{item.issecret==1?'../../images/personal/-rtx@2x.png':item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:28rpx">{{item.issecret==1?'匿名用户':item.u.nickName}}</text>
+
+        </view>
+        <text class="ask-text" style="margin-top:30rpx;display:block">{{item.askContent}}</text>
+
+        <view class="intro-content">
+          <view class="intro-right-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.createTime}}</text>
+          </view>
+
+          <view class="intro-right-content">
+            <view class="intro-right-content">
+              <image src="../../images/eye71.png" style="width:30rpx" mode='widthFix'></image>
+              <text style="display:inline-block;height:30rpx;width:60rpx;margin-left:10rpx;font-size: 0.6rem;font-family:Microsoft YaHei;">{{item.count}}</text>
+            </view>  
+            <text class="number-text" style="margin-left:10rpx">回复({{item.answercount}})</text>
+          </view>
+        </view>
+      </view>
+
+      
+    </view>
+
+    <!--<swiper class="ask-content" current="{{tag}}" bindchange="bindChange">
+-->
+    <view  style="margin:20rpx;display:{{tag==1?'block':'none'}}">
+    <form bindsubmit="formSubmit" >
+      <view style="padding :20rpx;margin:10rpx;border:1px solid #999;border-radius: 20rpx;">
+        <textarea  maxlength="500" placeholder="请详细描述你的问题，便于专家更准确的分析判断，四川招考网将确保您的隐私安全，仅供本次资讯使用" placeholder-style="font-family:黑体;font-size:0.8rem" style="width:100%;font-family:黑体;font-size:0.8rem;" name="text"></textarea>
+      </view>
+
+      <view class="tag-view">
+      <radio-group name="issecret">
+        <radio value="0" checked="checked" id="li"/><label for="li" class="radio-text">直接提问</label>
+        <radio value="1"  id="wen"/><label for="wen" class="radio-text">匿名提问</label>
+      </radio-group>  
+    </view>
+
+      <view style="margin-top:200rpx">
+        <!--<view class="classname">
+          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">10积分</text>
+        </view>-->
+        <view class="classname">
+          <button formType="submit"  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">立即提问</button>
+          <input hidden name="oid" value="{{oid}}"/>
+          <input hidden name="preid" value="{{preid}}"/>
+        </view>
+      </view>
+      </form>
+<view style="display:{{showLecturer}};">
+  <view style="margin-top:40rpx;margin-left:40rpx;display:flex;justify-content: flex-start;">
+    <view style="width:80rpx;height:80rpx">
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{lecturer.headUrl}}"style="width:80rpx;height:80rpx"></image>
+    </view>
+    <view style="margin-left:20rpx;margin-right:20rpx;display:flex;flex-direction: column;align-items: left;">
+      <view style="display:flex;align-items: center;justify-content:space-between;width:540rpx">
+        <view style="font-family:黑体">{{lecturer.lecturerName}}</view>
+        <view style="font-family:黑体;color:#59c9b9;font-size:0.8rem">
+                {{lecturer.lecturerCount}}人已咨询
+        </view>
+      </view>  
+      <view style="font-family:黑体;color:#a7a6a6;font-size: 0.8rem;">{{lecturer.lecturerDesc}}</view>
+    </view>
+    </view>
+  </view>
+    </view>
+
+
+
+    <view  style="margin:20rpx;display:{{tag==2?'block':'none'}}">
+      <view catchtap="lecturerDetail" wx:for="{{lecturerList}}" data-id="{{item.lecturerId}}" style="padding-bottom:10rpx;border-bottom:1px solid #ccc;padding-left :20rpx;margin-right:20rpx;margin-bottom:40rpx;">
+        <view style="display:inline-block;width:100rpx">
+          <view>
+            <image style="width:100rpx;height:100rpx;border-radius: 50%;" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.headUrl}}"></image>
+          </view>
+
+        </view>
+        <view style="display:inline-block;width:520rpx;margin-left:20rpx;margin-right:10rpx;">
+            <view style="">
+              <view style="display:inline-block;width:300rpx;margin-top:20rpx;font-family:黑体;font-size:28rpx">
+                {{item.lecturerName}}
+              </view>
+              <!--<view>
+                <button style="margin:0;padding:0;background-color:#f7805B;font-family:黑体;color:#fff;width:200rpx;font-size:0.6rem">立即线上提问</button>
+              </view>-->
+              <view style="text-align:right;display:inline-block;width:200rpx;font-family:黑体;color:#59c9b9;font-size:28rpx">
+                {{item.lecturerCount}}人已咨询
+              </view>
+            </view>
+            <view style="margin-top:20rpx;margin-botom:20rpx;font-family:黑体;color:#777;font-size:26rpx;overflow:hidden;text-overflow: ellipsis;  -webkit-box-orient: vertical;-webkit-line-clamp:2;white-space: nowrap;">{{item.lecturerDesc}}</view>
+        </view>
+      </view>
+
+      
+    </view>  
+  <!--</swiper>-->
+</view>
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+
+
+
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+  <!--<import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->

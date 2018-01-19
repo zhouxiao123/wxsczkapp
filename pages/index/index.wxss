@@ -1,0 +1,228 @@
+/**index.wxss**/
+
+@import "../bottom/bottom.wxss";
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.intro-right-content{
+
+  display:flex;
+  align-items:center;
+  justify-content: center
+  
+}
+.label-view{
+  height:384rpx;
+}
+
+.first-icon{
+  margin-top:24rpx;
+  margin-left:60rpx;
+  display:inline-block;
+}
+
+.second-icon{
+  display:inline-block;
+  margin-top:24rpx;
+  margin-left:60rpx
+}
+
+.third-icon{
+  display:inline-block;
+  margin-top:24rpx;
+  margin-left:60rpx
+}
+
+.fours-icon{
+  display:inline-block;
+  margin-top:24rpx;
+  margin-left:60rpx
+}
+
+.icon-pic{
+  width:112rpx;
+  height:114rpx
+}
+
+.icon-text{
+  display:block;
+  text-align:center;
+  font-family:黑体;
+  font-size:28rpx;
+}
+
+
+.ask-head{
+  margin-top: 20rpx
+}
+
+.left-head-one{
+  margin-left: 20rpx; 
+  display: inline-block;
+}
+
+.left-head-two{
+  margin-left: 10rpx; 
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -12rpx
+}
+
+.left-head-text{
+  font-size: 0.8rem;
+  font-family:黑体;
+  
+}
+
+.right-head-one{
+  margin-right: 20rpx;
+  float: right;
+  vertical-align: middle;
+  margin-top: -4rpx
+}
+
+.right-head-two{
+  margin-right: 10rpx;
+  vertical-align: middle;
+  float: right;
+  margin-top: -4rpx
+}
+
+.right-head-text{
+  font-size: 0.7rem; 
+  font-family:黑体;
+  color:#707070;
+}
+
+.ask-content{
+  margin-top:28rpx;
+  margin-left:20rpx;
+  margin-right:20rpx
+}
+
+.ask-bar{
+  border-bottom:1px solid #eaeaea;
+  margin-top:30rpx
+}
+
+.ask-text{
+  font-size: 28rpx; 
+  font-family:黑体;
+  color:#343434;
+}
+
+.answer-content{
+  margin-top:20rpx;
+  display:flex;
+  align-items:center;
+}
+
+.listen-content{
+  display:flex;
+  align-items: center
+}
+
+.time-text{
+  margin-left:20rpx;
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#a7a6a6;
+}
+
+.center-text{
+  position: absolute;
+  left :110rpx;
+  width:240rpx;
+  height:50rpx;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+
+.img-text{
+  font-size: 0.76rem; 
+  font-family:Microsoft YaHei;
+  color:#fff;
+}
+
+
+.img-img{
+  margin-right:20rpx
+  
+}
+
+.intro-content{
+  margin-top:12rpx;
+  margin-bottom:16rpx;
+  display:flex;
+  align-items:center;
+  justify-content: space-between
+}
+
+.name-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#3e3d3d;
+}
+
+.sep-text{
+  font-size: 0.4rem; 
+  font-family:Microsoft YaHei;
+  color:#7b7a7a;
+  margin-left:10rpx;
+  margin-right:10rpx;
+}
+
+.detail-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#7b7a7a;
+  text-overflow: ellipsis;
+  width:500rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  white-space: nowrap;
+
+
+}
+
+.number-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#59c9b9;
+  margin-left:12rpx
+}
+
+.mt10{
+  margin-top: 10rpx;
+}
+
+.redbag{
+  display:flex;align-items:center
+}
+
+.rb{
+  position:absolute;left:640rpx;width:60rpx
+}

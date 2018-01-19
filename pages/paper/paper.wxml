@@ -1,0 +1,16 @@
+<!--pages/paper/paper.wxml-->
+<view style="text-align:center;margin:40rpx"> 
+  <text>{{diqu}}{{fenlei}}{{plei}}</text>
+</view>
+
+<view style="text-align:center">
+  <image wx:for="{{list1}}"  style="width:90%;border:1px solid #666" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/testpaper/{{item.diqu}}/{{item.fenlei}}/{{item.plei}}/{{item.path}}" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/testpaper/{{item.diqu}}/{{item.fenlei}}/{{item.plei}}/{{item.path}}"></image>
+</view>
+
+<view style="text-align:center;margin:40rpx"> 
+  <text>{{diqu}}{{fenlei}}{{plei2}}</text>
+</view>
+
+<view style="text-align:center">
+  <image wx:for="{{list2}}"  style="width:90%;border:1px solid #666" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/testpaper/{{item.diqu}}/{{item.fenlei}}/{{item.plei}}/{{item.path}}" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/testpaper/{{item.diqu}}/{{item.fenlei}}/{{item.plei}}/{{item.path}}"></image>
+</view>

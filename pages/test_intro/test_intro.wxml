@@ -1,0 +1,185 @@
+<!--pages/test_intro/test_intro.wxml-->
+<!--pages/test_detail/test_detail.wxml-->
+<view style="margin-top:20rpx;text-align:center">
+  <text style="font-family:Microsoft YaHei;color:#4d504f">{{title}}</text>
+</view>
+
+<view style="margin-left:40rpx;margin-right:40rpx;text-indent:40rpx">
+  <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:34rpx;">{{desc}}</text>
+</view>
+
+<view style="margin-left:40rpx;margin-right:40rpx;text-align:center">
+  <text style="font-family:Microsoft YaHei;color:red;font-size:28rpx;">测试结果可以在我的收藏里面查看</text>
+    <text wx:if="{{id==5}}" style="display:block;font-family:Microsoft YaHei;color:red;font-size:34rpx;">MBTI职业测试只能做一次，请认真回答</text>
+</view>
+
+
+<form bindsubmit="formSubmit">
+<view style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" wx:for="{{list1}}">
+  <view>
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{index+1}}.{{item.content}}</text>
+  </view>
+  <view style='text-align:center'>
+    <radio-group name="{{'t'+item.id}}" >
+        <radio value="1" disabled="{{disflag}}" id="s{{index}}"/><label for="s{{index}}" style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">是</label>
+        <radio value="2" disabled="{{disflag}}"  id="f{{index}}" style="margin-left:140rpx"/><label for="f{{index}}" style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">否</label>
+    </radio-group>
+    
+  </view>
+
+</view>
+
+
+<view style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" wx:for="{{list2}}">
+  <view>
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{index+1}}.{{item.content}}</text>
+  </view>
+  <view style='text-align:left'>
+    <radio-group name="{{'t'+item.id}}">
+        <label for="s{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="1" disabled="{{disflag}}"  id="s{{index}}"/>偶尔</label>
+        <label for="f{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="2" disabled="{{disflag}}"  id="f{{index}}" />少有</label>
+        <label for="d{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="3" disabled="{{disflag}}"  id="d{{index}}" />常有</label>
+        <label for="w{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="4" disabled="{{disflag}}"  id="w{{index}}" />持续</label>
+    </radio-group>
+    
+  </view>
+
+</view>
+
+
+<view style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" wx:for="{{list3}}">
+  <view>
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{index+1}}.{{item.content}}</text>
+  </view>
+  <view style='text-align:left'>
+    <radio-group name="{{'t'+item.id}}">
+        <label for="s{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="1" disabled="{{disflag}}"  id="s{{index}}"/>非常符合</label>
+        <label for="f{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="2" disabled="{{disflag}}"  id="f{{index}}" />比较符合</label>
+        <label for="d{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="3" disabled="{{disflag}}"  id="d{{index}}" />吃不准</label>
+        <label for="w{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="4" disabled="{{disflag}}"  id="w{{index}}" />比较不符合</label>
+        <label for="b{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="5" disabled="{{disflag}}"  id="b{{index}}" />完全不符合</label>
+    </radio-group>
+    
+  </view>
+
+</view>
+
+<view style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" wx:for="{{list4}}">
+  <view>
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{index+1}}.{{item.content}}</text>
+  </view>
+  <view style='text-align:left;'>
+    <radio-group name="{{'t'+item.id}}">
+        <label for="s{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="1" disabled="{{disflag}}"  id="s{{index}}"/>偶尔</label>
+        <label for="f{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="2" disabled="{{disflag}}"  id="f{{index}}" />少有</label>
+        <label for="d{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="3" disabled="{{disflag}}"  id="d{{index}}" />常有</label>
+        <label for="w{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx"><radio value="4" disabled="{{disflag}}"  id="w{{index}}" />持续</label>
+    </radio-group>
+    
+  </view>
+
+</view>
+
+
+<view style="margin-top:40rpx;margin-left:20rpx;margin-right:20rpx;float:left" wx:for="{{list5}}">
+  
+  <view >
+    <view style="display:block;float:left;">
+      <text style="font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{index+1}}.{{item.content==''?'你更容易喜欢或倾向哪一个词？注意：这里的倾向不是指你向往得到的，而是指你现在已经具有的。':item.content}}</text>
+    </view>
+    <view style="display:inline-block;float:left;margin-left:30rpx">
+    <radio-group name="{{'t'+item.id}}">
+        <label for="s{{index}}" style="font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx;float:left"><radio value="1" disabled="{{disflag}}"  id="s{{index}}"/>{{item.leftsubject}}</label>
+        <label for="f{{index}}" style=";margin-left:50rpx;font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;display:inline-block;margin-top:10rpx;width:300rpx;float:left"><radio value="2" disabled="{{disflag}}"  id="f{{index}}" />{{item.rightsubject}}</label>
+    </radio-group>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{tag==1}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+
+  <view style="margin-top:20rpx" wx:for="{{answer1.ceshizhiye}}">
+    <text style="display:block"><text style="color:red">类型:</text>{{item.typename}}</text>
+    <text style="display:block"><text style="color:red">特点:</text>{{item.desc}}</text>
+    <text style="display:block"><text style="color:red">适合职业:</text>{{item.zhiye}}</text>
+  </view>
+
+    
+  <view style="text-align:center;margin-top:20rpx">
+    <text style="font-size:36rpx;color:red">综合结果</text>
+  </view>
+  <view style="margin-top:20rpx" wx:for="{{answer1.ceshizhiyeresult}}">
+    <text style="display:block"><text style="color:red">类型:</text>{{item!=null?item.typeletter:''}}</text>
+    <text style="display:block"><text style="color:red">适合职业:</text>{{item!=null?item.zhiye:''}}</text>
+  </view>
+
+
+</view>
+
+
+<view wx:if="{{tag==2}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+
+  <view style="margin-top:20rpx;text-align:center" >
+    <text style="display:block">{{answer2.content}}</text>
+    
+  </view>
+
+
+</view>
+
+<view wx:if="{{tag==3}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+ <view style="margin-top:20rpx" wx:for="{{answer3.ceshiqizhi}}">
+    <text style="display:block"><text style="color:red">类型:</text>{{item.title}}</text>
+    <text style="display:block"><text style="color:red">特点:</text>{{item.desc1}}</text>
+    <text style="display:block"><text style="color:red">适合职业:</text>{{item.desc2}}</text>
+  </view>
+
+
+
+</view>
+
+
+<view wx:if="{{tag==4}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+
+  <view style="margin-top:20rpx;text-align:center" >
+    <text style="display:block">{{answer4.content}}</text>
+    
+  </view>
+
+
+</view>
+
+<view wx:if="{{tag==5}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+ <view style="margin-top:20rpx" wx:for="{{answer5.ceshimbtianswer}}">
+    <text style="display:block"><text style="color:red">类型:</text>{{item.typename}}</text>
+    <text style="display:block"><text style="color:red">特点:</text>{{item.desc}}</text>
+    <text style="display:block"><text style="color:red">适合职业:</text>{{item.zhiye}}</text>
+  </view>
+
+
+
+</view>
+
+
+<view style="margin-top:40rpx;margin-bottom:40rpx">
+  <button  disabled="{{disflag}}" catchtap='testDetail' style="width:500rpx">马上测试</button>
+  <input hidden value="{{id}}" name="ceshiid"/>
+  <input hidden value="{{oid}}" name="oid"/>
+</view>
+</form>

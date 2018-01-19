@@ -1,0 +1,20 @@
+<!--bottom.wxml-->
+<template name="bottom">
+<view class="bottom-tag">
+    <view class="left-tag" bindtap="mainIndex">
+      <image wx:if="{{condition==1}}"  src="../../images/sy-(1)@2x.png" background-size="cover" style="width:48rpx;height:48rpx"/>
+      <image wx:if="{{condition!=1}}"  src="../../images/sy-(1)@2x2.png" background-size="cover" style="width:48rpx;height:48rpx"/>
+      <text class="bottom-text">首页</text>
+    </view>
+    <view class="center-tag" bindtap="signUpIndex">
+      <!--<image src="../../images/wen@2x.png" background-size="cover" style="display:block;width:98rpx;height:98rpx"/>-->
+            <image src="../../images/redbag.png" background-size="cover" style="display:block;width:130rpx;" mode='widthFix'/>
+      <text class="bottom-text mt10">签到</text>
+    </view>
+    <view class="right-tag" bindtap="personalIndex">
+      <image wx:if="{{condition==3}}" src="../../images/xz-10@2x.png" background-size="cover" style="width:48rpx;height:46rpx"/>
+      <image wx:if="{{condition!=3}}" src="../../images/xz-10@2x2.png" background-size="cover" style="width:48rpx;height:46rpx"/>
+      <text class="bottom-text">我的</text>
+    </view>
+  </view>
+</template>

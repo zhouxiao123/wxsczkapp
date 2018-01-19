@@ -1,0 +1,95 @@
+<!--pages/my_ask/my_ask.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view style="display:flex;height:60rpx">
+        <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索问答" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+
+<!--<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      我的提问
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      我的回答
+    </view>
+</view>-->
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+
+    <view class="ask-content" style="display:{{tag==0?'block':'none'}}">
+    
+          <!--<view wx:for="{{list1}}" class="ask-bar" data-id="{{item.askId}}" >
+        <text class="ask-text">{{item.askContent}}</text>
+
+      </view>-->
+      <view wx:for="{{list1}}" class="ask-bar" data-id="{{item.askId}}" bindtap="ask_detail">
+      <view class="dfs">
+        <view class="answer-content">
+          <image src="{{item.issecret==1?'../../images/personal/-rtx@2x.png':item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.issecret==1?'匿名用户':item.u.nickName}}</text>
+        </view>
+        <view wx:if="{{item.isNew==1}}" style="width:30rpx;height:30rpx;background-color:red;border-radius:50%"></view>
+        </view>
+        <text class="ask-text">{{item.askContent}}</text>
+
+        <view class="intro-content">
+          <view class="intro-right-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.createTime}}</text>
+          </view>
+
+          <view class="intro-right-content">
+            <view class="intro-right-content">
+              <image src="../../images/eye71.png" style="width:30rpx" mode='widthFix'></image>
+              <text style="display:inline-block;height:30rpx;width:60rpx;margin-left:10rpx;font-size: 0.6rem;font-family:Microsoft YaHei;">{{item.count}}</text>
+            </view>  
+            <text class="number-text" style="margin-left:10rpx">回复({{item.answercount}})</text>
+          </view>
+        </view>
+      </view>
+
+
+
+
+      
+    </view>
+
+
+    <view class="ask-content"  style="margin:20rpx;display:{{tag==1?'block':'none'}}">
+      <view wx:for="{{list2}}" class="ask-bar" data-id="{{item.askid}}" bindtap="ask_detail">
+        <view class="answer-content">
+          <image src="{{item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.u.nickName}}</text>
+
+        </view>
+        <text class="ask-text">{{item.answercontent}}</text>
+
+        <view class="intro-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.createtime}}</text>
+
+        </view>
+      </view>
+
+      
+    </view>
+
+
+
+    
+
+      
+    </view>  
+    <view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>

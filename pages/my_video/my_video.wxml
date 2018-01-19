@@ -1,0 +1,47 @@
+<!--pages/my_video/my_video.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view style="display:flex;height:60rpx">
+        <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" value="{{value}}" placeholder="搜索视频" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+<!--视频-->
+<view >
+<view wx:for="{{list}}" wx:for-item="l" class="select-view" data-id="{{l.w.webLessonId}}"  catchtap="see_video">
+  <view class="view-img">
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{l.w.webLessonPic}}" style="margin-left:28rpx;margin-bottom:20rpx;width:240rpx;height:144rpx"/>
+  </view>
+  <view class="text-view">
+    <text class="title-text">{{l.w.webLessonName}}</text>
+    <text class="subtitle-text">{{l.w.webLessonDesc}}</text>
+    <!--<text class="link-text" bindtap="see_video">点击免费试听1分钟</text>-->
+    <view class="text-bottom-content">
+      <text class="fee-text">￥{{l.w.webLessonType==2?l.w.webLessonPrice:0}}</text>
+      <text class="count-text">{{l.w.seeTimes}}次观看</text>
+      <button  style="line-height:35rpx;padding:5rpx;margin-left:50rpx;width:135rpx;height:40rpx;font-size:0.6rem">
+          已经购买
+      </button>
+        
+</view>
+  </view>
+</view>
+
+
+
+
+</view>
+
+</view>

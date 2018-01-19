@@ -1,0 +1,29 @@
+<!--pages/edit_answer/edit_answer.wxml-->
+<view  style="margin:20rpx;">
+    <form bindsubmit="formSubmit" >
+      <view style="padding :20rpx;margin:10rpx;border:1px solid #999;border-radius: 20rpx;">
+        <textarea  maxlength="500"  placeholder-style="font-family:黑体;font-size:0.8rem" style="width:100%;font-family:黑体;font-size:0.8rem;" name="content" value="{{answer.answercontent}}"></textarea>
+      </view>
+
+<view >
+        <button bindtap='addpic'>添加图片</button>
+        <image src="{{array[0]}}" style="width:150rpx" mode="widthFix"></image>
+        <image src="{{array[1]}}" style="width:150rpx" mode="widthFix"></image>
+        <image src="{{array[2]}}" style="width:150rpx" mode="widthFix"></image>
+        <image src="{{array[3]}}" style="width:150rpx" mode="widthFix"></image>
+
+
+    </view>
+
+      <view style="margin-top:200rpx">
+        <!--<view class="classname">
+          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">10积分</text>
+        </view>-->
+        <view class="classname">
+          <button formType="submit"  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">保存编辑</button>
+          <input hidden name="id" value="{{id}}"/>
+        </view>
+      </view>
+      </form>
+
+    </view>

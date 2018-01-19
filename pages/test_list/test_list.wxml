@@ -1,0 +1,28 @@
+<!--pages/test_list/test_list.wxml-->
+<view >
+
+
+
+<view style="position:absolute;text-align:center">
+  <!--<image src="../../images/test/1@2x.png" style="margin-top:350rpx;width:350rpx;height:78rpx;margin-left:200rpx" ></image>-->
+  <!--<button catchtap='testDetail' data-id="1" style="margin-top:350rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#faeeca;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">职业兴趣测试</button>-->
+
+    <button catchtap='testDetail' data-id="5" style="margin-top:350rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#f7fa9a;border:1px solid #aaa;border-radius:78rpx;color:red;font-family:Microsoft YaHei">MBTI职业测试</button>
+
+  <button catchtap='testDetail' data-id="2" style="margin-top:50rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#f9d7da;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">抑郁自评</button>
+
+  <button catchtap='testDetail' data-id="3" style="margin-top:50rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#fbd88e;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">气质测试</button>
+
+  <!--<button catchtap='testDetail' data-id="4" style="margin-top:50rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#cdfff4;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">抑郁自评</button>-->
+
+
+</view>
+<image src="../../images/test/2record_bottom.gif" style="width:100%" mode="widthFix"></image>
+
+
+<!--<button type="warn" style='margin-top:20rpx;color:#fff;font-family:黑体;width:400rpx;height:60rpx;line-height:60rpx'>霍兰德职业兴趣测试量表</button>
+<button type="warn" style='margin-top:20rpx;color:#fff;font-family:黑体;width:400rpx;height:60rpx;line-height:60rpx'>焦虑自评量表SAS</button>
+<button type="warn" style='margin-top:20rpx;color:#fff;font-family:黑体;width:400rpx;height:60rpx;line-height:60rpx'>气质测量表</button>
+<button type="warn" style='margin-top:20rpx;color:#fff;font-family:黑体;width:400rpx;height:60rpx;line-height:60rpx'>仲氏抑郁自评量表</button>-->
+
+</view>

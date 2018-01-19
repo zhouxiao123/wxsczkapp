@@ -1,0 +1,438 @@
+<!--sign_up.wxml-->
+<view style="height:196rpx">
+  <view style="" class="sign_title">
+    <view style="margin-left:20rpx;width:100rpx">
+      <image style="width:20rpx;height:20rpx" src="../../images/sign/jb1@2x.png"></image>
+      <text style="color:#9a9a9a;font-size:30rpx;margin-left:8rpx">{{user.point}}</text>
+    </view>
+    <view style="margin-left:130rpx;width:250rpx;text-align:center">
+      <text style="font-family:黑体;color:#343434;font-size:30rpx">已经累计签到<text style="color:#59c9b9">{{day}}</text>天</text>
+    </view>
+  </view>
+   <view style="margin-top:60rpx;text-align:center">
+   <view>
+      <image wx:if="{{today == 0}}" bindtap='signUp' style="width:170rpx;height:60rpx" src="../../images/personal/q-d@2x.png"></image>
+      <image  wx:if="{{today > 0}}" style="width:170rpx;height:60rpx" src="../../images/personal/yqd@2x.png"></image>
+   </view>
+    </view>
+
+</view>
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+  <view style="margin-top:44rpx;margin-left:44rpx;" class="dt">
+  <!--1天-->
+    <view class="dtf">
+
+    <image wx:if="{{day == 1}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+    <image wx:if="{{day != 1}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+    <text class="qd1">+5</text>
+    <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--2天-->
+    <view class="dtf">
+      <image wx:if="{{day == 2}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 2}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--3天-->
+    <view class="dtf">
+      <image wx:if="{{day == 3}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 3}}" style="width:60rpx;height:60rpx" src="../../images/sign/qdrq@2x.png"></image>
+      <text class="qd2">+10</text>
+      <view style="height:130rpx;width:60rpx;text-align:center">
+          <text style="font-family:黑体;color:#606060;font-size:30rpx;">3天</text>
+      </view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--4天-->
+        <view class="dtf">
+      <image wx:if="{{day == 4}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 4}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--5天-->
+        <view class="dtf">
+      <image wx:if="{{day == 5}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 5}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--6天-->
+    <view class="dtf">
+      <image wx:if="{{day == 6}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 6}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <image style="height:130rpx;width:1px" src="../../images/sign/xz-15-kb-2@2x.png"></image>
+    </view>
+  </view>
+
+
+
+<!--第二排-->
+<view style="margin-left:44rpx;" class='dt'>
+
+<!--12天-->
+    <view class="dtf">
+      <image wx:if="{{day == 12}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 12}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <image style="height:130rpx;width:1px" src="../../images/sign/xz-15-kb-2@2x.png"></image>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--11天-->
+    <view class="dtf">
+      <image wx:if="{{day == 11}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day !=11}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--10天-->
+    <view class="dtf">
+
+      <image wx:if="{{day == 10}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 10}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--9天-->
+        <view class="dtf">
+      <image wx:if="{{day == 9}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 9}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--8天-->
+        <view class="dtf">
+      <image wx:if="{{day == 8}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 8}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--7天-->
+    <view class="dtf">
+
+      <image wx:if="{{day == 7}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 7}}" style="width:60rpx;height:60rpx" src="../../images/sign/qdrq@2x.png"></image>
+      <text class="qd2">+10</text>
+      <view style="height:130rpx;width:60rpx;text-align:center">
+          <text style="font-family:黑体;color:#606060;font-size:30rpx;">7天</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+<!--第三排-->
+    <view style="margin-left:44rpx;" class="dt">
+
+    <!--13天-->
+    <view class="dtf">
+      <image wx:if="{{day == 13}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 13}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--14天-->
+    <view class="dtf">
+      <image wx:if="{{day == 14}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 14}}" style="width:60rpx;height:60rpx" src="../../images/sign/qdrq@2x.png"></image>
+      <text class="qd2">+10</text>
+      <view style="height:130rpx;width:60rpx;text-align:center">
+          <text style="font-family:黑体;color:#606060;font-size:30rpx;">14天</text>
+      </view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--15天-->
+    <view class="dtf">
+      <image wx:if="{{day == 15}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 15}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--16天-->
+        <view class="dtf">
+            <image wx:if="{{day == 16}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 16}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--17天-->
+        <view class="dtf">
+      <image wx:if="{{day == 17}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 17}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--18天-->
+    <view class="dtf">
+      <image wx:if="{{day == 18}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 18}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+            <image style="height:130rpx;width:1px" src="../../images/sign/xz-15-kb-2@2x.png"></image>
+    </view>
+  </view>
+
+
+
+
+  <!--第四排-->
+
+  <view style="margin-left:44rpx;" class="dt">
+  <!--24天-->
+    <view class="dtf">
+      <image wx:if="{{day == 24}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 24}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <image style="height:130rpx;width:1px" src="../../images/sign/xz-15-kb-2@2x.png"></image>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--23天-->
+    <view class="dtf">
+      <image wx:if="{{day == 23}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 23}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--22天-->
+    <view class="dtf">
+
+      <image wx:if="{{day == 22}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 22}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--21天-->
+        <view class="dtf">
+      <image wx:if="{{day == 21}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 21}}" style="width:60rpx;height:60rpx" src="../../images/sign/qdrq@2x.png"></image>
+      <text class="qd2">+10</text>
+      <view style="height:130rpx;width:60rpx;text-align:center">
+          <text style="font-family:黑体;color:#606060;font-size:30rpx;">21天</text>
+      </view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--20天-->
+        <view class="dtf">
+      <image wx:if="{{day == 20}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 20}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--19天-->
+    <view class="dtf">
+      <image wx:if="{{day == 19}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 19}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+  </view>
+
+  
+
+
+
+  <!--第四排-->
+
+      <view style="margin-left:44rpx;" class="dt">
+      <!--25天-->
+    <view class="dtf">
+      <image wx:if="{{day == 25}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 25}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--26天-->
+    <view class="dtf">
+      <image wx:if="{{day == 26}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 26}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>     
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--27天-->
+    <view class="dtf">
+      <image wx:if="{{day == 27}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 27}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--28天-->
+    <view class="dtf">
+      <image wx:if="{{day == 28}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 28}}" style="width:60rpx;height:60rpx" src="../../images/sign/qdrq@2x.png"></image>
+      <text class="qd2">+10</text>
+      <view style="height:130rpx;width:60rpx;text-align:center">
+          <text style="font-family:黑体;color:#606060;font-size:30rpx;">28天</text>
+      </view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+
+<!--29天-->
+        <view class="dtf">
+      <image wx:if="{{day == 29}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 29}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+    <view class="dtf">
+      <image style="height:1px;width:60rpx" src="../../images/sign/xz-14@2x.png"></image>
+      <view style="height:130rpx"></view>
+    </view>
+
+<!--30天-->
+    <view class="dtf">
+      <image wx:if="{{day == 30}}" style="width:60rpx;height:60rpx" src="../../images/sign/rq1@2x.png"></image>
+      <image wx:if="{{day != 30}}" style="width:60rpx;height:60rpx" src="../../images/sign/ty9-kb-2@2x.png"></image>
+      <text class="qd1">+5</text>
+      <view style="height:130rpx"></view>
+    </view>
+  </view>
+
+<view id="backg" style="display:{{disflag}};background-color:rgba(0,0,0,0.5);width:100%;height:100%;position:fixed;top:0;z-index:999">
+    <view  style="position:fixed;top:100rpx;left:110rpx">
+    <image  style="width:530rpx;height:600rpx" src="../../images/qdlhb.png" />
+
+    </view>
+    <view  style="position:fixed;top:750rpx;left:165rpx">
+
+    <image catchtap='getPoint'  style="width:420rpx;height:100rpx" src="../../images/qdlhb_an.png" />
+    </view>
+  </view>
+
+  <view id="backg2" style="display:{{disflag2}};background-color:rgba(0,0,0,0.5);width:100%;height:100%;position:fixed;top:0;z-index:999" catchtap='closeBg'>
+    <view  style="position:fixed;top:300rpx;left:95rpx">
+    <image  style="width:560rpx;height:320rpx" src="../../images/open{{redBagPoint}}.png" />
+
+    </view>
+  </view>
+
+  

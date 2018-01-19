@@ -1,0 +1,37 @@
+<!--pages/my_point/my_point.wxml-->
+<view style="height:196rpx;background-color:#59c9b9">
+  <view>
+    <view style="text-align:center">
+      <!--<image style="width:80rpx;height:80rpx" src="../../images/sign/jb1@2x.png"></image>-->
+      <text style="color:gold;font-size:2rem;margin-left:8rpx">{{user.point}}</text>
+    </view>
+  </view>
+   <view style="margin-top:10rpx;text-align:center">
+   <view>
+      <button catchtap='charge_fee' type="warn" style="width:150rpx;height:60rpx;line-height:60rpx">充值</button>
+   </view>
+    </view>
+
+</view>
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+  <view style="margin-left:44rpx;margin-right:44rpx;">
+    <view wx:for="{{pointLog}}" style="border-bottom:1px solid #aaa;margin-top:20rpx">
+      <view style="color:#999;font-family:黑体;font-size:1.0rem">{{item.createTime}}</view>
+      <view style="margin-top:10rpx;margin-bottom:10rpx">
+        <text style="color:{{item.feeType==2?'green':'red'}};font-family:黑体;font-size:1.2rem;margin-left:40rpx;width:120rpx;display:inline-block">{{item.feeType==2?'-'+item.point:'+'+item.point}}</text>
+        <text style="color:#666;font-family:黑体;font-size:0.9rem">{{item.message}}</text>
+      </view>
+    </view>
+
+ </view>
+
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+
+ 

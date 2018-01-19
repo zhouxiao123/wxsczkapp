@@ -1,0 +1,29 @@
+<!--pages/school_jh_detail/school_jh_detail.wxml-->
+
+
+<view style="font-family:黑体;margin-top:20rpx;text-align:center">{{yxname}}</view>
+<view style="margin:40rpx">
+
+    <view style="font-family:黑体">专业计划数</view>
+    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
+        地区:四川
+    </view>
+        
+    <view class="table">
+        <view class="tr">
+            <view class="th">专业</view>
+            <view class="th">编码</view>
+            <view class="th">计划数</view>
+            <view class="th">详情</view>
+        </view>
+        <view class="tr" wx:for="{{jhzy}}">
+            <view class="td">{{item.zymc}}</view>
+            <view class="td">{{item.zybm}}</view>
+            <view class="td">{{item.zyjhs}}</view>
+            <view class="td"><button data-id='{{item.id}}' bindtap='toJhzyDetail' style="font-size:0.7rem">详情</button></view>
+        </view>
+    </view>
+  
+</view>
+
+

@@ -1,0 +1,13 @@
+/* pages/month_point/month_point.wxss */
+
+.title{
+  text-align:center;color:green;font-size:44rpx;margin:20rpx
+}
+
+.content{
+  margin-left:40rpx;font-size:40rpx;color:#999;display:block;margin-top:40rpx;margin-right:40rpx
+}
+
+.sub_content{
+  margin-left:40rpx;font-size:34rpx;color:#999;display:block;margin-top:40rpx;margin-right:40rpx
+}

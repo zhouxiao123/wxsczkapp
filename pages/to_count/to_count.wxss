@@ -1,0 +1,6 @@
+/* pages/to_count/to_count.wxss */
+.df{
+  display:flex;
+  align-items: center;
+  justify-content: center
+}

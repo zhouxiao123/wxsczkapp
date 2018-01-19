@@ -1,0 +1,141 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.4",
+	"appid": "wxb92292e3ccd61cd8",
+	"projectname": "wxsczkapp",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "院校详情",
+					"pathName": "pages/school_detail/school_detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "liebiao",
+					"pathName": "pages/lesson/lesson",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分",
+					"pathName": "pages/my_point/my_point",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/charge_fee/charge_fee",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试题",
+					"pathName": "pages/test_list/test_list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评测",
+					"pathName": "pages/my_collect/my_collect",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "测试传参数",
+					"pathName": "pages/answer_ask_list/answer_ask_list",
+					"query": "tag=1"
+				},
+				{
+					"id": -1,
+					"name": "趣味测试",
+					"pathName": "pages/quwei_test/quwei_test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自主招生",
+					"pathName": "pages/zhizhuzhaosheng/zhizhuzhaosheng",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "加图片回复",
+					"pathName": "pages/to_answer/to_answer",
+					"query": "askid=35"
+				},
+				{
+					"id": 10,
+					"name": "回复图片显示",
+					"pathName": "pages/ask_detail/ask_detail",
+					"query": "id=35"
+				},
+				{
+					"id": -1,
+					"name": "自主招生",
+					"pathName": "pages/zhizhuzhaosheng/zhizhuzhaosheng",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "统计",
+					"pathName": "pages/to_count/to_count",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分数查询",
+					"pathName": "pages/check_point/check_point",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "抽奖",
+					"pathName": "pages/canvas/canvas",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试注册",
+					"pathName": "pages/personal_info/personal_info",
+					"query": "userid=23"
+				},
+				{
+					"id": -1,
+					"name": "接口",
+					"pathName": "pages/jiekoutest/jiekoutest",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "高职单招",
+					"pathName": "pages/lesson/lesson",
+					"query": "lessontypeid=1"
+				}
+			]
+		}
+	}
+}

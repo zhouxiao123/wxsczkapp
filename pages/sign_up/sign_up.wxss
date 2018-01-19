@@ -1,0 +1,24 @@
+/* sign_up.wxss */
+.sign_title{
+  display:flex;align-items:center;margin-top:28rpx
+}
+.dt{
+  display:flex;align-items:center
+}
+
+.dtf{
+  display:flex;align-items:center;flex-direction: column
+}
+
+
+.dts{
+  display:flex;align-items:flex-start
+}
+
+.qd1{
+  line-height:60rpx;display:inline-block;position:absolute;color:#8f8d8d;font-family:黑体;font-size:34rpx;
+}
+
+.qd2{
+  line-height:60rpx;display:inline-block;position:absolute;color:#fff;font-family:黑体;font-size:30rpx;
+}

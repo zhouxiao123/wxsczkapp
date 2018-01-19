@@ -1,0 +1,160 @@
+<!--pages/school_detail/school_detail.wxml-->
+<view style="background-color:#59c9b9;height:240rpx">
+<view  style="margin:20rpx；margin-top:0">
+    <view style="">
+      <view style="line-height:76rpx;width:530rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#fff;font-size:1.2rem">
+        {{item.yxname}}
+      </view>
+      <view style="width:150rpx;display:inline-block;margin-right:20rpx">
+        <button wx:if="{{collect==0}}" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;"  bindtap="collect">收藏</button>
+      <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;">已收藏</button>
+      </view> 
+    </view> 
+    <view style="padding-bottom:20rpx;margin-top:20rpx;">
+      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+        地区:{{item.province}}
+      </view>
+      <view style="display:inline-block;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
+        隶属:{{item.zgbm}}
+      </view>
+      <view  style="display:inline-block;">
+          <text wx:if="{{item.is985==1}}"  style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#00bb00;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;margin-right:20rpx;height:36rpx">985</text> 
+
+          <text wx:if="{{item.is211==1}}" style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#ffa979;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;height:36rpx">211</text>
+          
+      </view>
+    </view>
+
+
+    <view style="padding-bottom:20rpx;">
+      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+        类型:{{item.yxtype}}
+      </view>
+      <view style="display:inline-block;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
+        性质:{{item.yxxz}}
+      </view>
+      <view  style="display:inline-block;color:#fff;margin-right:40rpx;font-family:黑体;font-size:30rpx">
+          {{item.lqcc}}
+          
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      简介
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      录取
+    </view>
+    <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
+      章程
+    </view>
+    <view class="tag-view {{tag==3?'on t-on':''}}" data-current="3" bindtap="swichNav" >
+      计划
+    </view>
+</view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+  <!--简介-->
+  <view style="display:{{tag==0?'block':'none'}};">
+
+    <view style="margin:40rpx">
+      <view style="font-family:黑体;margin-bottom:20rpx">
+        信息概况
+      </view>
+      <view style="font-family:黑体;color:#aaa;font-size:0.7rem;margin-bottom:10rpx">
+        招生网站:{{item.website}}
+      </view>
+      <view style="font-family:黑体;color:#aaa;font-size:0.7rem;margin-bottom:10rpx">
+        招生热线:{{item.phone}}
+      </view>
+      <view style="font-family:黑体;color:#aaa;font-size:0.7rem;margin-bottom:10rpx">
+        通讯地址:{{item.address}}
+      </view>
+    </view>
+
+
+    <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+    <view style="margin:40rpx">
+    <view style="font-family:黑体">
+      学校简介
+    </view>
+
+    <view style="font-size:26rpx">
+        <import src="../../wxParse/wxParse.wxml"/>
+
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+    </view>
+  </view>
+
+<!--录取查询-->
+<view style="display:{{tag==1?'block':'none'}};margin:40rpx">
+    <view style="font-family:黑体">往年录取分数线</view>
+    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
+        地区:四川
+    </view>
+        <view class="table">
+        <view class="tr">
+            <view class="th">录取批次</view>
+            <view class="th">录取情况</view>
+            <view class="th">录取分数</view>
+            <view class="th">专业分数</view>
+        </view>
+        <view wx:for="{{yxxq.sls}}" class="tr" >
+            <view class="td" >{{item.pc}}</view>
+            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.id}}' data-tag='1' bindtap='toFsDetail' style="font-size:0.7rem">详情</button></view>
+            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.id}}' data-tag='2' bindtap='toFsDetail' style="font-size:0.7rem">详情</button></view>
+            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.id}}' data-tag='3' bindtap='toFsDetail' style="font-size:0.7rem">详情</button></view>
+        </view>
+        
+    </view>
+  
+</view>
+
+<!--章程-->
+  <view style="display:{{tag==2?'block':'none'}}">
+    <view style="margin-top:20rpx;font-family:黑体;text-align:center">
+      {{zszc.name}}
+    </view>
+    <view style="margin:40rpx;font-size:26rpx">
+
+        <import src="../../wxParse/wxParse.wxml"/>
+
+        <template is="wxParse" data="{{wxParseData:zszc.nodes}}"/>
+    </view>
+  </view>
+
+
+  <!--计划查询-->
+<view style="display:{{tag==3?'block':'none'}};margin:40rpx">
+    <view style="font-family:黑体">招生计划</view>
+    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
+        地区:四川
+    </view>
+        <view class="table">
+        <view class="tr">
+            <view class="th">计划批次</view>
+            <view class="th">2017计划数</view>
+            <view class="th">2016计划数</view>
+            <view class="th">专业计划</view>
+        </view>
+        <view wx:for="{{jhgx.jhs}}" class="tr" >
+            <view class="td" >{{item.pc}}</view>
+            <view class="td" style="display:flex;align-items:center;justify-content:center"><text>{{item.jhs1}}</text></view>
+            <view class="td" style="display:flex;align-items:center;justify-content:center"><text>{{item.jhs2}}</text></view>
+            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.jhid}}'  bindtap='toJhDetail' style="font-size:0.7rem">详情</button></view>
+        </view>
+        
+    </view>
+  
+</view>

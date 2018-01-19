@@ -1,0 +1,49 @@
+<!--pages/to_count/to_count.wxml-->
+<view>
+<view wx:if="{{user.qudao==1}}">
+<view style="font-size:38rpx;text-align:center;margin-top:40rpx;margin-bottom:40rpx">个人统计</view>
+
+<view style="text-align:center;font-size:32rpx" >
+  <view class="df">
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{user.name}}</view>
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{param.count}}</view>
+  </view>
+
+</view>
+</view>
+
+<view wx:if="{{user.lindao==1 || user.qudao==1}}">
+<view style="font-size:38rpx;text-align:center;margin-top:40rpx;margin-bottom:40rpx" >地区发展用户数排行榜</view>
+
+<view style="text-align:center;font-size:32rpx">
+  <view  class="df" wx:for="{{param.locallist}}">
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{item.name}}</view>
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{item.count}}</view>
+  </view>
+
+  <view class="df" >
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">总计</view>
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{param.total}}</view>
+  </view>
+
+</view>
+</view>
+
+
+<view wx:if="{{user.lindao==1}}">
+<view style="font-size:38rpx;text-align:center;margin-top:40rpx;margin-bottom:40rpx" >二维码分类统计</view>
+
+<view style="text-align:center;font-size:32rpx">
+  <view  class="df" wx:for="{{param.userlist}}">
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{item.name}}</view>
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{item.count}}</view>
+  </view>
+
+  <view class="df" >
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">总计</view>
+    <view style="display:inline-block;width:200rpx;height:40rpx;border:1px solid #666;text-align:center">{{param.total}}</view>
+  </view>
+
+</view>
+</view>
+</view>

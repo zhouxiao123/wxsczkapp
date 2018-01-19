@@ -1,0 +1,111 @@
+<!--pages/zy_detail/zy_detail.wxml-->
+<view style="background-color:#59c9b9;height:240rpx">
+<view  style="margin:20rpx；margin-top:0">
+    <view style="">
+      <view style="line-height:76rpx;width:530rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#fff;font-size:1.2rem">
+        {{item.name}}
+      </view> 
+      <view style="width:150rpx;display:inline-block;margin-right:20rpx">
+        <button wx:if="{{collect==0}}" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;"  bindtap="collect">收藏</button>
+        <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;">已收藏</button>
+      </view> 
+    </view> 
+    <view style="padding-bottom:20rpx;margin-top:20rpx;">
+      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+        层次:{{item.zycc}}
+      </view>
+      <view style="display:inline-block;width:400rpx;color:#fff;font-family:黑体;font-size:30rpx">
+        门类:{{item.zyml}}
+      </view>
+
+    </view>
+
+
+    <view style="padding-bottom:20rpx;">
+      <view style="display:inline-block;margin-left:40rpx;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
+        就业前景:{{item.jyqj}}
+      </view>
+      <view  style="display:inline-block;width:400rpx;margin-right:20rpx;color:#fff;;font-family:黑体;font-size:30rpx">
+         就业率前景:{{item.jylqj}}
+          
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<view class="tag-list" wx:if="{{item.zycc=='本科'}}">
+    <view class="tag-view {{tag==0?'on t-on':''}}" style="margin-left:80rpx" data-current="0" bindtap="swichNav" >
+      简介
+    </view> 
+    <view  style="margin-right:80rpx" class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      开设院校
+    </view>
+    
+</view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+  <!--简介-->
+  <view style="display:{{tag==0?'block':'none'}};">
+
+    <view style="margin:40rpx">
+      <view style="font-family:黑体;margin-bottom:20rpx">
+        信息概况
+      </view>
+      <!--<view style="font-family:黑体;color:#aaa;font-size:0.7rem;margin-bottom:10rpx">
+        专业代码:{{item.zydm}}
+      </view>-->
+      <view style="font-family:黑体;color:#aaa;font-size:0.7rem;margin-bottom:10rpx">
+        毕业生规模:{{item.bysgm}}
+      </view>
+    </view>
+
+
+    <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+    <view style="margin:40rpx">
+    <view style="font-family:黑体">
+      专业简介
+    </view>
+
+    <view style="font-size:28rpx">
+        <import src="../../wxParse/wxParse.wxml"/>
+
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+    </view>
+  </view>
+
+  <!--开设院校-->
+<view style="display:{{tag==1?'block':'none'}};margin:40rpx">
+    <view style="font-family:黑体">开设院校</view>
+
+        <view class="table">
+        <view class="tr">
+            <view class="th">院校名</view>
+            <view class="th">专业名次</view>
+            <view class="th">专业级别</view>
+            <!--<view class="th">开设院校数</view>-->
+        </view>
+        <view wx:for="{{ksyx}}" class="tr" >
+            <view class="td" >{{item.yxm}}</view>
+            <view class="td" style="display:flex;align-items:center">{{item.zymc}}</view>
+            <view class="td" style="display:flex;align-items:center">{{item.zyjb}}</view>
+            <!--<view class="td" style="display:flex;align-items:center">{{item.ksyxs}}</view>-->
+        </view>
+        
+    </view>
+  
+</view>
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+
+

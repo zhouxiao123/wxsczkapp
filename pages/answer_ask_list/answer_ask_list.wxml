@@ -1,0 +1,110 @@
+<!--pages/answer_ask_list/answer_ask_list.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view style="display:flex;height:60rpx">
+        <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索问答" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      指定提问
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      公共提问
+    </view>
+</view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+
+
+    <view class="ask-content" style="display:{{tag==0?'block':'none'}}">
+    
+      <view wx:for="{{list1}}" class="ask-bar" data-id="{{item.askId}}" bindtap="ask_detail">
+        <view class="answer-content">
+          <image src="{{item.issecret==1?'../../images/personal/-rtx@2x.png':item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.issecret==1?'匿名用户':item.u.nickName}}</text>
+
+        </view>
+        <text class="ask-text">{{item.askContent}}</text>
+
+        <view class="intro-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.createTime}}</text>
+          <text class="number-text">回复({{item.answercount}})</text>
+        </view>
+      </view>
+
+
+
+
+          <!--<view wx:for="{{list1}}" class="ask-bar" data-id="{{item.askId}}" catchtap="ask_detail">
+        <text class="ask-text">{{item.askContent}}</text>
+        <view class="answer-content">
+          <image src="../../images/wxid_fgfg4knq3bbj12_1490345033660_79@2x.png" style="width:52rpx;height:52rpx"></image>
+          <view class="listen-content" bindtap="listen" data-id="1">
+            <image  src="../../images/yjjxls@2x.png" style="width:274rpx;height:50rpx"></image>
+            <view class="center-text">
+              <text class="img-text">1元旁听</text>
+              <image src="../../images/{{img_url[1]}}" class="img-img"style="width:21rpx;height:27rpx"></image>
+            </view>
+          </view>
+          <text class="time-text">1'55"</text>
+        </view>
+        <view class="intro-content">
+          <text class="name-text">蔺翠翠</text>
+          <text class="sep-text">|</text>
+          <text class="detail-text">从事高校招生宣传咨询工作近10年，多次组织公益志愿填报咨询活动</text>
+          <image src="../../images/st@2x.png" style="width:16rpx;height:16rpx;margin-left:12rpx"></image>
+          <text class="number-text">4330</text>
+        </view>-->
+      
+
+
+
+      
+    </view>
+
+    <!--<swiper class="ask-content" current="{{tag}}" bindchange="bindChange">
+-->
+        <view class="ask-content" style="display:{{tag==1?'block':'none'}}">
+    
+      <view wx:for="{{list2}}" class="ask-bar" data-id="{{item.askId}}" bindtap="ask_detail">
+        <view class="answer-content">
+          <image src="{{item.issecret==1?'../../images/personal/-rtx@2x.png':item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.issecret==1?'匿名用户':item.u.nickName}}</text>
+
+        </view>
+        <text class="ask-text">{{item.askContent}}</text>
+
+        <view class="intro-content">
+              <text style="font-family:黑体;color:#a7a6a6;font-size: 0.7rem;">{{item.createTime}}</text>
+          <text class="number-text">回复({{item.answercount}})</text>
+        </view>
+      </view>
+
+
+      
+    </view>
+
+
+
+    
+
+      
+    </view>  
+
+
+
+
+
+  <!--<import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->
+

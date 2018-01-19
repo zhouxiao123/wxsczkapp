@@ -1,0 +1,102 @@
+<!--pages/month_point/month_point.wxml-->
+<view class="title">
+  <text>{{m}}月重点关注</text>
+</view>
+
+<view wx:if="{{m==11}}">
+  <text  class="content">1、2018年四川省普通高考报名。</text>
+  <text  class="sub_content">报名时间定为2017年11月1日至6日</text>
+  <text  class="sub_content">考生现场确认时间为2017年11月9日至21日。</text>
+  <text  class="sub_content">网上缴费工作应安排在报名资格审查后、11月27日前进行。</text>
+  
+  <text  class="content">2、艺术类统考报名</text>
+  <text  class="sub_content">各类专业统考网上报名、缴费的时间为：2017年11月1日至4日17:00，逾期不再补报。</text>
+  <text  class="sub_content">美术与设计类专业：2017年11月27日至12月3日网上打印专业考试准考证。2018年我省美术与设计类专业考试分片区集中进行。</text>
+  <text  class="sub_content">戏剧与影视类（含戏剧影视表演、播音与主持、服装表演、编导）及舞蹈类专业：2017年11月30日至12月15日网上打印专业考试准考证。</text>
+</view>
+
+
+<view wx:if="{{m==12}}">
+  <text  class="content">1、综合评价院校报名</text>
+  <text  class="sub_content">所谓综合评价模式，即学生根据院校提出的报考条件和要求，在高考前单独向各招生院校提交入学申请，学校通过参考学生平时成绩（以考生高中学业水平考试成绩、综合素质评价、高校自行组织的测试等综合成绩为录取依据），最后再综合考生的高考成绩，择优录取，从一定程度上降低了单次高考成绩对考生整体的影响。作为目前一种新的录取模式，目前在四川试点招生的院校并不算多，2017年的是中国科学技术大学、北京外国语大学、上海科技大学、上海纽约大学、南方科技大学。2018年会新增一所，昆山杜克大学。其中上海纽约大学、南方科技大学和昆山杜克大学报名时间较早，均在12月份开始。其余学校在3-5月份陆续开始报名。</text>
+
+  
+  <text  class="content">2、美术与设计类专业统考、戏剧与影视类及舞蹈类专业面试科目考试</text>
+  <text  class="sub_content">美术与设计类专业：2017年12月2日10:00-12:00考生熟悉考场，2017年12月2日下午至3日考试。全省分设八个考点：成都考点设在四川师范大学；南充考点设在西华师范大学；自贡考点设在四川理工学院；乐山考点设在乐山师范学院；绵阳考点设在绵阳师范学院；达州考点设在四川文理学院；内江考点设在内江师范学院；巴中考点设在巴中市巴州区第四中学。</text>
+  <text  class="sub_content">戏剧与影视类（含戏剧影视表演、播音与主持、服装表演、编导）及舞蹈类专业：2017年11月30日至12月15日网上打印专业考试准考证，12月5日至15日进行专业面试科目考试。其中编导专业考生12月9日10:00-12:00熟悉笔试科目考场，12月9日下午笔试科目考试。考点设在成都理工大学。</text>
+  
+</view>
+
+
+<view wx:if="{{m==1}}">
+  <text  class="content">1、特殊类型招生</text>
+  <text  class="sub_content">本月教育部进一步对高校艺术类专业、高水平艺术团、高水平运动队、保送生等4类特殊类型招生工作进行规范。</text>
+
+  
+  <text  class="content">2、自主招生信息</text>
+  <text  class="sub_content">自主招生对竞赛门槛要求较高，考生要提前准备。</text>
+
+    <text  class="content">3、港澳高校内地招生</text>
+  <text  class="sub_content">根据往年情况，本月香港、澳门高校内地招生工作陆续启动。</text>
+  
+</view>
+
+
+<view wx:if="{{m==2}}">
+  <text  class="content">1、艺术类专业考试（校考）</text>
+  <text  class="sub_content">艺术类专业考试分为省级招办统一组织的专业考试(简称省级统考)和招生学校组织的专业考试(简称校考)两种形式。本月，考生需要注意所报考专业涉及学校组织校考的，要按招生院校的规定时间报名、考试。</text>
+  
+  
+  <text  class="content">2、特殊类型招生简章持续发布</text>
+  <text  class="sub_content">保送生、高水平艺术团、高水平运动队招生简章发布高校2018年保送生、高水平艺术团、高水平运动队等招生简章持续更新。</text>
+
+</view>
+
+
+<view wx:if="{{m==3}}">
+  <text  class="content">1、自主招生报名</text>
+  <text  class="sub_content">自主招生试点高校将陆续发布自主招生简章。考生要根据高校简章要求，按时完成报名，并提交相关申请材料。90所自主招生高校全部通过阳光高考特殊类型招生报名平台接受考生报名。</text>
+
+  
+  <text  class="content">2、高考体检启动</text>
+  <text  class="sub_content">高考体检安排在本月进行，考生要在学校(或报名所在地招办)组织下到指定医院参加体检。</text>
+
+</view>
+
+
+<view wx:if="{{m==4}}">
+  <text  class="content">1、高考体检陆续进行，注意限报专业</text>
+  <text  class="sub_content">高考体检在本月持续进行，考生要在学校(或报名所在地招办)组织下到指定医院参加体检。体检前，考生应该注意保持身体健康。体检中发现身体指标有异常的考生，在填报志愿时要避开限报专业。在2018年4月30日前对考生的体检结论作出最终裁定。</text>
+
+  
+  <text  class="content">2、高职单招工作</text>
+  <text  class="sub_content">经批准的省内40余所高职院校开始单独招生报名、考试，一般于4月中旬针对考生进行文化考试和综合测试，5月初完成录取。通过高职单招的考生可不参加高考直接录取。</text>
+  
+</view>
+
+
+<view wx:if="{{m==5}}">
+  <text  class="content">1、四川省发布招生工作实施规定。</text>
+  <text  class="sub_content">省考试院正式公布2018年高考政策《四川省2018年普通高校招生实施规定》，是指导2018年高考工作的纲领性文件。</text>
+  
+  
+  <text  class="content">2、高校招生章程公布</text>
+  <text  class="sub_content">根据教育部规定，高校都要制订本校的招生章程，经高校上级主管部门审核通过后，将于5月陆续发布。</text>
+  
+  <text  class="content">3、三诊测试</text>
+
+</view>
+
+
+<view wx:if="{{m==6}}">
+  <text  class="content">1、高考考试</text>
+  <text  class="sub_content">6月7-8日高考文化考试，9-10日根据安排进行外语口试。</text>
+  <text  class="sub_content">6月中旬，系统公布招生计划。</text>
+  <text  class="sub_content">6月10-20日，经资格审核合格的考生参加高校自主招生测试工作。</text>
+  <text  class="sub_content">6月22晚，系统公布成都市考生高考成绩，省控线、全省考生成绩排位。</text>
+  <text  class="sub_content">6月23日—7月5日，网上填报志愿。</text>
+  <text  class="sub_content">6月25日左右军队院校、国防生、公安武警院校的军检、政审、面试工作。</text>
+  
+  
+</view>
+

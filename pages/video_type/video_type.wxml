@@ -1,0 +1,10 @@
+<!--pages/video_type/video_type.wxml-->
+
+<view>
+  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">请选择分类</view>
+  <button catchtap='lessonList' data-id="0" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">全部</button>
+        <button wx:for="{{typeList}}" catchtap='lessonList' data-id="{{item.id}}" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">{{item.name}}</button>
+  
+
+
+</view>

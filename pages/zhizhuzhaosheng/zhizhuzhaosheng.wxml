@@ -1,0 +1,121 @@
+<!--pages/zhizhuzhaosheng/zhizhuzhaosheng.wxml-->
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+      时间节点
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+      招生简章
+    </view>
+    <!--<view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
+      专家列表
+    </view>-->
+</view>
+
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
+<view class="ask-content" style="display:{{tag==0?'block':'none'}}">
+<view class="df">
+  <view class="df1">
+    <view class="df2" >
+      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text3">3月</text>
+        <text class="text4">考生提交申请资料</text>
+      </view>
+    </view>
+        <view class="df2" >
+      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text3">4月底前</text>
+        <text class="text4">公示初审通过名单</text>
+      </view>
+    </view>
+        <view class="df2" >
+      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text3">6月10~22号</text>
+        <text class="text4">试点高校组织考核</text>
+      </view>
+    </view>
+        <view class="df2" >
+      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text3">高考出分后</text>
+        <text class="text4">考生填报志愿,高校录取,公示录取名单</text>
+      </view>
+    </view>
+  </view>
+  <image src="../../images/lc_bg.jpg" class="arrowwidth" mode="widthFix"></image>
+  <view class="df1" >
+    <view class="df2" >
+      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text1">3月初</text>
+        <text class="text2">高校发布招生简章</text>
+      </view>
+    </view>
+    <view class="df2" >
+      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text1">4月</text>
+        <text class="text2">高校审核学校材料</text>
+      </view>
+    </view>
+    <view class="df2" >
+      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text1">6月7~8日</text>
+        <text class="text2">学生参加全国统一高考</text>
+      </view>
+    </view>
+    <view class="df2" >
+      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <view class="imagev" >
+        <text class="text1">高考出分前</text>
+        <text class="text2">高校确定并公示资格名单</text>
+      </view>
+    </view>
+
+  </view>
+</view>
+</view>
+
+
+<view  style="display:{{tag==1?'block':'none'}}">
+
+<view class="search_back">
+    <view class="search_box">
+      <view style="display:flex;height:60rpx">
+        <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image  bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+  <view  style="margin:20rpx" wx:for="{{contentList}}" data-id="{{item.id}}"  catchtap='schoolDetail'>
+    <view style="">
+      <!--<view style="width:280rpx;display:inline-block;margin-left:120rpx;font-family:黑体;color:#494a4d;font-size:38rpx">
+        {{item.year}}年
+      </view>--> 
+      <view style="width:700rpx;margin-left:40rpx;display:inline-block;color:#777;font-family:黑体;font-size:38rpx">
+        {{item.name}}
+      </view>
+    </view> 
+    <view style="border-bottom:1rpx solid #aaa;padding-bottom:20rpx;margin-top:20rpx;">
+
+    </view>
+  </view>
+
+
+
+
+</view>
+
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align: center;">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align: center;" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>

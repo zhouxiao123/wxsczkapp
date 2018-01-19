@@ -1,0 +1,87 @@
+/* school_list.wxss */
+@import "../bottom/bottom.wxss";
+.main-view{
+  
+}
+
+.df{
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+  border-bottom:1px solid #aaa;
+  padding-bottom:10rpx;
+  display:flex;
+  justify-content: space-between
+}
+
+
+.tag-list{
+  margin-top:20rpx;
+  margin-left:60rpx;
+  margin-right:60rpx;
+  margin-bottom:20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-view{
+  
+    display:flex;
+    padding:10rpx;
+  flex-direction:column;
+    font-family:黑体;
+  color:#4b4c4c;
+  font-size:0.9rem
+}
+
+.on{
+  border-bottom: 2px solid #59c9b9;
+}
+
+.t-on{
+  color:#59c9b9;
+}
+
+.search_back{
+  background-color:#f0f0f0;
+  height:100rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.search_box{
+  height:60rpx;
+  width:620rpx;
+  margin-left:65rpx;
+  border-radius: 30rpx;
+  background-color:#fff; 
+  display: flex;
+  align-items: center;
+}
+
+
+
+.tag-list-text{
+  margin-left:20rpx;
+  font-family:黑体;
+  color:#59c9b9;
+  font-size:1.0rem
+}
+
+.select-view{
+
+}
+
+.select-box{
+
+  width:160rpx;
+  text-align: center;
+  color:#858686;
+  margin-bottom:40rpx;
+  display:inline-block;
+}
+
+.select-text{
+  font-size:1.0rem;
+  font-family: 黑体;
+}

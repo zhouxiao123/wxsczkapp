@@ -1,0 +1,11 @@
+<!--video.wxml-->
+<text>video.wxml</text>
+<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/voice/112_S.MP4" ></video>
+
+<button type="default" bindtap="startRecord">录音</button>
+
+<button type="default" bindtap="stopRecord">停止</button>
+
+<button type="default" bindtap="startVoice">播放</button>
+
+<text>{{time_long}}</text>

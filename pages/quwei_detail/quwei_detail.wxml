@@ -1,0 +1,214 @@
+<!--pages/quwei_detail/quwei_detail.wxml-->
+<view style="margin-top:20rpx;text-align:center">
+  <text style="font-family:Microsoft YaHei;color:#4d504f">{{title}}</text>
+</view>
+
+<view style="margin-left:40rpx;margin-right:40rpx;text-indent:40rpx">
+  <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:24rpx;">{{desc}}</text>
+</view>
+
+<view style="margin-left:40rpx;margin-right:40rpx;text-indent:40rpx">
+  <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:24rpx;">{{subject}}</text>
+</view>
+
+<form bindsubmit="formSubmit">
+<view wx:if="{{type==1}}" style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" >
+  <view>
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{item.content}}</text>
+  </view>
+  <view style='text-align:center'>
+    <radio-group name="id" >
+        <radio checked="{{checkl}}" value="{{item.linka}}" disabled="{{disflag}}" id="s{{item.id}}"/><label for="s{{item.id}}" style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;" >{{item.answera}}</label>
+        <radio checked="{{checkr}}" value="{{item.linkb}}" disabled="{{disflag}}"  id="f{{item.id}}" style="margin-left:140rpx"/><label for="f{{item.id}}" style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;" >{{item.answerb}}</label>
+    </radio-group>
+    
+  </view>
+
+</view>
+
+
+<view wx:if="{{type==2}}" style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" >
+  <view>
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">{{item.content}}</text>
+  </view>
+  <view style='text-align:center'>
+    <radio-group name="id" >
+        <radio checked="{{checkl}}" value="{{item.linka}}" disabled="{{disflag}}" id="s{{item.id}}"/><label for="s{{item.id}}" style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;" >{{item.answera}}</label>
+        <radio checked="{{checkr}}" value="{{item.linkb}}" disabled="{{disflag}}"  id="f{{item.id}}" style="margin-left:140rpx"/><label for="f{{item.id}}" style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;" >{{item.answerb}}</label>
+    </radio-group>
+    
+  </view>
+
+</view>
+
+
+<view wx:if="{{type==3}}" style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" >
+  <view style="text-indent:40rpx">
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;">爱因斯坦在20世纪初出的这个题目，据说世界上有98%的人答不出来。</text>
+  </view>
+
+  <view style="text-indent:40rpx;margin-top:40rpx">
+  <text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">在一条街上，有5座房子，喷了5种颜色。每个房里住着不同国籍的人。每个人喝不同的饮料，抽不同品牌的香烟，养不同的宠物。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">问题是：谁养鱼？</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">提示：</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">1、英国人住红色房子</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">2、瑞典人养狗</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">3、丹麦人喝茶</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">4、绿色房子在白色房子左面</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">5、绿色房子主人喝咖啡</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">6、抽PallMall香烟的人养鸟</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">7、黄色房子主人抽Dunhill香烟</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">8、住在中间房子的人喝牛奶</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">9、挪威人住第一间房</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">10、抽Blends香烟的人住在养猫的人隔壁</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">11、养马的人住抽Dunhill香烟的人隔壁</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">12、抽BlueMaster的人喝啤酒</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">13、德国人抽Prince香烟</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">14、挪威人住蓝色房子隔壁</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">15、抽Blends香烟的人有一个喝水的邻居</text>
+
+  </view>
+
+
+</view>
+
+
+
+<view wx:if="{{type==4}}" style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" >
+  <view style="text-indent:40rpx">
+    <text style="text-indent:20px;font-family:Microsoft YaHei;color:#4d504f;font-size:26rpx;">谁是强奸犯</text>
+  </view>
+
+  <view style="text-indent:40rpx;margin-top:40rpx">
+  <text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">一天深夜，伦敦的一幢公寓连续发生3起刑事案件。一起是谋杀案，住在4楼的一名下院议员被人用手枪打死;一起是 盗窃案，住在二楼的一名名画收藏家珍藏的6幅16世纪的油画被盗了;一起是强奸案，住在底楼的一名漂亮的芭蕾舞演员被暴徒强奸。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">报警之后，苏格兰场(即伦敦警察总部)立即派出大批刑警 赶到作案现场。根据罪犯在现场留下的指纹、足迹和搏斗的痕迹，警方断定这3起案件是由3名罪犯分头单独作案的(后来证实这一判断是正确的)。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">经过几个月的侦查，终于搜集到大量的确凿证据，逮捕了 A、B、C3名罪犯。在审讯申，3名罪犯的口供如下:</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">A供称:</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">1． C是杀人犯，他杀掉下院议员纯粹是为了报过去的私仇。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">2． 我既然被捕了，我当然要编造口供，所以我并不是一个十分老实的人。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">3． B是强奸犯，因为B对漂亮女人有占有欲。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">B供称:</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">1． A是著名的大盗，我坚信那天晚上盗窃油画的就是他。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">2． A从来不说真话。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">3． C是强奸犯。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">C供称:</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">1． 盗窃案不是B所为。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">2． A是杀人犯。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">3． 总之我交代，那天晚上，我确实在这个公寓里作过案。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">3名罪犯中，有一个的供词全部是真话，有一个最不老实，他说的全部是假话，另一个人的</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">供词中，既有真话也有假话。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">A、B、C　分别作了哪一个案子，看完口供后刑警亨利已经做出了判断。</text>
+
+  </view>
+
+
+</view>
+
+
+
+<view wx:if="{{type==5}}" style="margin-top:20rpx;margin-left:60rpx;margin-right:40rpx;" >
+
+
+  <view style="text-align:center;margin-top:40rpx">
+  <image src="../../images/quweiceshi.png" style="width:100%" mode="widthFix"></image>
+
+  </view>
+
+
+</view>
+
+
+  
+<view  style="margin-top:40rpx;margin-bottom:40rpx">
+  <button  disabled="{{disflag}}" formType="submit" style="width:500rpx;display:{{dis1}}">{{type==1||type==2?'下一题':'答案'}}</button>
+    <input hidden name="type" value="{{type}}"/>
+</view>
+
+
+</form>
+
+
+
+<view wx:if="{{tag==1}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+
+  <view style="margin-top:20rpx" >
+    <text style="display:block"><text style="color:red">分裂程度:</text>{{percent}}</text>
+    <text style="display:block">{{result}}</text>
+  </view>
+  </view>
+
+  <view wx:if="{{tag==2}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">测试结果</text>
+  </view>
+
+  <view style="margin-top:20rpx" >
+    <text style="display:block"><text style="color:red">成熟度:</text>{{percent}}</text>
+    <text style="display:block">{{result}}</text>
+  </view>
+  </view>
+
+    <view wx:if="{{tag==3}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">答案</text>
+  </view>
+
+  <view style="margin-top:20rpx" >
+    <text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">1． 先确定8和9；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">2． 再做14；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">3． 接着4和5，因为“绿白”必须放在一起，五个位，“蓝”占第二，之后三位可插二空，“绿”喝“咖啡”，据“中”喝“牛奶”，即可定位“绿白”；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">4． 再做1；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">5． 接着7；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">6． 再是11；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">7． 再接2和3，“瑞典人养狗”，根据国籍排除一、三位，根据动物排除二位，“瑞典人”在四或五位；根据“丹麦人喝茶”，可得“丹麦人”在二或五位；五位重复，则试探性把“瑞典人”放五位，“丹麦人”放二位；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">8． 再做13；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">9． 再是12；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">10． 接着15；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">11． 再是6；</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">12． 最后是10。</text>
+　　 <text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">最后得出：德国人养鱼。</text>
+
+  </view>
+  </view>
+
+
+  <view wx:if="{{tag==4}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">答案</text>
+  </view>
+
+  <view style="margin-top:20rpx" >
+    <text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">亨利说，这个案件可以从分析 A、B、C三者的口供入 手。而从A的口供入手更
+　　好一些。
+</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">A说:"我既然被捕了，我当然要造口供，所以我并不是一个十分老实的人。"分析这句
+　　话，就可以推定A的口供有真有假。因为，如果A的口供全是真的， 不会说自己编造口供;如果A的口供全是假的，那么他就不会说自己不十分老实。
+</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">既然A的口供有真有假，那么B的口供或者是全真的， 或者是全假的。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">而B说:"A从来不说真话。"由此可见，B的这句话是假的，这就可判定B的话不可能
+　　是全真的，而是全假的。 既然B的话全假，那么C的话是全真的。
+</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">而C说A是杀掉下院议员的罪犯，B不是盗窃作案者， 所以B是强奸犯芭蕾舞演员的</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">罪犯，而盗窃油画的罪犯只能是C本人了。</text>
+　　<text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">我的思路：根据一真一假半真假，对比ABC的答案，从A看，A与B有吻合，A与C有吻合，B与C完全不相符；再根据A说“不十分老实”，可推断A为半真，B、C为全真或全假；根据B说“A从不说真话”可推出B为假，则C为全真。</text>
+　　
+
+  </view>
+  </view>
+
+  <view wx:if="{{tag==5}}" style="text-indent:40rpx;color:#4d504f;font-family:Microsoft YaHei;font-size:30rpx;margin-left:40rpx;margin-right:40rpx">
+  <view style="text-align:center">
+    <text style="font-size:36rpx;color:red">答案</text>
+  </view>
+
+  <view style="margin-top:20rpx" >
+    <text style="display:block;font-family:Microsoft YaHei;color:#4d504f;font-size:30rpx;">A会上升，B会下降
+</text>
+
+　　
+
+  </view>
+  </view>
