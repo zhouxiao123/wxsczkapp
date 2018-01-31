@@ -134,6 +134,18 @@
 					"name": "高职单招",
 					"pathName": "pages/lesson/lesson",
 					"query": "lessontypeid=1"
+				},
+				{
+					"id": -1,
+					"name": "青云汇",
+					"pathName": "pages/qinyunhui/school/school_list/school_list",
+					"query": ""
+				},
+				{
+					"id": 19,
+					"name": "回答详情",
+					"pathName": "pages/ask_detail/ask_detail",
+					"query": "id=120"
 				}
 			]
 		}

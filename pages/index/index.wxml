@@ -42,7 +42,7 @@
       </view>
       <view class="third-icon" bindtap="testTypeList">
         <image src="../../images/zypc.png" class="icon-pic"></image>
-        <text class="icon-text">测评</text>
+        <text class="icon-text">职业测评</text>
       </view>
       <view class="fours-icon" bindtap="toGaokaozhiyuan">
       <!--<view class="redbag">-->

@@ -1,0 +1,2 @@
+<!--pages/gaozhidanzhao_detail/gaozhidanzhao_detail.wxml-->
+<web-view src="https://wxsign.sczk.com.cn/wxsczkappback/wx/test_page?id={{id}}"></web-view>

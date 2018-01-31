@@ -1,3 +1,7 @@
 /* pages/article/article.wxss */
 
 @import "../../wxParse/wxParse.wxss";
+
+.content image{
+  width:100%!important
+}

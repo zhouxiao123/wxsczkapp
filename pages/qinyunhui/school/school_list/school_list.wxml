@@ -1,0 +1,288 @@
+<!--school_list.wxml-->
+<view class="main-view">
+
+  <view class="search_back">
+    <view class="search_box">
+      <view  bindtap="slideDown" style="display:flex;height:60rpx;">
+        <image animation="{{animationData}}" src="/images/school_list/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+      </view>  
+      <input bindinput="setValue" placeholder="搜索院校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="/images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+    </view>
+  </view>
+
+<!--筛选器display:flex;align-items:center;justify-content:space-between;-->
+
+<view class="tag-list">
+    <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" catchtap="swichNav" >
+      <picker name="diyu" bindchange="bindDiYuChange" value="{{diyuIndex}}"  range="{{diyu}}" range-key="name" >
+        <view class="picker radio-text">
+        {{province == '全部'?'地域':province}}
+        </view>
+      </picker>
+  
+    </view> 
+    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" catchtap="swichNav" >
+      <picker name="biaoqian" bindchange="bindBiaoQianChange"  value="{{biaoqianIndex}}"  range="{{biaoqian}}" range-key="name" >
+        <view class="picker radio-text">
+        {{yxzd == '全部'?'标签':yxzd}}
+        </view>
+      </picker>
+    </view>
+    <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" catchtap="swichNav" >
+      <picker name="leixing" bindchange="bindLeiXingChange"  range="{{leixing}}">
+        <view class="picker radio-text">
+        {{yxtype == '全部'?'类型':yxtype}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="tag-view {{tag==3?'on t-on':''}}" data-current="3" catchtap="swichNav" >
+      <picker name="cengci" bindchange="bindCengCiChange" value="{{biaoqianIndex}}"  range="{{cengci}}" range-key="name" >
+        <view class="picker radio-text">
+        {{lqcc == '全部'?'录取层次':lqcc}}
+        </view>
+      </picker>
+    </view>
+
+</view>
+  <view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+<!--<view class="df">
+  <view  style="text-align:center;margin-left:40rpx;font-family:黑体;color:#59c9b9;font-size:0.9rem">
+  <picker name="diyu" bindchange="bindDiYuChange"  range="{{diyu}}">
+        <view class="picker radio-text">
+        {{province == '全部'?'地域':province}}
+        </view>
+      </picker>
+  
+  </view>-->
+ 
+  <!--catchtap='setYxzd'-->
+  <!--<view  style="text-align:center;font-family:黑体;color:#59c9b9;font-size:0.9rem">--><!--{{yxzd == '全部'?'标签':yxzd}}-->
+  <!--<picker name="biaoqian" bindchange="bindBiaoQianChange"  range="{{biaoqian}}">
+        <view class="picker radio-text">
+        {{yxzd == '全部'?'标签':yxzd}}
+        </view>
+      </picker>
+  </view>
+  
+  <view  style="text-align:center;font-family:黑体;color:#59c9b9;font-size:0.9rem">
+  
+    <picker name="leixing" bindchange="bindLeiXingChange"  range="{{leixing}}">
+        <view class="picker radio-text">
+        {{yxtype == '全部'?'类型':yxtype}}
+        </view>
+      </picker></view>
+  
+  <view   style="text-align:center;margin-right:40rpx;font-family:黑体;color:#59c9b9;font-size:0.9rem">
+  <picker name="cengci" bindchange="bindCengCiChange"  range="{{cengci}}">
+        <view class="picker radio-text">
+        {{lqcc == '全部'?'录取层次':lqcc}}
+        </view>
+      </picker>
+  </view>
+
+
+</view>-->
+<!--<view style="display:{{tag==1?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box" catchtap='selectProvince' data-text='全部'><text class="select-text">全部</text></view>
+  <view wx:for="{{provinceList}}" class="select-box"  catchtap='selectProvince' data-text='{{item.provinceName}}'><text class="select-text">{{item.provinceName}}</text></view>
+
+</view>
+</view>
+
+<view style="display:{{tag==2?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box" catchtap='selectYxzd' data-text='全部'><text class="select-text">全部</text></view>
+  <view class="select-box" catchtap='selectYxzd' data-text='985'><text class="select-text">985工程</text></view>
+  <view class="select-box" catchtap='selectYxzd' data-text='211'><text class="select-text">211工程</text></view>
+  <view class="select-box" catchtap='selectYxzd' data-text='示范高职'><text class="select-text">示范高职</text></view>
+  <view class="select-box" catchtap='selectYxzd' data-text='骨干高职'><text class="select-text">骨干高职</text></view>
+</view>
+</view>
+
+<view style="display:{{tag==3?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box"  catchtap='selectYxtype' data-text='全部'><text class="select-text">全部</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='政法'><text class="select-text">政法</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='综合'><text class="select-text">综合</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='理工'><text class="select-text">理工</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='师范'><text class="select-text">师范</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='医药'><text class="select-text">医药</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='财经'><text class="select-text">财经</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='语言'><text class="select-text">语言</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='艺术'><text class="select-text">艺术</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='民族'><text class="select-text">民族</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='农林'><text class="select-text">农林</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='军事'><text class="select-text">军事</text></view>
+  <view class="select-box" catchtap='selectYxtype' data-text='体育'><text class="select-text">体育</text></view>
+
+</view>
+</view>
+
+<view style="display:{{tag==4?'block':'none'}}">
+<view style="padding-top:20rpx;padding-bottom:20rpx;position:absolute;top:160rpx;background-color:#fff;display:flex;flex-wrap:wrap;justify-content:center;border:1px solid #aaa;;border-radius: 0 0 20px 20px;background-color:#eee;width:746rpx">
+  <view class="select-box" catchtap='selectLqcc' data-text='全部'><text class="select-text">全部</text></view>
+  <view class="select-box"  catchtap='selectLqcc' data-text='一本'><text class="select-text">一本</text></view>
+  <view class="select-box"  catchtap='selectLqcc' data-text='二本'><text class="select-text">二本</text></view>
+  <view class="select-box"  catchtap='selectLqcc' data-text='高职'><text class="select-text">高职</text></view>
+</view>
+</view>-->
+
+<!--<view style="display:{{slideflag}}">
+<view class="tag-list">
+    <view class="tag-view">
+      <image src="../../images/school_list/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">院校类型</text>
+    </view> 
+</view>
+
+<view class="select-view">
+  <view class="select-box"><text>985</text></view>
+  <view class="select-box"><text>211</text></view>
+</view>
+
+<view class="tag-list">
+    <view class="tag-view">
+      <image src="../../images/school_list/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">录取层次</text>
+    </view> 
+</view>
+
+<view class="select-view">
+  <view class="select-box"><text class="select-text">本一批次</text></view>
+  <view class="select-box"><text class="select-text">本二批次</text></view>
+  <view class="select-box"><text class="select-text">专科批次</text></view>
+</view>
+
+<view class="tag-list">
+    <view class="tag-view">
+      <image src="../../images/school_list/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">选校属地</text>
+    </view> 
+</view>
+
+<view class="select-view">
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+  <view class="select-box"><text class="select-text">四川</text></view>
+</view>
+
+<view class="tag-list">
+    <view class="tag-view">
+      <image src="../../images/school_list/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">院校类别</text>
+    </view> 
+</view>
+
+<view class="select-view">
+  <view class="select-box"><text class="select-text">综合类</text></view>
+  <view class="select-box"><text class="select-text">医学类</text></view>
+  <view class="select-box"><text class="select-text">政法类</text></view>
+  <view class="select-box"><text class="select-text">理工类</text></view>
+  <view class="select-box"><text class="select-text">综合类</text></view>
+  <view class="select-box"><text class="select-text">医学类</text></view>
+  <view class="select-box"><text class="select-text">政法类</text></view>
+  <view class="select-box"><text class="select-text">理工类</text></view>
+  <view class="select-box"><text class="select-text">综合类</text></view>
+  <view class="select-box"><text class="select-text">医学类</text></view>
+  <view class="select-box"><text class="select-text">政法类</text></view>
+  <view class="select-box"><text class="select-text">理工类</text></view>
+  <view class="select-box"><text class="select-text">综合类</text></view>
+  <view class="select-box"><text class="select-text">医学类</text></view>
+  <view class="select-box"><text class="select-text">政法类</text></view>
+  <view class="select-box"><text class="select-text">理工类</text></view>
+  <view class="select-box"><text class="select-text">综合类</text></view>
+  <view class="select-box"><text class="select-text">医学类</text></view>
+  <view class="select-box"><text class="select-text">政法类</text></view>
+  <view class="select-box"><text class="select-text">理工类</text></view>
+  <view class="select-box"><text class="select-text">综合类</text></view>
+  <view class="select-box"><text class="select-text">医学类</text></view>
+  <view class="select-box"><text class="select-text">政法类</text></view>
+  <view class="select-box"><text class="select-text">理工类</text></view>
+</view>
+
+</view>-->
+
+<!--列表-->
+<view style="margin:20rpx">
+  <!--第一条-->
+  <!--<view wx:for="{{param.list}}" style="margin:20rpx" data-id="{{item.school_id}}" catchtap='schoolDetail'>
+    <view style="">
+      <view style="width:440rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#494a4d;font-size:30rpx">
+        {{item.name}}
+      </view> 
+      <view style="width:180rpx;display:inline-block;color:#777;font-family:黑体;font-size:28rpx">
+        地区:{{item.location}}
+      </view>
+    </view> 
+    <view style="border-bottom:1rpx solid #aaa;padding-bottom:20rpx;margin-top:20rpx;">
+      <view style="width:440rpx;display:inline-block;color:#777;margin-left:40rpx;font-family:黑体;font-size:28rpx">
+        隶属:{{item.gov}}
+      </view>
+      <view  style="width:180rpx;display:inline-block;">
+          <text wx:if="{{item.t985==0}}"  style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#59c9b9;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;margin-right:20rpx;height:36rpx">985</text> 
+
+          <text wx:if="{{item.t211==0}}" style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#ffa979;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;height:36rpx">211</text>
+          
+      </view>
+    </view>
+  </view>-->
+
+
+  <view wx:for="{{param.list}}" class="content_list" data-id="{{item.school_id}}" catchtap='schoolDetail'>
+    <view>
+      <image src="{{item.icon}}" style="width:100rpx" mode='widthFix'></image>
+    </view>
+    <view>
+    <view style="">
+      <view style="width:360rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#494a4d;font-size:30rpx">
+        {{item.name}}
+      </view> 
+      <view style="width:160rpx;display:inline-block;color:#777;font-family:黑体;font-size:28rpx">
+        地区:{{item.location}}
+      </view>
+    </view> 
+    <view style="margin-top:20rpx;">
+      <view style="width:360rpx;display:inline-block;color:#777;margin-left:40rpx;font-family:黑体;font-size:28rpx">
+        隶属:{{item.gov}}
+      </view>
+      <view  style="width:160rpx;display:inline-block;">
+          <text wx:if="{{item.t985==0}}"  style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#59c9b9;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;margin-right:20rpx;height:36rpx">985</text> 
+
+          <text wx:if="{{item.t211==0}}" style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#ffa979;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;height:36rpx">211</text>
+          
+      </view>
+    </view>
+</view>
+
+  </view>
+
+
+</view>
+
+</view>
+
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align:center">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align:center" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>
+
+  <view id="backg" style="display:{{disflag}};background-color:#000;width:100%;height:100%;position:absolute;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;top:0">
+    <image src="../../images/load.gif" style="position:fixed;left:340rpx;top:50%;width:70rpx;height:70rpx"/>
+  </view>
+
+ <!-- <import src="../bottom/bottom.wxml"/>
+  <template is="bottom" data="{{condition:2}}"></template>-->

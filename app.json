@@ -55,7 +55,11 @@
     "pages/check_point/check_point",
     "pages/list/list",
     "pages/canvas/canvas",
-    "pages/jiekoutest/jiekoutest"
+    "pages/jiekoutest/jiekoutest",
+    "pages/qinyunhui/school/school_list/school_list",
+    "pages/qinyunhui/school/school_detail/school_detail",
+    "pages/gaozhidanzhao/gaozhidanzhao",
+    "pages/gaozhidanzhao_detail/gaozhidanzhao_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
