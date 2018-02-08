@@ -1,4 +1,5 @@
 <!--sign_up.wxml-->
+<image   style="position:absolute;width:120rpx;left:560rpx;top:40rpx" mode='widthFix' src="../../images/choujiang.png" bindtap='toLottery'></image>
 <view style="height:196rpx">
   <view style="" class="sign_title">
     <view style="margin-left:20rpx;width:100rpx">

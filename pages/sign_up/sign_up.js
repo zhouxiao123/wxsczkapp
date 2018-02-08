@@ -17,6 +17,7 @@ Page({
       url: '../logs/logs'
     })
   },
+
   onLoad: function () {
     console.log('onLoad')
     wx.setNavigationBarTitle({ title: "签到" })
@@ -147,10 +148,10 @@ Page({
                   today: res.data.today
                 })
                 if (res.data.today == 0){
-                  that.setData({
+                  /*that.setData({
                     disflag: 'block',
                     disflag2: 'none'
-                  })
+                  })*/
                 }
                 wx.hideLoading()
               }
@@ -289,6 +290,59 @@ Page({
       disflag2: 'none'
     })
     this.signUp()
+  },
+  toLottery:function(){
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/getSignCount',
+      data: {
+        oid: that.data.oid
+      },
+      success: function (res) {
+        //console.log(res.data)
+        if (res.data.result == "fail") {
+          wx.showModal({
+            title: '提示',
+            content: '请先填写资料',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                wx.navigateTo({
+                  url: '../personal_info/personal_info'
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        } else {
+          that.setData({
+            day: res.data.day,
+            today: res.data.today
+          })
+          if (res.data.today == 0) {
+            wx.showModal({
+              title: '提示',
+              content: '请先签到',
+              showCancel: false,
+              success: function (res) {
+              }
+            })
+          } else {
+            wx.navigateTo({
+              url: 'lottery/lottery'
+            })
+          }
+          wx.hideLoading()
+        }
+      }
+    })
+
   }
 
 })

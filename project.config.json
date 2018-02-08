@@ -146,6 +146,12 @@
 					"name": "回答详情",
 					"pathName": "pages/ask_detail/ask_detail",
 					"query": "id=120"
+				},
+				{
+					"id": -1,
+					"name": "高职单招",
+					"pathName": "pages/gaozhidanzhao/gaozhidanzhao",
+					"query": ""
 				}
 			]
 		}

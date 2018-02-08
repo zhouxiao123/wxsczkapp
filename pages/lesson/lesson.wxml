@@ -41,9 +41,10 @@
     <text class="subtitle-text">{{l.webLessonDesc}}</text>
     <!--<text class="link-text" bindtap="see_video">点击免费试听1分钟</text>-->
     <view class="text-bottom-content">
-      <text class="fee-text">￥{{l.webLessonType==2?l.webLessonPrice:0}}</text>
-      <text class="count-text">{{l.seeTimes}}次观看</text>
-      <image src="../../images/lesson/{{l.webLessonType==2?'ljgm@2x.png':'mfgk@2x.png'}}" style="margin-left:50rpx;width:135rpx;height:40rpx"/>
+      <text class="fee-text" style="width:95rpx;text-decoration:line-through">￥9.9</text>
+      <text class="fee-text" style="width:40rpx">￥{{l.webLessonType==2?l.webLessonPrice:0}}</text>
+      <text class="count-text" >{{l.seeTimes}}次观看</text>
+      <image src="../../images/lesson/{{l.webLessonType==2?'ljgm@2x.png':'mfgk@2x(2).png'}}" style="margin-left:30rpx;width:135rpx;height:40rpx"/>
 
     </view>
   </view>

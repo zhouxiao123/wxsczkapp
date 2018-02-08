@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:0
+    id:0,
+    src:''
   },
 
   /**
@@ -13,7 +14,8 @@ Page({
    */
   onLoad: function (options) {
       this.setData({
-        id:options.id
+        id:options.id,
+        src: 'https://wxsign.sczk.com.cn/wxsczkappback/wx/gaozhidanzhao_detail?id=' + options.id
       })
   },
 
