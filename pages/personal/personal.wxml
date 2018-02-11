@@ -30,7 +30,7 @@
   
     <view class="tag-view">
       <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
-      <text class="tag-list-text">我的积分</text>
+      <text class="tag-list-text">我的积分(充值)</text>
     </view> 
 
     <view class="tag-view">

@@ -249,7 +249,7 @@ Page({
         //录音失败 
         wx.showModal({
           title: '提示',
-          content: '录音的姿势不对!',
+          content: res,
           showCancel: false,
           success: function (res) {
             if (res.confirm) {
