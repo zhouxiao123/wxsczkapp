@@ -23,7 +23,7 @@
     position: fixed; 
     bottom: 0; 
     left: 0; 
-    height: 300rpx; 
+    height: 350rpx; 
     width: 100%; 
     background-color:#fff
 } 

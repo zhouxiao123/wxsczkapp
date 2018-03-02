@@ -8,7 +8,8 @@ Page({
     oid: '',
     result: '',
     disflag: 'none',
-    imgsrc: ''
+    imgsrc: '',
+    locount:0
   },
   trans: function () {
     var that = this
@@ -80,11 +81,14 @@ Page({
             showCancel: false,
             success: function (res) {
               wx.navigateTo({
-                url: '../personal_info/personal_info'
+                url: '/pages/personal_info/personal_info'
               })
             }
           })
         } else if (res.data.result == "lotteryed") {
+          that.setData({
+            locount: res.data.locount
+          })
           wx.showModal({
             title: '提示',
             content: '您已经抽过奖了',
@@ -111,7 +115,8 @@ Page({
           animationRun.rotate(app.runDegs).step()
           that.setData({
             animationData: animationRun.export(),
-            btnDisabled: 'disabled'
+            btnDisabled: 'disabled',
+            locount: res.data.locount
           })
 
           // 记录奖品
@@ -149,7 +154,8 @@ Page({
             that.setData({
 
               result: awardsConfig.awards[awardIndex].name,
-              point: point
+              point: point,
+              btnDisabled: ''
             })
             /*if (awardsConfig.chance) {
               that.setData({
@@ -277,10 +283,23 @@ Page({
         oid: that.data.oid
       },
       success: function (res) {
-        if (res.data.result == "ok") {
+        //console.log(res.data.locount)
+        if (res.data.result != "fail") {
           that.setData({
-            result: app.awardsConfig.awards[res.data.lotteryrecord.lottery].name
+            //result: app.awardsConfig.awards[res.data.lotteryrecord.lottery].name
+            locount: res.data.locount
           })
+        } else {
+            wx.showModal({
+              title: '提示',
+              content: '请先填写资料',
+              showCancel: false,
+              success: function (res) {
+                wx.navigateTo({
+                  url: '/pages/personal_info/personal_info'
+                })
+              }
+            })
         }
       }
     })
@@ -366,6 +385,36 @@ Page({
       actions: ctx.getActions()
     })*/
 
+  },  onShareAppMessage: function (res) {
+    var that = this
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      //console.log(res.target)
+    }
+    return {
+      title: '四川招考网',
+      path: 'pages/index/index',
+      imageUrl: '/images/logo.jpg',
+      success: function (res) {
+        // 转发成功
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/saveLotteryShare',
+          data: {
+            oid: that.data.oid
+          },
+          success: function (res) {
+            if (res.data.result == "ok") {
+              that.setData({
+                locount: res.data.locount
+              })
+            }
+          }
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 
 })

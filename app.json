@@ -60,7 +60,9 @@
     "pages/qinyunhui/school/school_detail/school_detail",
     "pages/gaozhidanzhao/gaozhidanzhao",
     "pages/gaozhidanzhao_detail/gaozhidanzhao_detail",
-    "pages/sign_up/lottery/lottery"
+    "pages/sign_up/lottery/lottery",
+    "pages/adv/purui/purui",
+    "pages/adv/purui/ask/ask"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -228,6 +228,16 @@
     </view>
   </view>
 
+  <view id="backg3" style="display:{{disflag3}};background-color:rgba(0,0,0,0.5);width:100%;height:100%;position:fixed;top:0;z-index:999">
+    <view  style="position:fixed;left:25rpx;top:150rpx">
+    <image  catchtap='toSign' style="width:700rpx" mode="widthFix" src="../../images/qdlhb.png" />
+    
+    <!--<image   catchtap='changePage' style="width:700rpx" mode="widthFix" src="../../images/高职单招.png" bindload="imageLoad" catchtap='testPage'/>-->
+
+    <text catchtap="close2" style="position:fixed;left:600rpx;font-size:34rpx;font-family:黑体;color:#fff">关闭</text>
+    </view>
+  </view>
+
   <import src="../bottom/bottom.wxml"/>
   <template is="bottom" data="{{condition:1}}"></template>
 

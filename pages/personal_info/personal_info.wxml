@@ -25,11 +25,12 @@
   <view class="tag-list">
     <view class="tag-view" style="width:220rpx">
       <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
-      <text class="tag-list-text">联系电话</text>
+      <text class="tag-list-text">联系电话<text style="color:red">*</text></text>
     </view> 
 
     <view class="tag-view">
-      <input class="radio-text" name="phone" value="{{phone}}"/>
+      <input class="radio-text" style="display:inline-block;" name="phone" value="{{phone}}"/>
+      <!--width:200rpx<button style="display:inline-block;width:150rpx;font-size:22rpx" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">自动填写</button>-->
     </view>
   </view>
 
@@ -67,7 +68,7 @@
     <view class="tag-list">
     <view class="tag-view" style="width:220rpx">
       <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
-      <text class="tag-list-text">文理科</text>
+      <text class="tag-list-text">文理科<text style="color:red">*</text></text>
     </view> 
 
 

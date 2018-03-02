@@ -27,7 +27,7 @@
 
       <view style="margin-left:40rpx;margin-right:40rpx;margin-top:200rpx">
         <view class="classname" style="float:left;line-height:92rpx;display:inline-block;width:200rpx">
-          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">10积分</text>
+          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">100积分</text>
         </view>
         <view class="classname" style="float:left;display:inline-block;width:400rpx;text-align:center">
           <button formType="submit"  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">立即问专家</button>

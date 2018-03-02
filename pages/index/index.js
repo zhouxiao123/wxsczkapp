@@ -15,6 +15,7 @@ Page({
     ],
     disflag:'none',
     disflag2: 'none',
+    disflag3: 'none',
     userInfo: {},
     user:{},
     askList:[],
@@ -176,7 +177,7 @@ Page({
         oid: this.data.oid
       },
       success: function (res) {
-        //console.log(res.data)
+        
         wx.hideLoading()
         if (res.data.length == "0") {
          
@@ -512,7 +513,7 @@ Page({
           disflag2: 'none'
         })
         clearInterval(timer) 
-        //_this.tankuang();   
+        _this.signUp();   
       } else {
       _this.setData({
         cd: parseInt(_this.data.cd)-1
@@ -562,7 +563,63 @@ Page({
     this.setData({
       disflag2: 'none'
     })
+    this.signUp();
+  }, close2: function () {
+    //clearInterval(timer)
+    this.setData({
+      disflag3: 'none'
+    })
     //this.tankuang();
+  },
+  signUp:function(){
+    var that = this
+    //没有签到的才弹出
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/getSignCount',
+      data: {
+        oid: that.data.oid
+      },
+      success: function (res) {
+        //console.log(res.data)
+        if (res.data.result == "fail") {
+          /*wx.showModal({
+            title: '提示',
+            content: '请先填写资料',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                wx.navigateTo({
+                  url: '../personal_info/personal_info'
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })*/
+        } else {
+          /*that.setData({
+            day: res.data.day,
+            today: res.data.today
+          })*/
+          if (res.data.today == 0) {
+            /*that.setData({
+              disflag: 'block',
+              disflag2: 'none'
+            })*/
+            that.setData({
+              disflag3: 'block'
+            })
+          }
+          //wx.hideLoading()
+        }
+      }
+    })
+
+  },toSign:function(){
+    wx.navigateTo({
+      url: '../sign_up/sign_up'
+    })
   },testList:function(e){
     wx.showLoading({
       mask: true,
@@ -631,7 +688,9 @@ Page({
     })
 
 var that = this
-    //console.log(that.data.user.isLecturer)
+
+
+
     if(that.data.user.isLecturer!=1){
     wx.request({
       url: app.globalData.baseUrl + 'wx/is_has_answer',
@@ -785,6 +844,12 @@ function countdown(that) {
   var end = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5])
    
   var total_micro_second = end.getTime() - now.getTime()
+  if (total_micro_second < 0){
+    that.setData({
+      clock: '高考已结束'
+    });
+    return
+  }
   //console.log(total_micro_second)
   that.setData({
     clock: dateformat(total_micro_second)

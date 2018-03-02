@@ -152,6 +152,7 @@ Page({
                     disflag: 'block',
                     disflag2: 'none'
                   })*/
+                  that.signUp()
                 }
                 wx.hideLoading()
               }
@@ -183,7 +184,7 @@ Page({
     })
     //签到
     wx.request({
-      url: app.globalData.baseUrl+'wx/saveSignCount',
+      url: app.globalData.baseUrl+'wx/saveSignCountNew',
       data: {
         oid: that.data.oid
       },
@@ -208,13 +209,19 @@ Page({
           })
         } else {
           var point = res.data.point
+          var content = '';
+          if (res.data.point !=0){
+            content = '签到成功,获得' + res.data.point + '积分'
+          } else {
+            content = '签到成功'
+          }
           wx.showModal({
             title: '提示',
-            content: '签到成功,获得' + res.data.point+'积分',
+            content: content,
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
                 that.data.user.point = parseInt(that.data.user.point) + parseInt(point);
                 that.setData({
                   day: parseInt(that.data.day)+1,
@@ -224,6 +231,21 @@ Page({
               } else if (res.cancel) {
                 console.log('用户点击取消')
               }
+
+              wx.showModal({
+                title: '提示',
+                content: '恭喜您，获得了获得一次抽奖机会,请点击右上角的幸运大转盘。',
+                showCancel: true,
+                success: function (res) {
+                  if (res.confirm) {
+                    wx.navigateTo({
+                      url: 'lottery/lottery'
+                    })
+                  }
+
+
+                }
+              })
 
               /*that.setData({
                 disflag: 'block',

@@ -75,6 +75,35 @@ Page({
             province[0] = res.data.province.split(" ")[0];
             province[1] = res.data.province.split(" ")[1];
             province[2] = res.data.province.split(" ")[2];
+          }else{
+            wx.getLocation({
+              type: 'wgs84',
+              success: function (res) {
+                var latitude = res.latitude
+                var longitude = res.longitude
+                var speed = res.speed
+                var accuracy = res.accuracy
+                //console.log(latitude + "--" + longitude)
+                wx.request({
+                  url: app.globalData.baseUrl + 'wx/getLocation',
+                  data: {
+                    latitude: latitude,
+                    longitude: longitude
+                  },
+                  success: function (res) {
+                    if (res.data.result=="ok"){
+                      province[0] = res.data.province;
+                      province[1] = res.data.city;
+                      province[2] = res.data.district;
+                      that.setData({
+                        region: province
+                      })
+                    }
+                  }
+                })
+                //wx.hideLoading()
+              }
+            })
           }
           if (res.data.type != null) {
             if (res.data.type == 0) {
@@ -312,7 +341,21 @@ if(res.data.result=="new"){
       }
     })
     }
-  }
+  },
+  getPhoneNumber: function (e) {
+    if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '未授权',
+        success: function (res) { }
+      })
+    } else {
+      console.log(e.detail.errMsg)
+      console.log(e.detail.iv)
+      console.log(e.detail.encryptedData)
+    }
+  } 
 })
 
 function validatePhone(phone){

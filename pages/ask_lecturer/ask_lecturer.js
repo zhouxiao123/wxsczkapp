@@ -189,7 +189,7 @@ Page({
         oid: that.data.oid
       },
       success: function (res) {
-        if (res.data.point < 10) {
+        if (res.data.point < 100) {
           wx.showModal({
             title: '提示',
             content: '积分不足,是否进行充值?',
@@ -210,7 +210,7 @@ Page({
         } else {
           wx.showModal({
             title: '提示',
-            content: '积分充足,是否直接积分购买?',
+            content: '积分充足,是否直接100积分购买?',
             showCancel: true,
             success: function (res) {
               if (res.confirm) {

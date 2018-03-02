@@ -1,5 +1,15 @@
 // pages/answer_ask/answer_ask.wxml.js
 var app = getApp()
+const recorderManager = wx.getRecorderManager()
+const options = {
+  duration: 600000,
+  sampleRate: 44100,
+  numberOfChannels: 1,
+  encodeBitRate: 192000,
+  format: 'mp3'
+}
+
+
 Page({
   data: {
     j: 0,//帧动画初始图片 
@@ -130,6 +140,7 @@ Page({
   touchdown: function () {
     console.log("手指按下了...")
     console.log("new date : " + new Date)
+    
     this.audioCtx.seek(0);
     this.audioCtx.pause();
     var _this = this;
@@ -138,7 +149,19 @@ Page({
       isSpeaking: true
     })
     //开始录音 
-    wx.startRecord({
+    recorderManager.start(options)
+    recorderManager.onError((res) => {
+      //console.log('recorder stop', res)
+      wx.showModal({
+        title: '错误',
+        content: res,
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    })
+    /*wx.startRecord({
       success: function (res) {
 
         _this.setData({
@@ -208,42 +231,6 @@ Page({
         })
 
 
-
-        //持久保存 
-        /*wx.saveFile({
-          tempFilePath: tempFilePath,
-          success: function (res) {
-            //持久路径 
-            //本地文件存储的大小限制为 100M 
-            var savedFilePath = res.savedFilePath
-            console.log("savedFilePath: " + savedFilePath)
-          }
-        })
-        wx.showToast({
-          title: '恭喜!录音成功',
-          icon: 'success',
-          duration: 1000
-        })
-        //获取录音音频列表 
-        wx.getSavedFileList({
-          success: function (res) {
-            var voices = [];
-            for (var i = 0; i < res.fileList.length; i++) {
-              //格式化时间 
-              var createTime = new Date(res.fileList[i].createTime)
-              //将音频大小B转为KB 
-              var size = (res.fileList[i].size / 1024).toFixed(2);
-              var voice = { filePath: res.fileList[i].filePath, createTime: createTime, size: size };
-              console.log("文件路径: " + res.fileList[i].filePath)
-              console.log("文件时间: " + createTime)
-              console.log("文件大小: " + size)
-              voices = voices.concat(voice);
-            }
-            _this.setData({
-              voices: voices
-            })
-          }
-        })*/
       },
       fail: function (res) {
         //录音失败 
@@ -259,7 +246,7 @@ Page({
           }
         })
       }
-    })
+    })*/
   },
   //手指抬起 
   touchup: function () {
@@ -268,8 +255,48 @@ Page({
       isSpeaking: false,
     })    
     clearInterval(this.timer)
+    var _this = this;
+    _this.setData({
+      sec: parseInt(_this.data.j) + parseInt(_this.data.sec),
+      j: 0
+    })
+    recorderManager.stop()
+    recorderManager.onStop((res) => {
+      console.log('recorder stop', res)
+      
+      //临时路径,下次进入小程序时无法正常使用 
+      var tempFilePath = res.tempFilePath
+      //console.log("tempFilePath: " + tempFilePath)
 
-    setTimeout(function () {
+      wx.showLoading({
+        mask: true,
+        title: '加载中'
+      })
+
+      wx.uploadFile({
+        url: app.globalData.baseUrl + 'upload/uploadMp3Voice',
+        filePath: tempFilePath,
+        name: 'file', 
+        formData: {
+          'src': _this.data.src
+        },
+        success: function (res) {
+          console.log(res.data)
+          //var data = JSON.parse(res.data)
+          //console.log(data.path)
+          //do something
+          _this.setData({
+            src: res.data
+          })
+          _this.setData({
+            voiceUrl: app.globalData.baseUrl + 'temp/' + _this.data.src
+          })
+          _this.audioCtx.setSrc(_this.data.voiceUrl)
+          wx.hideLoading()
+        }
+      })
+    })
+    /*setTimeout(function () {
       //结束录音  
       wx.stopRecord({
 
@@ -289,7 +316,7 @@ Page({
           })
         }
       })
-    }, 500)
+    }, 500)*/
   },
   listen: function (event) {
     var ids = event.currentTarget.dataset.id;

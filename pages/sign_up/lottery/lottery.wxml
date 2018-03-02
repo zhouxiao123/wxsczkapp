@@ -36,12 +36,15 @@
 		<view class="main-container">
 			<view class="main-container-btn">
 				<!--<button bindtap="gotoList" type="primary">查看中奖</button>	-->
-        <text class="header-subtitle">中奖结果:<text class="header-subtitle" style="color:red;margin-left:40rpx">{{result}}</text></text> 
+        <text class="header-subtitle">剩余次数:<text class="header-subtitle" style="color:red;margin-left:40rpx">{{locount}}</text></text> 
 			</view>
+      <view style="margin-top:20rpx">
+        <button open-type='share'>点击分享抽奖</button>
+      </view>
 			<view class="main-container-rule" style="font-size:28rpx">
 				<text class="main-rule-title">活动规则：</text>
-				<text class="main-rule-item">1. 每日签到后可以抽奖一次。</text>
-				<text class="main-rule-item">2. 一等奖100积分，二等奖50积分，三等奖20积分，四等奖10积分，五等奖5积分。</text>	
+				<text class="main-rule-item">1. 每日签到后可以抽奖一次，每分享一次可获得一次抽奖机会，每日最多四次机会。</text>
+				<text class="main-rule-item">2. 一等奖100积分，二等奖50积分，三等奖20积分，四等奖10积分，五等奖5积分,积分可用于志愿咨询向专家提问。</text>	
 				<text class="main-rule-item">3. 本活动最终解释权归四川昭信教育咨询有限公司所有</text>	
 	
 			</view>	

@@ -1,4 +1,4 @@
-// lesson.js
+// pages/adv/purui/ask/ask.js
 var app = getApp()
 Page({
   data: {
@@ -14,22 +14,22 @@ Page({
       'yy@2x2.png'
     ],
     animationData: {},
-    lecturer:{},
-    lecturerList:[],
-    tag:0,
-    oid:'',
-    preid:0,
-    askList:[],
+    lecturer: {},
+    lecturerList: [],
+    tag: 0,
+    oid: '',
+    preid: 0,
+    askList: [],
     search_name: '',
     //下拉加载
     hasMore: true,
     pageOffset: 0,
     pageSize: 20,
     opacityflag: 0
-    
+
   },
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: "快速问答" })
+    wx.setNavigationBarTitle({ title: "我要提问" })
     var animation = wx.createAnimation({
       duration: 100,
       timingFunction: 'ease',
@@ -45,9 +45,9 @@ Page({
     }
 
     var value = wx.getStorageSync('oid')
-//console.log(value)
+    //console.log(value)
     if (value) {
-      that.setData({oid : value})
+      that.setData({ oid: value })
     } else {
       wx.login({
         success: function (res) {
@@ -55,7 +55,7 @@ Page({
             //console.log(res);
             //发起网络请求
             wx.request({
-              url: app.globalData.baseUrl+'wx/login',
+              url: app.globalData.baseUrl + 'wx/login',
               data: {
                 code: res.code
               },
@@ -104,47 +104,47 @@ Page({
       title: '加载中'
     })
     wx.request({
-      url: app.globalData.baseUrl+'wx/askList',
+      url: app.globalData.baseUrl + 'wx/purui_ask_list',
       data: {
-        search_name: ''
+        
       },
       success: function (res) {
         //console.log(res.data)
 
-        for (var i in res.data) {
-          res.data[i].createTime = transDate(res.data[i].createTime)
+        for (var i in res.data.puruiask) {
+          res.data.puruiask[i].createtime = transDate(res.data.puruiask[i].createtime)
         }
         that.setData({
-          askList: res.data
+          askList: res.data.puruiask
         })
 
         wx.hideLoading()
       }
     })
-  },reload:function(){
+  }, reload: function () {
     var that = this
     wx.showLoading({
-    mask: true,
+      mask: true,
       title: '加载中'
-  })
-wx.request({
-  url: app.globalData.baseUrl+'wx/askList',
-  data: {
-    search_name: ''
-  },
-  success: function (res) {
-    //console.log(res.data)
-
-    for (var i in res.data) {
-      res.data[i].createTime = transDate(res.data[i].createTime)
-    }
-    that.setData({
-      askList: res.data
     })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/purui_ask_list',
+      data: {
+        
+      },
+      success: function (res) {
+        //console.log(res.data)
 
-    wx.hideLoading()
-  }
-})
+        for (var i in res.data.puruiask) {
+          res.data.puruiask[i].createtime = transDate(res.data.puruiask[i].createtime)
+        }
+        that.setData({
+          askList: res.data.puruiask
+        })
+
+        wx.hideLoading()
+      }
+    })
   }
   ,// 上拉加载回调接口
   onReachBottom: function () {
@@ -162,25 +162,24 @@ wx.request({
     })
     var poff = parseInt(that.data.pageOffset) + 1;
     wx.request({
-      url: app.globalData.baseUrl+'wx/askList',
+      url: app.globalData.baseUrl + 'wx/purui_ask_list',
       data: {
         pageOffset: poff,
-        pageSize: 20,
-        search_name: that.data.search_name
-        
+        pageSize: 20
+
       },
       success: function (res) {
         //console.log(res.data.schools.length)
-        if (res.data.length == 0) {
+        if (res.data.puruiask.length == 0) {
           that.setData({
             hasMore: false,
           })
         } else {
           for (var i in res.data) {
-            res.data[i].createTime = transDate(res.data[i].createTime)
+            res.data.puruiask[i].createtime = transDate(res.data.puruiask[i].createtime)
           }
 
-          that.data.askList = that.data.askList.concat(res.data)
+          that.data.askList = that.data.askList.concat(res.data.puruiask)
           //console.log(poff)
           that.setData({
             askList: that.data.askList,
@@ -241,61 +240,41 @@ wx.request({
       disflag: "block"
     });
     wx.navigateTo({
-      url: '../ask_detail/ask_detail?id=' + event.currentTarget.dataset.id
+      url: 'ask_detail/ask_detail?id=' + event.currentTarget.dataset.id
     })
     this.setData({
       disflag: "none"
     });
   },
-  swichNav:function(event){
+  swichNav: function (event) {
 
     if (this.data.tag == event.target.dataset.current) {
       return false;
     } else {
       this.setData({
         tag: event.target.dataset.current,
-        search_name: '',
         pageOffset: 0,
         opacityflag: 0
       })
       var that = this
-      if (this.data.tag==2){
-        that.setData({
-          disflag: "block"
-        });
-        wx.request({
-          url: app.globalData.baseUrl+'wx/lecturer_list',
-          data: {
-            
-          },
-          success: function (res) {
-            //console.log(res.data)
-            that.setData({
-              lecturerList: res.data
-            })
-            that.setData({
-              disflag: "none"
-            });
-          }
-        })
-      } else if(this.data.tag == 0){
+      if (this.data.tag == 0) {
 
         wx.showLoading({
           mask: true,
           title: '加载中'
         })
         wx.request({
-          url: app.globalData.baseUrl+'wx/askList',
+          url: app.globalData.baseUrl + 'wx/purui_ask_list',
           data: {
-            search_name: ''
+            
           },
           success: function (res) {
             //console.log(res.data)
-            for (var i in res.data) {
-              res.data[i].createTime = transDate(res.data[i].createTime)
+            for (var i in res.data.puruiask) {
+              res.data.puruiask[i].createtime = transDate(res.data.puruiask[i].createtime)
             }
             that.setData({
-              askList: res.data
+              askList: res.data.puruiask
             })
 
             wx.hideLoading()
@@ -303,8 +282,8 @@ wx.request({
         })
       }
     }
-        
-    
+
+
   },
   setValue: function (event) {
     this.setData({
@@ -314,44 +293,23 @@ wx.request({
   search: function (event) {
     //console.log(this.data.search_name)
     var that = this
-    if (this.data.tag == 2) {
-      that.setData({
-        disflag: "block"
-      });
-      wx.request({
-        url: app.globalData.baseUrl+'wx/lecturer_list',
-        data: {
-          search_name: that.data.search_name
-        },
-        success: function (res) {
-          //console.log(res.data)
-          that.setData({
-            lecturerList: res.data,
-            pageOffset: 0,
-            opacityflag: 0
-          })
-          that.setData({
-            disflag: "none"
-          });
-        }
-      })
-    } else if (this.data.tag == 0) {
+    if (this.data.tag == 0) {
       wx.showLoading({
         mask: true,
         title: '加载中'
       })
       wx.request({
-        url: app.globalData.baseUrl +'wx/askList',
+        url: app.globalData.baseUrl + 'wx/purui_ask_list',
         data: {
           search_name: that.data.search_name
         },
         success: function (res) {
           //console.log(res.data)
-          for (var i in res.data) {
-            res.data[i].createTime = transDate(res.data[i].createTime)
+          for (var i in res.data.puruiask) {
+            res.data.puruiask[i].createtime = transDate(res.data.puruiask[i].createtime)
           }
           that.setData({
-            askList: res.data,
+            askList: res.data.puruiask,
             pageOffset: 0,
             opacityflag: 0
           })
@@ -361,13 +319,13 @@ wx.request({
       })
     }
   },
-  bindChange:function(event){
+  bindChange: function (event) {
     this.setData({ tag: event.detail.current });
-    
+
   },
   formSubmit: function (e) {
     //console.log('form发生了submit事件，携带数据为：', e.detail.value.text.length)
-    if (e.detail.value.text.length=="0"){
+    if (e.detail.value.askcontent.length == "0") {
       wx.showModal({
         title: '提示',
         content: '提问内容不可为空',
@@ -377,19 +335,17 @@ wx.request({
             console.log('用户点击确定')
           } else if (res.cancel) {
             console.log('用户点击取消')
-            
+
           }
         }
       })
       return false;
     }
-    this.setData({
-      disflag: "block"
-    });
+
     //console.log(e.detail.value)
     var that = this;
-    wx.request({
-      url: app.globalData.baseUrl+'wx/getUserDetail',
+    /*wx.request({
+      url: app.globalData.baseUrl + 'wx/getUserDetail',
       data: {
         oid: that.data.oid
       },
@@ -419,13 +375,18 @@ wx.request({
             showCancel: true,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                console.log('用户点击确定')*/
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
                 wx.request({
-                  url: app.globalData.baseUrl+'wx/save_ask',
+                  url: app.globalData.baseUrl + 'wx/savepuruiask',
                   data: e.detail.value,
                   success: function (res) {
                     //console.log(res.data);
-                    if (res.data == false) {
+                    wx.hideLoading()
+                    if (res.data.result == 'fail') {
                       wx.showModal({
                         title: '提示',
                         content: '提问失败，请重试',
@@ -448,22 +409,38 @@ wx.request({
                       //成功支付
                       wx.showModal({
                         title: '提示',
-                        content: '提问成功,专家将在24小时内进行答复。',
+                        content: '提问成功。',
                         showCancel: false,
                         success: function (res) {
-                          if (res.confirm) {
-                            that.setData({
-                              disflag: "block"
-                            });
-                            wx.reLaunch({
-                              url: '../personal/personal?tag=1'
-                            })
-                          } else if (res.cancel) {
-                            console.log('用户点击取消')
-                            that.setData({
-                              disflag: "none"
-                            });
-                          }
+                          //if (res.confirm) {
+                          wx.showLoading({
+                            mask: true,
+                            title: '加载中'
+                          })
+                          wx.request({
+                            url: app.globalData.baseUrl + 'wx/purui_ask_list',
+                            data: {
+
+                            },
+                            success: function (res) {
+                              //console.log(res.data)
+                              for (var i in res.data.puruiask) {
+                                res.data.puruiask[i].createtime = transDate(res.data.puruiask[i].createtime)
+                              }
+                              that.setData({
+                                askList: res.data.puruiask,
+                                tag:0
+                              })
+
+                              wx.hideLoading()
+                            }
+                          })
+                          //} else if (res.cancel) {
+                            //console.log('用户点击取消')
+                            //that.setData({
+                              //disflag: "none"
+                            //});
+                          //}
                         }
                       })
 
@@ -471,7 +448,7 @@ wx.request({
 
                   }
                 })
-              } else if (res.cancel) {
+              /*} else if (res.cancel) {
                 console.log('用户点击取消')
                 that.setData({
                   disflag: "none"
@@ -482,7 +459,7 @@ wx.request({
         }
 
       }
-    })
+    })*/
   },
   lecturerDetail: function (event) {
     wx.showLoading({
@@ -496,11 +473,11 @@ wx.request({
 
 
   },
-  setPreId : function(event){
+  setPreId: function (event) {
     //console.log(event.currentTarget.dataset.id)
     var that = this
     wx.request({
-      url: app.globalData.baseUrl+'wx/lecturerDetail',
+      url: app.globalData.baseUrl + 'wx/lecturerDetail',
       data: {
         id: event.currentTarget.dataset.id
       },
@@ -510,8 +487,8 @@ wx.request({
           tag: 1,
           preid: event.currentTarget.dataset.id,
           showLecturer: "block",
-          lecturer:res.data
-    })
+          lecturer: res.data
+        })
 
       }
     })

@@ -25,7 +25,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -151,6 +151,30 @@
 					"id": -1,
 					"name": "高职单招",
 					"pathName": "pages/gaozhidanzhao/gaozhidanzhao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "普瑞广告",
+					"pathName": "pages/adv/purui/purui",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "普瑞问答",
+					"pathName": "pages/adv/purui/ask/ask",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分抽奖",
+					"pathName": "pages/sign_up/lottery/lottery",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/personal_info/personal_info",
 					"query": ""
 				}
 			]

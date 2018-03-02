@@ -1,0 +1,80 @@
+/* pages/adv/purui/purui.wxss */
+.df{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:20rpx
+}
+
+.baomingtext{
+  margin-top:20rpx;
+  font-family:微软雅黑;
+      font-size: 30rpx;
+    color: #008bcd;
+    text-align: center;
+    border: 1px solid #008bcd;
+}
+.formText{
+    font: 28rpx "microsoft yahei";
+    display: inline-block;
+    width:150rpx
+}
+.formInput{
+    margin-left:20rpx;
+    font: 28rpx "microsoft yahei";
+    color: #525252;
+    background:white;
+    text-align: start;
+    width:280rpx
+}
+
+.subbutton{
+  border: none;
+    background: #ff8400;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    width:150rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:20rpx;
+    margin-right:20rpx
+}
+
+.resetbutton{
+  border: none;
+    background: #008bcd;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    width:150rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:20rpx;
+    margin-right:20rpx
+}
+
+
+.radio-group{
+  width:280rpx;
+  margin-left:20rpx;
+}
+
+.radio{
+  font: 28rpx "microsoft yahei";
+  margin-right:20rpx
+}
+
+.timeselect{
+  width:280rpx;
+  margin-left:20rpx;
+}
+.picker{
+  background: white;
+  width:280rpx;
+  height:52rpx;
+  font: 28rpx "microsoft yahei";
+  color: #525252;
+}
