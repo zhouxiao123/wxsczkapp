@@ -15,7 +15,8 @@ Page({
     appoint: 0,
     msg: '',
     isLecturer: 0,
-    lecturer:{}
+    lecturer:{},
+    src:''
   },
   
   onLoad: function (options) {
@@ -24,6 +25,8 @@ Page({
       duration: 100,
       timingFunction: 'ease'
     })
+
+
     this.animation = animation
     //console.log(options)
     this.setData({
@@ -130,6 +133,15 @@ Page({
         that.setData({
           item: res.data
         })
+        that.data.src ='https://wxsign.sczk.com.cn/hls/mystream.m3u8'
+        if (that.data.item.video.isfee == 1) {
+          if (that.data.item.buy == null || that.data.item.buy == '') {
+            that.data.src = ''
+          }
+        }
+        that.setData({
+          src: that.data.src
+        })
         /*wx.request({
           url: app.globalData.baseUrl+'wx/is_appoint_video',
           data: {
@@ -186,10 +198,29 @@ Page({
     if (this.data.tag == event.target.dataset.current) {
       return false;
     } else {
+      var that = this
+      if (event.target.dataset.current == 2){
+        if (this.data.item.video.isfee==1){
+          if (this.data.item.buy == null || this.data.item.buy == ''){
+            
+            wx.showModal({
+              title: '提示',
+              content: '请先购买',
+              showCancel: false,
+              success: function (res) {
+                
+
+              }
+            })
+            return false;
+          }
+        }
+      }
+
       this.setData({
         tag: event.target.dataset.current
       })
-      var that = this
+      
       if (event.target.dataset.current == 2) {
         wx.showLoading({
           mask: true,
@@ -305,7 +336,7 @@ Page({
                               disflag: "block"
                             });
                             wx.redirectTo({
-                              url: '../video_detail/video_detail?id=' + that.data.item.video.webLessonId
+                              url: '../live_video/live_video?id=' + that.data.item.video.webLessonId
                             })
                           } else if (res.cancel) {
                             console.log('用户点击取消')
@@ -392,7 +423,11 @@ Page({
   },
   sendMsg: function (event) {
     //console.log(this.data.search_name)
+    var that = this
     if (this.data.isLecturer != "1" && this.data.item.video.openask == "0"){
+      that.setData({
+        msg: ''
+      })
       wx.showModal({
         title: '提示',
         content: '当前状态禁止发言',
@@ -435,6 +470,9 @@ Page({
             success: function (res) {
               
             }
+          })
+          that.setData({
+            msg:''
           })
         } else {
           wx.showModal({

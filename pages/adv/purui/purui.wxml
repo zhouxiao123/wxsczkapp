@@ -69,7 +69,7 @@
     </view>
 </form>
 
-<view><button class="subbutton" catchtap='puruiAsk'>我要询问</button></view>
+<!--<view><button class="subbutton" catchtap='puruiAsk'>我要询问</button></view>-->
   </view>
 
                             <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png"></image>

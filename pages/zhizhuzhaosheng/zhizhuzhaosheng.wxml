@@ -1,10 +1,10 @@
 <!--pages/zhizhuzhaosheng/zhizhuzhaosheng.wxml-->
 <view class="tag-list">
     <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
-      时间节点
+      课程直播
     </view> 
     <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
-      招生简章
+      往期回顾
     </view>
     <!--<view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
       专家列表
@@ -15,7 +15,93 @@
   </view>
 
 <view class="ask-content" style="display:{{tag==0?'block':'none'}}">
-<view class="df">
+
+  <view style="text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑';font-weight:bold">
+    <text style="width:200rpx;display:inline-block">讲座主题：</text>2018四川高职单招专题讲座
+  </view>
+
+  <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'">
+    <text style="width:200rpx;display:inline-block">讲座时间：</text>2018年3月13日（星期二）
+  </view>
+<view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑';color:red"> 
+  <text style="width:200rpx;display:inline-block"> </text>
+   20:00——21:00
+   </view>
+
+  <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'">
+    <text style="width:200rpx;display:inline-block">讲座价格：</text><text style="color:orange">99</text>积分
+  </view>
+
+  <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'">
+    <text style="width:200rpx;display:inline-block">主讲专家：</text>韩春平老师
+  </view>
+
+  <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="width:200rpx;display:inline-block">讲座形式：</text><text >视频授课45分钟，现场答疑15分钟</text>
+  </view>
+
+    <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="width:200rpx;display:inline-block">讲座内容：</text><text style="font-size:28rpx">1、最新最全的高职单招政策解读</text>
+  </view>
+      <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">2、教你如何在单招中选取优质院校？</text>
+  </view>
+
+  <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">3、学校往年录取数据大揭秘</text>
+  </view>
+
+  <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">4、公办院校、民办院校怎么选？</text>
+  </view>
+    <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">5、高职单招专业介绍、就业前景等干货</text>
+  </view>
+    <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">6、考多少分能上什么学校什么专业？</text>
+  </view>
+    <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">7、教你如何更好的备考高职单招</text>
+  </view>
+    <view style="margin-top:20rpx;text-align:left;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑'" class="df3">
+    <text style="font-size:28rpx;margin-left:200rpx">8、面试流程及面试过程中的小技巧</text>
+  </view>
+
+  <view style="text-align:center;font-size:34rpx;color:#3f3f3f;font-family:'微软雅黑';font-weight:bold;margin-top:50rpx">
+    专家简介
+  </view>
+
+<view >
+  <view style="margin-top:40rpx">
+    <view style="float:left;display:inline-block;">
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/8aa64c0c-c6af-4355-a530-aa43ffbd9123.png"style="width:180rpx" mode='widthFix'></image>
+    </view>
+    <view style="float:left;display:inline-block;width:440rpx;margin-left:40rpx;margin-right:20rpx;">
+      <view style="width:440rpx">
+        <view style="display:inline-block;width:270rpx;font-family:微软雅黑;color:#3f3f3f;font-size:32rpx">韩春平老师</view>
+
+      </view>  
+      <view style="font-family:黑体;color:#a7a6a6;font-size: 30rpx;">高考志愿填报实战专家 </view>
+
+      <view style="font-family:黑体;color:#a7a6a6;font-size: 30rpx;">高考志愿规划师</view>
+
+      <view style="font-family:黑体;color:#a7a6a6;font-size: 30rpx;">多年从事学生生涯规划和高考志愿填报指导工作，对我国的大学分布、专业设置、报考政策等有相当深入的研究，擅长从生涯规划的角度开展高考志愿填报，经验丰富，帮助众多考生选择专业及大学，帮助众多考生实现了“低分上名校”的梦想，也让更多考生幸福地被理想大学及专业录取。</view>
+    </view>
+    
+    </view>
+  </view>
+<view style="clear:both"></view>
+
+
+  <view style="margin-top:60rpx">
+    <button style="font-family:黑体;font-size:32rpx;color:#fff;background-color:#59c9b9;width:400rpx;" wx:if="{{appoint==0}}" bindtap='videoAppoint'>立即预约</button>
+    <button style="font-family:黑体;font-size:32rpx;color:#fff;background-color:#59c9b9;width:400rpx;" wx:if="{{appoint==1}}" bindtap='cancelVideoAppoint'>已预约</button>
+  </view>
+
+
+
+
+<!--<view class="df">
   <view class="df1">
     <view class="df2" >
       <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
@@ -78,7 +164,7 @@
     </view>
 
   </view>
-</view>
+</view>-->
 </view>
 
 
@@ -89,16 +175,14 @@
       <view style="display:flex;height:60rpx">
         <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
       </view>  
-      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索名称" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
       <image  bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
     </view>
   </view>
 
-  <view  style="margin:20rpx" wx:for="{{contentList}}" data-id="{{item.id}}"  catchtap='schoolDetail'>
+  <!--<view  style="margin:20rpx" wx:for="{{contentList}}" data-id="{{item.id}}"  catchtap='schoolDetail'>
     <view style="">
-      <!--<view style="width:280rpx;display:inline-block;margin-left:120rpx;font-family:黑体;color:#494a4d;font-size:38rpx">
-        {{item.year}}年
-      </view>--> 
+
       <view style="width:700rpx;margin-left:40rpx;display:inline-block;color:#777;font-family:黑体;font-size:38rpx">
         {{item.name}}
       </view>
@@ -106,7 +190,26 @@
     <view style="border-bottom:1rpx solid #aaa;padding-bottom:20rpx;margin-top:20rpx;">
 
     </view>
+  </view>-->
+<!--直播-->
+
+  <view wx:for="{{list}}" wx:for-item="l" data-id="{{l.webLessonId}}" class="select-view" catchtap="see_live_video">
+  <view class="view-img">
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{l.webLessonPic}}" style="margin-left:28rpx;margin-bottom:20rpx;width:240rpx;height:144rpx"/>
   </view>
+  <view class="text-view">
+    <text class="title-text">{{l.webLessonName}}</text>
+    <text class="subtitle-text">{{l.webLessonDesc}}</text>
+    <!--<text class="link-text" bindtap="see_video">点击免费试听1分钟</text>-->
+    <view class="text-bottom-content">
+      <text class="fee-text">￥{{l.webLessonType==2?l.webLessonPrice:0}}</text>
+      <text class="count-text">{{l.seeTimes}}次观看</text>
+      <image src="../../images/lesson/{{l.webLessonType==2?'ljgm@2x.png':'mfgk@2x.png'}}" style="margin-left:50rpx;width:135rpx;height:40rpx"/>
+
+    </view>
+  </view>
+</view>
+
 
 
 

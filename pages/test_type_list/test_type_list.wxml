@@ -5,8 +5,19 @@
 
 
 
+
+<!--<view class="df">
+  <view style="width:375rpx;text-align:center;background:#eee">
+      <button catchtap='listDetail' data-id="1" style="width:250rpx;height:78rpx;line-height:78rpx;background-color:#f7fa9a;border:1px solid #aaa;border-radius:78rpx;color:red;font-family:Microsoft YaHei">职业评测</button>
+  </view>
+  <view style="width:375rpx;text-align:center">
+  <button catchtap='listDetail' data-id="2" style="width:250rpx;height:78rpx;line-height:78rpx;background-color:#f9d7da;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">趣味小测试</button>
+  </view>
+</view>-->
+
+
 <view style="position:absolute;text-align:center">
-  <!--<image src="../../images/test/1@2x.png" style="margin-top:350rpx;width:350rpx;height:78rpx;margin-left:200rpx" ></image>-->
+
 
 
     <button catchtap='listDetail' data-id="1" style="margin-top:350rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#f7fa9a;border:1px solid #aaa;border-radius:78rpx;color:red;font-family:Microsoft YaHei">职业评测</button>
@@ -17,7 +28,7 @@
 
 
 </view>
-<!--<image src="../../images/test/2record_bottom.gif" style="width:100%" mode="widthFix"></image>-->
+
 
 
 

@@ -3,7 +3,7 @@
 
 <view style="text-align:center;background-color:#000">
  <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/{{item.video.webLessonType==2?(item.buy==null||item.buy==''?item.video.webLessonFreeUrl:item.video.webLessonUrl):item.video.webLessonUrl}}?" ></video>-->
-  <video  controls src="https://wxsign.sczk.com.cn/hls/mystream.m3u8" ></video>
+  <video  controls src="{{src}}" ></video>
   <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/1/1.m3u8" ></video>-->
 </view>
 
@@ -36,13 +36,9 @@
   </view>
 </view>
 
-  
-  <view wx:if="{{item.video.webLessonType==2}}" class="btn-area">
+  <view wx:if="{{item.video.isfee==1}}" class="btn-area">
     <view class="classname">
       <text class="fee-text">￥{{item.video.webLessonPrice}}/{{item.video.webLessonPrice*10}}积分</text>
-    </view>
-    <view class="classname">
-      <text class="link-text" >免费试听1分钟</text>
     </view>
     <view class="classname">
       <button wx:if="{{item.buy==null || item.buy==''}}"  style="font-family:黑体;font-size:0.8rem;color:#fff;background-color:#59c9b9;width:100%;" data-id="{{item.video.webLessonId}}" bindtap="toBuy">立即购买</button>

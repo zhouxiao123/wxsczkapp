@@ -20,7 +20,7 @@
   <audio id="myAudio" bindended="voiceEnd"  src="{{voiceUrl}}"></audio>
   <!--<button bindtap='switchv'>切换</button>-->
 
-     
+  
 
 
  

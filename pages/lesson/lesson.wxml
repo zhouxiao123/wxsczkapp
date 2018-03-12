@@ -19,9 +19,9 @@
     <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
       付费视频
     </view>
-    <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
+    <!--<view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
       直播讲座
-    </view>
+    </view>-->
 </view>
 
 <view style="background-color:#f0f0f0;height:20rpx">
