@@ -1,4 +1,4 @@
-// pages/lesson_ask_detail/lesson_ask_detail.js
+// pages/lesson_ask_answer_detail/lesson_ask_answer_detail.js
 var app = getApp()
 Page({
   data: {
@@ -50,7 +50,7 @@ Page({
             //console.log(res);
             //发起网络请求
             wx.request({
-              url: app.globalData.baseUrl+'wx/login',
+              url: app.globalData.baseUrl + 'wx/login',
               data: {
                 code: res.code
               },
@@ -98,7 +98,7 @@ Page({
       title: '加载中'
     })
     wx.request({
-      url: app.globalData.baseUrl+'wx/lesson_ask_detail',
+      url: app.globalData.baseUrl + 'wx/lesson_ask_detail',
       data: {
         id: options.id
       },
@@ -110,7 +110,7 @@ Page({
         })
 
         wx.request({
-          url: app.globalData.baseUrl+'wx/is_collect_lecturer',
+          url: app.globalData.baseUrl + 'wx/is_collect_lecturer',
           data: {
             oid: that.data.oid,
             lecturerId: that.data.item.l.lecturerId
@@ -212,7 +212,7 @@ Page({
 
     var that = this
     wx.request({
-      url: app.globalData.baseUrl+'wx/collect_lecturer',
+      url: app.globalData.baseUrl + 'wx/collect_lecturer',
       data: {
         oid: that.data.oid,
         lecturerId: that.data.item.l.lecturerId
@@ -239,7 +239,7 @@ Page({
   }, cansleCollect: function () {
     var that = this
     wx.request({
-      url: app.globalData.baseUrl+'wx/cancel_collect_lecturer',
+      url: app.globalData.baseUrl + 'wx/cancel_collect_lecturer',
       data: {
         oid: that.data.oid,
         lecturerId: that.data.item.l.lecturerId
@@ -274,59 +274,6 @@ Page({
     this.setData({
       disflag: "none"
     });
-  }, deleteAsk:function(event){
-    event.currentTarget.dataset.id
-    var that = this
-    wx.showModal({
-      title: '提示',
-      content: '是否确认删除',
-      showCancel: true,
-      success: function (res) {
-        if (res.confirm) {
-          wx.request({
-            url: app.globalData.baseUrl + 'wx/deleteLessonAsk',
-            data: {
-              id: event.currentTarget.dataset.id
-            },
-            success: function (res) {
-              if (res.data.result == "fail") {
-                wx.showModal({
-                  title: '提示',
-                  content: '删除失败',
-                  showCancel: false,
-                  success: function (res) {
-
-                  }
-                })
-              } else {
-                wx.showModal({
-                  title: '提示',
-                  content: '删除成功',
-                  showCancel: false,
-                  success: function (res) {
-                    if (getCurrentPages().length == 1) {
-                      wx.redirectTo({
-                        url: '../index/index',
-                      })
-                    } else {
-
-                      wx.navigateBack()
-                    }
-                  }
-                })
-              }
-
-            }
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-  }, lecturerAnswer:function(e){
-    wx.redirectTo({
-      url: '../lesson_ask_answer/lesson_ask_answer?id=' + e.currentTarget.dataset.id
-    })
   }
 })
 function transDate(mescStr) {

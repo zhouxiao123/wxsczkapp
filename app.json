@@ -59,10 +59,12 @@
     "pages/qinyunhui/school/school_list/school_list",
     "pages/qinyunhui/school/school_detail/school_detail",
     "pages/gaozhidanzhao/gaozhidanzhao",
+    "pages/live_list/live_list",
     "pages/gaozhidanzhao_detail/gaozhidanzhao_detail",
     "pages/sign_up/lottery/lottery",
     "pages/adv/purui/purui",
-    "pages/adv/purui/ask/ask"
+    "pages/adv/purui/ask/ask",
+    "pages/lesson_ask_answer_detail/lesson_ask_answer_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

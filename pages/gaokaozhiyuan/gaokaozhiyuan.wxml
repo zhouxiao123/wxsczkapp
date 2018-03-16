@@ -1,13 +1,13 @@
 <!--pages/gaokaozhiyuan/gaokaozhiyuan.wxml-->
 <view class="tag-list">
     <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
-      一诊试卷
+      高职单招
     </view> 
     <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
-      问题咨询
+      自主招生
     </view>
     <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
-      云程定制
+      普通高考
     </view>
 </view>
 
@@ -15,33 +15,12 @@
 </view>
 
 <!--一诊考试答案-->
-<view style="display:{{tag==0?'block':'none'}}">
-<view style="display:{{tag2==0?'block':'none'}}">
-  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">请选择地区</view>
-  <button catchtap='typeList1' data-id="成都" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">成都</button>
-  
+<view style="display:{{tag==0?'block':'none'}}" style="height:{{imageHeight}}px;overflow:hidden;"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <view style="display:flex;flex-direction: column">
+  <image animation="{{animationData}}" src="/images/1.jpg" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image>
+  <image animation="{{animationData}}" src="/images/2.jpg" style="width:750rpx" mode='widthFix'></image>
+    <image animation="{{animationData}}" src="/images/3.jpg" style="width:750rpx" mode='widthFix'></image>
 </view>
-
-<view style="display:{{tag2==1?'block':'none'}}">
-  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">{{diqu}}</view>
-      <button catchtap='typeList2' data-id="重置" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">重新选择</button>
-  <button catchtap='typeList2' data-id="语文" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">语文</button>
-  <button catchtap='typeList2' data-id="理科数学" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">理科数学</button>
-    <button catchtap='typeList2' data-id="文科数学" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">文科数学</button>
-  <button catchtap='typeList2' data-id="英语" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">英语</button>
-  <button catchtap='typeList2' data-id="理综" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">理综</button>
-  <button catchtap='typeList2' data-id="文综" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">文综</button>
-</view>
-
-
-<view style="display:{{tag2==2?'block':'none'}}">
-  <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">{{diqu}} {{fenlei}}</view>
-    <button catchtap='typeList3' data-id="重置" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">重新选择</button>
-  <button catchtap='typeList3' data-id="答案" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">答案</button>
-  <button catchtap='typeList3' data-id="试卷" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">试卷</button>
-
-</view>
-
 </view>
 
 

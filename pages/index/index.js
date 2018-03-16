@@ -497,7 +497,8 @@ Page({
       title: '加载中'
     })
     wx.navigateTo({
-      url: '../small_video/small_video'
+      //url: '../small_video/small_video'
+      url: '../live_list/live_list'
     })
     wx.hideLoading()
   },countDown:function(){

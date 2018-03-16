@@ -1,4 +1,6 @@
 <!--personal.wxml-->
+
+
 <image  wx:if="{{isOpen==1}}" style="position:absolute;width:100rpx;left:600rpx;top:100rpx" mode='widthFix' src="../../images/xhb.png" bindtap='toLottery'></image>
 
 <view  style="padding-bottom:130rpx">

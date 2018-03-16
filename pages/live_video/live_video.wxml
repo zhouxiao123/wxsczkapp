@@ -3,7 +3,7 @@
 
 <view style="text-align:center;background-color:#000">
  <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/{{item.video.webLessonType==2?(item.buy==null||item.buy==''?item.video.webLessonFreeUrl:item.video.webLessonUrl):item.video.webLessonUrl}}?" ></video>-->
-  <video  controls src="{{src}}" ></video>
+  <video style="width:750rpx"  controls src="{{src}}" ></video>
   <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/1/1.m3u8" ></video>-->
 </view>
 
@@ -62,7 +62,7 @@
 
 <!--热评-->
 <view style="display:{{tag==2?'block':'none'}}">
-<view style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx" wx:if="{{isLecturer==1}}">
+<view style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx" wx:if="{{isLive==1}}">
 <button bindtap='closeLive' wx:if="{{item.video.openlive==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">关闭直播</button>
 <button wx:else bindtap='startLive' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">开启直播</button>
 
@@ -95,19 +95,19 @@
   </view>
 
 <view class="ask-content" >
-  <view wx:for="{{list.lessonask}}" class="ask-bar" data-id="{{item.id}}" data-lecturer="{{item.u.isLecturer}}" data-isanswer="{{item.isanswer}}" catchtap="ask_detail">
+  <view wx:for="{{list.lessonask}}" class="ask-bar" data-id="{{item.id}}" data-lecturer="{{item.u.isLive}}" data-isanswer="{{item.isanswer}}" catchtap="ask_detail">
         <view class="answer-content">
-          <image src="{{item.u.isLecturer!=1?item.u.headUrl:'https://wxsign.sczk.com.cn/wxsczkappback/img/'+item.u.l.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+          <image src="{{item.u.isLive!=1?item.u.headUrl:'https://wxsign.sczk.com.cn/wxsczkappback/img/'+item.u.l.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
           <!--<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.u.headUrl}}" style="width:52rpx;height:52rpx"></image>-->
     
-          <text style="width:100rpx;color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.u.isLecturer!=1?item.u.nickName:item.u.l.lecturerName}}</text>
-
+          <text style="width:100rpx;color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.u.isLive!=1?item.u.nickName:item.u.l.lecturerName}}</text>
+    <button wx:if="{{item.u.isLive==1}}" data-id="{{item.id}}" style="line-height:40rpx;height:40rpx;font-size:24rpx;display:inline-block;width:100rpx;position:absolute;left:300rpx" catchtap="deleteAsk">删除</button>
           <text style="width:300rpx;color:#777;font-family:黑体;margin-left:200rpx;font-size:0.8rem">{{item.createtime}}</text>
         </view>
 
         <text class="ask-text">{{item.askcontent}}</text>
 
-        <view class="intro-content" wx:if="{{item.u.isLecturer!=1}}">
+        <view class="intro-content" wx:if="{{item.u.isLive!=1}}">
           <text class="name-text" style="color:{{item.isanswer==0?'red':'green'}}">{{item.isanswer==0?'未回答':'已回答'}}</text>
           
         </view>

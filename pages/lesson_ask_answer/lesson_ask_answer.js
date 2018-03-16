@@ -450,6 +450,55 @@ Page({
         }
       })
     }
+  }, deleteAsk: function (event) {
+    event.currentTarget.dataset.id
+    var that = this
+    wx.showModal({
+      title: '提示',
+      content: '是否确认删除',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: app.globalData.baseUrl + 'wx/deleteLessonAsk',
+            data: {
+              id: event.currentTarget.dataset.id
+            },
+            success: function (res) {
+              if (res.data.result == "fail") {
+                wx.showModal({
+                  title: '提示',
+                  content: '删除失败',
+                  showCancel: false,
+                  success: function (res) {
+
+                  }
+                })
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  content: '删除成功',
+                  showCancel: false,
+                  success: function (res) {
+                    if (getCurrentPages().length == 1) {
+                      wx.redirectTo({
+                        url: '../index/index',
+                      })
+                    } else {
+
+                      wx.navigateBack()
+                    }
+                  }
+                })
+              }
+
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
 })
 //麦克风帧动画 

@@ -15,6 +15,7 @@ Page({
     appoint: 0,
     msg: '',
     isLecturer: 0,
+    isLive:0,
     lecturer:{},
     src:''
   },
@@ -101,6 +102,7 @@ Page({
         
         that.setData({
           isLecturer: res.data.isLecturer,
+          isLive:res.data.isLive,
           userid: res.data.id
         })
         if (res.data.isLecturer==1){
@@ -134,7 +136,8 @@ Page({
           item: res.data
         })
         that.data.src ='https://wxsign.sczk.com.cn/hls/mystream.m3u8'
-        if (that.data.item.video.isfee == 1) {
+        //that.data.src = 'https://wxsign.sczk.com.cn/wxsczkappback/vd/946c85f4-adb1-4ed9-a527-03b5b6e550d8/946c85f4-adb1-4ed9-a527-03b5b6e550d8.mp4'
+        if (that.data.item.video.isfee == 1 && res.data.isLecturer != 1) {
           if (that.data.item.buy == null || that.data.item.buy == '') {
             that.data.src = ''
           }
@@ -200,7 +203,7 @@ Page({
     } else {
       var that = this
       if (event.target.dataset.current == 2){
-        if (this.data.item.video.isfee==1){
+        if (this.data.item.video.isfee == 1 && res.data.isLecturer != 1){
           if (this.data.item.buy == null || this.data.item.buy == ''){
             
             wx.showModal({
@@ -424,7 +427,7 @@ Page({
   sendMsg: function (event) {
     //console.log(this.data.search_name)
     var that = this
-    if (this.data.isLecturer != "1" && this.data.item.video.openask == "0"){
+    if (this.data.isLive != "1" && this.data.item.video.openask == "0"){
       that.setData({
         msg: ''
       })
@@ -473,6 +476,18 @@ Page({
           })
           that.setData({
             msg:''
+          })
+        } else if(res.data.result == "not"){
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+          that.setData({
+            msg: ''
           })
         } else {
           wx.showModal({
@@ -680,6 +695,48 @@ Page({
         // 转发失败
       }
     }
+  }, deleteAsk: function (event) {
+    event.currentTarget.dataset.id
+    var that = this
+    wx.showModal({
+      title: '提示',
+      content: '是否确认删除',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: app.globalData.baseUrl + 'wx/deleteLessonAsk',
+            data: {
+              id: event.currentTarget.dataset.id
+            },
+            success: function (res) {
+              if (res.data.result == "fail") {
+                wx.showModal({
+                  title: '提示',
+                  content: '删除失败',
+                  showCancel: false,
+                  success: function (res) {
+
+                  }
+                })
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  content: '删除成功',
+                  showCancel: false,
+                  success: function (res) {
+                    
+                  }
+                })
+              }
+
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
 })
 function transDate(mescStr) {

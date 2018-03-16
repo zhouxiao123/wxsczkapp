@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.4",
+	"libVersion": "1.9.91",
 	"appid": "wxb92292e3ccd61cd8",
 	"projectname": "wxsczkapp",
 	"condition": {
@@ -76,10 +76,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "自主招生",
 					"pathName": "pages/zhizhuzhaosheng/zhizhuzhaosheng",
-					"query": ""
+					"query": "tag=1"
 				},
 				{
 					"id": 9,
@@ -187,6 +187,18 @@
 					"id": -1,
 					"name": "职业评测",
 					"pathName": "pages/test_type_list/test_type_list",
+					"query": ""
+				},
+				{
+					"id": 27,
+					"name": "自主招生课程列表",
+					"pathName": "pages/lesson/lesson",
+					"query": "lessontypeid=2"
+				},
+				{
+					"id": 28,
+					"name": "高考志愿",
+					"pathName": "pages/gaokaozhiyuan/gaokaozhiyuan",
 					"query": ""
 				}
 			]

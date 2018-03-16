@@ -1,0 +1,113 @@
+/* pages/lesson_ask_answer_detail/lesson_ask_answer_detail.wxss */
+@import "../bottom/bottom.wxss";
+
+.ask-content{
+  margin-top:28rpx;
+  margin-left:20rpx;
+  margin-right:20rpx
+}
+
+.ask-content{
+  margin-top:28rpx;
+  margin-left:20rpx;
+  margin-right:20rpx
+}
+
+.ask-bar{
+  border-bottom:4rpx solid #eaeaea;
+  margin-top:30rpx
+}
+
+.ask-text{
+  font-size: 0.8rem; 
+  font-family:黑体;
+  color:#343434;
+}
+
+.answer-content{
+  margin-top:40rpx;
+  display:flex;
+  align-items:center;
+  margin-left:100rpx
+}
+
+.listen-content{
+  display:flex;
+  align-items: center
+}
+
+.time-text{
+  margin-left:20rpx;
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#a7a6a6;
+}
+
+.center-text{
+  position: absolute;
+  left :220rpx;
+  width:240rpx;
+  height:50rpx;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+
+.img-text{
+  font-size: 0.76rem; 
+  font-family:Microsoft YaHei;
+  color:#fff;
+}
+
+
+.img-img{
+  margin-right:20rpx
+  
+}
+
+.intro-content{
+  margin-top:20rpx;
+  margin-bottom:16rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-left:100rpx;
+  margin-right:100rpx;
+  
+}
+
+.name-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#3e3d3d;
+}
+
+.sep-text{
+  font-size: 0.4rem; 
+  font-family:Microsoft YaHei;
+  color:#7b7a7a;
+  margin-left:10rpx;
+  margin-right:10rpx;
+}
+
+.detail-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#7b7a7a;
+  text-overflow: ellipsis;
+  width:500rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  white-space: nowrap;
+
+
+}
+
+.number-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#59c9b9;
+  margin-left:12rpx
+}

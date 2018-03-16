@@ -16,8 +16,6 @@ Page({
     pageSize: 10,
     opacityflag: 0,
     disflag: 'none',
-    appoint:0,
-    list:[]
   },
 
   /**
@@ -26,6 +24,11 @@ Page({
   onLoad: function (options) {
     var that = this
 
+    if (options.tag!=null){
+      that.setData({
+        tag:options.tag
+      })
+    }
     var value = wx.getStorageSync('oid')
     //console.log(value)
     if (value) {
@@ -80,27 +83,8 @@ Page({
       })
     }
 
+
     wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
-    wx.request({
-      url: app.globalData.baseUrl + 'wx/is_appoint_video',
-      data: {
-        oid:that.data.oid,
-        videoId:7
-      },
-      success: function (res) {
-        //console.log(res.data)
-        if (res.data.result=="ok"){
-          that.setData({
-            appoint:1
-          })
-        }
-        wx.hideLoading()
-      }
-    })
-    /*wx.showLoading({
       mask: true,
       title: '加载中'
     })
@@ -108,31 +92,18 @@ Page({
       url: app.globalData.baseUrl + 'wx/school_content_list',
       data: {
         search_name: '',
-        year:'2017',
-        pageOffset:0,
-        pageSize:10
+        year: '2017',
+        pageSize: 10
       },
       success: function (res) {
-        //console.log(res.data)
 
         that.setData({
-          contentList: res.data.schoolContent
+          contentList: res.data.schoolContent,
+          pageOffset: 0,
+          opacityflag: 0
         })
 
         wx.hideLoading()
-      }
-    })*/
-    wx.request({
-      url: app.globalData.baseUrl + 'wx/list_video',
-      data: {
-        tid: 6,
-        lessontypeid: 1
-      },
-      success: function (res) {
-        //console.log(res.data)
-        that.setData({
-          list: res.data
-        })
       }
     })
   
@@ -155,90 +126,10 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  videoAppoint: function (e) {
-    var that = this
-    wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
-    wx.request({
-      url: app.globalData.baseUrl + 'wx/appoint_video',
-      data: {
-        oid: that.data.oid,
-        videoId: 7
-      },
-      success: function (res) {
-        //console.log(res.data)
-        if (res.data.result == "fail") {
-          that.setData({
-            appoint: 0
-          })
-          wx.showModal({
-            title: '提示',
-            content: '预约失败',
-            showCancel: false,
-            success: function (res) {
-            }
-          })
-
-        } else {
-          that.setData({
-            appoint: 1
-          })
-          wx.showModal({
-            title: '提示',
-            content: '预约成功',
-            showCancel: false,
-            success: function (res) {
-            }
-          })
-        }
-        wx.hideLoading()
-      }
-    })
+  onHide: function () {
+  
   },
-  cancelVideoAppoint:function(){
-    var that = this
-    wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
-    wx.request({
-      url: app.globalData.baseUrl + 'wx/cancel_appoint_video',
-      data: {
-        oid: that.data.oid,
-        videoId: 7
-      },
-      success: function (res) {
-        //console.log(res.data)
-        if (res.data.result == "fail") {
-          that.setData({
-            appoint: 1
-          })
-          wx.showModal({
-            title: '提示',
-            content: '取消预约失败',
-            showCancel: false,
-            success: function (res) {
-            }
-          })
 
-        } else {
-          that.setData({
-            appoint: 0
-          })
-          wx.showModal({
-            title: '提示',
-            content: '取消预约成功',
-            showCancel: false,
-            success: function (res) {
-            }
-          })
-        }
-        wx.hideLoading()
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面卸载
    */
@@ -254,7 +145,7 @@ Page({
   },
 
   // 上拉加载回调接口
-  /*onReachBottom: function () {
+  onReachBottom: function () {
     // 我们用total和count来控制分页，total代表已请求数据的总数，count代表每次请求的个数。
     // 上拉时需把total在原来的基础上加上count，代表从count条后的数据开始请求。
     var that = this
@@ -332,7 +223,7 @@ Page({
         }
       })
     
-  },*/
+  },
   swichNav: function (event) {
 
     if (this.data.tag == event.target.dataset.current) {
@@ -344,11 +235,7 @@ Page({
       })
       var that = this
       if (that.data.tag==1){
-        that.setData({
-          hasMore: false,
-          opacityflag: 1
-        })
-      /*wx.showLoading({
+      wx.showLoading({
         mask: true,
         title: '加载中'
       })
@@ -369,27 +256,12 @@ Page({
 
           wx.hideLoading()
         }
-      })*/
-      } else {
-        that.setData({
-          hasMore: true,
-          opacityflag: 0
-        })
+      })
       }
     }
 
 
-  }, see_live_video: function (event) {
-    this.setData({
-      disflag: "block"
-    });
-    wx.navigateTo({
-      url: '../live_video/live_video?id=' + event.currentTarget.dataset.id
-    })
-    this.setData({
-      disflag: "none"
-    });
-  }/*,
+  },
   schoolDetail: function (event){
     wx.showLoading({
       mask: true,
@@ -399,5 +271,5 @@ Page({
       url: '../school_content_detail/school_content_detail?id=' + event.currentTarget.dataset.id
     })
     wx.hideLoading()
-  }*/
+  }
 })

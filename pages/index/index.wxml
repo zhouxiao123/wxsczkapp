@@ -1,4 +1,6 @@
 <!--index.wxml-->
+
+
 <swiper indicator-dots="true"
   autoplay="true" interval="5000" duration="500" style="height:272rpx">
   
@@ -27,7 +29,7 @@
       </view>
       <view class="fours-icon" bindtap="zzzs">
         <image src="../../images/zzzs.png" class="icon-pic"></image>
-        <text class="icon-text">直播讲座</text>
+        <text class="icon-text">自主招生</text>
       </view>
     </view>
 

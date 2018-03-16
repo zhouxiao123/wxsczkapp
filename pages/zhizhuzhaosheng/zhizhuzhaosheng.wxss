@@ -19,9 +19,7 @@
 .df2{
   display:flex;flex-direction:column;justify-content:center;align-items:center
 }
-.df3{
-  display:flex;align-items: flex-start
-}
+
 .imagev{
   position:absolute;text-align:center
 }

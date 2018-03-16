@@ -6,17 +6,20 @@
 
 
 
-<!--<view class="df">
-  <view style="width:375rpx;text-align:center;background:#eee">
-      <button catchtap='listDetail' data-id="1" style="width:250rpx;height:78rpx;line-height:78rpx;background-color:#f7fa9a;border:1px solid #aaa;border-radius:78rpx;color:red;font-family:Microsoft YaHei">职业评测</button>
+<view class="df">
+  <view  catchtap='listDetail' data-id="1" style="width:300rpx;text-align:center;background:#59c9b9;color:#fff;height:500rpx;  border-radius: 40rpx;margin-left:30rpx;">
+        <text style="display:block;font-size:32rpx;margin-top:50rpx">职业评测</text>
+        <view style="margin-left:20rpx;margin-right:20rpx;text-align:left;text-indent:60rpx;font-size:26rpx;padding:10rpx;margin-top:50rpx">职业生涯规划测评是职业能力测试的一种，测试的内容包括包括性格、职业性向、潜能、天赋、气质类型等。 这种测评是职业规划的一个条件。充分利用职业测试，确定报考专业，是志愿填报的第一步。</view>
   </view>
-  <view style="width:375rpx;text-align:center">
-  <button catchtap='listDetail' data-id="2" style="width:250rpx;height:78rpx;line-height:78rpx;background-color:#f9d7da;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">趣味小测试</button>
+  <view  catchtap='listDetail' data-id="2" style="width:300rpx;text-align:center;margin-left:90rpx;height:500rpx;  border-radius: 40rpx;border:1px solid #59c9b9;color:#666;">
+        <text style="display:block;font-size:32rpx;margin-top:50rpx">趣味小测试</text>
+        <view style="margin-left:20rpx;margin-right:20rpx;text-align:left;text-indent:60rpx;font-size:26rpx;padding:10rpx;margin-top:50rpx">学习压力大？想考察下自己是否有福尔摩斯般的推理能力？你平时的喜好透漏了你什么样的内心特点？……就来趣味小测评，这里百无禁忌，n多报考测试等着你。
+</view>
   </view>
-</view>-->
+</view>
 
 
-<view style="position:absolute;text-align:center">
+<!--<view style="position:absolute;text-align:center">
 
 
 
@@ -24,10 +27,12 @@
 
   <button catchtap='listDetail' data-id="2" style="margin-top:50rpx;width:350rpx;height:78rpx;line-height:78rpx;margin-left:200rpx;background-color:#f9d7da;border:1px solid #aaa;border-radius:78rpx;color:#4d504f;font-family:Microsoft YaHei">趣味小测试</button>
 
+  
 
 
 
-</view>
+
+</view>-->
 
 
 
