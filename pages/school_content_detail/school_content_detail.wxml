@@ -1,6 +1,7 @@
 <!--pages/school_content_detail/school_content_detail.wxml-->
-<import src="../../wxParse/wxParse.wxml"/>
+<!--<import src="../../wxParse/wxParse.wxml"/>
 <view style="margin:20rpx;font-size:38rpx;text-align:center">{{title}}</view>
 <view style="margin-left:40rpx;margin-right:40rpx;font-size:28rpx;">
 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-</view>
+</view>-->
+<web-view src="{{src}}"></web-view>

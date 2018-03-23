@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 0
+    id: 0,
+    src:""
   },
 
   /**
@@ -14,7 +15,11 @@ Page({
    */
   onLoad: function (options) {
     //console.log(options.id)
-    var WxParse = require('../../wxParse/wxParse.js');
+    this.setData({
+      id: options.id,
+      src: 'https://wxsign.sczk.com.cn/wxsczkappback/wx/school_content_detail_page?id=' + options.id
+    })
+    //var WxParse = require('../../wxParse/wxParse.js');
 
     /**
     * WxParse.wxParse(bindName , type, data, target,imagePadding)
@@ -24,7 +29,7 @@ Page({
     * 4.target为Page对象,一般为this(必填)
     * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
     */
-    var that = this;
+    /*var that = this;
     that.setData({
       id: options.id
     })
@@ -45,7 +50,7 @@ Page({
         WxParse.wxParse('article', 'html', res.data.content, that, 5);
         wx.hideLoading()
       }
-    })
+    })*/
 
   }/*,
   onShareAppMessage: function (res) {

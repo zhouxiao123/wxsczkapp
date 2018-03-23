@@ -267,11 +267,11 @@ Page({
     app.awardsConfig = {
       chance: true,
       awards: [
-        { 'index': 0, 'name': '一等奖' },
-        { 'index': 1, 'name': '二等奖' },
-        { 'index': 2, 'name': '三等奖' },
-        { 'index': 3, 'name': '四等奖' },
-        { 'index': 4, 'name': '五等奖' },
+        { 'index': 0, 'name': '100积分' },
+        { 'index': 1, 'name': '50积分' },
+        { 'index': 2, 'name': '20积分' },
+        { 'index': 3, 'name': '10积分' },
+        { 'index': 4, 'name': '5积分' },
         { 'index': 5, 'name': '继续努力' }
       ]
     }

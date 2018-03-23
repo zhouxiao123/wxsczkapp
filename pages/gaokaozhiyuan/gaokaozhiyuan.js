@@ -2,7 +2,6 @@
 var app = getApp()
 var image = 1
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -12,6 +11,8 @@ Page({
     diqu:"",
     fenlei:"",
     animationData: {},
+    animationData2: {},
+    animationData3: {},
     top1:0,
     imageHeight:0,
     touchDot:0,
@@ -42,6 +43,7 @@ Page({
 
   ,
   swichNav: function (event) {
+    //console.log(event.target.dataset.current)
     if (this.data.tag == event.target.dataset.current) {
       return false;
     } else {
