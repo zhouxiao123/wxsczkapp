@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 28,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -210,6 +210,12 @@
 					"name": "直播课程详情",
 					"pathName": "pages/live_video/live_video",
 					"query": "id=80"
+				},
+				{
+					"id": -1,
+					"name": "职业列表",
+					"pathName": "pages/zhiye_list/zhiye_list",
+					"query": ""
 				}
 			]
 		}

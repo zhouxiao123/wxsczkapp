@@ -136,7 +136,8 @@ Page({
           item: res.data
         })
         that.data.src ='https://wxsign.sczk.com.cn/hls/mystream.m3u8'
-        //that.data.src = 'https://wxsign.sczk.com.cn/wxsczkappback/vd/946c85f4-adb1-4ed9-a527-03b5b6e550d8/946c85f4-adb1-4ed9-a527-03b5b6e550d8.mp4'
+        //that.data.src = 'https://wxsign.sczk.com.cn/hls/mystream-test.m3u8'
+        //that.data.src = 'https://wxsign.sczk.com.cn/wxsczkappback/vd/a82d39ff-de18-4343-add3-8855e462b64d/a82d39ff-de18-4343-add3-8855e462b64d.m3u8'
         if (that.data.item.video.isfee == 1 && res.data.isLecturer != 1) {
           if (that.data.item.buy == null || that.data.item.buy == '') {
             that.data.src = ''

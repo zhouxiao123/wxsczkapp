@@ -498,7 +498,8 @@ Page({
     })
     wx.navigateTo({
       //url: '../small_video/small_video'
-      url: '../live_list/live_list'
+      //url: '../live_list/live_list'
+      url: '../zhiye_list/zhiye_list'
     })
     wx.hideLoading()
   },countDown:function(){
@@ -527,7 +528,6 @@ Page({
       positionHeight: parseInt(e.detail.height * 700 / e.detail.width)
     })
     //console.log(e.detail + "------" + this.data.positionHeight)
-
   },
   testPage:function(){
     wx.navigateTo({

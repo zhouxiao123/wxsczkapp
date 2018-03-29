@@ -64,7 +64,8 @@
     "pages/sign_up/lottery/lottery",
     "pages/adv/purui/purui",
     "pages/adv/purui/ask/ask",
-    "pages/lesson_ask_answer_detail/lesson_ask_answer_detail"
+    "pages/lesson_ask_answer_detail/lesson_ask_answer_detail",
+    "pages/zhiye_list/zhiye_list"
   ],
   "window": {
     "backgroundTextStyle": "light",

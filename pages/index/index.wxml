@@ -65,6 +65,21 @@
   </view>
 
 
+
+
+
+  <swiper 
+  autoplay="true" interval="5000" duration="500" style="height:130rpx">
+  
+    <swiper-item wx:for="{{adv.adv3}}">
+      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:100%;" mode="widthFix"/>
+    </swiper-item>
+    
+  </swiper>
+
+<view style="background-color:#f0f0f0;height:20rpx">
+  </view>
+
   <view >
   <view style="width:490rpx;display:inline-block;float:left">
     <view style="width:100rpx;display:inline-block;margin-left:20rpx;margin-top:20rpx;float:left">
@@ -115,18 +130,7 @@
   </swiper>
 </view>
 
-  <view style="background-color:#f0f0f0;height:20rpx">
-  </view>
-
-
-  <swiper 
-  autoplay="true" interval="5000" duration="500" style="height:130rpx">
   
-    <swiper-item wx:for="{{adv.adv3}}">
-      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:100%;" mode="widthFix"/>
-    </swiper-item>
-    
-  </swiper>
 
   <!--<view style="text-align:center">
     <image catchtap='testList' src="../../images/ggt.jpg" style="width:100%"  mode="widthFix"></image>

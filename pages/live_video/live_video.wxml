@@ -68,7 +68,10 @@
 
 <button bindtap='closeAsk' wx:if="{{item.video.openask==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">关闭问答</button>
 <button wx:else bindtap='startAsk' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">开启问答</button>
+<view>{{item.count}}</view>
 </view>
+
+
 
 <view style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx" wx:else>
 <!--<button bindtap='closeLive' wx:if="{{item.video.openlive==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block">关闭直播</button>

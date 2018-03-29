@@ -3,6 +3,7 @@ var app = getApp()
 Page({
   data: {
     disflag: 'none',
+    adv:{},
     showLecturer: "none",
     slideflag: 'none',
     img_url: [
@@ -116,6 +117,25 @@ Page({
         }
         that.setData({
           askList: res.data
+        })
+
+        wx.hideLoading()
+      }
+    })
+
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag:3
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          adv: res.data
         })
 
         wx.hideLoading()
