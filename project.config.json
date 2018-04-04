@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 31,
 			"list": [
 				{
 					"id": -1,
@@ -216,6 +216,11 @@
 					"name": "职业列表",
 					"pathName": "pages/zhiye_list/zhiye_list",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "聊天室",
+					"pathName": "pages/chatroom/chatroom"
 				}
 			]
 		}

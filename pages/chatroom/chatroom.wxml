@@ -1,0 +1,11 @@
+<!--pages/chatroom/chatroom.wxml-->
+<view>
+  <view wx:for="{{list}}">{{item}}</view>
+<view  class="talk_back">
+      <view class="talk_box">
+          
+        <input bindinput="setValue" value="{{msg}}" placeholder="回复" type="text" placeholder-style="font-family:黑体;" maxlength="500"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+        <button bindtap='sendMsg' style="height:60rpx;font-size:0.8rem;line-height:60rpx">发送</button>
+      </view>
+    </view>
+</view>

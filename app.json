@@ -49,6 +49,7 @@
     "pages/to_answer/to_answer",
     "pages/school_content_detail/school_content_detail",
     "pages/gaokaozhiyuan/gaokaozhiyuan",
+    "pages/gaokaozhiyuan-old/gaokaozhiyuan-old",
     "pages/paper/paper",
     "pages/news_list/news_list",
     "pages/to_count/to_count",
@@ -65,7 +66,8 @@
     "pages/adv/purui/purui",
     "pages/adv/purui/ask/ask",
     "pages/lesson_ask_answer_detail/lesson_ask_answer_detail",
-    "pages/zhiye_list/zhiye_list"
+    "pages/zhiye_list/zhiye_list",
+    "pages/chatroom/chatroom"
   ],
   "window": {
     "backgroundTextStyle": "light",
