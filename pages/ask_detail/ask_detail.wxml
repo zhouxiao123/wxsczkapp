@@ -1,3 +1,4 @@
+
 <view style="padding-bottom:130rpx">
   <view class="df">
     <image src="{{issecret==1?'../../images/personal/-rtx@2x.png':item.ask.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>

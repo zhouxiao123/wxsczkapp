@@ -647,6 +647,10 @@ Page({
       wx.navigateTo({
         url: e.currentTarget.dataset.link
       })
+    } else if (e.currentTarget.dataset.type == 4) {
+      wx.navigateTo({
+        url: '/pages/adv/adv?id=' + e.currentTarget.dataset.id
+      })
     }
     
   },

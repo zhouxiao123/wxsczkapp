@@ -67,7 +67,8 @@
     "pages/adv/purui/ask/ask",
     "pages/lesson_ask_answer_detail/lesson_ask_answer_detail",
     "pages/zhiye_list/zhiye_list",
-    "pages/chatroom/chatroom"
+    "pages/chatroom/chatroom",
+    "pages/adv/adv"
   ],
   "window": {
     "backgroundTextStyle": "light",

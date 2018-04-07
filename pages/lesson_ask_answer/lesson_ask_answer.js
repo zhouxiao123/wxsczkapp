@@ -27,7 +27,9 @@ Page({
     oid: '',
     item: {},
     id: 0,
-    userInfo: {}
+    userInfo: {},
+    isLecturer: 0,
+    isLive: 0,
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: "问题问答" })
@@ -113,7 +115,23 @@ Page({
         that.setData({
           item: res.data.lessonask
         })
-        wx.hideLoading()
+
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/getUserDetail',
+          data: {
+            oid: that.data.oid
+          },
+          success: function (res) {
+            //console.log(res.data)
+            wx.hideLoading()
+            that.setData({
+              isLecturer: res.data.isLecturer,
+              isLive: res.data.isLive
+            })
+
+          }
+        })
+        
       }
     })
   },

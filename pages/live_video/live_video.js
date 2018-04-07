@@ -99,7 +99,8 @@ Page({
       },
       success: function (res) {
         //console.log(res.data)
-        
+        clearInterval(that.data.time)
+        updateList(that)
         that.setData({
           isLecturer: res.data.isLecturer,
           isLive:res.data.isLive,
@@ -128,7 +129,8 @@ Page({
       url: app.globalData.baseUrl+'wx/detail_video',
       data: {
         id: options.id,
-        oid: that.data.oid
+        oid: that.data.oid,
+        from: options.from != null ? options.from:''
       },
       success: function (res) {
         //console.log(res.data)
