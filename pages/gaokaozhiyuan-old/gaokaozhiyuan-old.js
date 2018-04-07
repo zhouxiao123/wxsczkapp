@@ -9,14 +9,29 @@ Page({
     tag: 0,
     tag2: 0,
     diqu:"",
-    fenlei:""
+    fenlei:"",
+    adv:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag: 13
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          adv: res.data
+        })
+
+        //wx.hideLoading()
+      }
+    })
   },
 
   /**

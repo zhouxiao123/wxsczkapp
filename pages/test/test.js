@@ -1,55 +1,33 @@
-// pages/video_type/video_type.js
-var app = getApp()
+// pages/test/test.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    typeList:[],
-    adv:[]
+  adv:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  var that = this
+    var that = this
     wx.request({
-      url: app.globalData.baseUrl+'wx/video_type',
+      url: app.globalData.baseUrl + 'wx/adv_list',
       data: {
-
+        tag: 3
       },
       success: function (res) {
-        //console.log(res.data)
+        console.log(res.data)
         that.setData({
-          typeList:res.data
+          adv: res.data
         })
-        wx.request({
-          url: app.globalData.baseUrl + 'wx/adv_list',
-          data: {
-            tag: 9
-          },
-          success: function (res) {
-            console.log(res.data)
-            that.setData({
-              adv: res.data
-            })
 
-            //wx.hideLoading()
-          }
-        })
-        }
-          
+        wx.hideLoading()
+      }
     })
-
-  },
-  lessonList: function (event) {
-    //console.log(event.currentTarget.dataset.id)
-    wx.navigateTo({
-      url: '../lesson/lesson?lessontypeid=' + event.currentTarget.dataset.id
-    })
-
   },
 
   /**

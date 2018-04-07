@@ -22,7 +22,8 @@ Page({
     touchDot:0,
     touchEnd:0,
     scroll:0,
-    height:0
+    height:0,
+    adv:[]
   },
 
   /**
@@ -35,6 +36,20 @@ Page({
         tag:options.tag
       })
     }
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag: 13
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          adv: res.data
+        })
+
+        //wx.hideLoading()
+      }
+    })
   
   },
 
@@ -56,7 +71,20 @@ Page({
         tag: event.target.dataset.current
       })
       var that = this
+      wx.request({
+        url: app.globalData.baseUrl + 'wx/adv_list',
+        data: {
+          tag: parseInt(that.data.tag)+13
+        },
+        success: function (res) {
+          console.log(res.data)
+          that.setData({
+            adv: res.data
+          })
 
+          //wx.hideLoading()
+        }
+      })
 
     }
 

@@ -1,6 +1,6 @@
 <!--lesson.wxml-->
     <swiper 
-  autoplay="true" interval="5000" duration="500" style="height:130rpx;position:absolute;z-index:999">
+  autoplay="true" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0">
   
     <swiper-item wx:for="{{adv.adv}}">
       <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>

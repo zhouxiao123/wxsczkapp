@@ -222,6 +222,12 @@
 					"name": "聊天室",
 					"pathName": "pages/chatroom/chatroom",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试banner",
+					"pathName": "pages/test/test",
+					"query": ""
 				}
 			]
 		}

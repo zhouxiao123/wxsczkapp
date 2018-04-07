@@ -6,14 +6,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    adv:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag: 12
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          adv: res.data
+        })
 
+        //wx.hideLoading()
+      }
+    })
   },
 
   /**

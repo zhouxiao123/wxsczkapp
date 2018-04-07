@@ -9,6 +9,7 @@ Page({
     list:[],
     value:'',
     lessontypeid:0,
+    adv:[],
     //下拉加载
     hasMore: true,
     pageOffset: 0,
@@ -41,6 +42,20 @@ Page({
         that.setData({
           disflag: "none"
         });
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/adv_list',
+          data: {
+            tag: 10
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              adv: res.data
+            })
+
+            //wx.hideLoading()
+          }
+        })
       }
     })
   },// 上拉加载回调接口
@@ -155,6 +170,20 @@ Page({
             value:''
           })
           wx.hideLoading()
+          wx.request({
+            url: app.globalData.baseUrl + 'wx/adv_list',
+            data: {
+              tag: parseInt(that.data.tag) + 10
+            },
+            success: function (res) {
+              console.log(res.data)
+              that.setData({
+                adv: res.data
+              })
+
+              //wx.hideLoading()
+            }
+          })
         }
       })
       

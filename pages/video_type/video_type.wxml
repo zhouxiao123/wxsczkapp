@@ -1,6 +1,12 @@
 <!--pages/video_type/video_type.wxml-->
-
-<view>
+    <swiper 
+  autoplay="true" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0">
+  
+    <swiper-item wx:for="{{adv.adv}}">
+      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
+<view style=";padding-bottom:130rpx">
   <view style="margin-top:50rpx;text-align:center;font-family:Microsoft YaHei;color:#4d504f">请选择分类</view>
   <button catchtap='lessonList' data-id="0" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">全部</button>
         <button wx:for="{{typeList}}" catchtap='lessonList' data-id="{{item.id}}" style="margin-top:50rpx;width:250rpx;height:60rpx;line-height:60rpx;margin-left:80rpx;background-color:#59c9b9;border-radius:78rpx;color:white;font-family:Microsoft YaHei;display:inline-block">{{item.name}}</button>

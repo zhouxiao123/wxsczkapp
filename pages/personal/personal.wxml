@@ -25,10 +25,16 @@
       
     </view>
   </view>-->
+    <swiper wx:if="{{adv.adv.length!=0}}"
+  autoplay="true" interval="5000" duration="500" style="height:130rpx;margin-top:150rpx">
+  
+    <swiper-item wx:for="{{adv.adv}}">
+      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
 
 
-
-  <view class="tag-list mt150" bindtap="myPointIndex">
+  <view class="tag-list {{adv.adv.length!=0?'':'mt150'}}" bindtap="myPointIndex">
   
     <view class="tag-view">
       <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>

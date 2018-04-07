@@ -11,7 +11,8 @@ Page({
     isLecturer:0,
     isQudao:0,
     isLindao:0,
-    isOpen:0
+    isOpen:0,
+    adv:[]
   },
   //事件处理函数
   bindViewTap: function () {
@@ -119,6 +120,20 @@ Page({
         }
       })
     }
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag: 16
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          adv: res.data
+        })
+
+        //wx.hideLoading()
+      }
+    })
   },
   mainIndex: function (event) {
     this.setData({

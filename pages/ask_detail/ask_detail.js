@@ -21,7 +21,8 @@ Page({
     collect:0,
     issecret: 0,
     author:0,
-    msg: '',    
+    msg: '',
+    adv:[],    
     //下拉加载
     hasMore: true,
     pageOffset: 0,
@@ -141,6 +142,21 @@ Page({
           author: res.data.ask.userId
         })
         wx.hideLoading()
+
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/adv_list',
+          data: {
+            tag: 8
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              adv: res.data
+            })
+
+            //wx.hideLoading()
+          }
+        })
         /*wx.request({
           url: app.globalData.baseUrl+'wx/is_collect_lecturer',
           data: {
