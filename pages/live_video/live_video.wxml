@@ -3,7 +3,8 @@
 
 <view style="text-align:center;background-color:#000">
  <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/{{item.video.webLessonType==2?(item.buy==null||item.buy==''?item.video.webLessonFreeUrl:item.video.webLessonUrl):item.video.webLessonUrl}}?" ></video>-->
-  <video style="width:750rpx"  controls src="{{src}}" ></video>
+  <video wx:if="{{item.video.openlive!=2}}" style="width:750rpx"  controls src="{{src}}" ></video>
+  <image wx:if="{{item.video.openlive==2}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/liveover.png" style="width:750rpx" ></image>
   <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/1/1.m3u8" ></video>-->
 </view>
 
