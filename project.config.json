@@ -228,6 +228,12 @@
 					"name": "测试banner",
 					"pathName": "pages/test/test",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "直播",
+					"pathName": "pages/live_video/live_video",
+					"query": "id=84"
 				}
 			]
 		}

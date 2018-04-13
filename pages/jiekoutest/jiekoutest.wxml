@@ -14,4 +14,3 @@
 <button bindtap='denglu'>登陆</button>
 </view>
 
-<web-view src="https://wxsign.sczk.com.cn/wxsczkappback/wx/test_page?id=1"></web-view>
