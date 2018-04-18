@@ -475,8 +475,8 @@ Page({
   },
   toGaokaozhiyuan: function(){
     wx.navigateTo({
-      url: '../gaokaozhiyuan/gaokaozhiyuan'
-      //url: '../gaokaozhiyuan-old/gaokaozhiyuan-old'
+      //url: '../gaokaozhiyuan/gaokaozhiyuan'
+      url: '../gaokaozhiyuan-old/gaokaozhiyuan-old'
     })
   }
   ,

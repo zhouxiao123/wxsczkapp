@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 38,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -237,26 +237,18 @@
 				},
 				{
 					"id": 34,
-					"name": "青云汇-测录取",
-					"pathName": "pages/qinyunhui/celuqu/celuqu",
 					"name": "聊天室",
 					"pathName": "pages/chatroom/chatroom",
 					"query": ""
 				},
 				{
 					"id": -1,
-
-					"name": "青云汇-测录取-选批次",
-					"pathName": "pages/qinyunhui/xuanpici/xuanpici",
-
 					"name": "测试banner",
 					"pathName": "pages/test/test",
-
 					"query": ""
 				},
 				{
 					"id": -1,
-
 					"name": "青云汇-测录取-选批次-看录取机率",
 					"pathName": "pages/qinyunhui/kan_luqu_jilv/kan_luqu_jilv",
 					"query": ""
@@ -272,9 +264,9 @@
 					"name": "青云汇-青豆和积分对接测试",
 					"pathName": "pages/qinyunhui/test_qindou/test_qindou",
 					"query": ""
-        },
-        {
-          "id": 84,
+				},
+				{
+					"id": 84,
 					"name": "直播",
 					"pathName": "pages/live_video/live_video",
 					"query": "id=84"
