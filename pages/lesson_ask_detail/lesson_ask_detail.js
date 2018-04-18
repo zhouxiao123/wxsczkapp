@@ -16,7 +16,9 @@ Page({
     oid: '',
     id: '',
     item: {},
-    collect: 0
+    collect: 0,
+    isLecturer: 0,
+    isLive: 0,
   },
   //事件处理函数
   bindViewTap: function () {
@@ -125,7 +127,22 @@ Page({
                 collect: 1
               });
             }
-            wx.hideLoading()
+            wx.request({
+              url: app.globalData.baseUrl + 'wx/getUserDetail',
+              data: {
+                oid: that.data.oid
+              },
+              success: function (res) {
+                //console.log(res.data)
+                wx.hideLoading()
+                that.setData({
+                  isLecturer: res.data.isLecturer,
+                  isLive: res.data.isLive
+                })
+                
+              }
+            })
+
           }
         })
 

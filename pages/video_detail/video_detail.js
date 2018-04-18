@@ -105,7 +105,7 @@ Page({
     that.setData({
       disflag: "block"
     });
-
+    console.log(options.id)
     wx.request({
       url: app.globalData.baseUrl+'wx/detail_video',
       data: {
@@ -113,7 +113,7 @@ Page({
         oid: that.data.oid
       },
       success: function (res) {
-        //console.log(res.data)
+        
         that.setData({
           item: res.data
         })

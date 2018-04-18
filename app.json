@@ -49,6 +49,7 @@
     "pages/to_answer/to_answer",
     "pages/school_content_detail/school_content_detail",
     "pages/gaokaozhiyuan/gaokaozhiyuan",
+    "pages/gaokaozhiyuan-old/gaokaozhiyuan-old",
     "pages/paper/paper",
     "pages/news_list/news_list",
     "pages/to_count/to_count",
@@ -66,6 +67,7 @@
     "pages/adv/purui/ask/ask",
     "pages/lesson_ask_answer_detail/lesson_ask_answer_detail",
     "pages/zhiye_list/zhiye_list",
+
     "pages/jobdetail/jobdetail",
     "pages/online_ask/online_ask",
     "pages/question_research/question_research",
@@ -74,7 +76,10 @@
     "pages/qinyunhui/kan_luqu_jilv/kan_luqu_jilv",
     "pages/qinyunhui/not_enough_grade/not_enough_grade",
     "pages/qinyunhui/denglu_qinyunhui/denglu_qinyunhui",
-    "pages/qinyunhui/test_qindou/test_qindou"
+    "pages/qinyunhui/test_qindou/test_qindou",
+    "pages/chatroom/chatroom",
+    "pages/adv/adv",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

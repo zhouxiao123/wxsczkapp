@@ -11,7 +11,7 @@
       </view> 
     </view> 
     <view style="padding-bottom:20rpx;margin-top:20rpx;">
-      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+      <view style="display:inline-block;width:200rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
         地区:{{item.province}}
       </view>
       <view style="display:inline-block;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
@@ -26,14 +26,14 @@
     </view>
 
 
-    <view style="padding-bottom:20rpx;">
-      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+    <view style="padding-bottom:20rpx;display:flex;align-items: center;">
+      <view style="display:inline-block;width:200rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
         类型:{{item.yxtype}}
       </view>
       <view style="display:inline-block;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
         性质:{{item.yxxz}}
       </view>
-      <view  style="display:inline-block;color:#fff;margin-right:40rpx;font-family:黑体;font-size:30rpx">
+      <view  style="display:inline-block;color:#fff;font-family:黑体;font-size:30rpx">
           {{item.lqcc}}
           
       </view>

@@ -2,8 +2,8 @@
   <view style="display:flex;margin-top:20rpx;margin-left:20rpx;align-items: center;">
     <image src="{{item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
     <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.u.nickName}}</text>
-    <button wx:if="{{item.u.isLecturer==1}}" data-id="{{item.id}}" style="line-height:80rpx;font-size:30rpx;display:inline-block" catchtap="lecturerAnswer">重新回复</button>
-    <button wx:if="{{item.u.isLive==1}}" data-id="{{item.id}}" style="line-height:80rpx;font-size:30rpx;display:inline-block" catchtap="deleteAsk">删除</button>
+    <button wx:if="{{isLecturer==1}}" data-id="{{item.id}}" style="line-height:80rpx;font-size:30rpx;display:inline-block" catchtap="lecturerAnswer">重新回复</button>
+    <button wx:if="{{isLive==1}}" data-id="{{item.id}}" style="line-height:80rpx;font-size:30rpx;display:inline-block" catchtap="deleteAsk">删除</button>
   </view>
 
   <view style="border-bottom: 1px solid #eee;padding-bottom:20rpx;margin-left:100rpx;margin-top:40rpx;margin-right:100rpx">

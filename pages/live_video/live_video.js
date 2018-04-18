@@ -99,7 +99,8 @@ Page({
       },
       success: function (res) {
         //console.log(res.data)
-        
+        clearInterval(that.data.time)
+        updateList(that)
         that.setData({
           isLecturer: res.data.isLecturer,
           isLive:res.data.isLive,
@@ -128,7 +129,8 @@ Page({
       url: app.globalData.baseUrl+'wx/detail_video',
       data: {
         id: options.id,
-        oid: that.data.oid
+        oid: that.data.oid,
+        from: options.from != null ? options.from:''
       },
       success: function (res) {
         //console.log(res.data)
@@ -644,6 +646,44 @@ Page({
               that.setData({
                 item: that.data.item
               })
+            }
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '关闭失败',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+        }
+        wx.hideLoading()
+      }
+    })
+  }, changeAskFee:function(){
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/change_askfee',
+      data: {
+        lessonid: this.data.item.video.webLessonId
+      },
+      success: function (res) {
+        //console.log(res.data)
+        if (res.data.result == "ok") {
+          wx.showModal({
+            title: '提示',
+            content: '修改成功',
+            showCancel: false,
+            success: function (res) {
+              /*that.data.item.video.openask = 0
+              that.setData({
+                item: that.data.item
+              })*/
             }
           })
         } else {

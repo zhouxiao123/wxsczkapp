@@ -476,6 +476,7 @@ Page({
   toGaokaozhiyuan: function(){
     wx.navigateTo({
       url: '../gaokaozhiyuan/gaokaozhiyuan'
+      //url: '../gaokaozhiyuan-old/gaokaozhiyuan-old'
     })
   }
   ,
@@ -583,36 +584,15 @@ Page({
       success: function (res) {
         //console.log(res.data)
         if (res.data.result == "fail") {
-          /*wx.showModal({
-            title: '提示',
-            content: '请先填写资料',
-            showCancel: false,
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-                wx.navigateTo({
-                  url: '../personal_info/personal_info'
-                })
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
-            }
-          })*/
+
         } else {
-          /*that.setData({
-            day: res.data.day,
-            today: res.data.today
-          })*/
+
           if (res.data.today == 0) {
+
             /*that.setData({
-              disflag: 'block',
-              disflag2: 'none'
-            })*/
-            that.setData({
               disflag3: 'block'
-            })
+            })*/
           }
-          //wx.hideLoading()
         }
       }
     })
@@ -666,6 +646,10 @@ Page({
     } else if (e.currentTarget.dataset.type == 3){
       wx.navigateTo({
         url: e.currentTarget.dataset.link
+      })
+    } else if (e.currentTarget.dataset.type == 4) {
+      wx.navigateTo({
+        url: '/pages/adv/adv?id=' + e.currentTarget.dataset.id
       })
     }
     

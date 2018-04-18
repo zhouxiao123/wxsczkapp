@@ -130,7 +130,7 @@ Page({
     wx.request({
       url: app.globalData.baseUrl + 'wx/adv_list',
       data: {
-        tag:3
+        tag:5
       },
       success: function (res) {
         console.log(res.data)
@@ -279,7 +279,22 @@ wx.request({
         opacityflag: 0
       })
       var that = this
-      if (this.data.tag==2){
+      if(this.data.tag==1){
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/adv_list',
+          data: {
+            tag: 6
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              adv: res.data
+            })
+
+            wx.hideLoading()
+          }
+        })
+      }else if (this.data.tag==2){
         that.setData({
           disflag: "block"
         });
@@ -296,6 +311,20 @@ wx.request({
             that.setData({
               disflag: "none"
             });
+            wx.request({
+              url: app.globalData.baseUrl + 'wx/adv_list',
+              data: {
+                tag: 7
+              },
+              success: function (res) {
+                console.log(res.data)
+                that.setData({
+                  adv: res.data
+                })
+
+                wx.hideLoading()
+              }
+            })
           }
         })
       } else if(this.data.tag == 0){
@@ -319,6 +348,20 @@ wx.request({
             })
 
             wx.hideLoading()
+            wx.request({
+              url: app.globalData.baseUrl + 'wx/adv_list',
+              data: {
+                tag: 5
+              },
+              success: function (res) {
+                console.log(res.data)
+                that.setData({
+                  adv: res.data
+                })
+
+                wx.hideLoading()
+              }
+            })
           }
         })
       }
