@@ -1,4 +1,3 @@
-<!--pages/jiekoutest/jiekoutest.wxml-->
 <view style="margin:40rpx">
 <input type="text" bindinput="setValue" style="border:1px solid #999"></input>
 <button bindtap='yanzhengma'>发送验证码</button>
@@ -13,4 +12,6 @@
 
 <button bindtap='denglu'>登陆</button>
 </view>
+
+
 

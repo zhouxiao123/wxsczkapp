@@ -22,7 +22,12 @@ Page({
     touchDot:0,
     touchEnd:0,
     scroll:0,
-    height:0
+    height:0,
+    date: '',
+    checked: true,
+    oid:'',
+    user:{}
+    
   },
 
   /**
@@ -35,7 +40,82 @@ Page({
         tag:options.tag
       })
     }
-  
+
+    /**
+ * 加载的时候获取微信id
+ */
+    var value = wx.getStorageSync('oid')
+    //console.log(value)
+    if (value) {
+      that.setData({ oid: value })
+    } else {
+      wx.login({
+        success: function (res) {
+          if (res.code) {
+            //console.log(res);
+            //发起网络请求
+            wx.request({
+              url: app.globalData.baseUrl + 'wx/login',
+              data: {
+                code: res.code
+              },
+              success: function (res) {
+                if (res.data == "") {
+                  wx.showModal({
+                    title: '提示',
+                    content: '获取用户登录信息失败',
+                    showCancel: false,
+                    success: function (res) {
+                      if (res.confirm) {
+                        console.log('用户点击确定')
+                      } else if (res.cancel) {
+                        console.log('用户点击取消')
+                      }
+                    }
+                  })
+                }
+                wx.setStorageSync('oid', res.data)
+                //继续处理上面的
+                that.setData({ oid: res.data })
+              }
+            })
+          } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
+            wx.showModal({
+              title: '提示',
+              content: '获取用户登录状态失败',
+              showCancel: false,
+              success: function (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+          }
+        }
+      })
+    }
+
+    //that.data.oid
+    /**
+* 调用getUserDetail方法，通过oid查询对应的user集合
+*/
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/getUserDetail',
+      data: {
+        oid: that.data.oid
+      },
+      success: function (res) {
+        //console.log(res.data)
+
+        that.setData({
+          user: res.data
+        })
+
+      }
+    })
   },
 
   /**
@@ -236,6 +316,77 @@ Page({
 
     flag=0
     time = 0;
+  },
+ /**
+   * 表单输入
+   */
+  formSubmit: function (e) {
+  var that = this
+    //console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    var name = e.detail.value.name
+    var phone = e.detail.value.phone
+    var school = e.detail.value.school
+    var type = e.detail.value.type
+    var userid = e.detail.value.userid
+
+
+    if (name.length == 0) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入姓名',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    }
+    else if (phone.length == 0) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入联系电话',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    } else if (school.length == 0) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入学校',
+        showCancel: false,
+        success: function (res) {
+        }
+      })
+    } else {
+      wx.showLoading({
+        mask: true,
+        title: '加载中'
+      })
+      wx.request({
+        url: app.globalData.baseUrl + 'wx/savezhiyuanappoint',
+        data: e.detail.value,
+        success: function (res) {
+          //console.log(res.data)
+          wx.hideLoading()
+          if (res.data.result == "ok") {
+            wx.showModal({
+              title: '提示',
+              content: '保存成功',
+              showCancel: false,
+              success: function (res) {
+
+              }
+            })
+          }
+        }
+      })
+    }
+  },
+  formReset: function () {
+    this.setData({
+      date: '',
+      checked: true
+    })
   },
 
   /**

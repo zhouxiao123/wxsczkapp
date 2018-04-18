@@ -1,0 +1,54 @@
+<view class="page">
+
+<text class='class1'>高考志愿填报调查问卷</text>
+<text class='margin-left-2'>您好：</text>
+<text class='margin-left-2' style='margin-bottom:80rpx;' decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了更好地向您提供高考升学指导服务，请您花一分钟时间来填写这份问卷，我们会根据问卷调查结果丰富讲座内容，使您真正听有所学，并及时向您告知最新高考政策。</text>
+
+<!--问题1-->
+<form  bindsubmit="formSubmit" bindreset="formReset">
+ <text class='margin-left-1'>1、对高考升学及志愿填报，您目前了解多少？</text>
+    <view class="section">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{question1}}">
+          <radio class='section_gap' value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+<!--问题2-->
+ <text class='margin-left-1'>2、在高考升学及志愿填报中您最担心出现什么结果（可多选）？</text>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange2">
+  <view style="flex-direction:column;" wx:for="{{question2}}">
+    <checkbox class='section_gap' value="{{item.name}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+  </view>
+</checkbox-group>
+</view>
+<!--问题3-->
+ <text class='margin-left-1'>3、您希望我们的讲座重点讲那些内容（可多选）？</text>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange3">
+  <view style="flex-direction:column;" wx:for="{{question3}}">
+    <checkbox class='section_gap' value="{{item.name}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+  </view>
+</checkbox-group>
+<view class="df"><text>其他:</text><input style='border-bottom:1rpx solid #ddd;'name="wenti3input"></input></view>
+</view>
+<!--问题4-->
+ <text class='margin-left-1'>4、您判断志愿填报合理的依据有哪些（可多选）？</text>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange4">
+  <view style="flex-direction:column;" wx:for="{{question4}}">
+    <checkbox class='section_gap' value="{{item.name}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+  </view>
+</checkbox-group>
+</view>
+<!--问题5-->
+<view class="df"><text>5、关于高考志愿填报你还想了解那些方面：</text><input style='border-bottom:1rpx solid #ddd;' name="wenti5input"></input></view>
+
+ <view hidden="true" class="df"><text>userid:</text><input name="userid" value='{{user.id}}'></input></view>
+ <view class="df2" style="display:{{disflag?'none':'block'}}">
+      <button class="subbutton" formType="submit">提交</button>
+      <button class="resetbutton" formType="reset">重置</button>
+    </view>
+</form>
+</view>

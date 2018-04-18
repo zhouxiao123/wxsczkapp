@@ -3,7 +3,7 @@ var app = getApp()
 Page({
   data: {
     disflag: 'none',
-    opacityflag: 0,
+
     animationData: {},
     param:{},
     search_name:'',
@@ -20,7 +20,8 @@ Page({
     //下拉加载
     hasMore:true,
     pageOffset:0,
-    pageSize:20
+    pageSize:20,
+    opacityflag: 0,
   }, 
   onLoad: function () {
     wx.setNavigationBarTitle({title:"院校大全"})

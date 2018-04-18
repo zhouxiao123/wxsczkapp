@@ -15,17 +15,38 @@
 </view>
 
 <!--一诊考试答案-->
-<view style="display:{{tag==0?'block':'none'}};height:{{imageHeight}}px;overflow:hidden;"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+<view style="display:{{tag==0?'block':'none'}};">
+<view style="height:{{imageHeight}}px;overflow:hidden;"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
   <view style="display:flex;flex-direction: column">
-  <image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/1.jpg" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image>
+   <image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/1.jpg" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image>
   <image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/2.jpg" style="width:750rpx" mode='widthFix'></image>
     <image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/3.jpg" style="width:750rpx" mode='widthFix'></image>
 </view>
 </view>
+<!--表单提交部分-->
+ <view style="margin:auto;padding-top:40rpx;padding-bottom:40rpx;background: #ddf4ff;width:90%">
+  <form  bindsubmit="formSubmit" bindreset="formReset">
+    <view class="df"><image src="../../../images/scan.png" style="width:48rpx" mode='widthFix'></image><text style="font-size:32rpx;font-family:微软雅黑;font-weight:bold;margin-left:20rpx">咨询报名</text></view>
+    <!--<view class="df"><text catchtap='call' class="baomingtext">报名热线: 4000-800-110</text></view>-->
+    <view class="df"><text class="formText">姓名:</text><input class="formInput" name="name"></input></view>
+    <view class="df"><text class="formText">联系电话:</text><input class="formInput" name="phone"></input></view>
+    <view class="df"><text class="formText">学校:</text><input class="formInput" name="school"></input></view>
+    <view hidden="true" class="df"><text class="formText">类型:</text><input class="formInput" name="type" value='0'></input></view>
+     <view hidden="true" class="df"><text class="formText">userid:</text><input class="formInput" name="userid" value='{{user.id}}'></input></view>
+    <view class="df">
+      <button class="subbutton" formType="submit">提交</button>
+      <button class="resetbutton" formType="reset">重置</button>
+    </view>
+</form>
+</view>
+
+</view>
+
 
 
 <!--问题咨询-->
-<view style="display:{{tag==1?'block':'none'}};height:{{imageHeight}}px;overflow:hidden;" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+<view style="display:{{tag==1?'block':'none'}};">
+<view style="height:{{imageHeight}}px;overflow:hidden;" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
   <view style="display:flex;flex-direction: column">
   <image animation="{{animationData2}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/4.jpg" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image>
   <image animation="{{animationData2}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/5.jpg" style="width:750rpx" mode='widthFix'></image>
@@ -34,6 +55,24 @@
             <image animation="{{animationData2}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/8.jpg" style="width:750rpx" mode='widthFix'></image>
 </view>
 </view>
+<!--表单提交部分-->
+ <view style="margin:auto;padding-top:40rpx;padding-bottom:40rpx;background: #ddf4ff;width:90%">
+  <form  bindsubmit="formSubmit" bindreset="formReset">
+    <view class="df"><image src="../../../images/scan.png" style="width:48rpx" mode='widthFix'></image><text style="font-size:32rpx;font-family:微软雅黑;font-weight:bold;margin-left:20rpx">咨询报名</text></view>
+    <!--<view class="df"><text catchtap='call' class="baomingtext">报名热线: 4000-800-110</text></view>-->
+    <view class="df"><text class="formText">姓名:</text><input class="formInput" name="name"></input></view>
+    <view class="df"><text class="formText">联系电话:</text><input class="formInput" name="phone"></input></view>
+    <view class="df"><text class="formText">学校:</text><input class="formInput" name="school"></input></view>
+    <view hidden="true" class="df"><text class="formText">类型:</text><input class="formInput" name="type" value='1'></input></view>
+     <view hidden="true" class="df"><text class="formText">userid:</text><input class="formInput" name="userid" value='{{user.id}}'></input></view>
+    <view class="df">
+      <button class="subbutton" formType="submit">提交</button>
+      <button class="resetbutton" formType="reset">重置</button>
+    </view>
+</form>
+</view>
+</view>
+
 
 
 <!--云程定制-->
@@ -50,5 +89,21 @@
                             <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(9).jpg" style="width:750rpx" mode='widthFix'></image>
                                 <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(10).jpg" style="width:750rpx" mode='widthFix'></image>
                                     <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(11).jpg" style="width:750rpx" mode='widthFix'></image>
+</view>
+<!--表单提交部分-->
+ <view style="margin:auto;padding-top:40rpx;padding-bottom:40rpx;background: #ddf4ff;width:90%">
+  <form  bindsubmit="formSubmit" bindreset="formReset">
+    <view class="df"><image src="../../../images/scan.png" style="width:48rpx" mode='widthFix'></image><text style="font-size:32rpx;font-family:微软雅黑;font-weight:bold;margin-left:20rpx">咨询报名</text></view>
+    <!--<view class="df"><text catchtap='call' class="baomingtext">报名热线: 4000-800-110</text></view>-->
+    <view class="df"><text class="formText">姓名:</text><input class="formInput" name="name"></input></view>
+    <view class="df"><text class="formText">联系电话:</text><input class="formInput" name="phone"></input></view>
+    <view class="df"><text class="formText">学校:</text><input class="formInput" name="school"></input></view>
+    <view hidden="true" class="df"><text class="formText">类型:</text><input class="formInput" name="type" value='2'></input></view>
+     <view hidden="true" class="df"><text class="formText">userid:</text><input class="formInput" name="userid" value='{{user.id}}'></input></view>
+    <view class="df">
+      <button class="subbutton" formType="submit">提交</button>
+      <button class="resetbutton" formType="reset">重置</button>
+    </view>
+</form>
 </view>
 </view>

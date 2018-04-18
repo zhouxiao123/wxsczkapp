@@ -7,7 +7,7 @@
         <image animation="{{animationData}}" src="../../images/school_list/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
       </view>  
       <input bindinput="setValue" placeholder="搜索院校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
-      <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+      <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx;"/>
     </view>
   </view>
 

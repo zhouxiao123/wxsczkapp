@@ -1,0 +1,25 @@
+<!--表单提交部分-->
+ <view style="margin:auto;padding-top:400rpx;padding-bottom:40rpx;background: #ddf4ff;width:90%;height:800rpx;">
+  <form  bindsubmit="formSubmit" bindreset="formReset">
+    <view class="df"><image src="../../../images/scan.png" style="width:48rpx" mode='widthFix'></image><text style="font-size:32rpx;font-family:微软雅黑;font-weight:bold;margin-left:20rpx">录取测试</text></view>
+    
+   <!--选择文理科-->
+ <view class="section">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label>
+          <radio value="1" class="radio"/>文科
+          <radio style="margin-left: 40rpx;" value="5"/>理科
+          </label>
+      </radio-group>
+    </view>
+
+    <view class="df" style='margin-top:100rpx;margin-bottom:100rpx;'><text class="formText">高考成绩:</text><input class="formInput" name="score"></input></view>
+    <view hidden="true" class="df"><text>userid:</text><input name="userid" value='{{user.id}}'></input></view>
+    
+    <view class="df ">
+      <button class="subbutton" formType="submit">提交</button>
+      <button class="resetbutton" formType="reset">重置</button>
+    </view>
+</form>
+</view>
+

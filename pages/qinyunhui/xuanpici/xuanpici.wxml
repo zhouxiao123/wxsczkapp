@@ -1,0 +1,36 @@
+<view class="item_class1">
+
+<view class="margin-left" style=' flex-direction:column;display: flex;'>
+<view>{{param.tips1}}
+<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{param.matchPlanPc.pcmc}}</text>
+<text class="margin-left1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{param.matchPlanPc.xc}}分</text>
+</view>
+<view style='margin-top: 50rpx;'>{{param.tips2}}<text class="margin-left1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{param.matchPlanPc.pcmc}}</text></view>
+</view>
+
+<view class="tag-list1">
+  <view class="tag-view ">预估成绩</view> 
+  <view class="tag-view ">预估排名</view> 
+  <view class="tag-view ">科目</view> 
+  <view class="tag-view ">地区</view> 
+</view>
+<view class="tag-list2">
+  <view class="tag-view1 ">{{param.wish.grade}}</view> 
+  <view class="tag-view1 " style='margin-left:68rpx;'>{{param.wish.precedence}}</view> 
+  <view class="tag-view1 " style='margin-left:38rpx;'>{{param.wish.klmc}}</view> 
+  <view class="tag-view1 ">{{param.wish.pname}}</view> 
+</view>
+
+<view class="tag-list3">
+<view catchtap='xuanze' data-id="{{item.pcdm}}" wx:for="{{list}}" style="height: 100%;">
+      <view class="tag-view2">
+      <view style='width: 200rpx;'>{{item.pcmc}}</view>
+      <view style='width: 100rpx;'>{{param.wish.klmc}}</view>
+      <view style='width: 100rpx;'>{{item.point}}</view>
+       <view style='width: 120rpx;'><button class="tag-view3">选择</button></view>  
+      </view>
+</view>
+</view>
+
+
+</view>

@@ -1,0 +1,89 @@
+/* pages/zhiye_list/zhiye_list.wxss */
+
+.class1{
+  margin-top: 20rpx;
+  height:100rpx;
+  display: flex;
+  align-items: center;
+  font-family:黑体;
+  color:#333333;
+  flex-direction:column;
+  font-size:40rpx
+}
+
+.margin-left-1{
+  height:80rpx;
+  margin-left: 10rpx;
+  align-items: center;
+  display: flex;
+  font-family:黑体;
+  color:#333333;
+  font-size:34rpx
+}
+
+.margin-left-2{
+  height:80rpx;
+  margin-left:40rpx;
+  align-items: center;
+  display: flex;
+  font-family:黑体;
+  color:#494a4d;
+  font-size:30rpx
+}
+
+page {
+    min-height: 100%;
+    flex: 1;
+    background-color: #FBF9FE;
+    font-size: 32rpx;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    color:#494a4d;
+}
+
+.radio {
+  display: block;
+  margin-bottom: 20rpx;
+}
+.section{
+  margin-bottom: 60rpx;
+   padding: 0 30rpx;
+}
+.section_gap{
+   margin-top: 10rpx;
+}
+.df{
+  margin-top:40rpx
+}
+.df2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:100rpx;
+  margin-bottom: 50rpx;
+  
+}
+.subbutton{
+   border: none;
+    background: #ff8400;
+    color: #fff;
+    font-size: 40rpx;
+    border-radius: 50rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:120rpx;
+    display:inline;
+}
+
+.resetbutton{
+  border: none;
+    background: #008bcd;
+    color: #fff;
+    font-size: 40rpx;
+    border-radius: 50rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left: 250rpx;
+     display:inline;
+}

@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
-  phone:'',
-  code:'',
-  oid:''
+    userInfo: {},
+    phone: '',
+    code: '',
+    oid: ''
   },
 
   /**
@@ -86,54 +86,54 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
-   setValue: function (event) {
+  setValue: function (event) {
     this.setData({
       phone: event.detail.value
     });
   },
-   setValue2: function (event) {
+  setValue2: function (event) {
     this.setData({
       code: event.detail.value
     });
   },
-  yanzhengma:function(){
+  yanzhengma: function () {
     var that = this
     wx.showLoading({
       mask: true,
@@ -159,7 +159,7 @@ Page({
     })
   },
   //注册
-  zhuce:function(){
+  zhuce: function () {
     var that = this
     wx.showLoading({
       mask: true,
@@ -178,8 +178,8 @@ Page({
         unionid: that.data.oid,
         nick: that.data.userInfo.nickName,
         headimgurl: that.data.userInfo.avatarUrl,
-        phone:that.data.phone,
-        code:that.data.code
+        phone: that.data.phone,
+        code: that.data.code
       },
       success: function (res) {
 
@@ -201,7 +201,7 @@ Page({
       url: app.globalData.baseUrl + 'qinyun/pub/auth',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'qyh-appid':'07',
+        'qyh-appid': '07',
         'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
       },
       data: {
@@ -210,10 +210,11 @@ Page({
         unionid: that.data.oid
       },
       success: function (res) {
-
         console.log(res.data);
-
         wx.hideLoading()
+        wx.redirectTo({
+          url: '../celuqu/celuqu',
+       })
       }
     })
   }

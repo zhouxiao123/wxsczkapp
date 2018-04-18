@@ -139,3 +139,53 @@
 .t-on{
   color:#59c9b9;
 }
+
+.df{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:20rpx
+}
+
+.formText{
+    font: 28rpx "microsoft yahei";
+    display: inline-block;
+    width:150rpx
+}
+
+.formInput{
+    margin-left:20rpx;
+    font: 28rpx "microsoft yahei";
+    color: #525252;
+    background:white;
+    text-align: start;
+    width:280rpx
+}
+
+.subbutton{
+  border: none;
+    background: #ff8400;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    width:150rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:20rpx;
+    margin-right:20rpx
+}
+
+.resetbutton{
+  border: none;
+    background: #008bcd;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    width:150rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:20rpx;
+    margin-right:20rpx
+}

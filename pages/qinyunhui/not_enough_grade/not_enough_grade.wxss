@@ -1,0 +1,7 @@
+.item_class2{
+  margin-top:200rpx;
+  margin-left:120rpx;
+  margin-right:100rpx;
+  font-size:36rpx;
+  color:#4b4c4c;
+}

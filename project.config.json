@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 38,
 			"list": [
 				{
 					"id": -1,
@@ -215,6 +215,54 @@
 					"id": -1,
 					"name": "职业列表",
 					"pathName": "pages/zhiye_list/zhiye_list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "在线咨询",
+					"pathName": "pages/online_ask/online_ask",
+					"query": ""
+				},
+				{
+					"id": 32,
+					"name": "问卷调查",
+					"pathName": "pages/question_research/question_research",
+					"query": ""
+				},
+				{
+					"id": 33,
+					"name": "青云汇",
+					"pathName": "pages/qinyunhui/school/school_list/school_list",
+					"query": ""
+				},
+				{
+					"id": 34,
+					"name": "青云汇-测录取",
+					"pathName": "pages/qinyunhui/celuqu/celuqu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "青云汇-测录取-选批次",
+					"pathName": "pages/qinyunhui/xuanpici/xuanpici",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "青云汇-测录取-选批次-看录取机率",
+					"pathName": "pages/qinyunhui/kan_luqu_jilv/kan_luqu_jilv",
+					"query": ""
+				},
+				{
+					"id": 37,
+					"name": "青云汇-测录取-登录",
+					"pathName": "pages/qinyunhui/denglu_qinyunhui/denglu_qinyunhui",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "青云汇-青豆和积分对接测试",
+					"pathName": "pages/qinyunhui/test_qindou/test_qindou",
 					"query": ""
 				}
 			]

@@ -1,3 +1,36 @@
-<!--pages/zhiye_list/zhiye_list.wxml-->
+<!--pages/zhiye_list/zhiye_list.wxml-->    
 
-<view>>一个百度</view>
+<!-- 一级菜单--> 
+<view  class="item_class1">
+<view catchtap='jobType' data-id="{{item.id}}" class="item1width1" wx:for="{{instlist}}">
+            <view class="margin-left-1">
+                > {{item.name}}
+            </view>
+                  <!-- 二级菜单-->    
+                  <view class="item_class2">
+                  <view catchtap='jobdetail' class="item1width2" data-id="{{twodata2.id}}" style="display:{{tag2==item.id?'block':'none'}}" wx:for="{{jobtypelist}}" wx:for-item="twodata2">
+                  <view class="margin-left-2">
+                  <text>∨ {{twodata2.name}}</text>
+                  </view>
+                              <!-- 三级菜单--> 
+                              <view  class="item_class3">
+                              <view catchtap='job' class="item1width3" data-id="{{twodata3.id}}" style="display:{{tag3==twodata2.id?'block':'none'}}" wx:for="{{jobdetaillist}}" wx:for-item="twodata3">
+                              <view class="margin-left-3">
+                              <text>{{twodata3.jobname}}</text>
+                              </view>
+                                     <!-- 奇葩声内容--> 
+                              </view>
+                              </view>
+                    </view>
+                    </view>
+        </view>
+</view>
+
+
+
+
+
+
+
+   
+       

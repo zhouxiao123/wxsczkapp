@@ -1,1 +1,45 @@
 /* pages/zhiye_list/zhiye_list.wxss */
+.margin-left-1{
+  height:80rpx;
+  margin-left: 10rpx;
+  align-items: center;
+  display: flex;
+  font-family:黑体;
+  color:#4b4c4c;
+  font-size:0.9rem
+}
+.item1width1{
+  margin: 10rpx;
+  background-color: white;
+
+}
+.item_class1{
+  background-color: #FFE4E1;
+}
+
+.margin-left-2{
+  height:80rpx;
+  margin-left:40rpx;
+  align-items: center;
+  display: flex;
+  font-family:黑体;
+  color:#494a4d;
+  font-size:30rpx
+}
+.item1width2{
+  background-color: white;
+
+}
+
+.margin-left-3{
+  height:80rpx;
+  align-items: center;
+  display: flex;
+  color:#777;
+  margin-left:60rpx;
+  font-family:黑体;
+  font-size:28rpx
+}
+.item1width3{
+  background-color: white;
+}
