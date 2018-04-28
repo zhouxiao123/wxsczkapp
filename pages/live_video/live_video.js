@@ -699,6 +699,44 @@ Page({
         wx.hideLoading()
       }
     })
+  }, endLive:function(e){
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/end_live',
+      data: {
+        lessonid: this.data.item.video.webLessonId
+      },
+      success: function (res) {
+        //console.log(res.data)
+        if (res.data.result == "ok") {
+          wx.showModal({
+            title: '提示',
+            content: '修改成功',
+            showCancel: false,
+            success: function (res) {
+              /*that.data.item.video.openask = 0
+              that.setData({
+                item: that.data.item
+              })*/
+            }
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '关闭失败',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+        }
+        wx.hideLoading()
+      }
+    })
   }, ask_detail:function(e){
     wx.showLoading({
       mask: true,

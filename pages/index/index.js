@@ -627,7 +627,8 @@ Page({
       title: '加载中'
     })
     wx.navigateTo({
-      url: '../zhizhuzhaosheng/zhizhuzhaosheng'
+      //url: '../zhizhuzhaosheng/zhizhuzhaosheng'
+      url: '/pages/chatroom/chatroom'
     })
     wx.hideLoading()
   },

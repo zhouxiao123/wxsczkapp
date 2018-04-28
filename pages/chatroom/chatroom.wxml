@@ -1,11 +1,40 @@
 <!--pages/chatroom/chatroom.wxml-->
-<view>
-  <view wx:for="{{list}}">{{item}}</view>
+
+<view style="display:{{tag==0?'block':'none'}}">
+    <view style="text-align:center;">选择老师</view>
+    <view wx:for="{{askschool}}" style="border-bottom:1rpx solid #e5e5e5;padding-bottom:20rpx;margin-top:40rpx;">
+      <view class='margin-left'>
+        <view data-id='{{item.yxid}}' data-name='{{item.yxname}}' catchtap="gotoText">{{item.yxname}}</view>
+      </view> 
+ </view>
+</view>
+<view style="display:{{tag==1?'block':'none'}};">
+<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">{{schoolname}}</view>
+  
+<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:80rpx;height:{{scrollHeight}}rpx">
+<view class="a-class">
+  <view wx:for="{{list}}" >
+
+    <view wx:if="{{item.usertype==0}}" class="chat-student">
+      <view class="chat-text">{{item.content}}</view>
+      <image class="chat-img" src="/images/personal/-rtx@2x.png"></image>
+    </view>
+
+    <view wx:else class="chat-teacher">
+          <image class="chat-img" src="/images/personal/-rtx@2x.png"></image>
+      <view class="chat-text" style="background:#fff">{{item.content}}</view>
+    </view>
+</view>
+  </view>
+
+</scroll-view>
+
 <view  class="talk_back">
       <view class="talk_box">
           
-        <input bindinput="setValue" value="{{msg}}" placeholder="回复" type="text" placeholder-style="font-family:黑体;" maxlength="500"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+        <input bindinput="setValue" value="{{msg}}" placeholder="回复" type="text" placeholder-style="font-family:黑体;" maxlength="500"  style="color:#a5a6a6;display:inline-block;width:400rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
         <button bindtap='sendMsg' style="height:60rpx;font-size:0.8rem;line-height:60rpx">发送</button>
+        <button bindtap='goOut' style="height:60rpx;font-size:0.8rem;line-height:60rpx">退出</button>
       </view>
     </view>
 </view>

@@ -15,7 +15,7 @@
       问题咨询
     </view>
     <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
-      云程定制
+      云程订制
     </view>
 </view>
 
