@@ -13,8 +13,8 @@ Page({
     schoolname:'',
     scroll:0,
     scrollHeight:0,
-    scrollid:''
-  
+    scrollid:'',
+    oid:''
   },
 
   /**
@@ -22,6 +22,65 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+
+    var value = wx.getStorageSync('oid')
+    //console.log(value)
+    if (value) {
+      that.setData({ oid: value })
+    } else {
+      wx.login({
+        success: function (res) {
+          if (res.code) {
+            //console.log(res);
+            //发起网络请求
+            wx.request({
+              url: app.globalData.baseUrl + 'wx/login',
+              data: {
+                code: res.code
+              },
+              success: function (res) {
+                if (res.data == "") {
+                  wx.showModal({
+                    title: '提示',
+                    content: '获取用户登录信息失败',
+                    showCancel: false,
+                    success: function (res) {
+                      if (res.confirm) {
+                        console.log('用户点击确定')
+                      } else if (res.cancel) {
+                        console.log('用户点击取消')
+                      }
+                    }
+                  })
+                }
+                wx.setStorageSync('oid', res.data)
+                //继续处理上面的
+                that.setData({ oid: res.data })
+
+
+
+
+
+              }
+            })
+          } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
+            wx.showModal({
+              title: '提示',
+              content: '获取用户登录状态失败',
+              showCancel: false,
+              success: function (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+          }
+        }
+      })
+    }
 
     var res = wx.getSystemInfoSync()
 
@@ -131,7 +190,7 @@ Page({
       })
 
     } else {
-      var msg = '{"msgtype":2,"toUser":"' + this.data.toUser + '","usertype":0,"content":"' + this.data.msg + '"}'
+      var msg = '{"msgtype":2,"toUser":"' + this.data.toUser + '","usertype":0,"content":"' + this.data.msg + '","oid":"' + this.data.oid+'"}'
       wx.sendSocketMessage({
         data: msg,
       })
