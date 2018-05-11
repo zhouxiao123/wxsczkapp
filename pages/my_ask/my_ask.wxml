@@ -6,7 +6,7 @@
       <view style="display:flex;height:60rpx">
         <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
       </view>  
-      <input bindinput="setValue" value="{{search_name}}" placeholder="搜索问答" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <input bindinput="setValue"  bindconfirm='search' value="{{search_name}}" placeholder="搜索问答" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
       <image bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
     </view>
   </view>

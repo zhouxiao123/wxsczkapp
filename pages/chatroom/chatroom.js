@@ -1,4 +1,6 @@
 // pages/chatroom/chatroom.js
+//获取应用实例
+var app = getApp()
 Page({
 
   /**
@@ -14,7 +16,10 @@ Page({
     scroll:0,
     scrollHeight:0,
     scrollid:'',
-    oid:''
+    oid:'',
+    yxid:'',
+    user:{},
+    schoolhead:''
   },
 
   /**
@@ -82,6 +87,39 @@ Page({
       })
     }
 
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/getUserDetail',
+      data: {
+        oid: this.data.oid
+      },
+      success: function (res) {
+
+        wx.hideLoading()
+        if (res.data.length == "0") {
+
+          wx.showModal({
+            title: '提示',
+            content: '请先填写资料',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateTo({
+                url: '/pages/personal_info/personal_info'
+              })
+
+            }
+          })
+        } else{
+          that.setData({
+            user:res.data
+          })
+        }
+      } 
+    })
+
     var res = wx.getSystemInfoSync()
 
     //console.log(res)
@@ -134,7 +172,7 @@ Page({
         wx.createSelectorQuery().select('.a-class').boundingClientRect(function (rect) {
           
             
-          console.log()
+
           if (parseInt(rect.height * 1.5) > parseInt(that.data.scrollHeight)){
               that.setData({
                 scroll: parseInt(rect.height * 1.5)
@@ -152,7 +190,32 @@ Page({
       } else if (json.msgtype == 4){
         that.setData({
           tag: 1,
-          toUser: json.toUser
+          toUser: json.toUser,
+          list:json.tc
+        })
+        wx.createSelectorQuery().select('.a-class').boundingClientRect(function (rect) {
+
+
+          if (parseInt(rect.height * 1.5) > parseInt(that.data.scrollHeight)) {
+            that.setData({
+              scroll: parseInt(rect.height * 1.5)
+            })
+          } else {
+            that.setData({
+              scroll: parseInt(that.data.scrollHeight)
+            })
+          }
+
+        }).exec()
+
+      } else if (json.msgtype == -1) {
+        wx.showModal({
+          title: '提示',
+          content: '对方已下线',
+          showCancel: false,
+          success: function (res) {
+
+          }
         })
       }
 
@@ -190,9 +253,13 @@ Page({
       })
 
     } else {
-      var msg = '{"msgtype":2,"toUser":"' + this.data.toUser + '","usertype":0,"content":"' + this.data.msg + '","oid":"' + this.data.oid+'"}'
+      var msg = {msgtype:2,toUser:this.data.toUser,usertype:0,content:this.data.msg,oid:this.data.oid,yxid:this.data.yxid}
+      this.setData({
+        msg:''
+      })
+      var m = JSON.stringify(msg)
       wx.sendSocketMessage({
-        data: msg,
+        data: m,
       })
 
       
@@ -210,9 +277,13 @@ Page({
 
   }, gotoText:function(e){
     this.setData({
-      schoolname: e.currentTarget.dataset.name
+      schoolname: e.currentTarget.dataset.name,
+      schoolhead: e.currentTarget.dataset.head
     })
-    var msg = '{"msgtype":4,"yxid":"' + e.currentTarget.dataset.id + '","usertype":0}'
+    this.setData({
+      yxid: e.currentTarget.dataset.id
+    })
+    var msg = '{"msgtype":4,"yxid":"' + e.currentTarget.dataset.id + '","usertype":0,"oid":"' + this.data.oid +'"}'
     wx.sendSocketMessage({
       data: msg,
     })

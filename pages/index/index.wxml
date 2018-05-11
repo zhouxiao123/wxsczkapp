@@ -24,7 +24,7 @@
         <text class="icon-text">专业大全</text>
       </view>
       <view class="third-icon" bindtap="lesson">
-        <image src="../../images/xz-2@2x.png" class="icon-pic"></image>
+        <image src="../../images/{{zhibologo}}" class="icon-pic"></image>
         <text class="icon-text">云课堂</text>
       </view>
       <view class="fours-icon" bindtap="zzzs">

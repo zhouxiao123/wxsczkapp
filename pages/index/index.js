@@ -32,7 +32,10 @@ Page({
     m:'',
     monthE:'',
     flag:0,
-    positionHeight:0
+    positionHeight:0,
+    zhibo:0,
+    zhibologo:'xz-2@2x.png',
+    zhiboUrl:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -205,8 +208,16 @@ Page({
           })
         } else {
           that.setData({
-            user: res.data
+            user: res.data,
+            zhibo: res.data.zhibo,
+            zhiboUrl:res.data.zhiboUrl
           })
+          if(res.data.zhibo==1){
+            that.setData({
+              zhibologo: 'zhibo-2.gif'
+            })
+          }
+
           var date = new Date();
           var sList=[]
           if (that.data.swiperList.length=="0"){
@@ -421,11 +432,15 @@ Page({
 
   },
   lesson: function (event) {
-
-    wx.navigateTo({
-      url: '../video_type/video_type'
-    })
-
+    if(this.data.zhibo==1){
+      wx.navigateTo({
+        url: this.data.zhiboUrl
+      })
+    } else {
+      wx.navigateTo({
+       url: '../video_type/video_type'
+      })
+    }
     /*wx.navigateTo({
       url: '../lesson/lesson'
     })*/
@@ -475,8 +490,8 @@ Page({
   },
   toGaokaozhiyuan: function(){
     wx.navigateTo({
-      url: '../gaokaozhiyuan/gaokaozhiyuan'
-      //url: '../gaokaozhiyuan-old/gaokaozhiyuan-old'
+      //url: '../gaokaozhiyuan/gaokaozhiyuan'
+      url: '../gaokaozhiyuan-old/gaokaozhiyuan-old'
     })
   }
   ,

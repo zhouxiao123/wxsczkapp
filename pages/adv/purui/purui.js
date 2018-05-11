@@ -16,8 +16,10 @@ Page({
     array: [],
     date:'',
     checked:true,
-    start:''
-
+    start:'',
+showModalStatus: false,
+tag:1,
+dataCode:''
   },
 
   /**
@@ -29,9 +31,10 @@ Page({
     var myDate = new Date();
     myDate.toLocaleDateString();
     that.setData({start:myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate()})
-            for (var i=1;i < 16;i++ ) {
+    that.data.array.push("https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1-1.png")
+            for (var i=1;i < 9;i++ ) {
 
-              that.data.array.push("https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞"+i+".png")
+              that.data.array.push("https://wxsign.sczk.com.cn/wxsczkappback/img/adv/"+i+".png")
             }
             //console.log(that.data.array)
             that.setData({
@@ -51,7 +54,7 @@ Page({
   },
   call : function(){
     wx.makePhoneCall({
-      phoneNumber: '4000-800-110',
+      phoneNumber: '028-83319875',
     })
   },
   timeChange:function(e){
@@ -61,11 +64,12 @@ Page({
   },
   formSubmit: function (e) {
     //console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    var name = e.detail.value.name
+    var that = this
+    var name = e.detail.value.username
     var age = e.detail.value.age
     var sex = e.detail.value.sex
     var phone = e.detail.value.phone
-    var appointtime = e.detail.value.appointtime
+    var appointtime = e.detail.value.date
 
     if(name.length == 0){
       wx.showModal({
@@ -94,10 +98,10 @@ Page({
 
         }
       })
-    } else if (phone.length == 0) {
+    } else if (phone.length != 11) {
       wx.showModal({
         title: '提示',
-        content: '请输入联系电话',
+        content: '请输入正确的联系电话',
         showCancel: false,
         success: function (res) {
 
@@ -117,26 +121,133 @@ Page({
         mask: true,
         title: '加载中'
       })
+      //console.log(e.detail.value)
+      //http://web.prykweb.com/index.php?m=purui&amp;c=datadeal&amp;a=add_book&amp;host=2
+        //< input hidden name= "fasongurl" id= "fasongurl" value= "http://mob.p028.com" />
+      //e.detail.value.fasongurl = encodeURIComponent("http://mob.p028.com")
+      var data = {m:'purui',
+      c: 'datadeal',
+      a: 'Getajax_phone_time',
+      phone: phone,
+      host: 2,
+      callback: 't',
+      name: 'getitems',
+      _: 1525831176743}
+
       wx.request({
-        url: app.globalData.baseUrl + 'wx/savepuruiappoint',
+        url: app.globalData.baseUrl + 'purui',
+        data: data,
+        success: function (res) {
+          //console.log(res.data)
+          var result = res.data.replace('t(', '').replace(')', '').replace(/"/g, '')
+          //console.log(result)
+          if(result=="2"){
+wx.request({
+        url: app.globalData.baseUrl + 'purui?m=purui&c=datadeal&a=add_book&host=2',
+        method: 'POST',
+        header: {
+          //设置参数内容类型为json
+          "content-type": "application/x-www-form-urlencoded"
+        },
         data: e.detail.value,
         success: function (res) {
           //console.log(res.data)
+          var result = res.data.replace('<script type="text/javascript">window.top.postcallback(', '').replace(');</script>', '').replace(/"/g, '')
+          console.log(result)
           wx.hideLoading()
-          if (res.data.result == "ok") {
+          if (result == "1") {
             wx.showModal({
               title: '提示',
-              content: '保存成功',
+              content: '提交失败',
               showCancel: false,
               success: function (res) {
 
               }
             })
+          } else if (result == "5"){
+            wx.showModal({
+              title: '提示',
+              content: '24小时内只可预约一次',
+              showCancel: false,
+              success: function (res) {
+
+              }
+            })
+          } else {
+            that.setData({
+              dataCode: result,
+              tag:2
+            })
+            that.util('open')
           }
         }
       })
+          } else {
+            wx.hideLoading()
+            that.setData({
+              dataCode: result,
+              tag:1
+            })
+            that.util('open')
+          }
+        }
+      })
+
+
+      
     }
+  }, powerDrawer: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
   },
+  util: function (currentStatu) {
+    /* 动画部分 */
+    // 第1步：创建动画实例 
+    var animation = wx.createAnimation({
+      duration: 200, //动画时长 
+      timingFunction: "linear", //线性 
+      delay: 0 //0则不延迟 
+    });
+
+    // 第2步：这个动画实例赋给当前的动画实例 
+    this.animation = animation;
+
+    // 第3步：执行第一组动画 
+    animation.opacity(0).rotateX(-100).step();
+
+    // 第4步：导出动画对象赋给数据对象储存 
+    this.setData({
+      animationData: animation.export()
+    })
+
+    // 第5步：设置定时器到指定时候后，执行第二组动画 
+    setTimeout(function () {
+      // 执行第二组动画 
+      animation.opacity(1).rotateX(0).step();
+      // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象 
+      this.setData({
+        animationData: animation
+      })
+
+      //关闭 
+      if (currentStatu == "close") {
+        this.setData(
+          {
+            showModalStatus: false
+          }
+        );
+      }
+    }.bind(this), 200)
+
+    // 显示 
+    if (currentStatu == "open") {
+      this.setData(
+        {
+          showModalStatus: true
+        }
+      );
+    }
+  } ,
   formReset: function () {
     this.setData({
       date:'',

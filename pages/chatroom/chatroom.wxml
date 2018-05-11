@@ -4,7 +4,7 @@
     <view style="text-align:center;">选择老师</view>
     <view wx:for="{{askschool}}" style="border-bottom:1rpx solid #e5e5e5;padding-bottom:20rpx;margin-top:40rpx;">
       <view class='margin-left'>
-        <view data-id='{{item.yxid}}' data-name='{{item.yxname}}' catchtap="gotoText">{{item.yxname}}</view>
+        <view data-id='{{item.yxid}}' data-name='{{item.yxname}}' data-head="{{item.path}}" catchtap="gotoText">{{item.yxname}}</view>
       </view> 
  </view>
 </view>
@@ -17,11 +17,11 @@
 
     <view wx:if="{{item.usertype==0}}" class="chat-student">
       <view class="chat-text">{{item.content}}</view>
-      <image class="chat-img" src="/images/personal/-rtx@2x.png"></image>
+      <image class="chat-img" src="{{user.headUrl}}"></image>
     </view>
 
     <view wx:else class="chat-teacher">
-          <image class="chat-img" src="/images/personal/-rtx@2x.png"></image>
+          <image class="chat-img" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
       <view class="chat-text" style="background:#fff">{{item.content}}</view>
     </view>
 </view>
