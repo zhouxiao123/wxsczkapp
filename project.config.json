@@ -29,7 +29,9 @@
 			"list": []
 		},
 		"miniprogram": {
+
 			"current": 39,
+
 			"list": [
 				{
 					"id": -1,
@@ -248,6 +250,7 @@
 					"query": ""
 				},
 				{
+
 					"id": 84,
 					"name": "直播",
 					"pathName": "pages/live_video/live_video",

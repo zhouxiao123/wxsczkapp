@@ -35,8 +35,8 @@
 
     <view>
       <view class="first-icon" bindtap="online">
-        <image src="../../images/circle4@2x.png" class="icon-pic"></image>
-        <text class="icon-text">奇葩声</text>
+        <image src="../../images/circle4.png" class="icon-pic"></image>
+        <text class="icon-text">职业详解</text>
       </view>
       <view class="second-icon" bindtap="ask">
         <image src="../../images/xz-7@2x.png" class="icon-pic"></image>

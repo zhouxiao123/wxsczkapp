@@ -428,6 +428,29 @@ wx.request({
     this.setData({ tag: event.detail.current });
     
   },
+  changePage: function (e) {
+    //console.log(e.currentTarget.dataset.id)
+    //console.log("--" + e.currentTarget.dataset.type)
+    //console.log(e.currentTarget.dataset.link)
+
+    /*wx.navigateTo({
+      url: '../web_view/web_view'
+    })*/
+    if (e.currentTarget.dataset.type == 2) {
+      wx.navigateTo({
+        url: '../article/article?id=' + e.currentTarget.dataset.id
+      })
+    } else if (e.currentTarget.dataset.type == 3) {
+      wx.navigateTo({
+        url: e.currentTarget.dataset.link
+      })
+    } else if (e.currentTarget.dataset.type == 4) {
+      wx.navigateTo({
+        url: '/pages/adv/adv?id=' + e.currentTarget.dataset.id
+      })
+    }
+
+  },
   formSubmit: function (e) {
     //console.log('form发生了submit事件，携带数据为：', e.detail.value.text.length)
     if (e.detail.value.text.length=="0"){

@@ -4,8 +4,8 @@
 <view style="text-align:center;background-color:#000">
  <!--<video  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/{{item.video.webLessonType==2?(item.buy==null||item.buy==''?item.video.webLessonFreeUrl:item.video.webLessonUrl):item.video.webLessonUrl}}?" ></video>-->
 
-  <video wx:if="{{item.video.openlive==1}}" style="width:750rpx"  controls src="{{src}}" ></video>
-  <image wx:if="{{item.video.openlive==2}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/liveover.png" style="width:750rpx" ></image>
+  <video wx:if="{{item.video.openlive==1 || item.video.openlive==2}}" style="width:750rpx"  controls src="{{src}}" ></video>
+  <image wx:if="{{item.video.openlive==3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/liveover.png" style="width:750rpx" ></image>
     <image wx:if="{{item.video.openlive==0}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.video.webLessonPic}}" style="width:750rpx" ></image>
   <!--<video style="width:750rpx"  controls src="https://wxsign.sczk.com.cn/hls/mystream-test.m3u8" ></video>-->
 </view>
@@ -72,7 +72,8 @@
 <button bindtap='closeAsk' wx:if="{{item.video.openask==1}}" style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">关闭问答</button>
 <button wx:else bindtap='startAsk' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">开启问答</button>
 <button  bindtap='changeAskFee' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;">{{item.video.askfee!=null && item.video.askfee==1 ? '提问变免费':'提问变收费'}}</button>
-<text style="display:inline-block;height:60rpx;line-height:60rpx;font-size:26rpx">当前人数:{{item.count}}</text>
+<button  bindtap='endLive' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;display:inline-block;margin-left:110rpx">结束直播</button>
+<text style="display:block;height:60rpx;line-height:60rpx;font-size:26rpx">当前人数:{{item.count}}</text>
 </view>
 
 

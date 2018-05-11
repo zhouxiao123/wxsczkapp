@@ -1,4 +1,21 @@
 /* pages/chatroom/chatroom.wxss */
+page{
+  background:#f3f3f3
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.margin-left{
+height:40rpx;
+width:750rpx;
+font-family:黑体;
+color:#666666;
+font-size:28rpx;
+text-align: center
+}
+
 .ask-content{
   margin-top:28rpx;
   margin-left:20rpx;
@@ -118,12 +135,14 @@
   margin-left:12rpx
 }
 .talk_back{
-  background-color:#fff;
+  background:#fff;
   height:100rpx;
   display: flex;
   align-items: center;
   position:fixed;
-  bottom:0
+  bottom:0;
+  width:750rpx;
+  
 }
 
 
@@ -138,4 +157,31 @@
 }
 .df{
   display:flex;margin-top:20rpx;margin-left:20rpx;align-items: center;
+}
+.chat-teacher{
+margin:20rpx;
+display:flex;
+justify-content: flex-start;
+}
+.chat-student{
+margin:20rpx;
+display:flex;
+justify-content: flex-end;
+}
+.chat-img{
+width:100rpx;
+height:100rpx;
+border-radius: 50%;
+}
+.chat-text{
+  border-radius:10rpx;
+  margin:10rpx;
+  padding:10rpx;
+  background:#59c9b9;
+  font-size:28rpx;
+  font-family:微软雅黑;
+  color:999;
+  line-height:60rpx;
+  max-width:475rpx;
+  word-break:break-all;
 }

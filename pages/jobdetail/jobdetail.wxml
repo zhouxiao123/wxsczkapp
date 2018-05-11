@@ -3,7 +3,7 @@
 <view style=" font-size:0.9rem; color:#4b4c4c;"  class="item1width4-1">{{jobdetail.zi.name}}</view>
 <view style=" margin-left:40rpx;color:#494a4d;" class="item1width4-1">{{jobdetail.zj.name}}</view>
 <view  class="item1width4-2">{{jobdetail.jobname}}:</view>
-<view class="item1width4-2"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{jobdetail.introduce}}</view>
+<text class="item1width4-2">{{jobdetail.introduce}}</text>
 </view>
 
 <view style="margin-top: 50rpx; margin-left:40rpx;" class="item1width4-1">相关专业：</view>
