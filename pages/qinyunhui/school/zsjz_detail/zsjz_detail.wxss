@@ -1,0 +1,41 @@
+/* pages/jobdetail/jobdetail.wxss */
+.margin-left-4{
+  height:80rpx;
+  align-items: center;
+  display: flex;
+  color:#777;
+  padding-top:50rpx;
+  margin-left:60rpx;
+}
+.item1width4-1{
+  display:block;
+  padding-top:30rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  background-color: white;
+  color:#777;
+  font-family:黑体;
+  text-align: center;
+  font-size:30rpx;
+}
+.item1width4-2{
+  display:block;
+  padding-top:30rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  background-color: white;
+  color:#777;
+  font-family:黑体;
+  line-height: 1.2em;
+  font-size:28rpx;
+}
+.item1width4-3{
+  display: inline-block;
+  padding-top:30rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  color:#777;
+  font-family:黑体;
+  line-height: 1.2em;
+  font-size:28rpx
+}

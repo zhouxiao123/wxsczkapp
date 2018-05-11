@@ -1,0 +1,21 @@
+<view class="table">
+        <view class="tr" wx:for="{{1}}">
+            <view class='td' style='line-height: 40rpx;'>专业名称<view class='item1'>{{zsjh.zymc}}</view></view>
+            <view class="td">专业计划数<view class='item1'>{{zsjh.zyjhs}}</view></view>
+        </view>
+        <view class="tr" wx:for="{{1}}">
+            <view class='td'>专业代码<view class='item1'>{{zsjh.zyzsdm}}</view></view>
+            <view class="td">性别限制<view class='item1'>无</view></view>
+        </view>
+        <view class="tr" wx:for="{{1}}">
+            <view class='td'>语种限制<view class='item1'>无</view></view>
+            <view class="td">学费<view class='item1'>{{zsjh.zyxf}}</view></view>
+        </view>
+        <view class="tr" wx:for="{{1}}">
+             <view class='td'>其他限制<view class='item1'>无</view></view>
+            <view class="td">学制<view class='item1'>{{zsjh.xznx}}</view></view>
+        </view>
+ </view>
+
+<view class='td1'><view class='item2'>></view>其他</view>
+<view class='item3'>{{zsjh.xxjhsm ==null?'':zsjh.xxjhsm}}</view>

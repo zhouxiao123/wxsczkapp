@@ -1,0 +1,15 @@
+.margin-left-1{
+  padding: 20rpx;
+  height:120rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+  align-items: center;
+  font-family:黑体;
+  color:#4b4c4c;
+  font-size:34rpx;
+  border-radius: 5rpx;
+  background-color: white;
+  border-bottom:5rpx solid #E5E5E5;
+  line-height: 40rpx;
+}

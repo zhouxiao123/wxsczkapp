@@ -42,6 +42,15 @@ Page({
     })
     wx.request({
       url: app.globalData.baseUrl + 'qinyun/school/list',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+      },
       success: function (res) {
         //console.log(res.data)
         that.setData({
@@ -56,6 +65,15 @@ Page({
     })
     wx.request({
       url: app.globalData.baseUrl + 'qinyun/v2/init',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+      },
       success: function (res) {
         //console.log(res.data)
         if (res.data.status==200){
@@ -112,6 +130,11 @@ Page({
 
     wx.request({
       url: app.globalData.baseUrl + 'qinyun/school/list',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
       data: datas,
       success: function (res) {
         //console.log(res.data.schools.length)
@@ -221,6 +244,11 @@ Page({
     }
     wx.request({
       url: app.globalData.baseUrl + 'qinyun/school/list',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
       data: datas,
       success: function (res) {
         //console.log(res.data)

@@ -1,0 +1,6 @@
+ <view catchtap='proDetail' wx:for="{{zhuanyeleibie}}" data-id="{{item.id}}">
+       <view class="margin-left-1">
+       <view>{{item.name}}</view>
+        <view style='text-align:left;color:#777;font-size:28rpx;margin-top:40rpx;'>专业代码：{{item.code}}</view>
+       </view>
+</view>

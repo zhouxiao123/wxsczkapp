@@ -21,7 +21,6 @@
           <text wx:if="{{item.t985==0}}"  style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#00bb00;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;margin-right:20rpx;height:36rpx">985</text> 
 
           <text wx:if="{{item.t211==0}}" style="font-size:26rpx;font-family:黑体;color:#fff;background-color:#ffa979;padding: 4rpx 10rpx 4rpx 10rpx;border-radius: 18rpx;height:36rpx">211</text>
-          
       </view>
     </view>
 
@@ -35,12 +34,9 @@
       </view>
       <view  style="display:inline-block;color:#fff;margin-right:40rpx;font-family:黑体;font-size:30rpx">
           {{item.lqcc}}
-          
       </view>
     </view>
   </view>
-
-
 </view>
 
 <view class="tag-list">
@@ -58,13 +54,9 @@
     </view>
 </view>
 
-  <view style="background-color:#f0f0f0;height:20rpx">
-  </view>
-
 
   <!--简介-->
   <view style="display:{{tag==0?'block':'none'}};">
-
     <view style="margin:40rpx">
       <view style="font-family:黑体;margin-bottom:20rpx">
         信息概况
@@ -79,82 +71,203 @@
         通讯地址:{{item.address}}
       </view>
     </view>
-
-
     <view style="background-color:#f0f0f0;height:20rpx">
   </view>
-
     <view style="margin:40rpx">
     <view style="font-family:黑体">
       学校简介
     </view>
-
     <view style="font-size:26rpx">
         <import src="../../../../wxParse/wxParse.wxml"/>
-
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
     </view>
   </view>
 
-<!--录取查询-->
-<view style="display:{{tag==1?'block':'none'}};margin:40rpx">
-    <view style="font-family:黑体">往年录取分数线</view>
-    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
-        地区:四川
-    </view>
-        <view class="table">
-        <view class="tr">
-            <view class="th">录取批次</view>
-            <view class="th">录取情况</view>
-            <view class="th">录取分数</view>
-            <view class="th">专业分数</view>
+
+<!--历年录取-->
+<view style="display:{{tag==1?'block':'none'}};margin:10rpx">
+    <view class="tag-list">
+        <view class="tag-view {{tag2==0?'on t-on':''}}" data-current="0" bindtap="swichNav2" >
+          录取分数走势图
+        </view> 
+        <view class="tag-view {{tag2==1?'on t-on':''}}" data-current="1" bindtap="swichNav2" >
+          专业分数线
         </view>
-        <view wx:for="{{yxxq.sls}}" class="tr" >
-            <view class="td" >{{item.pc}}</view>
-            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.id}}' data-tag='1' bindtap='toFsDetail' style="font-size:0.7rem">详情</button></view>
-            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.id}}' data-tag='2' bindtap='toFsDetail' style="font-size:0.7rem">详情</button></view>
-            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.id}}' data-tag='3' bindtap='toFsDetail' style="font-size:0.7rem">详情</button></view>
-        </view>
-        
     </view>
-  
+    <!--录取分数走势图-->
+    <view style="text-align:center;display:{{tag2==0?'block':'none'}};">
+      <!--选择文理科和批次-->
+      <view class="tag-list1">
+        <view style='margin-left:40rpx;' class="tag-view {{tag3==0?'on t-on':''}}" data-current="0" catchtap="swichNav3" >
+          <picker name="wenlike" bindchange="bindWenLiKeChange1" value="{{wenlikeIndex}}"  range="{{wenlike}}" range-key="name" >
+            <view class="picker radio-text">
+            {{quanbuwenlike == '全部'?'理科':quanbuwenlike}}
+            </view>
+          </picker>
+        </view> 
+        <view style='margin-right:40rpx;' class="tag-view {{tag3==1?'on t-on':''}}" data-current="2" catchtap="swichNav3" >
+          <picker name="pici" bindchange="bindPiCiChange1" value="{{piciIndex}}"  range="{{pici}}" range-key="name">
+            <view class="picker radio-text">
+            {{quanbupici == '全部'?'批次':quanbupici}}
+            </view>
+          </picker>
+        </view>
+      </view>
+        <!--（1）历年录取分数-->
+        <view style='margin-top:60rpx;'>
+            <view class='title1'>
+              四川地区 历年录取分数
+            </view>
+            <view style='display:flex;'>
+            <view wx:for="{{lnlq}}">
+                    <view class="tr"><view class="th">{{item.year}}年</view></view>
+                    <view class="tr"><view class="th" style='color:#4876FF;'>{{item.lqpjf}}</view></view>
+                    <view class="tr"><view class="th" style='color:#B8860B;'>{{item.sjlqfs}}</view></view>
+            </view>
+            </view>
+            <view class='yanse'>
+                <view class='yanse1'></view><view>平均分</view>
+                <view class='yanse2'></view><view>最低分</view>
+            </view>
+        </view>
+
+        <!--（2）历年录取分数线差-->
+        <view style='margin-top:60rpx;'>
+            <view class='title1'>
+              四川地区 历年录取分数线差
+            </view>
+            <view style='display:flex;'>
+            <view wx:for="{{lnlq}}">
+                    <view class="tr"><view class="th">{{item.year}}年</view></view>
+                    <view class="tr"><view class="th" style='color:#4876FF;'>{{item.lqpjfxc}}</view></view>
+                    <view class="tr"><view class="th" style='color:#B8860B;'>{{item.sjlqfsxc}}</view></view>
+            </view>
+            </view>
+            <view class='yanse'>
+                <view class='yanse1'></view><view>平均分线差</view>
+                <view class='yanse2'></view><view>最低分线差</view>
+            </view>
+        </view>
+        <!--（3）历年录取分数位次-->
+        <view style='margin-top:60rpx;'>
+            <view class='title1'>
+              四川地区 历年录取分数位次
+            </view>
+            <view style='display:flex;'>
+            <view wx:for="{{lnlq}}">
+                    <view class="tr"><view class="th">{{item.year}}年</view></view>
+                    <view class="tr"><view class="th" style='color:#4876FF;'>{{item.pjwc}}</view></view>
+                    <view class="tr"><view class="th" style='color:#B8860B;'>{{item.sjwc}}</view></view>
+            </view>
+            </view>
+            <view class='yanse'>
+                <view class='yanse1'></view><view>平均分位次</view>
+                <view class='yanse2'></view><view>最低分位次</view>
+            </view>
+        </view>
+      </view>
+
+
+<!--专业分数线-->
+<view style="display:{{tag2==1?'block':'none'}};">
+
+ <!--选择文理科、年份、批次-->
+ <view class="tag-list1">
+    <view class="tag-view {{tag4==0?'on t-on':''}}" data-current="0" catchtap="swichNav4" >
+      <picker name="wenlike" bindchange="bindWenLiKeChange2" value="{{wenlikeIndex}}"  range="{{wenlike}}" range-key="name" >
+        <view class="picker radio-text">
+        {{quanbuwenlike == '全部'?'理科':quanbuwenlike}}
+        </view>
+      </picker>
+    </view> 
+
+   <view class="tag-view {{tag4==1?'on t-on':''}}" data-current="1" catchtap="swichNav4" >
+      <picker name="year" bindchange="bindYearChange2"  value="{{yearIndex}}"  range="{{yearlist1}}" range-key="name" >
+        <view class="picker radio-text">
+        {{quanbuyear1 == '全部'?'年份':quanbuyear1}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="tag-view {{tag4==2?'on t-on':''}}" data-current="2" catchtap="swichNav4" >
+      <picker name="pici" bindchange="bindPiCiChange2" value="{{piciIndex}}"  range="{{pici}}" range-key="name">
+        <view class="picker radio-text">
+        {{quanbupici == '全部'?'批次':quanbupici}}
+        </view>
+      </picker>
+    </view>
+   </view>
+
+ <view wx:for="{{lnlqfenshuxian}}">
+       <view class="margin-left-2">
+        <view style="width:400rpx;display:inline-block;font-family:黑体;color:#494a4d;font-size:34rpx">{{item.zymc}}</view>
+        <view style="width:200rpx;display:inline-block;margin-left:40rpx;color:#43CD80;font-family:黑体;font-size:28rpx">最低分{{item.p1}}</view>
+        <view style="width:150rpx;display:inline-block;color:#777;margin-left:40rpx;font-family:黑体;font-size:28rpx">线差{{item.p2}}</view>
+       </view>
+      </view>
+</view>
+
+
 </view>
 
 <!--章程-->
-  <view style="display:{{tag==2?'block':'none'}}">
-    <view style="margin-top:20rpx;font-family:黑体;text-align:center">
-      {{zszc.name}}
+  <view class='item1width1' style="display:{{tag==2?'block':'none'}}">
+ <view catchtap='zsjzdetail' wx:for="{{zszc}}" data-id="{{item.newsId}}">
+       <view class="margin-left-1">
+       <view>{{item.title}}</view>
+        <view style='text-align:right;color:#777;font-size:28rpx;'>{{item.time}}</view>
+       </view>
     </view>
-    <view style="margin:40rpx;font-size:26rpx">
-
+<!--页面解析-->
+   <view style="margin:40rpx;font-size:26rpx">
         <import src="../../../../wxParse/wxParse.wxml"/>
-
         <template is="wxParse" data="{{wxParseData:zszc.nodes}}"/>
     </view>
   </view>
 
 
   <!--计划查询-->
-<view style="display:{{tag==3?'block':'none'}};margin:40rpx">
-    <view style="font-family:黑体">招生计划</view>
-    <view style="margin-top:10rpx;font-family:黑体;color:#aaa;font-size:0.8rem;margin-bottom:10rpx">
-        地区:四川
+<view style="display:{{tag==3?'block':'none'}};">
+    <view class='title1'>
+       四川地区 招生计划
     </view>
-        <view class="table">
-        <view class="tr">
-            <view class="th">计划批次</view>
-            <view class="th">2017计划数</view>
-            <view class="th">2016计划数</view>
-            <view class="th">专业计划</view>
+
+  <view class="tag-list1">
+    <view class="tag-view {{tag1==0?'on t-on':''}}" data-current="0" catchtap="swichNav1" >
+      <picker name="wenlike" bindchange="bindWenLiKeChange" value="{{wenlikeIndex}}"  range="{{wenlike}}" range-key="name" >
+        <view class="picker radio-text">
+        {{quanbuwenlike == '全部'?'理科':quanbuwenlike}}
         </view>
-        <view wx:for="{{jhgx.jhs}}" class="tr" >
-            <view class="td" >{{item.pc}}</view>
-            <view class="td" style="display:flex;align-items:center;justify-content:center"><text>{{item.jhs1}}</text></view>
-            <view class="td" style="display:flex;align-items:center;justify-content:center"><text>{{item.jhs2}}</text></view>
-            <view class="td" style="display:flex;align-items:center"><button data-id='{{item.jhid}}'  bindtap='toJhDetail' style="font-size:0.7rem">详情</button></view>
+      </picker>
+    </view> 
+
+   <view class="tag-view {{tag1==1?'on t-on':''}}" data-current="1" catchtap="swichNav1" >
+      <picker name="year" bindchange="bindYearChange"  value="{{yearIndex}}"  range="{{yearlist}}" range-key="name" >
+        <view class="picker radio-text">
+        {{quanbuyear == '全部'?'年份':quanbuyear}}
         </view>
-        
+      </picker>
     </view>
-  
-</view>
+
+    <view class="tag-view {{tag1==2?'on t-on':''}}" data-current="2" catchtap="swichNav1" >
+      <picker name="pici" bindchange="bindPiCiChange" value="{{piciIndex}}"  range="{{pici}}" range-key="name">
+        <view class="picker radio-text">
+        {{quanbupici == '全部'?'批次':quanbupici}}
+        </view>
+      </picker>
+    </view>
+   </view>
+
+ 
+ <view wx:for="{{zsjh}}" data-id="{{item.id}}" catchtap='zsjh_Detail'>
+       <view class="margin-left-3">
+        <view style="width:250rpx;display:inline-block;font-family:黑体;color:#494a4d;font-size:34rpx">{{item.zymc}}</view>
+        <view style="width:150rpx;display:inline-block;margin-left:40rpx;color:#777;font-family:黑体;font-size:28rpx">计划招生{{item.zyjhs}}人</view>
+        <view style="width:150rpx;display:inline-block;color:#777;margin-left:40rpx;font-family:黑体;font-size:28rpx">学费{{item.zyxf}}</view>
+        <view style="width:100rpx;display:inline-block;font-size:26rpx;color:#777;font-family:黑体;margin-left:40rpx;height:36rpx;">学制{{item.xz}}</view>
+       </view>
+        </view>
+
+
+    </view>

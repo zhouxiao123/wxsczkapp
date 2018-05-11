@@ -67,7 +67,6 @@
     "pages/adv/purui/ask/ask",
     "pages/lesson_ask_answer_detail/lesson_ask_answer_detail",
     "pages/zhiye_list/zhiye_list",
-
     "pages/jobdetail/jobdetail",
     "pages/online_ask/online_ask",
     "pages/question_research/question_research",
@@ -76,10 +75,18 @@
     "pages/qinyunhui/kan_luqu_jilv/kan_luqu_jilv",
     "pages/qinyunhui/not_enough_grade/not_enough_grade",
     "pages/qinyunhui/denglu_qinyunhui/denglu_qinyunhui",
-    "pages/qinyunhui/test_qindou/test_qindou",
     "pages/chatroom/chatroom",
     "pages/adv/adv",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/qinyunhui/school/zsjz_detail/zsjz_detail",
+    "pages/qinyunhui/school/zsjh_detail/zsjh_detail",
+    "pages/qinyunhui/zhuanye/pro_list/pro_list",
+    "pages/qinyunhui/zhuanye/pro_fenlei/pro_fenlei",
+    "pages/qinyunhui/zhuanye/pro_detail/pro_detail",
+    "pages/qinyunhui/kan_zixun/kan_zixun_zhuye/kan_zixun_zhuye",
+    "pages/qinyunhui/kan_zixun/zixun_detail/zixun_detail",
+    "pages/personal_simple_version/personal_simple_version",
+    "pages/zhiyuan_shenqing_tongji/zhiyuan_shenqing_tongji"
   ],
   "window": {
     "backgroundTextStyle": "light",
