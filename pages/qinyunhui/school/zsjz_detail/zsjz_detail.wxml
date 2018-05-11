@@ -1,0 +1,14 @@
+<!--<view class="item_class4" style="display:flex;flex-direction: column;" >
+<view style=" font-size:0.9rem; color:#4b4c4c;"  class="item1width4-1">{{detail.title}}</view>
+<view style=" margin-left:40rpx;color:#494a4d;" class="item1width4-1">{{detail.visit}}浏览</view>
+<view  class="item1width4-2">{{detail.createTime}}</view>
+</view>
+
+
+ 页面解析
+ <view style="font-size:26rpx">
+        <import src="../../../../wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+ </view> -->
+
+ <web-view src="{{src}}"></web-view>

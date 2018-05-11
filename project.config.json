@@ -29,7 +29,9 @@
 			"list": []
 		},
 		"miniprogram": {
+
 			"current": -1,
+
 			"list": [
 				{
 					"id": -1,
@@ -140,8 +142,8 @@
 					"query": "lessontypeid=1"
 				},
 				{
-					"id": -1,
-					"name": "青云汇",
+					"id": 18,
+					"name": "青云汇-高校",
 					"pathName": "pages/qinyunhui/school/school_list/school_list",
 					"query": ""
 				},
@@ -230,12 +232,6 @@
 					"query": ""
 				},
 				{
-					"id": 33,
-					"name": "青云汇",
-					"pathName": "pages/qinyunhui/school/school_list/school_list",
-					"query": ""
-				},
-				{
 					"id": 34,
 					"name": "聊天室",
 					"pathName": "pages/chatroom/chatroom",
@@ -248,28 +244,34 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "青云汇-测录取-选批次-看录取机率",
-					"pathName": "pages/qinyunhui/kan_luqu_jilv/kan_luqu_jilv",
-					"query": ""
-				},
-				{
 					"id": 37,
 					"name": "青云汇-测录取-登录",
 					"pathName": "pages/qinyunhui/denglu_qinyunhui/denglu_qinyunhui",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "青云汇-青豆和积分对接测试",
-					"pathName": "pages/qinyunhui/test_qindou/test_qindou",
+					"id": 84,
+					"name": "直播",
+					"pathName": "pages/live_video/live_video",
+					"query": "id=84"
+				},
+				{
+					"id": 37,
+					"name": "青云汇-专业",
+					"pathName": "pages/qinyunhui/zhuanye/pro_list/pro_list",
+					"query": ""
+				},
+				{
+					"id": 38,
+					"name": "青云汇-看资讯",
+					"pathName": "pages/qinyunhui/kan_zixun/kan_zixun_zhuye/kan_zixun_zhuye",
 					"query": ""
 				},
 				{
 					"id": 39,
-					"name": "直播",
-					"pathName": "pages/live_video/live_video",
-					"query": "id=88"
+					"name": "用户个人信息管理",
+					"pathName": "pages/personal_simple_version/personal_simple_version",
+					"query": ""
 				}
 			]
 		}

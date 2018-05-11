@@ -53,7 +53,6 @@ Page({
       title: '加载中'
     })
     var poff = parseInt(that.data.pageOffset) + 1;
-    //console.log('?????????' + poff)
     wx.request({
       url: app.globalData.baseUrl + 'wx/ask_school',
       data: {

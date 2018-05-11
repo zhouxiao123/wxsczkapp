@@ -46,6 +46,17 @@
     </view>
   </view>
 
+  <view  wx:if="{{isLecturer==1}}" class="tag-list" bindtap="zhiyuanshenqing">
+    <view class="tag-view">
+      <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">志愿申请</text>
+    </view> 
+
+    <view class="tag-view">
+      <image src="../../images/personal/jx-11@2x.png" style="width:10rpx;height:20rpx;margin-left:12rpx"/>
+    </view>
+  </view>
+
       <view wx:if="{{isQudao==1 || isLindao==1}}" class="tag-list" bindtap="toCount">
     <view class="tag-view">
       <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
@@ -111,6 +122,7 @@
       <image src="../../images/personal/jx-11@2x.png" style="width:10rpx;height:20rpx;margin-left:12rpx"/>
     </view>
   </view>
+
 
     <view class="tag-list" bindtap="feedBack">
     <view class="tag-view">

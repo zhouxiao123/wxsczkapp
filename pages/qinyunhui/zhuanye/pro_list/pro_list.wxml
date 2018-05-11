@@ -1,0 +1,74 @@
+<view class="tag-list">
+  <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
+          本科专业
+  </view> 
+  <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+          高职专科专业
+  </view>
+</view>
+ <!--本科-->
+ <view style="text-align:center;display:{{tag==0?'block':'none'}};">
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-y="true" class="scroll-view" scroll-into-view="head-{{indexSize}}">
+          <view class="scroll-view-ul">   
+
+          <block wx:for="{{param}}" wx:for-item="item" wx:key="index" id="head-{{index}}">
+              <view class="scroll-view-item {{indexSize === index?'active':''}}"   bindtap="scrollTo" data-index="{{index}}">{{item.name}}
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </view>
+      <view indicator-dots='true' class="detail-container" bindchange="change" data-index="{{index}}" current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+            <a catchtap='proFenlei' wx:for="{{param[indexSize].categories}}" data-id="{{item.id}}" wx:key="index" wx:key="index" item="item"
+              key="key">
+              <view class="inner">
+                <!--<view class="cover">
+                  <view class="cover-img"></view> 
+                </view>-->
+                <view class="info overflow">
+                  <view class="info-title overflow">{{item.name}}</view>
+            
+                </view>
+              </view>
+            </a>
+      </view>
+    </view>
+  </view>
+ </view>
+ 
+ 
+ 
+ <!--专科-->
+ <view style="text-align:center;display:{{tag==1?'block':'none'}};">
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-y="true" class="scroll-view" scroll-into-view="head-{{indexSize}}">
+          <view class="scroll-view-ul">   
+
+          <block wx:for="{{param1}}" wx:for-item="item" wx:key="index" id="head-{{index}}">
+              <view class="scroll-view-item {{indexSize === index?'active':''}}"   bindtap="scrollTo" data-index="{{index}}">{{item.name}}
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </view>
+      <view indicator-dots='true' class="detail-container" bindchange="change" data-index="{{index}}" current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+            <a catchtap='proFenlei' wx:for="{{param1[indexSize].categories}}" data-id="{{item.id}}" wx:key="index" wx:key="index" item="item"
+              key="key">
+              <view class="inner">
+                <view class="info overflow">
+                  <view class="info-title overflow">{{item.name}}</view>
+            
+                </view>
+              </view>
+            </a>
+      </view>
+    </view>
+  </view>
+ </view>

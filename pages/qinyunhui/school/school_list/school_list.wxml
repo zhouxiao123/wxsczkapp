@@ -20,7 +20,6 @@
         {{province == '全部'?'地域':province}}
         </view>
       </picker>
-  
     </view> 
     <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" catchtap="swichNav" >
       <picker name="biaoqian" bindchange="bindBiaoQianChange"  value="{{biaoqianIndex}}"  range="{{biaoqian}}" range-key="name" >

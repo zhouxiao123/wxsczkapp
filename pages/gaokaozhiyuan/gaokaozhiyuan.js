@@ -10,6 +10,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    disflag: false,
+    disflag1: true,
+    disflag2: false,
+    disflag3: true,
     tag: 0,
     tag2: 0,
     diqu:"",
@@ -277,7 +281,26 @@ Page({
       scroll:e.scrollTop
     })
   },
-  touchStart: function (e) {
+/**
+   * 点击切换图片
+   */
+  qiehuan_tupian1: function (event) {
+    this.setData({
+      disflag: true,
+      disflag1: false,
+    });
+  },
+  /**
+   * 点击切换图片
+   */
+  qiehuan_tupian2: function (event) {
+    this.setData({
+      disflag2: true,
+      disflag3: false,
+    });
+  },
+
+  /*touchStart: function (e) {
     touchDot = e.touches[0].pageY; // 获取触摸时的原点 
     // 使用js计时器记录时间  
     interval = setInterval(function () {
@@ -290,9 +313,6 @@ Page({
     console.log("touchMove:" + touchMove + " touchDot:" + touchDot + " diff:" + (touchMove - touchDot));
     // 向左滑动  
     if (touchMove - touchDot <= -40 && time < 10) {
-      /*wx.switchTab({
-        url: '../左滑页面/左滑页面'
-      });*/
       flag=1
       console.log("上")
       
@@ -301,9 +321,6 @@ Page({
     if (touchMove - touchDot >= 40 && time < 10) {
       console.log('向下滑动');
       flag=2
-      /*wx.switchTab({
-        url: '../右滑页面/右滑页面'
-      });*/
     }
   },
   // 触摸结束事件 
@@ -373,7 +390,7 @@ Page({
 
     flag=0
     time = 0;
-  },
+  },*/
  /**
    * 表单输入
    */

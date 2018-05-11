@@ -217,6 +217,18 @@ Page({
       disflag: "none"
     });
   },
+  //志愿申请
+  zhiyuanshenqing: function () {
+    this.setData({
+      disflag: "block"
+    });
+    wx.navigateTo({
+      url: '../zhiyuan_shenqing_tongji/zhiyuan_shenqing_tongji'
+    })
+    this.setData({
+      disflag: "none"
+    });
+  },
   myVideo: function () {
     this.setData({
       disflag: "block"
