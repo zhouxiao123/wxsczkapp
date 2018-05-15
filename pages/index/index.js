@@ -32,7 +32,10 @@ Page({
     m:'',
     monthE:'',
     flag:0,
-    positionHeight:0
+    positionHeight:0,
+    zhibo:0,
+    zhibologo:'xz-2@2x.png',
+    zhiboUrl:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -88,8 +91,8 @@ Page({
                 //继续处理上面的
                 that.setData({ oid: res.data })
 
-
-
+                if (that.openIdReadyCallback)
+                  that.openIdReadyCallback(res.data)
 
                 
               }
@@ -134,16 +137,16 @@ Page({
             askList: res.data
           })
         
-        wx.hideLoading()
+        //wx.hideLoading()
       }
     })
 
 
 
-    wx.showLoading({
+    /*wx.showLoading({
       mask: true,
       title: '加载中'
-    })
+    })*/
     wx.request({
       url: app.globalData.baseUrl +'wx/adv_list',
       data: {
@@ -155,7 +158,7 @@ Page({
           adv: res.data
         })
 
-        wx.hideLoading()
+        //wx.hideLoading()
       }
     })
 
@@ -163,10 +166,30 @@ Page({
     //console.log("+++++++++++")
     //console.log("onload")
   },onShow:function(){
+
     var that = this
 //console.log("show")
+if(that.data.oid){
+  console.log("already" + that.data.oid)
+  that.setUserInfo()
+}else{
+  that.openIdReadyCallback = res => {
+    console.log("oid"+res)
+    that.setUserInfo()
+    
+  }
+}
+
+    
 
 
+
+
+    
+
+  },
+  setUserInfo:function(){
+    var that = this
     wx.showLoading({
       mask: true,
       title: '加载中'
@@ -192,24 +215,21 @@ Page({
               wx.navigateTo({
                 url: '../personal_info/personal_info'
               })
-              /*if (res.confirm) {
-                console.log('用户点击确定')
-                
-                wx.navigateTo({
-                  url: '../personal_info/personal_info'
-                })
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-                wx.navigateTo({
-                  url: '../personal_info/personal_info'
-                })
-              }*/
+
             }
           })
         } else {
           that.setData({
-            user: res.data
+            user: res.data,
+            zhibo: res.data.zhibo,
+            zhiboUrl:res.data.zhiboUrl
           })
+          if(res.data.zhibo==1){
+            that.setData({
+              zhibologo: 'zhibo-2.gif'
+            })
+          }
+
           var date = new Date();
           var sList=[]
           if (that.data.swiperList.length=="0"){
@@ -255,12 +275,7 @@ Page({
           }
           sList.push(list)
           }
-          /*var da = {year:0,month:0,week:0,day:0}
-          da.year = date.getFullYear()
-          da.month = (date.getMonth()+1)+'月'
-          da.week = transWeek(date.getDay())
-          da.day = date.getDate()
-          list.push(da)*/
+
           that.setData({
             swiperList:sList,
             year: that.data.tday.year,
@@ -280,25 +295,8 @@ Page({
       }
     })
 
-
-    /*wx.showModal({
-      title: '提示',
-      content: '有需要回复的公共提问,今日值班老师:',
-      showCancel: true,
-      confirmText:'去回答',
-      cancelText:'稍后提醒',
-      success: function (res) {
-        if(res.confirm){
-        wx.navigateTo({
-          url: '../answer_ask_list/answer_ask_list?tag=0'
-        })
-        }
-      }
-    })*/
-
-    
-
-  }/*,
+  }
+  /*,
   onHide:function(){
     //console.log("rrrrr")
     wx.showModal({
@@ -424,11 +422,15 @@ Page({
 
   },
   lesson: function (event) {
-
-    wx.navigateTo({
-      url: '../video_type/video_type'
-    })
-
+    if(this.data.zhibo==1){
+      wx.navigateTo({
+        url: this.data.zhiboUrl
+      })
+    } else {
+      wx.navigateTo({
+       url: '../video_type/video_type'
+      })
+    }
     /*wx.navigateTo({
       url: '../lesson/lesson'
     })*/
@@ -630,8 +632,8 @@ Page({
       title: '加载中'
     })
     wx.navigateTo({
-      //url: '../zhizhuzhaosheng/zhizhuzhaosheng'
-      url: '/pages/chatroom/chatroom'
+      url: '../zhizhuzhaosheng/zhizhuzhaosheng'
+      //url: '/pages/chatroom/chatroom'
     })
     wx.hideLoading()
   },

@@ -2,42 +2,42 @@
 
 <view style="text-align:center">
   
+<image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1-1.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1-1.png"></image>
+  <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/1.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/1.png"></image>
 
-  <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1.png"></image>
+    <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/2.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/2.png"></image>
 
-    <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞2.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞2.png"></image>
+      <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/3.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/3.png"></image>
 
-      <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞3.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞3.png"></image>
+        <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/4.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/4.png"></image>
 
-        <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞4.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞4.png"></image>
+          <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/5.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/5.png"></image>
 
-          <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞5.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞5.png"></image>
+            <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/6.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/6.png"></image>
 
-            <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞6.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞6.png"></image>
+              <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/7.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/7.png"></image>
 
-              <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞7.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞7.png"></image>
+                <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/8.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/8.png"></image>
 
-                <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞8.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞8.png"></image>
+                  <!--<image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞9.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞9.png"></image>
 
-                  <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞9.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞9.png"></image>
+                    <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞10.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞10.png"></image>
 
-                    <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞10.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞10.png"></image>
+                      <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞11.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞11.png"></image>
 
-                      <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞11.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞11.png"></image>
+                        <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞12.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞12.png"></image>
 
-                        <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞12.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞12.png"></image>
+                          <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞13.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞13.png"></image>
 
-                          <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞13.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞13.png"></image>
-
-<image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞14.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞14.png"></image>
+<image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞14.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞14.png"></image>-->
 
     <view style="margin:auto;padding-top:40rpx;padding-bottom:40rpx;background: #ddf4ff;width:90%">
   <form  bindsubmit="formSubmit" bindreset="formReset">
     <view class="df"><image src="../../../images/scan.png" style="width:48rpx" mode='widthFix'></image><text style="font-size:32rpx;font-family:微软雅黑;font-weight:bold;margin-left:20rpx">在线预约</text></view>
 
-    <view class="df"><text catchtap='call' class="baomingtext">报名热线: 4000-800-110</text></view>
+    <view class="df"><text catchtap='call' class="baomingtext">报名热线: 028-83319875</text></view>
 
-    <view class="df"><text class="formText">姓名:</text><input class="formInput" name="name"></input></view>
+    <view class="df"><text class="formText">姓名:</text><input class="formInput" name="username"></input></view>
 
     <view class="df"><text class="formText">年龄:</text><input class="formInput" name="age" type="number"></input></view>
 
@@ -56,7 +56,7 @@
 
     <view class="df"><text class="formText">预约时间:</text>
       <!--<input class="formInput"></input>-->
-        <picker mode="date" class="timeselect" start="{{start}}" bindchange='timeChange' name="appointtime">
+        <picker mode="date" class="timeselect" start="{{start}}" bindchange='timeChange' name="date">
           <view class="picker">
             {{date}}
           </view>
@@ -66,13 +66,54 @@
     <view class="df">
       <button class="subbutton" formType="submit">提交</button>
       <button class="resetbutton" formType="reset">重置</button>
+      <input hidden name="mobile" value="1"/>
+      <!--<input hidden name="fasongurl" id="fasongurl" value="http://mob.p028.com"/>-->
+      <input hidden name="fasongurl" id="fasongurl" value="https://wxsign.sczk.com.cn"/>
+      <input hidden name="dosubmit" value="1" type="hidden"/>
+      <input hidden name="url" value="file:///D:/wamp/www/web/mobile/p028/fmjnh/index.html" id="url"/>
     </view>
 </form>
+
+
 
 <!--<view><button class="subbutton" catchtap='puruiAsk'>我要询问</button></view>-->
   </view>
 
-                            <image  style="width:90%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png"></image>
+                            <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png"></image>
+</view>
+
+<!--mask-->
+<view class="drawer_screen"  wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+ <view class="drawer_title">提示</view> 
+ <view wx:if="{{tag==1}}" class="drawer_content"> 
+ <view class="top grid"> 
+    您已经预约过了，请耐心等候!
+ </view> 
+  <view class="top grid"> 
+    预约号为<text style="color:red">{{dataCode}}</text>
+ </view>
+  <view class="top grid"> 
+    如有需要请<text style="color:red">24</text>小时之后再进行预约！
+ </view>
+ <view class="top grid"> 
+    或电话进行预约。
+ </view>  
+ </view>
+
+ <view wx:else > 
+  <view class="top grid"> 
+    您的预约号码为<text style="color:red">{{dataCode}}</text>
+ </view>
+  <view class="top grid"> 
+    请妥善保管。
+ </view> 
+ </view>  
+ <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
 </view>
 
 

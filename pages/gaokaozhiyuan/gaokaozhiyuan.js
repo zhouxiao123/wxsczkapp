@@ -34,7 +34,10 @@ Page({
     user:{},
     
 
-    adv:[]
+    adv:[],
+    name:'',
+    school:'',
+    phone:''
 
   },
 
@@ -443,6 +446,11 @@ Page({
           //console.log(res.data)
           wx.hideLoading()
           if (res.data.result == "ok") {
+            that.setData({
+              name:'',
+              phone:'',
+              school:''
+            })
             wx.showModal({
               title: '提示',
               content: '保存成功',
