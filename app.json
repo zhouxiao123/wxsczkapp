@@ -85,8 +85,8 @@
     "pages/qinyunhui/zhuanye/pro_detail/pro_detail",
     "pages/qinyunhui/kan_zixun/kan_zixun_zhuye/kan_zixun_zhuye",
     "pages/qinyunhui/kan_zixun/zixun_detail/zixun_detail",
-    "pages/personal_simple_version/personal_simple_version",
-    "pages/zhiyuan_shenqing_tongji/zhiyuan_shenqing_tongji"
+    "pages/zhiyuan_shenqing_tongji/zhiyuan_shenqing_tongji",
+    "pages/first_zhuce/first_zhuce"
   ],
   "window": {
     "backgroundTextStyle": "light",

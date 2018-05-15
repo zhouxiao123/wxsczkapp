@@ -16,7 +16,7 @@ input{
 .userinfo-avatar {
   width: 148rpx;
   height: 148rpx;
-  margin: 20rpx;
+  margin: 10rpx;
   border-radius: 50%;
 }
 
@@ -36,12 +36,11 @@ input{
 }
 
 .tag-list{
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 300rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
   border-bottom: 1px solid #eee;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .tag-view{
@@ -58,8 +57,7 @@ input{
 .radio-text{
   font-family:黑体;
   font-size:28rpx;
-  margin-left:10rpx;
-  width: 320rpx;
+  margin-right:20rpx
 }
 
 input{
@@ -67,7 +65,7 @@ input{
 }
 
 .saveButton{
-  margin-top:400rpx; 
+  margin-top:100rpx; 
   font-family:黑体;
   font-size:0.8rem;
   color:#fff;

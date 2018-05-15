@@ -53,9 +53,9 @@ Page({
         'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
       },
       data: {
-        batchId: batchId,
-        scope: that.data.scope,
-        sort: that.data.sort,
+        batchId: batchId,//	批次序号
+        scope: that.data.scope,//概览范围
+        sort: that.data.sort,//是否由难到易排序，默认大到小
         pageNo: 1,
         uid: that.data.uid,
         secKey: that.data.secKey,
@@ -75,6 +75,29 @@ Page({
         wx.hideLoading()
       }
     })
+
+    //接口测试，选择专业界面
+    /*wx.request({
+      url: app.globalData.baseUrl + 'qinyun/fm/forecast/plans',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        pcdm:'3',
+        yxdm:'5177',
+        wishName:'A',
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+      },
+      success: function (res) {
+        console.log('测试数据=============')
+        console.log(res.data)
+        wx.hideLoading()
+      }
+    })*/
+
   },
   // 上拉加载回调接口
   onReachBottom: function () {
