@@ -24,9 +24,12 @@ Page({
     //console.log(getCurrentPages().length)
     wx.setNavigationBarTitle({ title: "个人主页" })
     var that = this
+
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
       //更新数据
+      console.log('打印------------------------')
+      console.log(userInfo)
       that.setData({
         userInfo: userInfo
       })
@@ -36,6 +39,7 @@ Page({
       that.setData({
         userid: options.userid
       })
+     
       /*wx.request({
         url: app.globalData.baseUrl + 'wx/getUserDetailById',
         data: {
@@ -124,7 +128,7 @@ Page({
           that.setData({
             id: res.data.id,
             name: res.data.name,
-            phone: res.data.phone,
+            huoquphone: res.data.phone,
             school: res.data.school,
             region: province,
             level: res.data.level,
@@ -139,58 +143,58 @@ Page({
 
 
 
-    var value = wx.getStorageSync('oid')
-    if (value) {
-      setPersonalInfo(value);
-    } else {
-      wx.login({
-        success: function (res) {
-          if (res.code) {
-            //发起网络请求
-            wx.request({
-              url: app.globalData.baseUrl + 'wx/login',
-              data: {
-                code: res.code
-              },
-              success: function (res) {
-                if (res.data == "") {
-                  wx.showModal({
-                    title: '提示',
-                    content: '获取用户登录信息失败',
-                    showCancel: false,
-                    success: function (res) {
-                      if (res.confirm) {
-                        console.log('用户点击确定')
-                      } else if (res.cancel) {
-                        console.log('用户点击取消')
-                      }
+    wx.login({
+      success: function (res) {
+        //console.log(code);
+        //that.data.code = res.code
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: app.globalData.baseUrl + 'wx/login_v2',
+            data: {
+              code: res.code
+            },
+            success: function (res) {
+              // console.log(res.data)
+              if (res.data == "") {
+                wx.showModal({
+                  title: '提示',
+                  content: '获取用户登录信息失败',
+                  showCancel: false,
+                  success: function (res) {
+                    if (res.confirm) {
+                      console.log('用户点击确定')
+                    } else if (res.cancel) {
+                      console.log('用户点击取消')
                     }
-                  })
-                }
-                wx.setStorageSync('oid', res.data)
-                //继续处理上面的
-                setPersonalInfo(res.data);
+                  }
+                })
               }
-            })
-          } else {
-            console.log('获取用户登录态失败！' + res.errMsg)
-            wx.showModal({
-              title: '提示',
-              content: '获取用户登录状态失败',
-              showCancel: false,
-              success: function (res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
-                } else if (res.cancel) {
-                  console.log('用户点击取消')
-                }
-              }
-            })
-          }
-        }
-      })
-    }
+              wx.setStorageSync('oid', res.data.oid)
+              //继续处理上面的
+              setPersonalInfo(res.data.oid);
+              that.data.sessionKey = res.data.sessionKey
 
+
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+          wx.showModal({
+            title: '提示',
+            content: '获取用户登录状态失败',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        }
+      }
+    })
 
 
 
@@ -255,6 +259,9 @@ Page({
       })
     } else {
       //console.log(e.detail.value.userid)
+      e.detail.value.name=''
+      e.detail.value.school=''
+      e.detail.value.level=''
       wx.request({
         url: app.globalData.baseUrl + 'wx/saveUserDetail',
         data: e.detail.value,
@@ -290,9 +297,9 @@ Page({
 
             that.setData({
               id: res.data.user.id,
-              name: res.data.user.name,
+              //name: res.data.user.name,
               phone: res.data.user.phone,
-              school: res.data.user.school,
+              //school: res.data.user.school,
               region: province,
               lcheck: l,
               wcheck: w,
@@ -344,8 +351,9 @@ Page({
   },
 
 
-  
-  /*getPhoneNumber: function (e) {
+
+  getPhoneNumber: function (e) {
+    var that = this
     if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
       wx.showModal({
         title: '提示',
@@ -353,51 +361,33 @@ Page({
         content: '未授权',
         success: function (res) { }
       })
-    } else {
-      console.log(e.detail.errMsg)
-      console.log(e.detail.iv)
-      console.log(e.detail.encryptedData)
+    } else if (e.detail.errMsg == "getPhoneNumber:ok") {
+      //console.log(e.detail.errMsg)
+      //console.log(e.detail.iv)
+      //console.log(e.detail.encryptedData)
+
+
+      wx.request({
+        url: app.globalData.baseUrl + 'wx/dianhuajiemi',
+        data: {
+          encrypted: e.detail.encryptedData,
+          sessionKey: that.data.sessionKey,
+          iv: e.detail.iv
+        },
+        success: function (res) {
+          console.log(res.data)
+          console.log(res.data.dianhuajiemi)
+          var jso = JSON.parse(res.data.dianhuajiemi)
+          console.log(jso.phoneNumber)
+          //继续处理上面的
+          that.setData({
+            huoquphone: jso.phoneNumber
+          })
+        }
+      })
+
     }
-  }*/
-
-
-  getPhoneNumber: function (e) {
-    console.log(e.detail.iv);
-    console.log(e.detail.encryptedData);
-    wx.login({
-      success: res => {
-        console.log(res.code);
-        wx.request({
-          url: 'https://你的解密地址',
-          data: {
-            'encryptedData': encodeURIComponent(e.detail.encryptedData),
-            'iv': e.detail.iv,
-            'code': res.code
-          },
-          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-          header: {
-            'content-type': 'application/json'
-          }, // 设置请求的 header
-          success: function (res) {
-            console.log()
-            console.log(res.data)
-            if (res.status == 1) {//我后台设置的返回值为1是正确
-              //存入缓存即可
-              wx.setStorageSync('phone', res.phone);
-            }
-          },
-          fail: function (err) {
-            console.log(err);
-          }
-        })
-      }
-    })
   }
-
-
-
-
-
 
 })
 

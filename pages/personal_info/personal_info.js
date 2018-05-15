@@ -75,8 +75,9 @@ Page({
             province[0] = res.data.province.split(" ")[0];
             province[1] = res.data.province.split(" ")[1];
             province[2] = res.data.province.split(" ")[2];
+
           }else{
-            wx.getLocation({
+            /*wx.getLocation({
               type: 'wgs84',
               success: function (res) {
                 var latitude = res.latitude
@@ -101,8 +102,12 @@ Page({
                     }
                   }
                 })
+
                 //wx.hideLoading()
               }
+            })*/
+            wx.redirectTo({
+              url: '../first_zhuce/first_zhuce'
             })
           }
           if (res.data.type != null) {

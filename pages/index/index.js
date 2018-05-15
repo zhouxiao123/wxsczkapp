@@ -209,6 +209,9 @@ if(that.data.oid){
             content: '请先填写资料',
             showCancel: false,
             success: function (res) {
+              /*wx.navigateTo({
+                url: '../first_zhuce/first_zhuce'
+              })*/
               wx.navigateTo({
                 url: '../personal_info/personal_info'
               })

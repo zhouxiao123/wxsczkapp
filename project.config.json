@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -242,7 +242,7 @@
 					"query": ""
 				},
 				{
-					"id": 37,
+					"id": 35,
 					"name": "青云汇-测录取-登录",
 					"pathName": "pages/qinyunhui/denglu_qinyunhui/denglu_qinyunhui",
 					"query": ""
@@ -266,9 +266,9 @@
 					"query": ""
 				},
 				{
-					"id": 39,
-					"name": "用户个人信息管理",
-					"pathName": "pages/personal_simple_version/personal_simple_version",
+					"id": -1,
+					"name": "首次注册",
+					"pathName": "pages/first_zhuce/first_zhuce",
 					"query": ""
 				}
 			]
