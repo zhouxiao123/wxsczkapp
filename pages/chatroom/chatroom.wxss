@@ -185,3 +185,71 @@ border-radius: 50%;
   max-width:475rpx;
   word-break:break-all;
 }
+.item_class1{
+ margin-left: 25rpx;
+ margin-right: 25rpx;
+}
+.margin-left{
+  margin-left:20rpx;
+  height:80rpx;
+  margin-top: 42rpx;
+  align-items: center;
+  display: flex;
+  font-family:黑体;
+  color:#333333;
+  font-size:48rpx
+}
+
+.main-view{
+ width: 100%;
+ margin-top: 80rpx;
+ align-content:center;
+ border-bottom: 1px solid #59c9b9;
+}
+
+.tag-list{
+  margin-top:20rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  margin-bottom:30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-view{
+  height:50rpx;
+  display:flex;
+  flex-direction:column;
+  font-family:黑体;
+  color:#999999;
+  font-size:26rpx
+}
+
+.margin-left-1{
+height:40rpx;
+width:350rpx;display:inline-block;
+margin-left:20rpx;
+font-family:黑体;
+color:#666666;
+font-size:28rpx;
+}
+
+.margin-left-2{
+height:40rpx;
+width:140rpx;
+display:inline-block;
+color:#666666;
+font-family:黑体;
+font-size:28rpx;
+margin-left:30rpx;
+}
+
+.margin-left-3{
+height:40rpx;
+width:60rpx;
+display:inline-block;
+color:#666666;
+font-family:黑体;
+font-size:28rpx;
+margin-left:90rpx;
+}

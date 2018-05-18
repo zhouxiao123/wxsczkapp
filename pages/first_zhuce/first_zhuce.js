@@ -198,7 +198,18 @@ Page({
 
 
 
-  },
+  }, bindGetUserInfo: function (e) {
+    this.setData({
+      userInfo: e.detail.userInfo
+    })
+    /*wx.request({
+      url: app.globalData.baseUrl + 'wx/saveUserInfo',
+      data: { oid: this.data.oid, head: e.detail.userInfo.avatarUrl, nickName: e.detail.userInfo.nickName },
+      success: function (res) {
+        
+      }
+    })*/
+  } ,
   mainIndex: function (event) {
     this.setData({
       disflag: "block"

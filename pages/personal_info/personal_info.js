@@ -60,6 +60,9 @@ Page({
 
 //函数
     function setPersonalInfo(oid) {
+      that.setData({
+        oid: oid
+      })
       wx.request({
         url: app.globalData.baseUrl+'wx/getUserDetail',
         data: {
@@ -107,7 +110,7 @@ Page({
               }
             })*/
             wx.redirectTo({
-              url: '../first_zhuce/first_zhuce'
+              url: '../first_zhuce/first_zhuce?userid='+that.data.userid
             })
           }
           if (res.data.type != null) {
@@ -360,7 +363,18 @@ if(res.data.result=="new"){
       console.log(e.detail.iv)
       console.log(e.detail.encryptedData)
     }
-  } 
+  }, bindGetUserInfo: function (e) {
+    this.setData({
+      userInfo: e.detail.userInfo
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/saveUserInfo',
+      data: { oid: this.data.oid, head: e.detail.userInfo.avatarUrl, nickName: e.detail.userInfo.nickName },
+      success: function (res) {
+        //console.log(res.data)
+      }
+    })
+  }  
 })
 
 function validatePhone(phone){

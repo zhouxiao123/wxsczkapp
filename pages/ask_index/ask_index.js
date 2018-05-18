@@ -481,6 +481,9 @@ wx.request({
       },
       success: function (res) {
         if(res.data.length=="0"){
+          that.setData({
+            disflag: "none"
+          });
           wx.showModal({
             title: '提示',
             content: '请先填写资料',
@@ -492,6 +495,7 @@ wx.request({
 
             }
           })
+          
         }else if (res.data.point < 10) {
           wx.showModal({
             title: '提示',

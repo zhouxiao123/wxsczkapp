@@ -1,1 +1,6 @@
 /* pages/charge_fee/charge_fee.wxss */
+.df{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}

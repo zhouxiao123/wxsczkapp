@@ -19,7 +19,13 @@ Page({
     oid:'',
     yxid:'',
     user:{},
-    schoolhead:''
+    schoolhead:'',
+    search_name:'',
+    //下拉加载
+    hasMore: true,
+    pageOffset: 0,
+    pageSize: 20,
+    opacityflag: 0,
   },
 
   /**
@@ -232,6 +238,17 @@ Page({
     wx.onSocketClose(function(){
       console.log('websocket连接关闭！');
     })
+  },
+  //模糊查询
+  setValue2: function (event) {
+    this.setData({
+      search_name: event.detail.value
+    });
+  },
+  search: function (event) {
+    //console.log(this.data.search_name)
+    
+
   }, setValue: function (event) {
 
     this.setData({
@@ -276,16 +293,49 @@ Page({
     })
 
   }, gotoText:function(e){
-    this.setData({
-      schoolname: e.currentTarget.dataset.name,
-      schoolhead: e.currentTarget.dataset.head
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
     })
-    this.setData({
-      yxid: e.currentTarget.dataset.id
-    })
-    var msg = '{"msgtype":4,"yxid":"' + e.currentTarget.dataset.id + '","usertype":0,"oid":"' + this.data.oid +'"}'
-    wx.sendSocketMessage({
-      data: msg,
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/getUserDetail',
+      data: {
+        oid: this.data.oid
+      },
+      success: function (res) {
+
+        wx.hideLoading()
+        if (res.data.length == "0") {
+
+          wx.showModal({
+            title: '提示',
+            content: '请先填写资料',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateTo({
+                url: '/pages/personal_info/personal_info'
+              })
+
+            }
+          })
+        } else {
+          that.setData({
+            user: res.data
+          })
+          that.setData({
+            schoolname: e.currentTarget.dataset.name,
+            schoolhead: e.currentTarget.dataset.head
+          })
+          that.setData({
+            yxid: e.currentTarget.dataset.id
+          })
+          var msg = '{"msgtype":4,"yxid":"' + e.currentTarget.dataset.id + '","usertype":0,"oid":"' + that.data.oid + '"}'
+          wx.sendSocketMessage({
+            data: msg,
+          })
+        }
+      }
     })
       
   },

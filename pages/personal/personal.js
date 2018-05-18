@@ -12,6 +12,7 @@ Page({
     isQudao:0,
     isLindao:0,
     isOpen:0,
+    oid:'',
     adv:[]
   },
   //事件处理函数
@@ -36,10 +37,13 @@ Page({
       that.setData({
         userInfo: userInfo
       })
+      
     })
 //console.log(this.data.userInfo)
-
     function setPersonalInfo(oid) {
+      that.setData({
+        oid:oid
+      })
       wx.request({
         url: app.globalData.baseUrl+'wx/getUserDetail',
         data: {
@@ -64,6 +68,17 @@ Page({
             isLindao: res.data.lindao,
             isOpen: res.data.isOpen
           })
+
+          if(that.data.userInfo.nickName){
+            //console.log("---***-*-*-*-")
+            wx.request({
+              url: app.globalData.baseUrl + 'wx/saveUserInfo',
+              data: { oid: oid, head: that.data.userInfo.avatarUrl, nickName: that.data.userInfo.nickName },
+              success: function (res) {
+                //console.log(res.data)
+              }
+            })
+          }
         }
       })
     }
@@ -134,7 +149,19 @@ Page({
         //wx.hideLoading()
       }
     })
-  },changePage: function (e) {
+  },bindGetUserInfo:function(e){
+    this.setData({
+      userInfo: e.detail.userInfo
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/saveUserInfo',
+      data: { oid: this.data.oid, head: e.detail.userInfo.avatarUrl, nickName: e.detail.userInfo.nickName},
+      success: function (res) {
+        //console.log(res.data)
+        }
+      })
+  }   
+  ,changePage: function (e) {
     //console.log(e.currentTarget.dataset.id)
     //console.log("--" + e.currentTarget.dataset.type)
     //console.log(e.currentTarget.dataset.link)

@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -122,7 +122,7 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 15,
 					"name": "测试注册",
 					"pathName": "pages/personal_info/personal_info",
 					"query": "userid=23"
@@ -248,10 +248,10 @@
 					"query": ""
 				},
 				{
-					"id": 84,
+					"id": 36,
 					"name": "直播",
 					"pathName": "pages/live_video/live_video",
-					"query": "id=84"
+					"query": "id=95"
 				},
 				{
 					"id": 37,
@@ -269,6 +269,18 @@
 					"id": -1,
 					"name": "首次注册",
 					"pathName": "pages/first_zhuce/first_zhuce",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "问答列表",
+					"pathName": "pages/ask_index/ask_index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "咨询会门票购买",
+					"pathName": "pages/zixunhuimenpiao/buy/buy",
 					"query": ""
 				}
 			]

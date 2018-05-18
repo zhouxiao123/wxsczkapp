@@ -76,14 +76,18 @@ App({
     //console.log(this.globalData.userInfo)
     if (this.globalData.userInfo!="") {
       typeof cb == "function" && cb(this.globalData.userInfo)
+      console.log("-----------")
     } else {
       //调用登录接口
+      console.log("res.userInfo")
       wx.getUserInfo({
         withCredentials: false,
         success: function(res) {
           that.globalData.userInfo = res.userInfo
-          //console.log(res.userInfo)
+          console.log(res.userInfo)
           typeof cb == "function" && cb(that.globalData.userInfo)
+        }, fail:function(res){
+          console.log(res)
         }
       })
     }

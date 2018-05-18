@@ -3,7 +3,8 @@
 <view  style="padding-bottom:130rpx">
   
   <view  class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <image wx:if="{{userInfo.nickName}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <button wx:else open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" style="height:60rpx;line-height:60rpx;margin-top:40rpx;margin-bottom:40rpx">设置头像</button>
     <!--<text class="userinfo-text">{{userInfo.nickName}}</text>-->
     
   </view>

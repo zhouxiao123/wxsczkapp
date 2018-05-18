@@ -1,4 +1,15 @@
 <!--pages/to_answer/to_answer.wxml-->
+  <view style="display:flex;margin-top:20rpx;margin-left:20rpx;align-items: center;">
+    <image src="{{item.ask.issecret==1?'../../images/personal/-rtx@2x.png':item.user.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.ask.issecret==1?'匿名用户':item.user.nickName}}</text>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.user.type==0?'文科':'理科'}}</text>
+    <text style="color:#777;font-family:黑体;margin-left:20rpx;font-size:0.8rem">{{item.user.province}}</text>
+  </view>
+  <view style="border-bottom: 1px solid #eee;padding-bottom:20rpx;margin-left:100rpx;margin-top:40rpx;margin-right:100rpx">
+    <text style="font-family:黑体">{{item.ask.askContent}}</text>
+  </view>
+
+
     <view  style="margin:20rpx;">
     <form bindsubmit="formSubmit" >
       <view style="padding :20rpx;margin:10rpx;border:1px solid #999;border-radius: 20rpx;">

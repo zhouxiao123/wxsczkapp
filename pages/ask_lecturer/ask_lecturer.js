@@ -189,7 +189,23 @@ Page({
         oid: that.data.oid
       },
       success: function (res) {
-        if (res.data.point < 100) {
+        if (res.data.length == "0") {
+          that.setData({
+            disflag: "none"
+          });
+          wx.showModal({
+            title: '提示',
+            content: '请先填写资料',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateTo({
+                url: '/pages/personal_info/personal_info'
+              })
+
+            }
+          })
+          
+        } else if (res.data.point < 100) {
           wx.showModal({
             title: '提示',
             content: '积分不足,是否进行充值?',

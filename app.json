@@ -86,7 +86,9 @@
     "pages/qinyunhui/kan_zixun/kan_zixun_zhuye/kan_zixun_zhuye",
     "pages/qinyunhui/kan_zixun/zixun_detail/zixun_detail",
     "pages/zhiyuan_shenqing_tongji/zhiyuan_shenqing_tongji",
-    "pages/first_zhuce/first_zhuce"
+    "pages/first_zhuce/first_zhuce",
+    "pages/zixunhuimenpiao/buy/buy",
+    "pages/zixunhuimenpiao/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
