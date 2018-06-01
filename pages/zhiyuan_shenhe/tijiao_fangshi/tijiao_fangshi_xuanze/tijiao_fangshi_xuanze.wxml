@@ -1,0 +1,20 @@
+<view>
+<view style="height:400rpx;"></view>
+<!--图标-->
+  <view style="height:400rpx;">
+    <view style="display:flex;justify-content: center;">
+
+      <view catchtap='xuanze_shexiang' style='flex-direction:column;align-items: center;'>
+      <view><image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/shexiang.png" style="width:300rpx;" mode='widthFix'></image></view>
+      <view class='neirong'>点击上传图片或拍照</view>
+      </view>
+
+      <view catchtap='xuanze_xiezi' style='flex-direction:column;align-items: center;'>
+      <view><image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/xiezi.png" style="width:300rpx;" mode='widthFix'></image></view>
+      <view class='neirong'>点击填写志愿</view>
+      </view>
+
+    </view>
+  </view>
+<view style="height:400rpx;"></view>
+</view>

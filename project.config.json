@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 42,
 			"list": [
 				{
 					"id": -1,
@@ -243,8 +243,8 @@
 				},
 				{
 					"id": 35,
-					"name": "青云汇-测录取-登录",
-					"pathName": "pages/qinyunhui/denglu_qinyunhui/denglu_qinyunhui",
+					"name": "青云汇-测录取",
+					"pathName": "pages/qinyunhui/celuqu/celuqu",
 					"query": ""
 				},
 				{
@@ -269,6 +269,30 @@
 					"id": -1,
 					"name": "首次注册",
 					"pathName": "pages/first_zhuce/first_zhuce",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/my_collect/my_collect",
+					"query": ""
+				},
+				{
+					"id": 41,
+					"name": "青云汇-我的收藏",
+					"pathName": "pages/qinyunhui/school/my_collect/my_collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿审核",
+					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
+					"query": ""
+				},
+				{
+					"id": 43,
+					"name": "测试登录验证码",
+					"pathName": "pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu",
 					"query": ""
 				}
 			]

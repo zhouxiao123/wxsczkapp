@@ -1,0 +1,80 @@
+.main-view{
+display: flex;
+
+}
+
+.denglu{
+margin-top:400rpx;
+background-color: #66CDAA;
+
+}
+
+.yanzhengma{
+width: 200rpx;
+color: #66CDAA;
+font-family:黑体;
+font-size:32rpx;
+margin-right: 0;
+}
+
+.biaoti{
+font-weight:bold;
+font-size:60rpx;
+ color:#4b4c4c;
+ display:block;
+ padding-top:30rpx;
+ margin-left:20rpx;
+ margin-right:20rpx;
+ background-color: white;
+ font-family:黑体;
+ text-align: center;
+}
+
+
+page{
+font-size: 30rpx;
+}
+
+.left{ float: left}
+.right{float: right}
+
+.info_list {
+height: 103rpx;
+line-height: 103rpx;
+width: 100%;
+border-bottom: 1px solid #bcbcbd;
+padding-left: 24rpx;
+display: inline-block;
+font-size: 33rpx;
+}
+
+.shouji_info input {
+margin-top: 25rpx;
+/* background: rebeccapurple; */
+}
+
+.yanzheng_btn {
+width: 207rpx;
+background: #66CDAA;
+margin-right: 20rpx;
+height: 82rpx;
+margin-bottom: 12rpx;
+text-align: center;
+line-height: 82rpx;
+border-radius: 15rpx;
+color: #fff;
+font-size: 33rpx;
+padding: 0 10rpx;
+}
+.neirong1{
+  display:block;
+  padding-top:20rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  background-color: white;
+  color:#777;
+  font-family:黑体;
+  line-height: 50rpx;
+  font-size:30rpx;
+  text-align: center
+}

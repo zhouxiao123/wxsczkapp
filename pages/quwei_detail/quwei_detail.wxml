@@ -110,8 +110,8 @@
 
 
   <view style="text-align:center;margin-top:40rpx">
-  <image src="../../images/quweiceshi.png" style="width:100%" mode="widthFix"></image>
-
+  <!--<image src="../../images/quweiceshi.png" style="width:100%" mode="widthFix"></image>-->
+  <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/quweiceshi.png" style="width:100%" mode="widthFix"></image>
   </view>
 
 

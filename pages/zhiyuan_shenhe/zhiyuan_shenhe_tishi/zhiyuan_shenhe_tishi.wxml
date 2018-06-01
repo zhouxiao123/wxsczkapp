@@ -1,0 +1,40 @@
+<view style="flex-direction: column;height:2420rpx;" >
+
+<view style=" font-size:44rpx; color:#4b4c4c;"  class="biaoti">志愿填报方案评估功能使用提示</view>
+
+<view  class="neirong1"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>此项评估适用于高三普通类考生高考志愿方案的合理性审核（注：艺体考生不适用，普通类考生特殊批次方案不适用，特殊批次方案是指国家专项计划、地方专项计划、少数民族预科等志愿方案等批次）</view>
+
+<view  class="neirong">评估内容:</view>
+<view  class="neirong1">1.落榜风险</view>
+<view  class="neirong1">2.是否浪费分数过多</view>
+<view  class="neirong1">3.填报批次完整性</view>
+<view  class="neirong1">4.填报专业方案完整性</view>
+<view  class="neirong1">5.目标专业录取概率</view>
+<view  class="neirong1">6.志愿优化建议</view>
+
+<view  class="neirong">评估流程:</view>
+<view  class="neirong1">提交志愿表</view>
+<view  class="neirong1">签约交费</view>
+<view  class="neirong1">生成档案，等待评估</view>
+<view  class="neirong1">评估结果反馈</view>
+<view  class="neirong1">A.升级为专家面谈调整方案（需补缴费用）-等待录取</view>
+<view  class="neirong1">B.根据建议自行修正方案（无需再收费）-等待录取</view>
+
+<view  class="neirong">注：</view>
+<view  class="neirong1">签约交费：<text style='color:#B8860B;font-size:28rpx;'>签约协议为网络版协议，请认真阅读。志愿评估收费为800元/人。</text></view>
+<view  class="neirong1">交费方式：<text style='color:#B8860B;font-size:28rpx;'>微信交费（推荐），现金交费（需与工作人员直接联系，指导下操作）</text></view>
+<view  class="neirong1">提交志愿表方式：<text style='color:#B8860B;font-size:28rpx;'>1.图片上传/拍照上传（推荐电脑截屏方式上传，拍照时需保证方案清晰可读）2.手工录入（根据系统提示手工录入志愿表）</text></view>
+<view  class="neirong1">评估时限承诺：<text style='color:#B8860B;font-size:28rpx;'>用户在生成评估档案后1个工作日内，专家老师会根据提交的志愿表进行方案评估，并针对方案给出优化建议。</text></view>
+<view  class="neirong1">服务升级：<text style='color:#B8860B;font-size:28rpx;'>购买评估服务的用户可升级为专家面谈调整方案，已消费金额可做抵扣，补足差价即可升级服务。</text></view>
+<view  class="neirong1">积分使用：<text style='color:#B8860B;font-size:28rpx;'>小程序积分可用于抵扣评估功能收费，抵扣额度为10积分抵扣1元，抵扣额度不超过500积分。</text></view>
+
+<view  class="neirong">联系电话：</view>
+<view  class="neirong1">028-85064242</view>
+<view  class="neirong1">17311248067（冯老师）</view>
+<view  class="neirong1">15008228412（李老师）</view>
+
+</view>
+
+ <view style="text-align:center" style="width:100%;">
+  <button bindtap='toanswer' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;margin-bottom:50rpx;">下一页</button>
+ </view>

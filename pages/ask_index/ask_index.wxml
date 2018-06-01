@@ -65,6 +65,7 @@
 
     <!--<swiper class="ask-content" current="{{tag}}" bindchange="bindChange">
 -->
+    <!--快速提问-->
     <view  style="margin:20rpx;display:{{tag==1?'block':'none'}}">
     <form bindsubmit="formSubmit" >
       <view style="padding :20rpx;margin:10rpx;border:1px solid #999;border-radius: 20rpx;">

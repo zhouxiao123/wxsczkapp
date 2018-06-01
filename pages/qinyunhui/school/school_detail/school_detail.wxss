@@ -375,3 +375,46 @@ background-color: #B8860B;
 line-height: 60rpx;
 flex-direction:column;
 }
+.slide-image{
+    width:100%;
+}
+
+.left{
+  width: 100px;
+  height: 40px;
+  background-color:#66CDAA;
+  text-align: center;
+  line-height: 40px;
+  font-family:黑体;
+  color:red;
+  font-size:38rpx;
+  border-radius: 5rpx;
+}
+
+.right{
+  width: 100px;
+  height: 40px;
+  background-color:#66CDAA;
+  text-align: center;
+  line-height: 40px;
+  font-family:黑体;
+  color:red;
+  font-size:38rpx;
+  border-radius: 5rpx;
+}
+.bottomfixed{
+  background:#fff;
+  position:fixed;
+  bottom: 0;
+  width:750rpx;
+  display:flex;
+  justify-content: space-between;
+  height:80rpx;
+}
+
+.b-l{
+  width:375rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,18 +1,29 @@
 <!--头部信息-->
-   <view style="padding-bottom:10rpx;margin-top:10rpx;">
-      <view style="display:inline-block;width:350rpx;color:#4b4c4c;margin-left:20rpx;font-family:黑体;font-size:34rpx">
+   <view style="padding-bottom:10rpx;margin-top:20rpx;display:flex;">
+      <view style='width:500rpx;'>
+      <view style="display:inline-block;color:#4b4c4c;margin-left:20rpx;font-family:黑体;font-size:34rpx">
         专业代码：{{toubuxinxi.code}}
       </view>
-      <view style="display:inline-block;width:350rpx;color:#4b4c4c;font-family:黑体;font-size:34rpx;margin-right:20rpx;">
-        授予学位：<view style='display:inline-block;color:#EEB422;'>{{toubuxinxi.n4 ==null?'':toubuxinxi.n4}}</view>
-      </view>
-  </view>
-
-  <view style="width:100%;color:#4b4c4c;margin-left:20rpx;font-family:黑体;font-size:34rpx;padding-bottom:10rpx;">
+  <view style="color:#4b4c4c;margin-left:20rpx;font-family:黑体;font-size:34rpx;padding-bottom:10rpx;height: 40rpx;line-height: 40rpx;margin-top:20rpx;">
         专业类别：{{toubuxinxi.name}}
   </view>
-  <view style="width:100%;color:#4b4c4c;margin-left:20rpx;font-family:黑体;font-size:34rpx;padding-bottom:10rpx;">
-        学历层次：{{toubuxinxi.n3}}
+</view>
+
+<view>
+   <view style="display:inline-block;width:200rpx;color:#4b4c4c;font-family:黑体;font-size:34rpx;margin-left:20rpx;">
+        <button wx:if="{{collect==0}}" bindtap="collect" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;height: 80rpx;line-height: 80rpx;">收藏</button>
+        <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;height: 80rpx;line-height: 80rpx;">已收藏</button>
+      </view>
+  </view>
+</view>
+
+  <view style='display:flex; height: 40rpx;line-height: 40rpx;'>
+      <view style="width:45%;color:#4b4c4c;margin-left:20rpx;font-family:黑体;font-size:34rpx;padding-bottom:10rpx;">
+            学历层次：{{toubuxinxi.n3}}
+      </view>
+      <view style="display:inline-block;width:350rpx;color:#4b4c4c;font-family:黑体;font-size:34rpx;margin-left:60rpx;">
+    授予学位：<view style='display:inline-block;color:#EEB422;'>{{toubuxinxi.n4 ==null?'':toubuxinxi.n4}}</view>
+      </view>
   </view>
 
 <view class="tag-list">
@@ -58,11 +69,16 @@
     <view style="font-family:黑体;margin-bottom:40rpx;color:#4b4c4c;font-size:1rem;">
       开设课程
     </view>
+
+<view style='margin-bottom:100rpx;'>
  <view wx:for="{{jianjie.courses}}">
    <view style="font-family:黑体;margin-bottom:20rpx;font-size:0.7rem;color:#4b4c4c;">
        <view>{{item.name}}</view>
    </view>
-    </view>
+  </view>
+</view>
+
+
   </view>
 </view>
 
@@ -87,10 +103,12 @@
 
 <!--相近专业-->
  <view style="display:{{tag==2?'block':'none'}};">
+<view style='margin-bottom:100rpx;'>
  <view  catchtap='xjzy_Detail' wx:for="{{xjzy}}" data-id="{{item.id}}">
        <view class="margin-left-1">
        <view>{{item.name}}</view>
        </view>
+</view>
 </view>
 </view>
 
@@ -115,11 +133,14 @@
     <view style="font-family:黑体;margin-bottom:40rpx;color:#4b4c4c;font-size:1rem;">
       毕业人员从业岗位
     </view>
+<view style='margin-bottom:100rpx;'>
  <view wx:for="{{jyqk.works}}">
    <view style="font-family:黑体;margin-bottom:20rpx;font-size:0.7rem;color:#4b4c4c;">
        <view>{{item.name}}</view>
    </view>
     </view>
+</view>
+
   </view>
 </view>
 
@@ -137,6 +158,16 @@
   </view>
 
 
+<view class="bottomfixed" style='display:flex;border-top:1rpx solid #D4D4D4;'>
+<view catchtap='tiaozhuanwenzhuanjia' class="b-l">
+<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/wenzhuanjia.png" style="width:150rpx" mode='widthFix'/>
+</view>
 
+<view  class="b-l">
+<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/间隔.png" style="width:2rpx" mode='widthFix'/>
+</view>
 
-
+<view catchtap='tiaozhuanceluqu' class="b-l">
+<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/celuqu.png" style="width:200rpx" mode='widthFix'/>
+</view>
+</view>

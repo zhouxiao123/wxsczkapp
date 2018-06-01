@@ -23,4 +23,5 @@
       <button class="resetbutton" formType="reset">重置</button>
     </view>
 </form>
+<view  class="neirong1">提示：<text style='color:#B8860B;font-size:28rpx;'>分数仅作为志愿填报的参考</text></view>
 </view>

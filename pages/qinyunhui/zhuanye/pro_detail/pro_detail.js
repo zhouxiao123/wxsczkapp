@@ -9,6 +9,7 @@ Page({
     toubuxinxi:{},
     jyqk:{},
     tag:0,
+    collect: 0,
     //下拉加载
     hasMore: true,
     pageOffset: 0,
@@ -53,11 +54,37 @@ Page({
 
       },
       success: function (res) {
-        //console.log(res.data)
+        console.log(res.data)
         that.setData({
           toubuxinxi: res.data.list[0]
         })
+        wx.hideLoading()
+      }
+    })
 
+    wx.request({
+      //判断是否已经收藏专业
+      url: app.globalData.baseUrl + 'qinyun/v2/major/info',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        majorId: that.data.id,
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+      },
+      success: function (res) {
+        if (res.data.list[0].attention != null) {
+          that.setData({
+            collect: 1
+          });
+        } else {
+          that.setData({
+            collect: 0
+          });
+        }
         wx.hideLoading()
       }
     })
@@ -77,7 +104,8 @@ Page({
 
       },
       success: function (res) {
-        //console.log(res.data)
+        console.log('简介---------------------------------')
+        console.log(res.data.list[0])
         that.setData({
           jianjie: res.data.list[0]
         })
@@ -243,7 +271,7 @@ Page({
       title: '加载中'
     })
     wx.navigateTo({
-      url: '../../school/school_detail/school_detail?id=' + event.currentTarget.dataset.id
+      url: '../../school/school_detail/school_detail?id=' + event.currentTarget.dataset.id + '&secKey=' + that.data.secKey + '&uid=' + that.data.uid
     })
     wx.hideLoading()
   },
@@ -258,6 +286,100 @@ Page({
       url: '../pro_detail/pro_detail?&id=' + event.currentTarget.dataset.id + '&secKey=' + that.data.secKey + '&uid=' + that.data.uid
     })
   },
+  //收藏专业
+  collect: function (event) {
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'qinyun/u/support/attentionMajor',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        tid: that.data.id,//	专业id
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+      },
+      success: function (res) {
+        //console.log('专业的收藏=================')
+        //console.log(res.data)
+        if (res.data.status == 200) {
+          that.setData({
+            collect: 1
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '收藏失败',
+            showCancel: false,
+            success: function (res) {
+            }
+          })
+        }
+      }
+    })
+  },
+
+  //取消收藏专业
+  cansleCollect: function (event) {
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'qinyun/u/support/attentionMajor',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        tid: that.data.id,//学校id
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+        cancel: 0
+      },
+      success: function (res) {
+        //console.log('取消收藏=================')
+        //console.log(res.data)
+        if (res.data.status == 200) {
+          that.setData({
+            collect: 0
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '取消收藏失败',
+            showCancel: false,
+            success: function (res) {
+            }
+          })
+        }
+      }
+    })
+  },
+  //跳转找专家
+  tiaozhuanwenzhuanjia: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.navigateTo({
+      url: '/pages/ask_index/ask_index',
+    })
+    wx.hideLoading()
+  },
+
+  //跳转测录取
+  tiaozhuanceluqu: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.navigateTo({
+      url: '/pages/qinyunhui/celuqu/celuqu',
+    })
+    wx.hideLoading()
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -269,6 +391,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    
+ 
 
   },
 

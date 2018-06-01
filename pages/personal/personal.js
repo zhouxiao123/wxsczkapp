@@ -251,7 +251,7 @@ Page({
       disflag: "none"
     });
   },
-  myCollect:function(){
+  /*myCollect:function(){
     this.setData({
       disflag: "block"
     });
@@ -261,7 +261,19 @@ Page({
     this.setData({
       disflag: "none"
     });
+  },*/
+  myCollect: function () {
+    this.setData({
+      disflag: "block"
+    });
+    wx.navigateTo({
+      url: '/pages/qinyunhui/school/my_collect/my_collect'
+    })
+    this.setData({
+      disflag: "none"
+    });
   },
+
   myPointIndex:function(){
     wx.showLoading({
       mask: true,

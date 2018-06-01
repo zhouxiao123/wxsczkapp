@@ -1,0 +1,11 @@
+.neirong{
+  display:block;
+  padding-top:-10rpx;
+  margin-left:30rpx;
+  margin-right:30rpx;
+  background-color: white;
+  color:#777;
+  font-family:黑体;
+  line-height: 40rpx;
+  font-size:36rpx;
+}

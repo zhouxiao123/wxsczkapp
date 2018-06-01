@@ -134,17 +134,18 @@ Page({
             if (res.data.status == 300) {
               //跳转到测录取页面
               wx.showModal({
-                title: '注册账号',
-                content: res.data.msg,
+                title: '验证手机号',
+                //content: res.data.msg,
+                content: '验证后进入测录取',
                 success: function (res) {
                   if (res.confirm) {
                     console.log('用户点击确定')
                     wx.redirectTo({
-                      url: '../denglu_qinyunhui/denglu_qinyunhui'
+                      url: '/pages/qinyunhui/denglu/celuqu_denglu/celuqu_denglu'
                     })
                   } else if (res.cancel) {
                     wx.navigateTo({
-                      url: '../../index/index'
+                      url: '/pages/index/index'
                     })
                     console.log('用户点击取消')
                   }
