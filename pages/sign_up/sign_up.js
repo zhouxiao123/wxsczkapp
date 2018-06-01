@@ -232,7 +232,7 @@ Page({
                 console.log('用户点击取消')
               }
 
-              wx.showModal({
+              /*wx.showModal({
                 title: '提示',
                 content: '恭喜您，获得了获得一次抽奖机会,请点击右上角的幸运大转盘。',
                 showCancel: true,
@@ -245,12 +245,9 @@ Page({
 
 
                 }
-              })
-
-              /*that.setData({
-                disflag: 'block',
-                disflag2: 'none'
               })*/
+
+
             }
           })
 

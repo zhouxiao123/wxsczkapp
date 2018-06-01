@@ -105,7 +105,9 @@
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bkderp/tupian_bkderp",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_zktqp/tupian_zktqp",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_zkp/tupian_zkp",
-    "pages/zhiyuan_shenhe/zhiyuan_shenhe_xieyi/zhiyuan_shenhe_xieyi"
+    "pages/zhiyuan_shenhe/zhiyuan_shenhe_xieyi/zhiyuan_shenhe_xieyi",
+    "pages/zixunhuimenpiao/buy/buy",
+    "pages/zixunhuimenpiao/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

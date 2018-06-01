@@ -15,26 +15,31 @@
 
 
 <view style="text-align:center;margin-top:20rpx">
-<button catchtap='setCharge' data-fee="5" type="primary" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block">5元</button>
-<button catchtap='setCharge' data-fee="10" type="primary" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">10元</button>
+<button catchtap='setCharge' data-fee="5" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block">5元</button>
+<button catchtap='setCharge' data-fee="10" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">10元</button>
 </view>
 <view style="text-align:center;margin-top:20rpx">
-<button catchtap='setCharge' data-fee="20" type="primary" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block">20元</button>
-<button catchtap='setCharge' data-fee="50" type="primary" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">50元</button>
+<button catchtap='setCharge' data-fee="15" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block">15元</button>
+<button catchtap='setCharge' data-fee="20" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">20元</button>
 </view>
 <view style="text-align:center;margin-top:20rpx">
-<button catchtap='setCharge' data-fee="100" type="primary" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block">100元</button>
-<button catchtap='setCharge' data-fee="200" type="primary" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">200元</button>
+<button catchtap='setCharge' data-fee="30" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block">30元</button>
+<button catchtap='setCharge' data-fee="50" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">50元</button>
+</view>
+<view style="text-align:center;margin-top:20rpx">
+<button catchtap='setCharge' data-fee="100" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block">100元</button>
+<button catchtap='setCharge' data-fee="200" type="primary" style="width:180rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">200元</button>
 </view>
 
-<view style="text-align:center;margin-top:20rpx">
-<input type="number" bindinput="setValue" value="{{feeValue}}" style="width:150rpx;border:1px solid #999;display:inline-block;border-radius: 5px;"/>
-<button catchtap='charge_fee' type="warn" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:60rpx">充值</button>
+<view style="text-align:center;margin-top:20rpx" class="df">
+<text style="color:#179B16;margin-left:60rpx">充值金额:<text style="color:red">{{ftext}}</text></text>
+<input hidden value="{{feeValue}}" style="width:150rpx;border:1px solid #999;" />
+<button catchtap='charge_fee' type="warn" style="width:150rpx;height:60rpx;line-height:60rpx;display:inline-block;margin-left:30rpx">充值</button>
 </view>
 
 <view style="margin:40rpx">
-<text style="font-size:28rpx;color:red">充值积分规则：
-1元钱=10积分，1元起充，也可以选择5元、10元、50元、100元，200元不同档次
+<text style="font-size:28rpx;color:red">充值积分规则<text style="font-weight:bold;color:#179B16">(多充多奖励)</text>：
+5元=50积分，10元=110积分，15元=170积分，20元240积分，30元350积分，50元=600积分，100元=1200积分，200元=2500积分
 积分使用范围：
 可以用积分购买四川招考微信小程序中云课堂、问吧、语音答疑、志愿订制等板块中丰富的服务产品，包括：付费视频、直播讲座、志愿订制等，详细定价请参看对应产品的价格标注。</text>
 </view>

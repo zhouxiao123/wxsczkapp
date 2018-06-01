@@ -10,7 +10,8 @@ Page({
     oid:'',
     array:[],
     path:[],
-    msg:''
+    msg:'',
+    item:{}
   },
 
   /**
@@ -82,6 +83,24 @@ Page({
         }
       })
     }
+
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/ask_detail',
+      data: {
+        id: options.askid
+      },
+      success: function (res) {
+        //console.log(res.data)
+        that.setData({
+          item: res.data
+        })
+        wx.hideLoading()
+      }
+    })
   },
 
   /**

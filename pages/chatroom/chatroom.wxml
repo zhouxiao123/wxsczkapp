@@ -1,16 +1,57 @@
 <!--pages/chatroom/chatroom.wxml-->
 
-<view style="display:{{tag==0?'block':'none'}}">
-    <view style="text-align:center;">选择老师</view>
+<!--<view style="display:{{tag==0?'block':'none'}}">
+    <view style="text-align:center;border-bottom:1px solid #999">选择学校</view>
     <view wx:for="{{askschool}}" style="border-bottom:1rpx solid #e5e5e5;padding-bottom:20rpx;margin-top:40rpx;">
       <view class='margin-left'>
         <view data-id='{{item.yxid}}' data-name='{{item.yxname}}' data-head="{{item.path}}" catchtap="gotoText">{{item.yxname}}</view>
       </view> 
  </view>
+</view>-->
+
+
+<view class="item_class1" style="display:{{tag==0?'block':'none'}}">
+<view class="margin-left">学校选择</view>
+<view class="main-view">
+   <input bindinput="setValue2" placeholder="请输入你需要咨询的学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:600rpx;margin-left:20rpx;font-family:黑体;font-size:30rpx;"/>
+   <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx;margin-bottom:10rpx;"/>
 </view>
+
+<view class="tag-list">
+  <view class="tag-view ">推荐学校</view> 
+  <view class="tag-view " style='margin-left:80px;'>院校性质</view> 
+  <view class="tag-view ">在线</view> 
+</view>
+
+<!--列表-->
+ <view style="">
+  <!--第一条-->
+  <view wx:for="{{askschool}}" style="border-bottom:1rpx solid #e5e5e5;padding-bottom:20rpx;margin-top:20rpx;" data-id='{{item.yxid}}' data-name='{{item.yxname}}' data-head="{{item.path}}" catchtap="gotoText">
+      <view class='margin-left-1'>
+        <view> {{item.yxname}}</view>
+      </view> 
+      <view class='margin-left-2'>
+       <view> {{item.s.yxxz}}</view>
+      </view>
+      <view class='margin-left-3'>
+       <view>在线</view>
+      </view>
+ </view>
+</view>
+</view>
+
+
+
+
+
+
+  <!--第二部分-->
+
+
+
+
 <view style="display:{{tag==1?'block':'none'}};">
 <view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">{{schoolname}}</view>
-  
 <scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:80rpx;height:{{scrollHeight}}rpx">
 <view class="a-class">
   <view wx:for="{{list}}" >
@@ -38,3 +79,10 @@
       </view>
     </view>
 </view>
+
+<!-- 分页 
+<view  animation="{{animationData}}" class="tips1" style="opacity:{{opacityflag}}">
+ <view wx:if="{{hasMore}}" style="text-align:center">
+ <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
+ <view style="text-align:center" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
+</view>-->

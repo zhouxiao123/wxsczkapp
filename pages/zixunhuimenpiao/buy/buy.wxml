@@ -1,0 +1,35 @@
+<!--pages/zixunhuimenpiao/buy/buy.wxml-->
+<view class="backimg">
+
+<view style="padding-top:230rpx;text-align:center">
+  <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/ticket.jpg" style="width:700rpx" mode='widthFix'></image>
+</view>
+    <view style="margin-top: 5px;text-align: center">
+        <view style="display:block;color:white;font-size: 20px;font-weight: bold;text-decoration:line-through">原价50元</view>
+        <view style="display:block;color:yellow;font-size: 15px;">限时优惠</view>
+        <view style="display:block;color:white;font-size: 20px;">现价<text style="color:yellow;font-size: 25px;">20</text>元</view>
+    </view>
+
+<form bindsubmit="formSubmit" style="margin-top: 5px">
+
+    <view class="form-group">
+        <view style="color:white;font-weight: bold">手机号:</view>
+        <input type="text" name="phone" style="background:#fff"/>
+    </view>
+    <view class="form-group" style="text-align:center">
+        <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'yellow':'white'}}">1张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'yellow':'white'}}">2张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="3" style="background:{{tag==3?'yellow':'white'}}">3张</button>
+    </view>
+    <view class="form-group" style="text-align: center">
+        <button formType="submit"  style="background-color:#f7805B;font-family:黑体;color:#fff;width:160px;">购买高招门票</button>
+    </view>
+    <view class="form-group" style="text-align: center;margin-top: 20px">
+        <button  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:160px;">查看已购买门票</button>
+        
+    </view>
+    <input hidden name="openId" value="{{oid}}"/>
+    <input hidden name="countNum" value="{{tag}}"/>
+</form>
+
+</view>

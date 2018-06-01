@@ -1,0 +1,23 @@
+/* pages/zixunhuimenpiao/buy/buy.wxss */
+.backimg{
+  background-image: url('https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/ticketback.jpg');
+  background-size:contain;
+  background-repeat:no-repeat;
+  width:750rpx;
+  height:1899rpx
+}
+input{
+  padding:5rpx;
+  margin-left:10rpx;
+border-radius: 15rpx
+}
+.form-group{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:40rpx
+}
+.btn{
+  height:60rpx;
+  line-height:60rpx;
+}

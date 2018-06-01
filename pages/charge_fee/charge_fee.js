@@ -7,8 +7,8 @@ Page({
     oid: '',
     user: {},
     day: 0,
-    feeValue:''
-
+    feeValue:5,
+    ftext: '5元=50积分'
   },
   //事件处理函数
   bindViewTap: function () {
@@ -117,12 +117,33 @@ Page({
       }
     })
   },setCharge:function(e){
-    this.setData({feeValue:e.currentTarget.dataset.fee})
-  }, setValue: function (event) {
+    var t = e.currentTarget.dataset.fee
+    var ft = ''
+    if(t==5)
+      ft=t+'元=50积分'
+    else if(t==10)
+      ft = t + '元=110积分'
+    else if (t == 15)
+      ft = t + '元=170积分'
+    else if (t == 20)
+      ft = t + '元=240积分'
+    else if (t == 30)
+      ft = t + '元=350积分'
+    else if (t == 50)
+      ft = t + '元=600积分'
+    else if (t == 100)
+      ft = t + '元=1200积分'
+    else if (t == 200)
+      ft = t + '元=2500积分'
+    this.setData({
+      feeValue:e.currentTarget.dataset.fee,
+      ftext:ft
+      })
+  }, /*setValue: function (event) {
     this.setData({
       feeValue: event.detail.value
     });
-  },
+  },*/
   charge_fee: function (event) {
     //console.log(this.data.feeValue)
     var that = this
@@ -131,7 +152,7 @@ Page({
       title: '加载中'
     })
     wx.request({
-      url: app.globalData.baseUrl+'wx/charge_fee',
+      url: app.globalData.baseUrl +'wx/charge_fee_new',
       data: {
         openId: that.data.oid,
         fee: that.data.feeValue
