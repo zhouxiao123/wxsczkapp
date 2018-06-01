@@ -5,7 +5,7 @@ Page({
     disflag: 'none',
     slideflag: 'none',
     animationData: {},
-    tag: 0,
+    tag: 1,
     list:[],
     value:'',
     lessontypeid:0,

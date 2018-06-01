@@ -1,10 +1,13 @@
 /* pages/zixunhuimenpiao/buy/buy.wxss */
+view{
+  font-family: 微软雅黑
+  }
 .backimg{
   background-image: url('https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/ticketback.jpg');
   background-size:contain;
   background-repeat:no-repeat;
   width:750rpx;
-  height:1899rpx
+  height:1899rpx;
 }
 input{
   padding:5rpx;
@@ -17,7 +20,15 @@ border-radius: 15rpx
   align-items: center;
   margin-top:40rpx
 }
+
+button{
+  padding:0
+}
 .btn{
   height:60rpx;
   line-height:60rpx;
+  width:96rpx;
+  color:#fff;
+  font-size:30rpx;
+  
 }

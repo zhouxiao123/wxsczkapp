@@ -6,8 +6,8 @@
       <view  bindtap="slideDown" style="display:flex;height:60rpx">
         <image animation="{{animationData}}" src="../../images/school_list/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
       </view>  
-      <input bindinput="setValue"  bindconfirm='search' placeholder="搜索专业" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
-      <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+      <input bindinput="setValue"  bindconfirm='search' placeholder="输入专业名称" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+      <image bindtap='search' src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/dianjisousuo.png" style="width:200rpx;height:40rpx;margin-right:22rpx"/>
     </view>
   </view>
 

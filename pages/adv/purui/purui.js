@@ -36,6 +36,7 @@ dataCode:''
 
               that.data.array.push("https://wxsign.sczk.com.cn/wxsczkappback/img/adv/"+i+".png")
             }
+            that.data.array.push("https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞15.png")
             //console.log(that.data.array)
             that.setData({
               array: that.data.array

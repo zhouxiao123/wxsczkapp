@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 41,
 			"list": [
 				{
 					"id": -1,
@@ -282,6 +282,12 @@
 					"name": "咨询会门票购买",
 					"pathName": "pages/zixunhuimenpiao/buy/buy",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "门票二维码详情",
+					"pathName": "pages/zixunhuimenpiao/list/list",
+					"query": "id=95"
 				}
 			]
 		}

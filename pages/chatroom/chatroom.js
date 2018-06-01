@@ -33,7 +33,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-
+    wx.setNavigationBarTitle({ title: "四川招考网在线咨询会" })
     var value = wx.getStorageSync('oid')
     //console.log(value)
     if (value) {

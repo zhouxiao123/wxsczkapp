@@ -1,2 +1,15 @@
 <!--pages/zixunhuimenpiao/list/list.wxml-->
-<text>pages/zixunhuimenpiao/list/list.wxml</text>
+<view style="margin-top:40rpx;text-align:center" wx:for="{{list}}">
+  <view style="position:absolute;text-align:left">
+    <text style="position:relative;left:70rpx;top:170rpx;display:block;font-size:26rpx;color:#fff">手机号:{{item.qc.phone}}</text>
+    <text style="position:relative;left:70rpx;top:170rpx;display:block;font-size:26rpx;color:#fff">购买时间:{{item.createTime}}</text>
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/wxsign/qrcode?code_url={{item.codenum}}"  style="width:200rpx;position:relative;left:430rpx;bottom:30rpx" mode="widthFix" data-src="https://wxsign.sczk.com.cn/wxsczkappback/wxsign/qrcode?code_url={{item.codenum}}" catchtap='bigImg'></image>
+  </view>
+  <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/{{item.swipeTime==null?'门票1.png':'门票2.png'}}" style="width:700rpx;" mode='widthFix'></image>
+
+</view>
+
+<view wx:if="{{list.length==0}}" style="text-align:center;margin-top:60rpx;font-size:30rpx;color:#999" catchtap='goBuy'>
+  -还未购买门票,点击购买-
+</view>
+

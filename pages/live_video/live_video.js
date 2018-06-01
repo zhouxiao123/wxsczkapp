@@ -139,7 +139,7 @@ Page({
         })
         that.data.src ='https://wxsign.sczk.com.cn/hls/mystream.m3u8'
         //that.data.src = 'https://wxsign.sczk.com.cn/hls/mystream-test.m3u8'
-        //that.data.src = 'https://wxsign.sczk.com.cn/wxsczkappback/vd/a82d39ff-de18-4343-add3-8855e462b64d/a82d39ff-de18-4343-add3-8855e462b64d.m3u8'
+        //that.data.src = 'https://wxsign.sczk.com.cn/wxsczkappback/vd/3e9a46b3-63ff-48be-a2cd-a38563586b34/3e9a46b3-63ff-48be-a2cd-a38563586b34.mp4'
         if (that.data.item.video.isfee == 1 && res.data.isLecturer != 1) {
           if (that.data.item.buy == null || that.data.item.buy == '') {
             that.data.src = ''

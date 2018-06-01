@@ -1,5 +1,5 @@
 <!--pages/zixunhuimenpiao/buy/buy.wxml-->
-<view class="backimg">
+<!--<view class="backimg">
 
 <view style="padding-top:230rpx;text-align:center">
   <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/ticket.jpg" style="width:700rpx" mode='widthFix'></image>
@@ -32,4 +32,43 @@
     <input hidden name="countNum" value="{{tag}}"/>
 </form>
 
+</view>-->
+
+    <swiper  wx:if="{{adv.adv.length!=0}}"
+  autoplay="true" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0">
+  
+    <swiper-item wx:for="{{adv.adv}}">
+      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
+
+
+<view style="padding-bottom:130rpx">
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票.png" style="width:750rpx" mode='widthFix'></image>
+    <view style="text-align:center;color:#e00">
+      <text style="display:block">2018年高考考生可凭准考证免费入场</text>
+      <text style="display:block;margin-top:20rpx;color:#f90">家长请在下方购票</text>
+    </view>
+    <form bindsubmit="formSubmit" style="margin-top: 5px">
+
+    <view class="form-group">
+        <view style="color:#333">手机号:</view>
+        <input type="text" name="phone" style="border:1px solid #999;width:516rpx;height:60rpx" value="{{user.phone}}"/>
+    </view>
+    <view class="form-group" style="text-align:center">
+        <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'#46dfc8':'#d4d4d4'}}">1张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'#46dfc8':'#d4d4d4'}}">2张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="3" style="background:{{tag==3?'#46dfc8':'#d4d4d4'}}">3张</button>
+    </view>
+    <view class="form-group" style="text-align: center;margin-top:60rpx">
+        <button formType="submit"  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:666rpx;height:88rpx;border-radius:20rpx">购票</button>
+
+    </view>
+    <view class="form-group" style="text-align: center;margin-top: 30px">
+        <!--<button  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:160px;">查看已购买门票</button>-->
+        <view catchtap='toList' style="color:#999999;font-size:26rpx;border-bottom:1px solid #999999">查看已购买门票</view>
+    </view>
+    <input hidden name="openId" value="{{oid}}"/>
+    <input hidden name="countNum" value="{{tag}}"/>
+</form>
 </view>

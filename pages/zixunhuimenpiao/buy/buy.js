@@ -1,4 +1,5 @@
 // pages/zixunhuimenpiao/buy/buy.js
+var app = getApp()
 Page({
 
   /**
@@ -6,7 +7,8 @@ Page({
    */
   data: {
   tag:1,
-  oid:''
+  oid:'',
+  user:{}
   },
 
   /**
@@ -72,6 +74,36 @@ Page({
         }
       })
     }
+
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag: 17
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          adv: res.data
+        })
+
+        wx.hideLoading()
+      }
+    })
+
+    if (that.data.oid) {
+      console.log("already" + that.data.oid)
+      that.setUser()
+    } else {
+      that.openIdReadyCallback = res => {
+        console.log("oid" + res)
+        that.setUser()
+
+      }
+    }
   },
 
   /**
@@ -92,6 +124,7 @@ wx.showLoading({
 })
     var that = this;
     //console.log(e.detail.value.phone)
+
     if (!validatePhone(e.detail.value.phone)) {
       wx.hideLoading()
       wx.showModal({
@@ -109,29 +142,189 @@ wx.showLoading({
           }
         }
       })
-    } else {
-      //console.log(e.detail.value.userid)
-      /*wx.request({
-        url: app.globalData.baseUrl + 'wx/saveUserDetail',
-        data: e.detail.value,
+    }else if(that.data.oid.length==0){
+      wx.hideLoading()
+      wx.showModal({
+        title: '提示',
+        content: '请稍后再试',
+        showCancel: false,
         success: function (res) {
-          wx.hideLoading()
-          //console.log(res.data)
-          if (res.data.result == "fail") {
-            wx.showModal({
-              title: '提示',
-              content: '请开启用户授权',
-              showCancel: false,
-              success: function (res) {
-
-              }
+          if (res.confirm) {
+            console.log('用户点击确定')
+            that.setData({
+              disflag: "none"
             })
-          } else {
-
+          } else if (res.cancel) {
+            console.log('用户点击取消')
           }
         }
-      })*/
+      })
+    } else {
+      if (that.data.user.phone){
+        wx.request({
+          url: app.globalData.baseUrl + 'wxsign/mini_buy',
+          data: e.detail.value,
+          success: function (res) {
+            wx.hideLoading()
+            //console.log(res.data)
+            if (res.data.result == "false") {
+              wx.showModal({
+                title: '提示',
+                content: '购买失败，请重试',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定')
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            } else if (res.data.result == "true") {
+              //调用支付
+              wx.requestPayment({
+                'timeStamp': res.data.timeStamp,
+                'nonceStr': res.data.nonceStr,
+                'package': res.data.package,
+                'signType': 'MD5',
+                'paySign': res.data.paySign,
+                'success': function (res) {
+                  wx.showModal({
+                    title: '提示',
+                    content: '购买成功',
+                    showCancel: false,
+                    success: function (res) {
+                      wx.navigateTo({
+                        url: '/pages/zixunhuimenpiao/list/list',
+                      })
+                    }
+                  })
+                },
+                'fail': function (res) {
+                }
+              })
+
+            }
+          }
+        })
+      }else{
+
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/saveUserDetail',
+          data: {
+            phone: e.detail.value.phone,
+            oid: e.detail.value.openId,
+            name:'',
+            school:'',
+            level:'',
+            headUrl:'',
+            nickName:'',
+            province:'',
+            type:''
+
+          },
+          success: function (res) {
+            //console.log(res.data)
+            if (res.data.result == "fail") {
+              wx.hideLoading()
+              wx.showModal({
+                title: '提示',
+                content: '请开启用户授权',
+                showCancel: false,
+                success: function (res) {
+
+                }
+              })
+            } else {
+
+              wx.request({
+                url: app.globalData.baseUrl + 'wxsign/mini_buy',
+                data: e.detail.value,
+                success: function (res) {
+                  wx.hideLoading()
+                  //console.log(res.data)
+                  if (res.data.result == "false") {
+                    wx.showModal({
+                      title: '提示',
+                      content: '购买失败，请重试',
+                      showCancel: false,
+                      success: function (res) {
+                        if (res.confirm) {
+                          console.log('用户点击确定')
+                        } else if (res.cancel) {
+                          console.log('用户点击取消')
+                        }
+                      }
+                    })
+                  } else if (res.data.result == "true") {
+                    //调用支付
+                    wx.requestPayment({
+                      'timeStamp': res.data.timeStamp,
+                      'nonceStr': res.data.nonceStr,
+                      'package': res.data.package,
+                      'signType': 'MD5',
+                      'paySign': res.data.paySign,
+                      'success': function (res) {
+                        wx.showModal({
+                          title: '提示',
+                          content: '购买成功',
+                          showCancel: false,
+                          success: function (res) {
+                            wx.navigateTo({
+                              url: '/pages/zixunhuimenpiao/list/list',
+                            })
+                          }
+                        })
+                      },
+                      'fail': function (res) {
+                      }
+                    })
+
+                  }
+                }
+              })
+              
+            }
+          }
+        })
+      }
+      
     }
+  },
+  setUser: function(){
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/getUserDetail',
+      data: {
+        oid: that.data.oid
+      },
+      success: function (res) {
+
+        wx.hideLoading()
+        if (res.data.length == "0") {
+
+          /*wx.showModal({
+            title: '提示',
+            content: '请先填写资料',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateTo({
+                url: '../personal_info/personal_info'
+              })
+
+            }
+          })*/
+        } else {
+          that.setData({
+            user:res.data
+          })
+        }
+      }
+      })
   },
   /**
    * 生命周期函数--监听页面显示
@@ -139,7 +332,12 @@ wx.showLoading({
   onShow: function () {
   
   },
-
+  toList:function(){
+    wx.navigateTo({
+      url: '/pages/zixunhuimenpiao/list/list',
+    })
+  }
+,
   /**
    * 生命周期函数--监听页面隐藏
    */
