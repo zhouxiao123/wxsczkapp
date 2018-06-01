@@ -17,18 +17,18 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    //console.log(options.uid + '-' + options.secKey + '_' + options.newsId)
-    /*this.setData({
+    console.log(options.uid + '-' + options.secKey + '_' + options.newsId)
+   this.setData({
       id: options.id,
-      src: 'https://wxsign.sczk.com.cn/wxsczkappback/wx/school_news_detail_page?uid=' + options.uid + '&secKey=' + options.secKey + '&newsId=' + options.newsId
-    })*/
+      src: 'https://wxsign.sczk.com.cn/wxsczkappback/wx/zixun_detail_page?uid=' + options.uid + '&secKey=' + options.secKey + '&newsId=' + options.newsId
+    })
 
     var uid = options.uid
     that.data.uid = uid
     var secKey = options.secKey
     that.data.secKey = secKey
-    var WxParse = require('../../../../wxParse/wxParse.js');//解析页面
-    wx.request({
+    //var WxParse = require('../../../../wxParse/wxParse.js');//解析页面
+    /*wx.request({
       url: app.globalData.baseUrl + 'qinyun/news/info',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -50,7 +50,7 @@ Page({
        })
        WxParse.wxParse('article', 'html', res.data.list[0].info, that, 5);//解析页面
       }
-    })
+    })*/
   },
 
   /**

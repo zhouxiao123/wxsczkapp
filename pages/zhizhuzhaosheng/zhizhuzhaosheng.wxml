@@ -19,59 +19,63 @@
 <view class="df">
   <view class="df1">
     <view class="df2" >
-      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
       <view class="imagev" >
         <text class="text3">3月</text>
         <text class="text4">考生提交申请资料</text>
       </view>
     </view>
         <view class="df2" >
-      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
       <view class="imagev" >
         <text class="text3">4月底前</text>
         <text class="text4">公示初审通过名单</text>
       </view>
     </view>
         <view class="df2" >
-      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
       <view class="imagev" >
         <text class="text3">6月10~22号</text>
         <text class="text4">试点高校组织考核</text>
       </view>
     </view>
         <view class="df2" >
-      <image src="../../images/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_t.jpg" class="imagewidth" mode="widthFix"></image>
       <view class="imagev" >
         <text class="text3">高考出分后</text>
         <text class="text4">考生填报志愿,高校录取,公示录取名单</text>
       </view>
     </view>
   </view>
-  <image src="../../images/lc_bg.jpg" class="arrowwidth" mode="widthFix"></image>
+  <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc_bg.jpg" class="arrowwidth" mode="widthFix"></image>
   <view class="df1" >
     <view class="df2" >
-      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+
       <view class="imagev" >
         <text class="text1">3月初</text>
         <text class="text2">高校发布招生简章</text>
       </view>
     </view>
     <view class="df2" >
-      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+
       <view class="imagev" >
         <text class="text1">4月</text>
         <text class="text2">高校审核考生材料</text>
       </view>
     </view>
     <view class="df2" >
-      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+
       <view class="imagev" >
         <text class="text1">6月7~8日</text>
         <text class="text2">考生参加全国统一高考</text>
       </view>
     </view>
     <view class="df2" >
-      <image src="../../images/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/lc-bg_b.jpg" class="imagewidth" mode="widthFix"></image>
+
       <view class="imagev" >
         <text class="text1">高考出分前</text>
         <text class="text2">高校确定并公示资格名单</text>

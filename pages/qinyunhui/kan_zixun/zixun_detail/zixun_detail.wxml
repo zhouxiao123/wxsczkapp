@@ -1,19 +1,16 @@
-<!--<view class="item_class4" style="display:flex;flex-direction: column;" >
-<view style=" font-size:0.9rem; color:#4b4c4c;"  class="item1width4-1">{{detail.title}}</view>
-<view style=" margin-left:40rpx;color:#494a4d;" class="item1width4-1">{{detail.visit}}浏览</view>
-<view  class="item1width4-2">{{detail.createTime}}</view>
-</view>-->
-
-<view style="display:flex;flex-direction: column;">
+<!--<view style="display:flex;flex-direction: column;">
     <view style=" font-weight:bold;font-size:40rpx; color:#4b4c4c;display:block;padding-top:30rpx;margin-left:20rpx;margin-right:20rpx;background-color: white;font-family:黑体;text-align: center;">{{detail.title}}</view>
     <view style=" display:block;padding-top:20rpx;margin-left:20rpx;margin-right:20rpx;background-color: white;color:#777;font-family:黑体;line-height: 1.2em;font-size:28rpx;">来源：{{detail.source}}</view>
    <view style="display: flex;margin-bottom: 30rpx;">
     <view style=" padding-top:20rpx;margin-left:20rpx;margin-right:20rpx;background-color: white;color:#777;font-family:黑体;line-height: 1.2em;font-size:28rpx;">{{detail.visit}}浏览</view>
     <view style=" padding-top:20rpx;margin-left:20rpx;margin-right:20rpx;background-color: white;color:#777;font-family:黑体;line-height: 1.2em;font-size:28rpx;">{{detail.createTime}}</view>
    </view>
-</view>
+</view>-->
 
- <view style="font-size:26rpx">
+ <web-view src="{{src}}"></web-view>
+
+
+ <!--<view style="font-size:26rpx">
         <import src="../../../../wxParse/wxParse.wxml"/>
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
- </view> 
+ </view> -->

@@ -34,7 +34,7 @@ Page({
     flag:0,
     positionHeight:0,
     zhibo:0,
-    zhibologo:'xz-2@2x.png',
+    zhibologo:'/images/xz-2@2x.png',
     zhiboUrl:''
   },
   //事件处理函数
@@ -226,7 +226,7 @@ if(that.data.oid){
           })
           if(res.data.zhibo==1){
             that.setData({
-              zhibologo: 'zhibo-2.gif'
+              zhibologo: 'https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/zhibo-2.gif'
             })
           }
 
@@ -407,7 +407,7 @@ if(that.data.oid){
     })
   }
   ,
-  school_list: function (event) {
+  /*school_list: function (event) {
 
     wx.navigateTo({
       url: '../school_list/school_list'
@@ -418,6 +418,18 @@ if(that.data.oid){
 
     wx.navigateTo({
       url: '../pro_list/pro_list'
+    })
+
+  },*/
+  school_list: function (event) {
+    wx.navigateTo({
+      url: '/pages/qinyunhui/school/school_list/school_list'
+    })
+  },
+  pro_list: function (event) {
+
+    wx.navigateTo({
+      url: '/pages/qinyunhui/zhuanye/pro_list/pro_list'
     })
 
   },

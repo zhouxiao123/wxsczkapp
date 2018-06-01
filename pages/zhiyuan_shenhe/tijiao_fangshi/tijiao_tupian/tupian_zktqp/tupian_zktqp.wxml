@@ -1,0 +1,29 @@
+    <!--上传图片或拍照-->
+<view  style="margin:20rpx;margin-top:40rpx;">
+    <form bindsubmit="formSubmit" >
+      
+      <view style="padding :20rpx;margin:10rpx;border:1px solid #999;border-radius: 20rpx;">
+        <textarea bindinput="setValue" value="{{msg}}"  maxlength="500" placeholder="此处可以填写备注信息，便于专家更准确的分析判断，四川招考网将确保您的隐私安全，仅供本次审核使用" placeholder-style="font-family:黑体;font-size:0.8rem"  style="width:100%;font-family:黑体;font-size:0.8rem;" name="text"></textarea>
+      </view>
+
+      <view style="margin-top:40rpx;margin-bottom:40rpx;">
+        <view class="classname">
+          <text style="color:#f7805B;font-family:黑体;font-size:1.1rem">*积分 + *现金</text>
+        </view>
+        <view class="classname" style='margin-top:300rpx;'>
+          <button bindtap='sendMsg'  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">提交</button>
+        </view>
+      </view>
+
+      <view style='margin-top:40rpx;'>
+        <button bindtap='addpic'>添加图片</button>
+        <image src="{{array[0]}}" stye="width:150rpx" mode="widthFix"></image>
+        <image src="{{array[1]}}" style="width:150rpx" mode="widthFix"></image>
+        <image src="{{array[2]}}" style="width:150rpx" mode="widthFix"></image>
+        <image src="{{array[3]}}" style="width:150rpx" mode="widthFix"></image>
+      </view>
+
+   </form>
+</view>
+
+

@@ -1,0 +1,43 @@
+<view style='margin:40rpx;'>
+<view class='biaoti'>短信验证</view>
+<view style="border-bottom:1px solid #CCCCCC;margin-top:200rpx;" class='main-view'>
+
+<input style='width: 400rpx;line-height:82rpx;height: 82rpx;' type="text" placeholder="手机号" placeholder-style="font-family:黑体;color:#a5a6a6;font-size:40rpx;" bindinput="setValue"></input>
+<button class='right yanzheng_btn' bindtap="bindButtonTap" disabled='{{disabled}}' style="background-color:{{color}}">{{text}}</button>
+
+</view>
+<view style='margin-top:80rpx;'>
+
+<input type="text" placeholder="验证码" placeholder-style="font-family:黑体;color:#a5a6a6;font-size:40rpx;"  bindinput="setValue2" style="border-bottom:1px solid #CCCCCC;line-height:82rpx;height: 82rpx;"></input>
+
+<button class='denglu' bindtap='zhuce'>验证</button>
+</view>
+<view  class="neirong1">提示：<text style='color:#B8860B;font-size:28rpx;'>短信验证次数一天不超过四次</text></view>
+</view>
+
+
+
+
+
+
+<!--<view style="margin:40rpx">
+<input type="text" bindinput="setValue" style="border:1px solid #999"></input>
+<button bindtap='yanzhengma'>发送验证码</button>
+</view>
+
+<view style="margin:40rpx">
+<input type="text" bindinput="setValue2" style="border:1px solid #999"></input>
+<button bindtap='zhuce'>注册登陆</button>
+</view>
+
+<view style="margin:40rpx">
+
+<button bindtap='denglu'>登陆</button>
+</view>-->
+
+
+
+
+
+
+

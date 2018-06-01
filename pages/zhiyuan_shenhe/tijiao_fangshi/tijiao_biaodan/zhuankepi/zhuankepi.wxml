@@ -1,0 +1,328 @@
+<text class='class1'>专科批</text>
+
+<form  bindsubmit="formSubmit" bindreset="formReset">
+<!--平行志愿A-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1'>平行志愿A</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiA_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiA_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiA_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange1">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+    <checkbox class='section_gap' value="2">定向调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿B-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿B</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiB_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiB_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiB_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange2">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿C-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿C</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiC_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiC_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiC_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange3">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿D-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿D</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiD_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiD_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiD_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange4">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿E-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿E</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiE_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiE_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiE_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange5">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿F-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿F</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiF_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiF_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiF_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange6">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿G-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿G</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiG_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiG_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiG_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange7">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+    <checkbox class='section_gap' value="2">定向调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿H-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿H</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiH_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiH_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiH_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange8">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--平行志愿I-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>平行志愿I</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="zhuankepiI_yxdm" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="zhuankepiI_yxmc" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem;"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zydm1" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zymc1" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zydm2" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zymc2" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zydm3" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zymc3" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zydm4" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zymc4" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zydm5" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zymc5" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zydm6" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="zhuankepiI_zymc6" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange9">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+ <view hidden="true" class="df"><text>userid:</text><input name="userid" value='{{user.id}}'></input></view>
+ <view class="df2" style="display:{{disflag?'none':'block'}}">
+      <view style='color:#B8860B;font-size:28rpx;margin-bottom:60rpx;text-align:center'>*点击保存，仅保存当前批次填报志愿！</view>
+      <button class="subbutton" formType="submit">保存</button>
+      <button class="resetbutton" formType="reset">重置</button>
+ </view>
+
+</form>

@@ -1,20 +1,37 @@
-<!--pages/school_detail/school_detail.wxml-->
-<view style="background-color:#59c9b9;height:240rpx">
+
+  <!--头部校园图片-->
+<swiper indicator-dots="{{indicatorDots}}"  interval="{{interval}}" duration="{{duration}}" style='width:750rpx;height:500rpx;'>
+        <block wx:for="{{1}}">
+            <swiper-item>
+                <image src="{{xuexiaotupian1==''?'':xuexiaotupian1}}" class="slide-image"/>
+            </swiper-item>
+ <swiper-item>
+                <image src="{{xuexiaotupian2==''?'':xuexiaotupian2}}" class="slide-image"/>
+            </swiper-item>
+ <swiper-item>
+                <image src="{{xuexiaotupian3==''?'':xuexiaotupian3}}" class="slide-image"/>
+            </swiper-item>
+        </block>
+</swiper>
+
+<view style="background-color:#EDEDED;height:270rpx">
 <view  style="margin:20rpx；margin-top:0">
     <view style="">
-      <view style="line-height:76rpx;width:530rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#fff;font-size:1.2rem">
+      <view style="line-height:76rpx;width:530rpx;display:inline-block;margin-left:40rpx;font-family:黑体;color:#4b4c4c;font-size:1.2rem">
         {{item.name}}
       </view>
-      <view style="width:150rpx;display:inline-block;margin-right:20rpx">
-        <button wx:if="{{collect==0}}" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;"  bindtap="collect">收藏</button>
+      <view style="width:150rpx;display:inline-block;margin-right:20rpx;margin-top:10rpx;">
+        
+      <button wx:if="{{collect==0}}" bindtap="collect" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;">收藏</button>
       <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;">已收藏</button>
-      </view> 
+
+      </view>
     </view> 
     <view style="padding-bottom:20rpx;margin-top:20rpx;">
-      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+      <view style="display:inline-block;width:250rpx;color:#4b4c4c;margin-left:40rpx;font-family:黑体;font-size:30rpx">
         地区:{{item.location}}
       </view>
-      <view style="display:inline-block;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
+      <view style="display:inline-block;width:250rpx;color:#4b4c4c;font-family:黑体;font-size:30rpx">
         隶属:{{item.gov}}
       </view>
       <view  style="display:inline-block;">
@@ -26,10 +43,10 @@
 
 
     <view style="padding-bottom:20rpx;">
-      <view style="display:inline-block;width:250rpx;color:#fff;margin-left:40rpx;font-family:黑体;font-size:30rpx">
+      <view style="display:inline-block;width:250rpx;color:#4b4c4c;margin-left:40rpx;font-family:黑体;font-size:30rpx">
         类型:{{item.type}}
       </view>
-      <view style="display:inline-block;width:250rpx;color:#fff;font-family:黑体;font-size:30rpx">
+      <view style="display:inline-block;width:250rpx;color:#4b4c4c;font-family:黑体;font-size:30rpx">
         性质:{{item.properties}}
       </view>
       <view  style="display:inline-block;color:#fff;margin-right:40rpx;font-family:黑体;font-size:30rpx">
@@ -77,7 +94,7 @@
     <view style="font-family:黑体">
       学校简介
     </view>
-    <view style="font-size:26rpx">
+    <view style="font-size:26rpx;margin-bottom:80rpx;">
         <import src="../../../../wxParse/wxParse.wxml"/>
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
@@ -150,7 +167,7 @@
             </view>
         </view>
         <!--（3）历年录取分数位次-->
-        <view style='margin-top:60rpx;'>
+        <view style='margin-top:60rpx;margin-bottom:100rpx;'>
             <view class='title1'>
               四川地区 历年录取分数位次
             </view>
@@ -198,7 +215,7 @@
       </picker>
     </view>
    </view>
-
+  <view style='margin-bottom:80rpx;'>
  <view wx:for="{{lnlqfenshuxian}}">
        <view class="margin-left-2">
         <view style="width:400rpx;display:inline-block;font-family:黑体;color:#494a4d;font-size:34rpx">{{item.zymc}}</view>
@@ -207,7 +224,7 @@
        </view>
       </view>
 </view>
-
+</view>
 
 </view>
 
@@ -220,7 +237,7 @@
        </view>
     </view>
 <!--页面解析-->
-   <view style="margin:40rpx;font-size:26rpx">
+   <view style="margin:40rpx;font-size:26rpx;margin-bottom:40rpx;">
         <import src="../../../../wxParse/wxParse.wxml"/>
         <template is="wxParse" data="{{wxParseData:zszc.nodes}}"/>
     </view>
@@ -259,7 +276,7 @@
     </view>
    </view>
 
- 
+ <view style='margin-bottom:80rpx;'>
  <view wx:for="{{zsjh}}" data-id="{{item.id}}" catchtap='zsjh_Detail'>
        <view class="margin-left-3">
         <view style="width:250rpx;display:inline-block;font-family:黑体;color:#494a4d;font-size:34rpx">{{item.zymc}}</view>
@@ -268,6 +285,19 @@
         <view style="width:100rpx;display:inline-block;font-size:26rpx;color:#777;font-family:黑体;margin-left:40rpx;height:36rpx;">学制{{item.xz}}</view>
        </view>
         </view>
-
-
     </view>
+</view>
+
+<view class="bottomfixed" style='display:flex;border-top:1rpx solid #D4D4D4;'>
+<view catchtap='tiaozhuanwenzhuanjia' class="b-l">
+<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/wenzhuanjia.png" style="width:150rpx" mode='widthFix'/>
+</view>
+
+<view  class="b-l">
+<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/间隔.png" style="width:2rpx" mode='widthFix'/>
+</view>
+
+<view catchtap='tiaozhuanceluqu' class="b-l">
+<image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/celuqu.png" style="width:200rpx" mode='widthFix'/>
+</view>
+</view>

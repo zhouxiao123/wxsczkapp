@@ -8,7 +8,7 @@
     </view>
     <view class="center-tag" bindtap="signUpIndex">
       <!--<image src="../../images/wen@2x.png" background-size="cover" style="display:block;width:98rpx;height:98rpx"/>-->
-            <image src="../../images/redbag.png" background-size="cover" style="display:block;width:130rpx;" mode='widthFix'/>
+            <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/redbag.png" background-size="cover" style="display:block;width:130rpx;" mode='widthFix'/>
       <text class="bottom-text mt10">签到</text>
     </view>
     <view class="right-tag" bindtap="personalIndex">

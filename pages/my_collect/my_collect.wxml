@@ -4,10 +4,10 @@
   <view class="search_back">
     <view class="search_box">
       <view style="display:flex;height:60rpx">
-        <image animation="{{animationData}}" src="../../images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
+        <image animation="{{animationData}}" src="/images/lesson/dbx-1@2x.png" style="margin-top:28rpx;width:22rpx;height:10rpx;margin-left:27rpx;"/>
       </view>  
       <input bindinput="setValue"  bindconfirm='search' value="{{search_name}}" placeholder="搜索" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:490rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
-      <image bindtap='search' src="../../images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
+      <image bindtap='search' src="/images/lesson/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx"/>
     </view>
   </view>
 
@@ -20,7 +20,7 @@
       专家
     </view>
     <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
-      学校
+      高校
     </view> 
     <view class="tag-view {{tag==3?'on t-on':''}}" data-current="3" bindtap="swichNav" >
       专业
@@ -82,11 +82,11 @@
             <view style="margin-top:20rpx;margin-botom:20rpx;font-family:黑体;color:#777;font-size:0.7rem;overflow:hidden;text-overflow: ellipsis;  -webkit-box-orient: vertical;-webkit-line-clamp:2;white-space: nowrap;">{{item.l.lecturerDesc}}</view>
         </view>
       </view>
-
-      
     </view> 
 
 
+
+<!--收藏的高校-->
 <view  style="margin:20rpx;display:{{tag==2?'block':'none'}}">
 <view wx:for="{{schoolList.collectSchool}}" style="margin:20rpx" data-id="{{item.s.yxid}}" catchtap='schoolDetail'>
     <view style="display:flex;align-items:center;justify-content:space-between">
@@ -109,9 +109,12 @@
       </view>
     </view>
   </view>
-
 </view>
     
+
+
+
+
 <view  style="margin:20rpx;display:{{tag==3?'block':'none'}}">
   <view wx:for="{{zyList.collectZy}}" style="margin:20rpx" data-id="{{item.z.id}}" catchtap='zyDetail'>
     <view style="display:flex;align-items:center;justify-content:space-between">

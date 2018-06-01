@@ -6,7 +6,7 @@
         {{item.yxname}}
       </view>
       <view style="width:150rpx;display:inline-block;margin-right:20rpx">
-        <button wx:if="{{collect==0}}" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;"  bindtap="collect">收藏</button>
+        <button wx:if="{{collect==0}}" bindtap="collect" type="primary"  style="font-family:黑体;font-size:0.8rem;color:#fff;width:100%;">收藏</button>
       <button wx:if="{{collect==1}}" bindtap="cansleCollect"  style="font-family:黑体;font-size:0.8rem;color:#000;background-color:#eee;width:100%;">已收藏</button>
       </view> 
     </view> 

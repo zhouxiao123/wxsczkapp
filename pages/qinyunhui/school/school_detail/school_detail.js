@@ -1,6 +1,8 @@
 var app = getApp()
 Page({
   data: {
+    indicatorDots: true,
+    autoplay: true,
     param: {},
     disflag: 'none',
     showLecturer: "none",
@@ -57,16 +59,22 @@ Page({
   onLoad: function (options) {
     var WxParse = require('../../../../wxParse/wxParse.js');//引入WxParse模块
     wx.setNavigationBarTitle({ title: "院校详情" })
+    var that = this
+    var uid = options.uid
+    that.data.uid = uid
+    var secKey = options.secKey
+    that.data.secKey = secKey
 
     var animation = wx.createAnimation({
       duration: 100,
       timingFunction: 'ease',
     })
     this.animation = animation
+    console.log('院校id的值：')
+    console.log(options.id)
     this.setData({
       id: options.id
     });
-    var that = this
 
     var value = wx.getStorageSync('oid')
     //console.log(value)
@@ -123,7 +131,7 @@ Page({
     }
 
     //调用登录接口
-    wx.request({
+   /*wx.request({
 
       url: app.globalData.baseUrl + 'qinyun/pub/auth',
       header: {
@@ -140,20 +148,20 @@ Page({
         console.log(res.data);
         wx.hideLoading()
         //跳转到注册页面
-        if (res.data.status == 300) {
+        if (res.data.status == 300 || res.data.status == 403) {
           //跳转到测录取页面
           wx.showModal({
             title: '注册账号',
-            content: res.data.msg,
+            //content: res.data.msg,
             success: function (res) {
               if (res.confirm) {
                 console.log('用户点击确定')
                 wx.redirectTo({
-                  url: '../denglu_qinyunhui/denglu_qinyunhui'
+                  url: '/pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu'
                 })
               } else if (res.cancel) {
                 wx.navigateTo({
-                  url: '../../index/index'
+                  url: '/pages/index/index'
                 })
                 console.log('用户点击取消')
               }
@@ -166,9 +174,8 @@ Page({
           })
           //取secKey和uid
           that.data.secKey = res.data.list[0].secKey
-          that.data.uid = res.data.list[0].id
-
-
+          that.data.uid = res.data.list[0].id*/
+      
           //登录成功后 获取uid和secKey
           wx.showLoading({
             mask: true,
@@ -187,13 +194,58 @@ Page({
               secKey: that.data.secKey,
             },
             success: function (res) {
-               console.log(res.data)//加载院校详情的初始信息
-              that.setData({
-                item: res.data.list[0]
-              })
+              console.log('院校基础信息')
+              console.log(res.data)//加载院校详情的初始信息
+          
+              //console.log('第一个')
+              //console.log(res.data.list[0].pics[0].pic)
+
+              var str = res.data.list[0].pics[0].pic;
+
+              if (res.data.list[0].pics.length==3){
+                if (str.startsWith("https:")) {
+                  var xuexiaotupian1 = res.data.list[0].pics[0].pic.replace('cdn.img.up678.com', 'wxsign.sczk.com.cn/tp')
+                  var xuexiaotupian2 = res.data.list[0].pics[1].pic.replace('cdn.img.up678.com', 'wxsign.sczk.com.cn/tp')
+                  var xuexiaotupian3 = res.data.list[0].pics[2].pic.replace('cdn.img.up678.com', 'wxsign.sczk.com.cn/tp')
+                } else {
+
+                  var xuexiaotupian1 = 'https://wxsign.sczk.com.cn/tp/icon/school/' + res.data.list[0].pics[0].pic
+                  var xuexiaotupian2 = 'https://wxsign.sczk.com.cn/tp/icon/school/' + res.data.list[0].pics[1].pic
+                  var xuexiaotupian3 = 'https://wxsign.sczk.com.cn/tp/icon/school/' + res.data.list[0].pics[2].pic
+                }
+                that.setData({
+                  item: res.data.list[0],
+                  xuexiaotupian1: xuexiaotupian1,
+                  xuexiaotupian2: xuexiaotupian2,
+                  xuexiaotupian3: xuexiaotupian3,
+                })
+              } else if (res.data.list[0].pics.length == 2){
+                if (str.startsWith("https:")) {
+                  var xuexiaotupian1 = res.data.list[0].pics[0].pic.replace('cdn.img.up678.com', 'wxsign.sczk.com.cn/tp')
+                  var xuexiaotupian2 = res.data.list[0].pics[1].pic.replace('cdn.img.up678.com', 'wxsign.sczk.com.cn/tp')
+                } else {
+                  var xuexiaotupian1 = 'https://wxsign.sczk.com.cn/tp/icon/school/' + res.data.list[0].pics[0].pic
+                  var xuexiaotupian2 = 'https://wxsign.sczk.com.cn/tp/icon/school/' + res.data.list[0].pics[1].pic
+                }
+                that.setData({
+                  item: res.data.list[0],
+                  xuexiaotupian1: xuexiaotupian1,
+                  xuexiaotupian2: xuexiaotupian2,
+                })
+              } else if (res.data.list[0].pics.length == 1) {
+                if (str.startsWith("https:")) {
+                  var xuexiaotupian1 = res.data.list[0].pics[0].pic.replace('cdn.img.up678.com', 'wxsign.sczk.com.cn/tp')
+                } else {
+                  var xuexiaotupian1 = 'https://wxsign.sczk.com.cn/tp/icon/school/' + res.data.list[0].pics[0].pic
+                }
+                that.setData({
+                  item: res.data.list[0],
+                  xuexiaotupian1: xuexiaotupian1,
+                })
+              }
               that.data.scode = res.data.list[0].scode//学校id
-              that.data.pcdm = res.data.list[0].historyParams.pcdm//批次代码
-              that.data.year = res.data.list[0].historyParams.year//year
+              //that.data.pcdm = res.data.list[0].historyParams.pcdm//批次代码
+              //that.data.year = res.data.list[0].historyParams.year//year
               that.data.yxdh = res.data.list[0].yxdh//yxdh
               that.data.school_id = res.data.list[0].school_id//school_id
               WxParse.wxParse('article', 'html', res.data.list[0].info, that, 5);       
@@ -212,36 +264,42 @@ Page({
                   secKey: that.data.secKey,
                 },
                 success: function (res) {
-
-                  console.log('初始参数====================')
-                  console.log(res.data)
+                  console.log('批次初始参数====================')
+                  //console.log(res.data)
                   that.setData({
                     pici: res.data.list
                   })
-                  that.setData({
-                    quanbupici:res.data.list[0].name//设置批次的默认值
-                  })
-                  
-                 
+                  console.log(res.data.list)
+                  if (res.data.list != null || res.data.list.length!=0){
+                    that.setData({
+                      quanbupici: res.data.list[0].name//设置批次的默认值
+                    })
+                  }
                   wx.hideLoading()
                 }
               })
 
               wx.request({
-                //是否已经收藏学校
-                url: app.globalData.baseUrl + 'wx/is_collect_school',
-                data: {
-                  oid: that.data.oid,
-                  yxId: options.id
-                },
+                //判断是否已经收藏学校
+                  url: app.globalData.baseUrl + 'qinyun/school/info',
+                  header: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'qyh-appid': '07',
+                    'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+                  },
+                  data: {
+                    id: options.id,
+                    uid: that.data.uid,
+                    secKey: that.data.secKey,
+                  },
                 success: function (res) {
-                  if (res.data.result == "fail") {
+                  if (res.data.list[0].attention!=null) {
                     that.setData({
-                      collect: 0
+                      collect: 1
                     });
                   } else {
                     that.setData({
-                      collect: 1
+                      collect: 0
                     });
                   }
                   wx.hideLoading()
@@ -249,11 +307,9 @@ Page({
               })
             }
           })
-        }
-      }
-    })
-
-
+       // }
+      //}
+    //})
   },
   swichNav: function (event) {
 
@@ -561,38 +617,77 @@ Page({
     this.search2();
   },
 
-
-
+  //收藏学校
   collect: function (event) {
-
     var that = this
     wx.request({
-      url: app.globalData.baseUrl + 'wx/collect_school',
+      url: app.globalData.baseUrl + 'qinyun/u/support/attentionSchool',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
       data: {
-        oid: that.data.oid,
-        yxId: that.data.item.yxid
+        tid: that.data.school_id,//学校id
+        uid: that.data.uid,
+        secKey: that.data.secKey,
       },
       success: function (res) {
-        if (res.data.result == "fail") {
+        //console.log('高校中的收藏=================')
+        //console.log(res.data)
+        if (res.data.status == 200) {
+          that.setData({
+            collect: 1
+          });
+        } else {
           wx.showModal({
             title: '提示',
             content: '收藏失败',
             showCancel: false,
             success: function (res) {
-
             }
           })
-        } else {
-          that.setData({
-            collect: 1
-          });
         }
-
       }
     })
-    //console.log(event.currentTarget.dataset.id)
   },
-  cansleCollect: function () {
+
+  //取消收藏学校
+  cansleCollect: function (event) {
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'qinyun/u/support/attentionSchool',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'qyh-appid': '07',
+        'qyh-appsecret': '11248CFCB0CBC5F96392AA96B3FE271A'
+      },
+      data: {
+        tid: that.data.school_id,//学校id
+        uid: that.data.uid,
+        secKey: that.data.secKey,
+        cancel:0
+      },
+      success: function (res) {
+        console.log('取消收藏=================')
+        console.log(res.data)
+        if (res.data.status == 200) {
+          that.setData({
+            collect: 0
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '取消收藏失败',
+            showCancel: false,
+            success: function (res) {
+            }
+          })
+        }
+      }
+    })
+  },
+  /*cansleCollect: function () {
     var that = this
     wx.request({
       url: app.globalData.baseUrl + 'wx/cancel_collect_school',//取消收藏学校
@@ -618,7 +713,21 @@ Page({
 
       }
     })
-  },
+  },*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   toFsDetail: function (e) {
     //console.log(e.target.dataset.id + "----" + e.target.dataset.tag)
     wx.showLoading({
@@ -641,7 +750,29 @@ Page({
     })
     wx.hideLoading()
   },
-
+//跳转找专家
+  tiaozhuanwenzhuanjia: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.navigateTo({
+      url: '../../../ask_index/ask_index',
+    })
+    wx.hideLoading()
+  },
+  
+  //跳转测录取
+  tiaozhuanceluqu: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.navigateTo({
+      url: '../../celuqu/celuqu',
+    })
+    wx.hideLoading()
+  },
     swichNav1: function (event) {
     this.setData({
       tag1: event.currentTarget.dataset.current

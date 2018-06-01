@@ -1,0 +1,154 @@
+.main-view{
+  padding-bottom:130rpx;
+  
+}
+.search_back{
+  background-color:#f0f0f0;
+  height:100rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.search_box{
+  height:60rpx;
+  width:620rpx;
+  margin-left:65rpx;
+  border-radius: 30rpx;
+  background-color:#fff; 
+  display: flex;
+  align-items: center;
+}
+
+.tag-list{
+  margin-top:32rpx;
+  margin-left: 30rpx;
+  margin-bottom:24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-list-text{
+  margin-left:20rpx;
+  font-family:黑体;
+  color:#59c9b9;
+  font-size:1.0rem
+}
+
+.select-view{
+  border-bottom:1rpx solid #ddd;
+  margin-top:28rpx;
+  display:flex;
+  margin-bottom: 60rpx
+}
+
+.text-view{
+  margin-left:20rpx;
+  display:flex;
+  flex-direction:column;
+}
+
+.title-text{
+  font-family:黑体;
+  color:#4b4c4c;
+  font-size:0.9rem;
+  width:440rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  white-space: nowrap;
+}
+
+.subtitle-text{
+  font-family:黑体;
+  color:#9b9b9b;
+  font-size:0.7rem;
+  width:440rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  white-space: nowrap;
+  margin-top:8rpx;
+  margin-bottom:20rpx
+}
+
+.link-text{
+  font-family:Microsoft YaHei;
+  color:#ff7231;
+  font-size:0.65rem;
+  text-decoration:underline;
+  margin-bottom:20rpx
+}
+
+.text-bottom-content{
+  margin-bottom:16rpx;
+  display:flex; 
+  align-items: center;
+  justify-content:flex-end;
+}
+
+.fee-text{
+  font-family:Microsoft YaHei;
+  font-size:0.9rem;
+  color:#ff7231;
+  width:115rpx
+}
+
+.count-text{
+  font-family:Microsoft YaHei;
+  font-size:0.65rem;
+  color:#939494;
+  width:140rpx;
+  text-align: right;
+}
+
+.buy-view{
+  height:60rpx;
+  position: absolute;
+  margin-left:300rpx
+}
+
+.buy-text{
+  font-family:Microsoft YaHei;
+  font-size:0.7rem;
+  color:#fff;
+  
+  
+}
+
+.tag-list{
+  margin-top:20rpx;
+  margin-left:60rpx;
+  margin-right:60rpx;
+  margin-bottom:20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-view{
+  
+    display:flex;
+    padding:10rpx;
+  flex-direction:column;
+    font-family:黑体;
+  color:#4b4c4c;
+  font-size:0.9rem
+}
+
+.on{
+  border-bottom: 2px solid #59c9b9;
+}
+
+.t-on{
+  color:#59c9b9;
+}
+
+
+.content_list{
+  margin:20rpx;
+  display:flex;
+  border-bottom:1px solid #aaa;
+  padding-bottom:10rpx;
+}

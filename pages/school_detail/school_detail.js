@@ -225,6 +225,7 @@ Page({
 
 
   },
+  //收藏学校
   collect: function (event) {
 
     var that = this
