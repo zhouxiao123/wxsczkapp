@@ -44,11 +44,7 @@
 
 
 <view style="padding-bottom:130rpx">
-    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票.png" style="width:750rpx" mode='widthFix'></image>
-    <view style="text-align:center;color:#e00">
-      <text style="display:block">2018年高考考生可凭准考证免费入场</text>
-      <text style="display:block;margin-top:20rpx;color:#f90">家长请在下方购票</text>
-    </view>
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票-a.png" style="width:750rpx" mode='widthFix'></image>
     <form bindsubmit="formSubmit" style="margin-top: 5px">
 
     <view class="form-group">
@@ -71,4 +67,9 @@
     <input hidden name="openId" value="{{oid}}"/>
     <input hidden name="countNum" value="{{tag}}"/>
 </form>
+    <view style="color:#e51d1d;font-size:26rpx;margin-top:20rpx;margin-left:40rpx">
+      <text style="display:block">注：1.2018年高考考生可凭准考证免费入场，家长请购买门票。
+</text>
+      <text style="display:block;margin-top:20rpx">2.本门票一张只能参加成都或绵阳咨询会其中一场</text>
+    </view>
 </view>

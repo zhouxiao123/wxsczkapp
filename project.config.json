@@ -251,7 +251,7 @@
 					"id": 36,
 					"name": "直播",
 					"pathName": "pages/live_video/live_video",
-					"query": "id=95"
+					"query": "id=98"
 				},
 				{
 					"id": 37,
@@ -300,6 +300,12 @@
 					"name": "门票二维码详情",
 					"pathName": "pages/zixunhuimenpiao/list/list",
 					"query": "id=95"
+				},
+				{
+					"id": -1,
+					"name": "购买门票",
+					"pathName": "pages/zixunhuimenpiao/buy/buy",
+					"query": ""
 				}
 			]
 		}
