@@ -47,6 +47,18 @@
     </view>
   </view>
 
+
+    <view class="tag-list" bindtap="myProduct">
+    <view class="tag-view">
+      <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">已购产品(门票</text><image style="width:40rpx" mode='widthFix' src="/images/1(1).png"></image><text class="tag-list-text-r">)</text>
+    </view> 
+    <view class="tag-view">
+      <image src="../../images/personal/jx-11@2x.png" style="width:10rpx;height:20rpx;margin-left:12rpx"/>
+    </view>
+  </view>
+
+
   <view  wx:if="{{isLecturer==1}}" class="tag-list" bindtap="zhiyuanshenqing">
     <view class="tag-view">
       <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
@@ -80,16 +92,6 @@
     </view>
   </view>
 
-
-    <view class="tag-list" bindtap="myVideo">
-    <view class="tag-view">
-      <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
-      <text class="tag-list-text">已购视频</text>
-    </view> 
-    <view class="tag-view">
-      <image src="../../images/personal/jx-11@2x.png" style="width:10rpx;height:20rpx;margin-left:12rpx"/>
-    </view>
-  </view>
 
     <view class="tag-list" bindtap="myAsk">
     <view class="tag-view">

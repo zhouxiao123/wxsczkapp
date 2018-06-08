@@ -129,7 +129,7 @@ Page({
     var res = wx.getSystemInfoSync()
 
     //console.log(res)
-    var he = parseInt(750 * res.windowHeight / res.windowWidth - 180)
+    var he = parseInt(750 * res.windowHeight / res.windowWidth - 260)
     that.setData({
       scrollHeight:he
     })

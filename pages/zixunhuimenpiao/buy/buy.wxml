@@ -44,6 +44,7 @@
 
 
 <view style="padding-bottom:130rpx">
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/fhsy1.png" style="position:absolute;width:200rpx;top:20rpx;left:20rpx" catchtap="goIndex" mode='widthFix'></image>
     <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票-a.png" style="width:750rpx" mode='widthFix'></image>
     <form bindsubmit="formSubmit" style="margin-top: 5px">
 
@@ -63,9 +64,11 @@
     <view class="form-group" style="text-align: center;margin-top: 30px">
         <!--<button  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:160px;">查看已购买门票</button>-->
         <view catchtap='toList' style="color:#999999;font-size:26rpx;border-bottom:1px solid #999999">查看已购买门票</view>
+
     </view>
     <input hidden name="openId" value="{{oid}}"/>
     <input hidden name="countNum" value="{{tag}}"/>
+    <input hidden name="type" value="{{type}}"/>
 </form>
     <view style="color:#e51d1d;font-size:26rpx;margin-top:20rpx;margin-left:40rpx">
       <text style="display:block">注：1.2018年高考考生可凭准考证免费入场，家长请购买门票。

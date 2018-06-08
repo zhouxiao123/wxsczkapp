@@ -6,9 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  tag:1,
-  oid:'',
-  user:{}
+    tag:1,
+    oid:'',
+    user:{},
+    type:0
   },
 
   /**
@@ -17,6 +18,11 @@ Page({
   onLoad: function (options) {
     var that = this
     var value = wx.getStorageSync('oid')
+    if(options.type){
+      that.setData({
+        type:options.type
+      })
+    }
     //console.log(value)
     if (value) {
       that.setData({ oid: value })
@@ -326,6 +332,12 @@ wx.showLoading({
       }
       })
   },
+  goIndex:function(){
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
+  }
+  ,
   /**
    * 生命周期函数--监听页面显示
    */

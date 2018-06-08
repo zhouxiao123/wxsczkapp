@@ -33,7 +33,7 @@
       <view class='margin-left-2'>
        <view> {{item.s.yxxz}}</view>
       </view>
-      <view class='margin-left-3'>
+      <view class='margin-left-3' style="color:red">
        <view>在线</view>
       </view>
  </view>
@@ -51,8 +51,12 @@
 
 
 <view style="display:{{tag==1?'block':'none'}};">
-<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">{{schoolname}}</view>
-<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:80rpx;height:{{scrollHeight}}rpx">
+<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:160rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">
+<text style="display:block">{{schoolname}}</text>
+<text style="display:block">在线时间14:00到18:00</text>
+</view>
+
+<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:160rpx;height:{{scrollHeight}}rpx">
 <view class="a-class">
   <view wx:for="{{list}}" >
 

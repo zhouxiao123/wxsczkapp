@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.6",
+	"libVersion": "1.9.98",
 	"appid": "wxb92292e3ccd61cd8",
 	"projectname": "wxsczkapp",
 	"condition": {
@@ -305,6 +305,42 @@
 					"id": -1,
 					"name": "购买门票",
 					"pathName": "pages/zixunhuimenpiao/buy/buy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人主页",
+					"pathName": "pages/personal/personal",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已购产品",
+					"pathName": "pages/my_product/my_product",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "老师登陆",
+					"pathName": "pages/chatroom_teacher/chatroom_teacher",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登陆后设置",
+					"pathName": "pages/chatroom_teacher/setting/setting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登陆后列表",
+					"pathName": "pages/chatroom_teacher/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "老师对话",
+					"pathName": "pages/chatroom_teacher/talkpage/talkpage",
 					"query": ""
 				}
 			]

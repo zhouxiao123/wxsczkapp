@@ -7,7 +7,9 @@ Page({
    */
   data: {
   list:[],
-  oid:''
+  oid:'',
+  bigSrc:'',
+  disflag: 'none'
   },
 
   /**
@@ -114,11 +116,21 @@ Page({
     })
   },
   bigImg:function(e){
-    wx.previewImage({
+    /*wx.previewImage({
       urls: [e.currentTarget.dataset.src]
+    })*/
+    this.setData({
+      bigSrc: e.currentTarget.dataset.src,
+      disflag:'block'
     })
-    
   },
+  cancelBig:function(){
+    this.setData({
+      bigSrc: '',
+      disflag: 'none'
+    })
+  }
+  ,
   /**
    * 生命周期函数--监听页面显示
    */

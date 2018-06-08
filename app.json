@@ -99,14 +99,20 @@
     "pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu",
     "pages/qinyunhui/denglu/zhuanye_denglu/zhuanye_denglu",
     "pages/qinyunhui/denglu/shoucang_denglu/shoucang_denglu",
-    "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bktqp/tupian_bktqp",    "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici",
+    "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bktqp/tupian_bktqp",
+    "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bkdyp/tupian_bkdyp",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bkderp/tupian_bkderp",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_zktqp/tupian_zktqp",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_zkp/tupian_zkp",
     "pages/zhiyuan_shenhe/zhiyuan_shenhe_xieyi/zhiyuan_shenhe_xieyi",
     "pages/zixunhuimenpiao/buy/buy",
-    "pages/zixunhuimenpiao/list/list"
+    "pages/zixunhuimenpiao/list/list",
+    "pages/my_product/my_product",
+    "pages/chatroom_teacher/chatroom_teacher",
+    "pages/chatroom_teacher/setting/setting",
+    "pages/chatroom_teacher/list/list",
+    "pages/chatroom_teacher/talkpage/talkpage"
   ],
   "window": {
     "backgroundTextStyle": "light",
