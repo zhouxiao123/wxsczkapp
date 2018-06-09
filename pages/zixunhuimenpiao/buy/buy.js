@@ -168,7 +168,7 @@ wx.showLoading({
     } else {
       if (that.data.user.phone){
         wx.request({
-          url: app.globalData.baseUrl + 'wxsign/mini_buy',
+          url: app.globalData.baseUrl + 'wxsign/mini_buy_new',
           data: e.detail.value,
           success: function (res) {
             wx.hideLoading()
@@ -244,7 +244,7 @@ wx.showLoading({
             } else {
 
               wx.request({
-                url: app.globalData.baseUrl + 'wxsign/mini_buy',
+                url: app.globalData.baseUrl + 'wxsign/mini_buy_new',
                 data: e.detail.value,
                 success: function (res) {
                   wx.hideLoading()

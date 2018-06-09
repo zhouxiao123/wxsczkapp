@@ -32,3 +32,13 @@ button{
   font-size:30rpx;
   
 }
+.tag-view{
+  text-align: center;
+  margin-top:20rpx;
+  margin-bottom:20rpx
+}
+.radio-text{
+  font-family:黑体;
+  font-size:28rpx;
+  margin-right:20rpx
+}

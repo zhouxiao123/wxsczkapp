@@ -644,8 +644,8 @@ if(that.data.oid){
       title: '加载中'
     })
     wx.navigateTo({
-      //url: '../zhizhuzhaosheng/zhizhuzhaosheng'
-      url: '/pages/chatroom/chatroom'
+      url: '../zhizhuzhaosheng/zhizhuzhaosheng'
+      //url: '/pages/chatroom/chatroom'
     })
     wx.hideLoading()
   },
