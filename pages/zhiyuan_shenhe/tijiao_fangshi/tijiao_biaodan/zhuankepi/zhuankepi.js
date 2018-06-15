@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: "本科第二批" })
+    wx.setNavigationBarTitle({ title: "专科批" })
     /**
     * 加载的时候获取微信id
     */
@@ -96,6 +96,207 @@ Page({
           user: res.data
         })
         that.data.userid = res.data.id
+        //显示之前填写
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_zhuankepi',
+          data: {
+            userid: that.data.userid
+          },
+          success: function (res) {
+            // console.log(res.data)
+            //专业调配和定向调配1
+            var diyige = {};
+            diyige.type1 = 0;
+            diyige.type2 = 0;
+            if (res.data.zhuankepi_xuanze1.indexOf("1") != -1) {
+              diyige.type1 = 1
+            } if (res.data.zhuankepi_xuanze1.indexOf("2") != -1) {
+              diyige.type2 = 1
+            }
+            console.log(diyige)
+            //专业调配和定向调配2
+            var dierge = 0;
+            if (res.data.zhuankepi_xuanze2.indexOf("1") != -1) {
+              dierge = 1
+            }
+            //专业调配和定向调配3
+            var disange = 0;
+            if (res.data.zhuankepi_xuanze3.indexOf("1") != -1) {
+              disange = 1
+            }
+            //专业调配和定向调配4
+            var disige = 0;
+            if (res.data.zhuankepi_xuanze4.indexOf("1") != -1) {
+              disige = 1
+            }
+            //专业调配和定向调配5
+            var diwuge = 0;
+            if (res.data.zhuankepi_xuanze5.indexOf("1") != -1) {
+              diwuge = 1
+            }
+            //专业调配和定向调配6
+            var diliuge = 0;
+            if (res.data.zhuankepi_xuanze6.indexOf("1") != -1) {
+              diliuge = 1
+            }
+            //专业调配和定向调配7
+            var diqige = {};
+            diqige.type1 = 0;
+            diqige.type2 = 0;
+            if (res.data.zhuankepi_xuanze7.indexOf("1") != -1) {
+              diqige.type1 = 1
+            } if (res.data.zhuankepi_xuanze7.indexOf("2") != -1) {
+              diqige.type2 = 1
+            }
+            //专业调配和定向调配8
+            var dibage = 0;
+            if (res.data.zhuankepi_xuanze8.indexOf("1") != -1) {
+              dibage = 1
+            }
+            //专业调配和定向调配9
+            var dijiuge = 0;
+            if (res.data.zhuankepi_xuanze9.indexOf("1") != -1) {
+              dijiuge = 1
+            }
+            that.setData({
+              zhuankepi_xuanze1: diyige,
+              zhuankepi_xuanze2: dierge,
+              zhuankepi_xuanze3: disange,
+              zhuankepi_xuanze4: disige,
+              zhuankepi_xuanze5: diwuge,
+              zhuankepi_xuanze6: diliuge,
+              zhuankepi_xuanze7: diqige,
+              zhuankepi_xuanze8: dibage,
+              zhuankepi_xuanze9: dijiuge,
+              zhuankepiA_yxdm: res.data.zhuankepiA_yxdm,
+              zhuankepiA_yxmc: res.data.zhuankepiA_yxmc,
+              zhuankepiA_zydm1: res.data.zhuankepiA_zydm1,
+              zhuankepiA_zymc1: res.data.zhuankepiA_zymc1,
+              zhuankepiA_zydm2: res.data.zhuankepiA_zydm2,
+              zhuankepiA_zymc2: res.data.zhuankepiA_zymc2,
+              zhuankepiA_zydm3: res.data.zhuankepiA_zydm3,
+              zhuankepiA_zymc3: res.data.zhuankepiA_zymc3,
+              zhuankepiA_zydm4: res.data.zhuankepiA_zydm4,
+              zhuankepiA_zymc4: res.data.zhuankepiA_zymc4,
+              zhuankepiA_zydm5: res.data.zhuankepiA_zydm5,
+              zhuankepiA_zymc5: res.data.zhuankepiA_zymc5,
+              zhuankepiA_zydm6: res.data.zhuankepiA_zydm6,
+              zhuankepiA_zymc6: res.data.zhuankepiA_zymc6,
+              zhuankepiB_yxdm: res.data.zhuankepiB_yxdm,
+              zhuankepiB_yxmc: res.data.zhuankepiB_yxmc,
+              zhuankepiB_zydm1: res.data.zhuankepiB_zydm1,
+              zhuankepiB_zymc1: res.data.zhuankepiB_zymc1,
+              zhuankepiB_zydm2: res.data.zhuankepiB_zydm2,
+              zhuankepiB_zymc2: res.data.zhuankepiB_zymc2,
+              zhuankepiB_zydm3: res.data.zhuankepiB_zydm3,
+              zhuankepiB_zymc3: res.data.zhuankepiB_zymc3,
+              zhuankepiB_zydm4: res.data.zhuankepiB_zydm4,
+              zhuankepiB_zymc4: res.data.zhuankepiB_zymc4,
+              zhuankepiB_zydm5: res.data.zhuankepiB_zydm5,
+              zhuankepiB_zymc5: res.data.zhuankepiB_zymc5,
+              zhuankepiB_zydm6: res.data.zhuankepiB_zydm6,
+              zhuankepiB_zymc6: res.data.zhuankepiB_zymc6,
+              zhuankepiC_yxdm: res.data.zhuankepiC_yxdm,
+              zhuankepiC_yxmc: res.data.zhuankepiC_yxmc,
+              zhuankepiC_zydm1: res.data.zhuankepiC_zydm1,
+              zhuankepiC_zymc1: res.data.zhuankepiC_zymc1,
+              zhuankepiC_zydm2: res.data.zhuankepiC_zydm2,
+              zhuankepiC_zymc2: res.data.zhuankepiC_zymc2,
+              zhuankepiC_zydm3: res.data.zhuankepiC_zydm3,
+              zhuankepiC_zymc3: res.data.zhuankepiC_zymc3,
+              zhuankepiC_zydm4: res.data.zhuankepiC_zydm4,
+              zhuankepiC_zymc4: res.data.zhuankepiC_zymc4,
+              zhuankepiC_zydm5: res.data.zhuankepiC_zydm5,
+              zhuankepiC_zymc5: res.data.zhuankepiC_zymc5,
+              zhuankepiC_zydm6: res.data.zhuankepiC_zydm6,
+              zhuankepiC_zymc6: res.data.zhuankepiC_zymc6,
+              zhuankepiD_yxdm: res.data.zhuankepiD_yxdm,
+              zhuankepiD_yxmc: res.data.zhuankepiD_yxmc,
+              zhuankepiD_zydm1: res.data.zhuankepiD_zydm1,
+              zhuankepiD_zymc1: res.data.zhuankepiD_zymc1,
+              zhuankepiD_zydm2: res.data.zhuankepiD_zydm2,
+              zhuankepiD_zymc2: res.data.zhuankepiD_zymc2,
+              zhuankepiD_zydm3: res.data.zhuankepiD_zydm3,
+              zhuankepiD_zymc3: res.data.zhuankepiD_zymc3,
+              zhuankepiD_zydm4: res.data.zhuankepiD_zydm4,
+              zhuankepiD_zymc4: res.data.zhuankepiD_zymc4,
+              zhuankepiD_zydm5: res.data.zhuankepiD_zydm5,
+              zhuankepiD_zymc5: res.data.zhuankepiD_zymc5,
+              zhuankepiD_zydm6: res.data.zhuankepiD_zydm6,
+              zhuankepiD_zymc6: res.data.zhuankepiD_zymc6,
+              zhuankepiE_yxdm: res.data.zhuankepiE_yxdm,
+              zhuankepiE_yxmc: res.data.zhuankepiE_yxmc,
+              zhuankepiE_zydm1: res.data.zhuankepiE_zydm1,
+              zhuankepiE_zymc1: res.data.zhuankepiE_zymc1,
+              zhuankepiE_zydm2: res.data.zhuankepiE_zydm2,
+              zhuankepiE_zymc2: res.data.zhuankepiE_zymc2,
+              zhuankepiE_zydm3: res.data.zhuankepiE_zydm3,
+              zhuankepiE_zymc3: res.data.zhuankepiE_zymc3,
+              zhuankepiE_zydm4: res.data.zhuankepiE_zydm4,
+              zhuankepiE_zymc4: res.data.zhuankepiE_zymc4,
+              zhuankepiE_zydm5: res.data.zhuankepiE_zydm5,
+              zhuankepiE_zymc5: res.data.zhuankepiE_zymc5,
+              zhuankepiE_zydm6: res.data.zhuankepiE_zydm6,
+              zhuankepiE_zymc6: res.data.zhuankepiE_zymc6,
+              zhuankepiF_yxdm: res.data.zhuankepiF_yxdm,
+              zhuankepiF_yxmc: res.data.zhuankepiF_yxmc,
+              zhuankepiF_zydm1: res.data.zhuankepiF_zydm1,
+              zhuankepiF_zymc1: res.data.zhuankepiF_zymc1,
+              zhuankepiF_zydm2: res.data.zhuankepiF_zydm2,
+              zhuankepiF_zymc2: res.data.zhuankepiF_zymc2,
+              zhuankepiF_zydm3: res.data.zhuankepiF_zydm3,
+              zhuankepiF_zymc3: res.data.zhuankepiF_zymc3,
+              zhuankepiF_zydm4: res.data.zhuankepiF_zydm4,
+              zhuankepiF_zymc4: res.data.zhuankepiF_zymc4,
+              zhuankepiF_zydm5: res.data.zhuankepiF_zydm5,
+              zhuankepiF_zymc5: res.data.zhuankepiF_zymc5,
+              zhuankepiF_zydm6: res.data.zhuankepiF_zydm6,
+              zhuankepiF_zymc6: res.data.zhuankepiF_zymc6,
+              zhuankepiG_yxdm: res.data.zhuankepiG_yxdm,
+              zhuankepiG_yxmc: res.data.zhuankepiG_yxmc,
+              zhuankepiG_zydm1: res.data.zhuankepiG_zydm1,
+              zhuankepiG_zymc1: res.data.zhuankepiG_zymc1,
+              zhuankepiG_zydm2: res.data.zhuankepiG_zydm2,
+              zhuankepiG_zymc2: res.data.zhuankepiG_zymc2,
+              zhuankepiG_zydm3: res.data.zhuankepiG_zydm3,
+              zhuankepiG_zymc3: res.data.zhuankepiG_zymc3,
+              zhuankepiG_zydm4: res.data.zhuankepiG_zydm4,
+              zhuankepiG_zymc4: res.data.zhuankepiG_zymc4,
+              zhuankepiG_zydm5: res.data.zhuankepiG_zydm5,
+              zhuankepiG_zymc5: res.data.zhuankepiG_zymc5,
+              zhuankepiG_zydm6: res.data.zhuankepiG_zydm6,
+              zhuankepiG_zymc6: res.data.zhuankepiG_zymc6,
+              zhuankepiH_yxdm: res.data.zhuankepiH_yxdm,
+              zhuankepiH_yxmc: res.data.zhuankepiH_yxmc,
+              zhuankepiH_zydm1: res.data.zhuankepiH_zydm1,
+              zhuankepiH_zymc1: res.data.zhuankepiH_zymc1,
+              zhuankepiH_zydm2: res.data.zhuankepiH_zydm2,
+              zhuankepiH_zymc2: res.data.zhuankepiH_zymc2,
+              zhuankepiH_zydm3: res.data.zhuankepiH_zydm3,
+              zhuankepiH_zymc3: res.data.zhuankepiH_zymc3,
+              zhuankepiH_zydm4: res.data.zhuankepiH_zydm4,
+              zhuankepiH_zymc4: res.data.zhuankepiH_zymc4,
+              zhuankepiH_zydm5: res.data.zhuankepiH_zydm5,
+              zhuankepiH_zymc5: res.data.zhuankepiH_zymc5,
+              zhuankepiH_zydm6: res.data.zhuankepiH_zydm6,
+              zhuankepiH_zymc6: res.data.zhuankepiH_zymc6,
+              zhuankepiI_yxdm: res.data.zhuankepiI_yxdm,
+              zhuankepiI_yxmc: res.data.zhuankepiI_yxmc,
+              zhuankepiI_zydm1: res.data.zhuankepiI_zydm1,
+              zhuankepiI_zymc1: res.data.zhuankepiI_zymc1,
+              zhuankepiI_zydm2: res.data.zhuankepiI_zydm2,
+              zhuankepiI_zymc2: res.data.zhuankepiI_zymc2,
+              zhuankepiI_zydm3: res.data.zhuankepiI_zydm3,
+              zhuankepiI_zymc3: res.data.zhuankepiI_zymc3,
+              zhuankepiI_zydm4: res.data.zhuankepiI_zydm4,
+              zhuankepiI_zymc4: res.data.zhuankepiI_zymc4,
+              zhuankepiI_zydm5: res.data.zhuankepiI_zydm5,
+              zhuankepiI_zymc5: res.data.zhuankepiI_zymc5,
+              zhuankepiI_zydm6: res.data.zhuankepiI_zydm6,
+              zhuankepiI_zymc6: res.data.zhuankepiI_zymc6,
+            })
+          }
+        })
       }
     })
   },

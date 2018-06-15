@@ -300,4 +300,6 @@
 <view catchtap='tiaozhuanceluqu' class="b-l">
 <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/celuqu.png" style="width:200rpx" mode='widthFix'/>
 </view>
+
+
 </view>

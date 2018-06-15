@@ -8,9 +8,9 @@
 
       <view style="margin-top:40rpx;margin-bottom:40rpx;">
         <view class="classname">
-          <text style="color:#f7805B;font-family:黑体;font-size:1.1rem">*积分 + *现金</text>
+          <view style="color:#f7805B;font-family:黑体;font-size:1.1rem">500积分+850元现金 <view style='font-size:0.9rem;margin-top:40rpx;'>注：1元=10积分，积分最高可使用500分</view></view>
         </view>
-        <view class="classname" style='margin-top:300rpx;'>
+        <view class="classname" style='margin-top:250rpx;'>
           <button bindtap='sendMsg'  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">保存</button>
         </view>
       </view>

@@ -1,0 +1,4 @@
+<text>支付界面</text>
+ <view style="text-align:center" style="width:100%;">
+  <button bindtap='toanswer' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;margin-bottom:50rpx;">下一页</button>
+ </view>

@@ -90,7 +90,6 @@
     "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_fangshi_xuanze/tijiao_fangshi_xuanze",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/benke_tiqianpi/benke_tiqianpi",
-    "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/shenhe_pici/shenhe_pici",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/benke_diyipi/benke_diyipi",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/benke_dierpi/benke_dierpi",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/zhuanke_tiqianpi/zhuanke_tiqianpi",
@@ -107,7 +106,14 @@
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_zkp/tupian_zkp",
     "pages/zhiyuan_shenhe/zhiyuan_shenhe_xieyi/zhiyuan_shenhe_xieyi",
     "pages/zixunhuimenpiao/buy/buy",
-    "pages/zixunhuimenpiao/list/list"
+    "pages/zixunhuimenpiao/list/list",
+    "pages/zhiyuan_shenhe/zhiyuan_shenhe_jichuxinxi/zhiyuan_shenhe_jichuxinxi",
+    "pages/zhiyuan_shenhe/tijiao_fangshi/zhiyuanshenhe_pay/zhiyuanshenhe_pay",
+    "pages/zhiyuan_shenhe/dengdai_fankui/dengdai_fankui",
+    "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/xuanze_biaodan_pici/xuanze_biaodan_pici",
+    "pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_pici/jieguo_pici",
+    "pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo",
+    "pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

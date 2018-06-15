@@ -138,6 +138,10 @@ Page({
 
   //提交按钮
   sendMsg: function () {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
     var that = this
     console.log(that.data.msg)
     //选择的图片
@@ -174,7 +178,7 @@ Page({
                   //askid: that.data.askid,
                   //answerid: 0,
                   path: that.data.path,
-                  type: 2,
+                  pici: 2,
                 },
                 success: function (res) {
                   //console.log(res.data)
@@ -212,10 +216,6 @@ Page({
         })
       }
     }
-
-
-
-
   }
   ,
   /**

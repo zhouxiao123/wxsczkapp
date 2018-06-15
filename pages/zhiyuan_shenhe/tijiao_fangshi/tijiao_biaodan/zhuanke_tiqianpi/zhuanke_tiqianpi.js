@@ -91,6 +91,84 @@ Page({
         })
         //console.log(res.data.id)
         that.data.userid = res.data.id
+        //显示之前填写
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_zhuanketiqianpi',
+          data: {
+            userid: that.data.userid
+          },
+          success: function (res) {
+            console.log(res.data)
+            //专业调配和定向调配1
+            var diyige = {};
+            diyige.type1 = 0;
+            diyige.type2 = 0;
+
+            if (res.data.zhuanketiqianpi_xuanze1.indexOf("1") != -1) {
+              diyige.type1 = 1
+            } if (res.data.zhuanketiqianpi_xuanze1.indexOf("2") != -1) {
+              diyige.type2 = 1
+            }
+            console.log(diyige)
+            //专业调配和定向调配2
+            var dierge = 0;
+            if (res.data.zhuanketiqianpi_xuanze2.indexOf("1") != -1) {
+              dierge = 1
+            }
+            //专业调配和定向调配3
+            var disange = 0;
+            if (res.data.zhuanketiqianpi_xuanze3.indexOf("1") != -1) {
+              disange = 1
+            }
+            that.setData({
+              zhuanketiqianpi_xuanze1: diyige,
+              zhuanketiqianpi_xuanze2: dierge,
+              zhuanketiqianpi_xuanze3: disange,
+              zhuanketiqian1_yxdm: res.data.zhuanketiqian1_yxdm,
+              zhuanketiqian1_yxmc: res.data.zhuanketiqian1_yxmc,
+              zhuanketiqian1_zydm1: res.data.zhuanketiqian1_zydm1,
+              zhuanketiqian1_zymc1: res.data.zhuanketiqian1_zymc1,
+              zhuanketiqian1_zydm2: res.data.zhuanketiqian1_zydm2,
+              zhuanketiqian1_zymc2: res.data.zhuanketiqian1_zymc2,
+              zhuanketiqian1_zydm3: res.data.zhuanketiqian1_zydm3,
+              zhuanketiqian1_zymc3: res.data.zhuanketiqian1_zymc3,
+              zhuanketiqian1_zydm4: res.data.zhuanketiqian1_zydm4,
+              zhuanketiqian1_zymc4: res.data.zhuanketiqian1_zymc4,
+              zhuanketiqian1_zydm5: res.data.zhuanketiqian1_zydm5,
+              zhuanketiqian1_zymc5: res.data.zhuanketiqian1_zymc5,
+              zhuanketiqian1_zydm6: res.data.zhuanketiqian1_zydm6,
+              zhuanketiqian1_zymc6: res.data.zhuanketiqian1_zymc6,
+              zhuanketiqian2A_yxdm: res.data.zhuanketiqian2A_yxdm,
+              zhuanketiqian2A_yxmc: res.data.zhuanketiqian2A_yxmc,
+              zhuanketiqian2A_zydm1: res.data.zhuanketiqian2A_zydm1,
+              zhuanketiqian2A_zymc1: res.data.zhuanketiqian2A_zymc1,
+              zhuanketiqian2A_zydm2: res.data.zhuanketiqian2A_zydm2,
+              zhuanketiqian2A_zymc2: res.data.zhuanketiqian2A_zymc2,
+              zhuanketiqian2A_zydm3: res.data.zhuanketiqian2A_zydm3,
+              zhuanketiqian2A_zymc3: res.data.zhuanketiqian2A_zymc3,
+              zhuanketiqian2A_zydm4: res.data.zhuanketiqian2A_zydm4,
+              zhuanketiqian2A_zymc4: res.data.zhuanketiqian2A_zymc4,
+              zhuanketiqian2A_zydm5: res.data.zhuanketiqian2A_zydm5,
+              zhuanketiqian2A_zymc5: res.data.zhuanketiqian2A_zymc5,
+              zhuanketiqian2A_zydm6: res.data.zhuanketiqian2A_zydm6,
+              zhuanketiqian2A_zymc6: res.data.zhuanketiqian2A_zymc6,
+              zhuanketiqian2B_yxdm: res.data.zhuanketiqian2B_yxdm,
+              zhuanketiqian2B_yxmc: res.data.zhuanketiqian2B_yxmc,
+              zhuanketiqian2B_zydm1: res.data.zhuanketiqian2B_zydm1,
+              zhuanketiqian2B_zymc1: res.data.zhuanketiqian2B_zymc1,
+              zhuanketiqian2B_zydm2: res.data.zhuanketiqian2B_zydm2,
+              zhuanketiqian2B_zymc2: res.data.zhuanketiqian2B_zymc2,
+              zhuanketiqian2B_zydm3: res.data.zhuanketiqian2B_zydm3,
+              zhuanketiqian2B_zymc3: res.data.zhuanketiqian2B_zymc3,
+              zhuanketiqian2B_zydm4: res.data.zhuanketiqian2B_zydm4,
+              zhuanketiqian2B_zymc4: res.data.zhuanketiqian2B_zymc4,
+              zhuanketiqian2B_zydm5: res.data.zhuanketiqian2B_zydm5,
+              zhuanketiqian2B_zymc5: res.data.zhuanketiqian2B_zymc5,
+              zhuanketiqian2B_zydm6: res.data.zhuanketiqian2B_zydm6,
+              zhuanketiqian2B_zymc6: res.data.zhuanketiqian2B_zymc6,
+            })
+          }
+        })
       }
     })
   },
@@ -122,11 +200,38 @@ Page({
   * 表单输入
   */
   formSubmit: function (e) {
-    wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
     var that = this
+    var zhuanketiqian1_yxdm= e.detail.value.zhuanketiqian1_yxdm
+    var zhuanketiqian1_yxmc= e.detail.value.zhuanketiqian1_yxmc
+    var zhuanketiqian1_zydm1= e.detail.value.zhuanketiqian1_zydm1
+    var zhuanketiqian1_zymc1= e.detail.value.zhuanketiqian1_zymc1
+    var zhuanketiqian1_zydm2= e.detail.value.zhuanketiqian1_zydm2
+    var zhuanketiqian1_zymc2= e.detail.value.zhuanketiqian1_zymc2
+    var zhuanketiqian1_zydm3= e.detail.value.zhuanketiqian1_zydm3
+    var zhuanketiqian1_zymc3= e.detail.value.zhuanketiqian1_zymc3
+    var zhuanketiqian1_zydm4= e.detail.value.zhuanketiqian1_zydm4
+    var zhuanketiqian1_zymc4= e.detail.value.zhuanketiqian1_zymc4
+    var zhuanketiqian1_zydm5= e.detail.value.zhuanketiqian1_zydm5
+    var zhuanketiqian1_zymc5= e.detail.value.zhuanketiqian1_zymc5
+    var zhuanketiqian1_zydm6= e.detail.value.zhuanketiqian1_zydm6
+    var zhuanketiqian1_zymc6= e.detail.value.zhuanketiqian1_zymc6
+    if (zhuanketiqian1_yxdm == '' && zhuanketiqian1_yxmc == '' && zhuanketiqian1_zydm1 == '' && zhuanketiqian1_zymc1 == ''
+      && zhuanketiqian1_zydm2 == '' && zhuanketiqian1_zymc2 == '' && zhuanketiqian1_zydm3 == '' && zhuanketiqian1_zymc3 == '' &&
+      zhuanketiqian1_zydm4 == '' && zhuanketiqian1_zymc4 == '' && zhuanketiqian1_zydm5 == '' && zhuanketiqian1_zymc5 == ''
+      && zhuanketiqian1_zydm6 == '' && zhuanketiqian1_zymc6 == '') {
+      wx.showModal({
+        title: '提示',
+        content: '至少要填写第一志愿',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    } else {
+      wx.showLoading({
+        mask: true,
+        title: '加载中'
+      })
     console.log(that.data.userid)
     wx.request({
       url: app.globalData.baseUrl + 'wx/zhiyuanshenhe_zhuanketiqianpi',
@@ -202,6 +307,7 @@ Page({
         }
       }
     })
+    }
   },
   formReset: function () {
     this.setData({

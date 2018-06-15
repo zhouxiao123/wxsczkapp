@@ -1,0 +1,7 @@
+
+
+<view style="text-align:center;padding-top:500rpx;width:100%;" >
+  <button bindtap='toanswer' class='jieguo'>查看审核结果</button>
+ </view>
+
+ 

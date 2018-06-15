@@ -20,7 +20,7 @@
 </view>
 
 
-<view style='margin-top:110rpx;'>
+<view style='margin-top:80rpx;margin-left:20rpx;margin-right:20rpx;'>
 <view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>*每个批次填写之后单独保存，然后统一提交，统一提交之后不可修改！</view>
   <button bindtap='tongyi_tijiao'>统一提交</button>
 </view>

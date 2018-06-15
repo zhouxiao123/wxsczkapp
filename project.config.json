@@ -284,15 +284,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 42,
 					"name": "志愿审核",
-					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
-					"query": ""
-				},
-				{
-					"id": 43,
-					"name": "测试登录验证码",
-					"pathName": "pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu",
+					"pathName": "pages/zhiyuan_shenhe/tijiao_fangshi/zhiyuanshenhe_pay/zhiyuanshenhe_pay",
 					"query": ""
 				},
 				{
@@ -300,6 +294,12 @@
 					"name": "门票二维码详情",
 					"pathName": "pages/zixunhuimenpiao/list/list",
 					"query": "id=95"
+				},
+				{
+					"id": -1,
+					"name": "青云汇---登录",
+					"pathName": "pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu",
+					"query": ""
 				}
 			]
 		}
