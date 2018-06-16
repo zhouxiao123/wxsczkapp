@@ -128,6 +128,12 @@ Page({
   onReady: function () {
 
   },
+  //已放大保存图片
+  bigImg: function(e){
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.src],
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示

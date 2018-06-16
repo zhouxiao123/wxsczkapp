@@ -1,0 +1,18 @@
+<view style='margin:40rpx;'>
+<view class='biaoti'>第十一届普通高校招生及志愿填报在线咨询会</view>
+<view style="margin-top:10rpx;text-align:center;font-size:36rpx;font-weight:bold">老师登录</view>
+<view style="border-bottom:1px solid #CCCCCC;margin-top:200rpx;" class='main-view'>
+
+<input style='width: 400rpx;line-height:82rpx;height: 82rpx;' type="text" placeholder="手机号" placeholder-style="font-family:黑体;color:#a5a6a6;font-size:40rpx;" bindinput="setValue"></input>
+<!--<button class='right yanzheng_btn' bindtap="bindButtonTap" disabled='{{disabled}}' style="background-color:{{color}}">{{text}}</button>-->
+<button class='right yanzheng_btn' bindtap="bindButtonTap" disabled='{{disabled}}' style="background-color:{{color}}">发送验证码</button>
+
+</view>
+<view style='margin-top:80rpx;'>
+
+<input type="text" placeholder="验证码" placeholder-style="font-family:黑体;color:#a5a6a6;font-size:40rpx;"  bindinput="setValue2" style="border-bottom:1px solid #CCCCCC;line-height:82rpx;height: 82rpx;"></input>
+
+<button class='denglu' bindtap='zhuce'>登录</button>
+</view>
+
+</view>

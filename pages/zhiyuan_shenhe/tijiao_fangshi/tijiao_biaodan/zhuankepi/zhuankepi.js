@@ -104,6 +104,9 @@ Page({
           },
           success: function (res) {
             // console.log(res.data)
+            if (res.data != null && res.data != '') {
+
+              if (res.data.zhuankepi_xuanze1 != null && res.data.zhuankepi_xuanze1 != '' && res.data.zhuankepi_xuanze1 != "undefined") {
             //专业调配和定向调配1
             var diyige = {};
             diyige.type1 = 0;
@@ -114,6 +117,8 @@ Page({
               diyige.type2 = 1
             }
             console.log(diyige)
+              }
+
             //专业调配和定向调配2
             var dierge = 0;
             if (res.data.zhuankepi_xuanze2.indexOf("1") != -1) {
@@ -139,6 +144,8 @@ Page({
             if (res.data.zhuankepi_xuanze6.indexOf("1") != -1) {
               diliuge = 1
             }
+
+            if (res.data.zhuankepi_xuanze7 != null && res.data.zhuankepi_xuanze7 != '' && res.data.zhuankepi_xuanze7 != "undefined") {
             //专业调配和定向调配7
             var diqige = {};
             diqige.type1 = 0;
@@ -148,6 +155,8 @@ Page({
             } if (res.data.zhuankepi_xuanze7.indexOf("2") != -1) {
               diqige.type2 = 1
             }
+            }
+
             //专业调配和定向调配8
             var dibage = 0;
             if (res.data.zhuankepi_xuanze8.indexOf("1") != -1) {
@@ -296,6 +305,7 @@ Page({
               zhuankepiI_zymc6: res.data.zhuankepiI_zymc6,
             })
           }
+        }
         })
       }
     })
@@ -542,7 +552,7 @@ Page({
               if (res.confirm) {
                 console.log('用户点击确定')
                 wx.navigateTo({
-                  url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/shenhe_pici/shenhe_pici'
+                  url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/xuanze_biaodan_pici/xuanze_biaodan_pici'
                 })
               } else if (res.cancel) {
                 console.log('用户点击取消')

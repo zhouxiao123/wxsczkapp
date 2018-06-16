@@ -1,0 +1,33 @@
+.tiqianpi{
+  background-color:#66CDAA;
+  font-family:黑体;
+  color:#fff;
+  width:321rpx;
+}
+
+.benyi{
+background-color:#66CDAA;
+font-family:黑体;
+color:#fff;
+width:321rpx;
+}
+.bener{
+background-color:#66CDAA;
+font-family:黑体;
+color:#fff;
+width:321rpx;
+}
+
+.zhaunketiqian{
+background-color:#66CDAA;
+font-family:黑体;
+color:#fff;
+width:321rpx;
+}
+
+.zhaunke{
+background-color:#66CDAA;
+font-family:黑体;
+color:#fff;
+width:321rpx;
+}

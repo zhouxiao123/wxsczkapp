@@ -25,7 +25,7 @@ Page({
       title: '加载中'
     })
     if (that.data.tongyi == 1) {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/zhiyuan_shenhe/tijiao_fangshi/zhiyuanshenhe_pay/zhiyuanshenhe_pay'
       })
     } else {

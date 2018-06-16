@@ -16,6 +16,34 @@ Page({
     wx.setNavigationBarTitle({ title: "等待志愿审核结果" })
   },
   /**
+* 返回主页
+*/
+  toanswer: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.redirectTo({
+      url: '/pages/index/index'
+    })
+    wx.hideLoading()
+  },
+  /**
+* 查看我已经填写的志愿
+*/
+  wodetianxie: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.redirectTo({
+      url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_pici/yitijiao_pici'
+    })
+    wx.hideLoading()
+  },
+
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

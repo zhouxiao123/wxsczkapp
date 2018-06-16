@@ -27,7 +27,19 @@ Page({
     })
     wx.hideLoading()
   },
-
+  /**
+   * 点击查看之前提交的志愿
+   */
+  wodezhiyuan: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.navigateTo({
+      url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_pici/yitijiao_pici'
+    })
+    wx.hideLoading()
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -48,4 +48,10 @@
   font-size:1.0rem
 }
 
+.tag-list-text-r{
+  font-family:黑体;
+  color:#59c9b9;
+  font-size:1.0rem
+}
+
 

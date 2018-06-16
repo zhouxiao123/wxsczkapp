@@ -296,14 +296,14 @@ Page({
   /**
    * 点击切换图片
    */
-  /*qiehuan_tupian2: function (event) {
+  qiehuan_tupian2: function (event) {
     this.setData({
       disflag2: true,
       disflag3: false,
     });
-  },*/
+  },
   //测试志愿审核
-  qiehuan_tupian2: function (event) {
+ /* qiehuan_tupian2: function (event) {
       var that = this
       wx.request({
         url: app.globalData.baseUrl + 'wx/zhiyuanjiemian',
@@ -330,9 +330,7 @@ Page({
         
     }
   })
-
-
-  },
+  },*/
 
   /*touchStart: function (e) {
     touchDot = e.touches[0].pageY; // 获取触摸时的原点 

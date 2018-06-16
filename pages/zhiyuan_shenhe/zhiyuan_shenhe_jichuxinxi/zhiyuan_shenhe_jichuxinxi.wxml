@@ -3,7 +3,7 @@
 <form  bindsubmit="formSubmit" bindreset="formReset">
 <!--基础信息-->
 <view style='border-bottom:1rpx solid #66CDAA;'>
-<text class='margin-left-1'>基础信息</text>
+<text class='margin-left-1'>基础信息<text class='neirong3'>（注：填写后不可修改）</text></text>
 
 <view style='display:flex;'>
 <view class="df"><input style='border-bottom:1rpx solid #ddd;width:650rpx;'name="lianxidianhua" value="{{lianxidianhua}}" placeholder="学生/家长电话(请保证真实并且近期方便联系)" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>

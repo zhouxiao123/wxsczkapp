@@ -1,0 +1,43 @@
+/* pages/chatroom_teacher/list/list.wxss */
+.chat-img{
+width:120rpx;
+height:120rpx;
+border-radius: 50%;
+
+}
+
+
+.df{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:20rpx;
+
+}
+.subbutton{
+  border: none;
+    background: #ff8400;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    width:150rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:20rpx;
+    margin-right:20rpx
+}
+
+.resetbutton{
+  border: none;
+    background: #008bcd;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    width:150rpx;
+    line-height: 50rpx;
+    padding: 6rpx 24rpx;
+    font-family: 微软雅黑;
+    margin-left:20rpx;
+    margin-right:20rpx
+}

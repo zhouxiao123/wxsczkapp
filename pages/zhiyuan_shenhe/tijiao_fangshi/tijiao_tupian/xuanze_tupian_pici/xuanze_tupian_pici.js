@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    yixuan:0,
   },
 
   /**
@@ -17,6 +17,7 @@ Page({
     * 加载的时候获取微信id
     */
     var that = this
+
     var value = wx.getStorageSync('oid')
     //console.log(value)
     if (value) {
@@ -70,7 +71,13 @@ Page({
         }
       })
     }
-
+    /*if (options.yixuan != null && options.yixuan != '' && options.yixuan != "undefined"){
+     var yixuan = options.yixuan
+     that.data.yixuan = yixuan//这样在其他方法中就可以取值了
+     that.setData({
+       yixuan: that.data.yixuan
+     })
+   }*/
     //that.data.oid
     /**
 * 调用getUserDetail方法，通过oid查询对应的user集合
@@ -88,6 +95,89 @@ Page({
         })
         //console.log(res.data.id)
         that.data.userid = res.data.id
+
+        //已填写的颜色改变1
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype:1,
+            pici:1
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse1: res.data
+            })
+           
+          }
+        })
+        //已填写的颜色改变2
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 2
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse2: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变3
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 3
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse3: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变4
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 4
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse4: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变5
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 5
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse5: res.data
+            })
+
+          }
+        })
+
+
       }
     })
   },
@@ -171,7 +261,6 @@ Page({
       url: app.globalData.baseUrl + 'wx/savezhiyuan_pay',
       data: {
         userid: that.data.userid,
-        state:1,
         pay:0,
         uploadingtype:1,
         

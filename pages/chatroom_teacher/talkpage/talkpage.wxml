@@ -1,0 +1,39 @@
+<!--pages/chatroom_teacher/talkpage/talkpage.wxml-->
+<view style="display:block">
+<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">
+<text style="display:block">学生1</text>
+
+</view>
+
+<scroll-view   scroll-y="true" id="text-page"  style="margin-top:80rpx;height:600rpx">
+<view class="a-class">
+  <view  >
+    <view class="chat-teacher">
+          <image class="chat-img" src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoK6yaq7CstdTZWXuLCc2qicn4EhGxdLia0icJz4pvOUh9yzBKiceJLweO5cv0n4Wup7ia4CX9wqIsI9rQ/132"></image>
+      <view class="chat-text" >老师您好</view>
+    </view>
+
+    <view  class="chat-student">
+      <view class="chat-text" style="background:#fff">请问有什么问题么</view>
+      <image class="chat-img"  src="https://wxsign.sczk.com.cn/wxsczkappback/img/1229d35f-6a6f-46ae-852f-a6bace7e9df1.png"></image>
+    </view>
+
+    <view class="chat-teacher">
+          <image class="chat-img" src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoK6yaq7CstdTZWXuLCc2qicn4EhGxdLia0icJz4pvOUh9yzBKiceJLweO5cv0n4Wup7ia4CX9wqIsI9rQ/132"></image>
+      <view class="chat-text" >请问学校优势专业有哪些</view>
+    </view>
+
+</view>
+  </view>
+
+</scroll-view>
+
+<view  class="talk_back">
+      <view class="talk_box">
+          
+        <input bindinput="setValue" value="{{msg}}"  type="text" placeholder-style="font-family:黑体;" maxlength="500"  style="color:#333;display:inline-block;width:400rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+        <button bindtap='sendMsg' style="height:60rpx;font-size:0.8rem;line-height:60rpx;background:#59c9b9;color:#fff;border:none">发送</button>
+        <button bindtap='goOut' style="height:60rpx;font-size:0.8rem;line-height:60rpx;background:red;color:#fff;border:none">退出</button>
+      </view>
+    </view>
+</view>

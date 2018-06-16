@@ -1,0 +1,255 @@
+/* pages/chatroom_teacher/talkpage/talkpage.wxss */
+page{
+  background:#f3f3f3
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.margin-left{
+height:40rpx;
+width:750rpx;
+font-family:黑体;
+color:#666666;
+font-size:28rpx;
+text-align: center
+}
+
+.ask-content{
+  margin-top:28rpx;
+  margin-left:20rpx;
+  margin-right:20rpx
+}
+
+.ask-content{
+  margin-top:28rpx;
+  margin-left:20rpx;
+  margin-right:20rpx
+}
+
+
+.ask-bar{
+  border-bottom:4rpx solid #eaeaea;
+  margin-top:30rpx
+}
+
+.ask-text{
+  font-size: 36rpx; 
+  font-family:黑体;
+  color:#343434;
+  margin-left:40rpx
+}
+
+.answer-content{
+  margin-top:40rpx;
+  display:flex;
+  align-items:center;
+  margin-left:20rpx
+}
+
+.listen-content{
+  display:flex;
+  align-items: center
+}
+
+.intro-right-content{
+
+  display:flex;
+  align-items:center;
+  justify-content: center
+  
+}
+.time-text{
+  margin-left:20rpx;
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#a7a6a6;
+}
+
+.center-text{
+  position: absolute;
+  left :140rpx;
+  width:240rpx;
+  height:50rpx;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+
+.img-text{
+  font-size: 0.76rem; 
+  font-family:Microsoft YaHei;
+  color:#fff;
+}
+
+
+.img-img{
+  margin-right:20rpx
+  
+}
+
+.intro-content{
+  margin-top:20rpx;
+  margin-bottom:16rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  
+}
+
+.name-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#3e3d3d;
+}
+
+.sep-text{
+  font-size: 0.4rem; 
+  font-family:Microsoft YaHei;
+  color:#7b7a7a;
+  margin-left:10rpx;
+  margin-right:10rpx;
+}
+
+.detail-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#7b7a7a;
+  text-overflow: ellipsis;
+  width:440rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  white-space: nowrap;
+
+
+}
+
+.number-text{
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  margin-left:12rpx
+}
+.talk_back{
+  background:#fff;
+  height:100rpx;
+  display: flex;
+  align-items: center;
+  position:fixed;
+  bottom:0;
+  width:750rpx;
+  
+}
+
+
+.talk_box{
+  height:60rpx;
+  
+  margin-left:40rpx;
+  
+  background-color:#f0f0f0; 
+  display: flex;
+  align-items: center;
+}
+.df{
+  display:flex;margin-top:20rpx;margin-left:20rpx;align-items: center;
+}
+.chat-teacher{
+margin:20rpx;
+display:flex;
+justify-content: flex-start;
+}
+.chat-student{
+margin:20rpx;
+display:flex;
+justify-content: flex-end;
+}
+.chat-img{
+width:90rpx;
+height:90rpx;
+border-radius: 50%;
+}
+.chat-text{
+  border-radius:10rpx;
+  margin:10rpx;
+  padding:10rpx;
+  background:#59c9b9;
+  font-size:28rpx;
+  font-family:微软雅黑;
+  color:999;
+  line-height:60rpx;
+  max-width:475rpx;
+  word-break:break-all;
+}
+.item_class1{
+ margin-left: 25rpx;
+ margin-right: 25rpx;
+}
+.margin-left{
+  margin-left:20rpx;
+  height:80rpx;
+  margin-top: 42rpx;
+  align-items: center;
+  display: flex;
+  font-family:黑体;
+  color:#333333;
+  font-size:48rpx
+}
+
+.main-view{
+ width: 100%;
+ margin-top: 80rpx;
+ align-content:center;
+ border-bottom: 1px solid #59c9b9;
+}
+
+.tag-list{
+  margin-top:20rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  margin-bottom:30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-view{
+  height:50rpx;
+  display:flex;
+  flex-direction:column;
+  font-family:黑体;
+  color:#999999;
+  font-size:26rpx
+}
+
+.margin-left-1{
+height:40rpx;
+width:350rpx;display:inline-block;
+margin-left:20rpx;
+font-family:黑体;
+color:#666666;
+font-size:28rpx;
+}
+
+.margin-left-2{
+height:40rpx;
+width:140rpx;
+display:inline-block;
+color:#666666;
+font-family:黑体;
+font-size:28rpx;
+margin-left:30rpx;
+}
+
+.margin-left-3{
+height:40rpx;
+width:60rpx;
+display:inline-block;
+color:#666666;
+font-family:黑体;
+font-size:28rpx;
+margin-left:90rpx;
+}

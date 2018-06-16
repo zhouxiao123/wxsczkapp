@@ -1,0 +1,16 @@
+/* pages/my_product/my_product.wxss */
+.title{
+  height:108rpx;
+  border-bottom:1px solid #ccc;
+  margin-left:40rpx;
+  margin-right:40rpx;
+  display:flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.title-l{
+  display:flex;
+  align-items: center;
+margin-left:10rpx
+}

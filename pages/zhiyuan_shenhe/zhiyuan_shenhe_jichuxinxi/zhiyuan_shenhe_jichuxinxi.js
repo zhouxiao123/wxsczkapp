@@ -320,6 +320,10 @@ Page({
   */
   formSubmit: function (e) {
     var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
     var lianxidianhua= e.detail.value.lianxidianhua
     var kaoshengxingming=e.detail.value.kaoshengxingming
     var zhengzhimianmao=e.detail.value.zhengzhimianmao
@@ -352,6 +356,7 @@ Page({
 
     if (lianxidianhua==''||kaoshengxingming ==''|| zhengzhimianmao ==''|| minzu == ''|| jiudugaozhong ==''
     ||jiudubanji ==''|| shenfenzhenghao ==''|| zhunkaozhenghao ==''|| kaoshenghao =='') {
+      wx.hideLoading()
       wx.showModal({
         title: '提示',
         content: '请完善基础信息',
@@ -361,6 +366,7 @@ Page({
         }
       })
     } else if (xingbie == 0 || wenlike == 0  ||gaokaojiafen == 0 ){
+      wx.hideLoading()
       wx.showModal({
         title: '提示',
         content: '请完善基础信息',
@@ -371,6 +377,7 @@ Page({
       })
     }
     else if (yuwen == '' || shuxue == '' ||yingyu == '' || wuli_zhengzhi == '' ||huaxue_lishi == '' || shengwu_dili == '') {
+      wx.hideLoading()
       wx.showModal({
         title: '提示',
         content: '请完善考生学业情况',
@@ -380,6 +387,7 @@ Page({
         }
       })
     } else if (tijianshouxian == 0) {
+      wx.hideLoading()
       wx.showModal({
         title: '提示',
         content: '请选择是否体检受限',
@@ -390,11 +398,6 @@ Page({
       })
     }
     else {
-      wx.showLoading({
-        mask: true,
-        title: '加载中'
-      })
-
     wx.request({
       url: app.globalData.baseUrl + 'wx/zhiyuanshenhe_kaoshenjibenxinxi',
       data: {
@@ -443,7 +446,7 @@ Page({
             success: function (res) {
               if (res.confirm) {
                 console.log('用户点击确定')
-                wx.navigateTo({
+                wx.redirectTo({
                   url: '/pages/zhiyuan_shenhe/dengdai_fankui/dengdai_fankui'
                 })
               } else if (res.cancel) {

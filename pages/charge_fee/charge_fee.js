@@ -7,8 +7,8 @@ Page({
     oid: '',
     user: {},
     day: 0,
-    feeValue:5,
-    ftext: '5元=50积分'
+    feeValue:10,
+    ftext: '10元=110积分'
   },
   //事件处理函数
   bindViewTap: function () {

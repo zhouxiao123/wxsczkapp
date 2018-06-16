@@ -256,6 +256,11 @@ Page({
       disflag: "none"
     });
   },
+  myProduct:function(){
+    wx.navigateTo({
+      url: '/pages/my_product/my_product'
+    })
+  },
   myVideo: function () {
     this.setData({
       disflag: "block"

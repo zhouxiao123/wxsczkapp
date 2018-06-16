@@ -63,6 +63,9 @@ Page({
       success: function (res) {
         console.log(res.data)
         if (res.data.status == 200) {
+          for (var i in res.data.list){
+            res.data.list[i].yxdm = ('0000' + res.data.list[i].yxdm).slice(-4)
+          }
           that.setData({
             list: res.data.list
           })
@@ -138,6 +141,9 @@ Page({
             hasMore: false,
           })
         } else {
+          for (var i in res.data.list) {
+            res.data.list[i].yxdm = ('0000' + res.data.list[i].yxdm).slice(-4)
+          }
           that.data.list = that.data.list.concat(res.data.list)
           //console.log(poff)
           that.setData({
@@ -183,6 +189,9 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
+        for (var i in res.data.list) {
+          res.data.list[i].yxdm = ('0000' + res.data.list[i].yxdm).slice(-4)
+        }
         that.setData({
           list: res.data.list,
           pageNo: 0

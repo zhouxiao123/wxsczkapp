@@ -44,17 +44,22 @@
 
 
 <view style="padding-bottom:130rpx">
-    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票.png" style="width:750rpx" mode='widthFix'></image>
-    <view style="text-align:center;color:#e00">
-      <text style="display:block">2018年高考考生可凭准考证免费入场</text>
-      <text style="display:block;margin-top:20rpx;color:#f90">家长请在下方购票</text>
-    </view>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/fhsy1.png" style="position:absolute;width:200rpx;top:20rpx;left:20rpx" catchtap="goIndex" mode='widthFix'></image>
+    <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票-b.png" style="width:750rpx" mode='widthFix'></image>
     <form bindsubmit="formSubmit" style="margin-top: 5px">
 
     <view class="form-group">
         <view style="color:#333">手机号:</view>
         <input type="text" name="phone" style="border:1px solid #999;width:516rpx;height:60rpx" value="{{user.phone}}"/>
     </view>
+
+    <!--<view class="tag-view">
+      <radio-group name="buyType" >
+        <radio value="1" checked="checked" id="li"/><label for="li" class="radio-text">30元购买</label>
+        <radio  style="margin-left:40rpx"  value="0"  id="wen"/><label for="wen" class="radio-text">100积分+20元购买</label>
+      </radio-group>  
+    </view>-->
+
     <view class="form-group" style="text-align:center">
         <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'#46dfc8':'#d4d4d4'}}">1张</button>
         <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'#46dfc8':'#d4d4d4'}}">2张</button>
@@ -67,8 +72,15 @@
     <view class="form-group" style="text-align: center;margin-top: 30px">
         <!--<button  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:160px;">查看已购买门票</button>-->
         <view catchtap='toList' style="color:#999999;font-size:26rpx;border-bottom:1px solid #999999">查看已购买门票</view>
+
     </view>
     <input hidden name="openId" value="{{oid}}"/>
     <input hidden name="countNum" value="{{tag}}"/>
+    <input hidden name="type" value="{{type}}"/>
 </form>
+    <view style="color:#e51d1d;font-size:26rpx;margin-top:20rpx;margin-left:40rpx">
+      <text style="display:block">注：1.2018年高考考生可凭准考证免费入场，家长请购买门票。
+</text>
+      <text style="display:block;margin-top:20rpx">2.本门票一张只能参加成都或绵阳咨询会其中一场</text>
+    </view>
 </view>

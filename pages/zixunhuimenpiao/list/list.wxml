@@ -9,7 +9,12 @@
 
 </view>
 
-<view wx:if="{{list.length==0}}" style="text-align:center;margin-top:60rpx;font-size:30rpx;color:#999" catchtap='goBuy'>
+<view wx:if="{{list.length==0}}" style="text-align:center;margin-top:60rpx;font-size:30rpx;color:#fff;background:#59c9b9;width:600rpx;margin-left:75rpx;padding-top:20rpx;padding-bottom:20rpx" catchtap='goBuy'>
   -还未购买门票,点击购买-
 </view>
 
+<view style="display:{{disflag}}">
+<view class="bigImg" catchtap='cancelBig'>
+  <image src="{{bigSrc}}" style="width:300rpx" mode='widthFix'></image>
+</view>
+</view>

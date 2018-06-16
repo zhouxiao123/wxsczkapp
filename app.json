@@ -113,7 +113,19 @@
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/xuanze_biaodan_pici/xuanze_biaodan_pici",
     "pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_pici/jieguo_pici",
     "pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo",
-    "pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail"
+    "pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail",
+    "pages/my_product/my_product",
+    "pages/chatroom_teacher/chatroom_teacher",
+    "pages/chatroom_teacher/setting/setting",
+    "pages/chatroom_teacher/list/list",
+    "pages/chatroom_teacher/talkpage/talkpage",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_pici/yitijiao_pici",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_bktqp/yitijiao_bktqp",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_bkdyp/yitijiao_bkdyp",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_bkderp/yitijiao_bkderp",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_zktqp/yitijiao_zktqp",
+    "pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_zkp/yitijiao_zkp"
   ],
   "window": {
     "backgroundTextStyle": "light",

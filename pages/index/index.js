@@ -797,6 +797,37 @@ var that = this
       })
     }
   },
+
+  //测试志愿审核
+  toZhiyuanpingu: function (event) {
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/zhiyuanjiemian',
+      data: {
+        oid: that.data.oid
+      },
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.result == "dengdai") {//等待
+          wx.navigateTo({
+            url: '/pages/zhiyuan_shenhe/dengdai_fankui/dengdai_fankui'
+          })
+        } else if (res.data.result == "fankui") {//反馈结果
+          wx.navigateTo({
+            url: '/pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo'
+          })
+        } else {
+          //志愿审核提示
+          wx.navigateTo({
+            url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi'
+          })
+        }
+        wx.hideLoading()
+
+      }
+    })
+  },
+
   mpoint:function(e){
     wx.navigateTo({
       url: '../month_point/month_point?m=' + e.currentTarget.dataset.m

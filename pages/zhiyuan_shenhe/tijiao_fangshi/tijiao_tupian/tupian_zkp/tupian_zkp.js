@@ -150,6 +150,7 @@ Page({
     console.log(ar)
 
     if (ar.length == 0) {
+      wx.hideLoading()
       wx.showModal({
         title: '提示',
         content: '请添加图片',
@@ -185,14 +186,14 @@ Page({
                   if (res.data == "ok") {
                     wx.showModal({
                       title: '提示',
-                      content: '提交成功',
+                      content: '保存成功',
                       showCancel: false,
                       success: function (res) {
                         wx.hideLoading()
                         var prePage = getCurrentPages()[parseInt(getCurrentPages().length) - 2];
                         //prePage.reload()
-                        wx.navigateBack({
-
+                        wx.navigateTo({
+                          url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici'
                         })
                       }
                     })

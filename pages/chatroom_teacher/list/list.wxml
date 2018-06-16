@@ -1,0 +1,55 @@
+<!--pages/chatroom_teacher/list/list.wxml-->
+<view style="margin-left:40rpx;margin-right:40rpx;border-bottom:1px solid #aaa;margin-top:20rpx;display:flex;align-items: center;padding-bottom:20rpx;justify-content: space-between">
+<view style="display:flex;align-items: center">
+  <image src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoK6yaq7CstdTZWXuLCc2qicn4EhGxdLia0icJz4pvOUh9yzBKiceJLweO5cv0n4Wup7ia4CX9wqIsI9rQ/132" class="chat-img"></image>
+  <view  style="margin-left:20rpx;display:flex;flex-direction:column;">
+    <text>学生1</text>
+    <text style="font-size:30rpx;color:red;margin-top:15rpx">在线</text>
+    </view>
+  </view>
+
+  <view style="display:flex;flex-direction:column;text-align:center">
+    <text style="color:#aaa;font-size:26rpx">12:30</text>
+    <text style="background:#59c8b8;display:inline-block;width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">3</text>
+  </view>
+</view>
+
+<view style="margin-left:40rpx;margin-right:40rpx;border-bottom:1px solid #aaa;margin-top:20rpx;display:flex;align-items: center;padding-bottom:20rpx;justify-content: space-between">
+<view style="display:flex;align-items: center">
+  <image src="https://wx.qlogo.cn/mmopen/vi_32/fxk7AgnIPGcjRMK89PK78EMRicKzvDYkNcuKCmjKicJKbX5icDicHqS5t4GzWy1U3fYbg3ia91ia98HltZHd56SsvCew/132" class="chat-img"></image>
+  <view  style="margin-left:20rpx;display:flex;flex-direction:column;">
+    <text>学生2</text>
+    <text style="font-size:30rpx;color:red;margin-top:15rpx">在线</text>
+    </view>
+  </view>
+
+  <view style="display:flex;flex-direction:column;text-align:center">
+    <text style="color:#aaa;font-size:26rpx">12:30</text>
+    <text style="background:#59c8b8;display:inline-block;width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">2</text>
+  </view>
+</view>
+
+<view style="margin-left:40rpx;margin-right:40rpx;border-bottom:1px solid #aaa;margin-top:20rpx;display:flex;align-items: center;padding-bottom:20rpx;justify-content: space-between">
+<view style="display:flex;align-items: center">
+  <image src="https://wx.qlogo.cn/mmopen/vi_32/laweeD9yYaa6BgKhMfgaj4Y28uP2ricichJphbmRBGs1N63GO9LI43BZTHUmQVXC1picCC3OWpaASqbVRdqB3Yujw/132" class="chat-img"></image>
+  <view  style="margin-left:20rpx;display:flex;flex-direction:column;">
+    <text>学生3</text>
+    <text style="font-size:30rpx;color:red;margin-top:15rpx">在线</text>
+    </view>
+  </view>
+
+  <view style="display:flex;flex-direction:column;text-align:center">
+    <text style="color:#aaa;font-size:26rpx">12:30</text>
+    <text style="background:#59c8b8;display:inline-block;width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">4</text>
+  </view>
+</view>
+
+
+
+
+<view style="position:fixed;bottom:10rpx;text-align:center;width:750rpx">
+    <view class="df" style='margin-top:30rpx;'>
+      <button class="subbutton" formType="submit">设置</button>
+      <button class="resetbutton" formType="reset">退出</button>
+    </view>
+</view>

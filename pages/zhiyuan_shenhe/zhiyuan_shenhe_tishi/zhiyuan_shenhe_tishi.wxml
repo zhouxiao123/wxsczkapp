@@ -2,7 +2,7 @@
 
 <view style=" font-size:44rpx; color:#4b4c4c;"  class="biaoti">志愿填报方案评估功能使用提示</view>
 
-<view  class="neirong1"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>此项评估服务仅面向高三普通类文科、理科考生提供普通类本科提前批、本科第一批、本科第二批、专科提前批、专科批志愿审核结论。不适用于艺体考生及普通类考生特殊批次（如：国家专项计划、地方专项计划、少数民族预科等批次）。</view>
+<view  class="neirong1"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>此项评估服务仅面向高三普通类文科、理科考生提供普通类本科提前批、本科第一批、本科第二批、专科提前批、专科批志愿审核结论。<text style=' color:red;'>不适用于艺体考生及普通类考生特殊批次（如：国家专项计划、地方专项计划、少数民族预科等批次）。</text></view>
 
 <view  class="neirong">评估内容:</view>
 <view  class="neirong1">1.落榜风险</view>

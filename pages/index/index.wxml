@@ -34,9 +34,13 @@
     </view>
 
     <view>
-      <view class="first-icon" bindtap="online">
+      <!--<view class="first-icon" bindtap="online">
         <image src="../../images/circle4.png" class="icon-pic"></image>
         <text class="icon-text">职业详解</text>
+      </view>-->
+      <view class="third-icon" bindtap="toZhiyuanpingu">
+        <image src="../../images/zypg.png" class="icon-pic"></image>
+        <text class="icon-text">志愿评估</text>
       </view>
       <view class="second-icon" bindtap="ask">
         <image src="../../images/xz-7@2x.png" class="icon-pic"></image>
@@ -47,20 +51,53 @@
         <text class="icon-text">职业测评</text>
       </view>
       <view class="fours-icon" bindtap="toGaokaozhiyuan">
-      <!--<view class="redbag">-->
         <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
-        <!--<image src="../../images/xhb.png" class="rb" mode="widthFix"></image>-->
-      <!--</view>-->
         <text class="icon-text">高考志愿</text>
       </view>
-      <!--<view class="fours-icon" bindtap="testLink">
-        <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
-        <image src="../../images/xhb.png" class="rb" mode="widthFix"></image>
-      </view>
-        <text class="icon-text">测试链接</text>
-      </view>-->
+
     </view>
   </view>
+
+    <!--<view class="label-view" >
+    <view>
+      <view class="first-icon" bindtap="school_list">
+        <image src="../../images/circle1@2x.png" class="icon-pic" ></image>
+        <text class="icon-text">院校大全</text>
+      </view>
+      <view class="second-icon" bindtap="pro_list">
+        <image src="../../images/jx-5@2x.png" class="icon-pic"></image>
+        <text class="icon-text">专业大全</text>
+      </view>
+      <view class="third-icon" bindtap="lesson">
+        <image src="{{zhibologo}}" class="icon-pic"></image>
+        <text class="icon-text">云课堂</text>
+      </view>
+      <view class="fours-icon" bindtap="zzzs">
+        <image src="../../images/购票入口.png" class="icon-pic"></image>
+        <text class="icon-text">咨询会购票</text>
+      </view>
+    </view>
+
+    <view>
+      <view class="first-icon" bindtap="online">
+        <image src="../../images/xz-7@2x.png" class="icon-pic"></image>
+        <text class="icon-text">语音答疑</text>
+      </view>
+      <view class="second-icon" bindtap="ask">
+        <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
+        <text class="icon-text" >测录取</text>
+      </view>
+      <view class="third-icon" bindtap="testTypeList">
+        <image src="../../images/志愿评估.png" class="icon-pic"></image>
+        <text class="icon-text">志愿评估</text>
+      </view>
+      <view class="fours-icon" bindtap="toGaokaozhiyuan">
+        <image src="../../images/专家一对一.png" class="icon-pic"></image>
+        <text class="icon-text">专家一对一</text>
+      </view>
+
+    </view>
+  </view>-->
   <view style="background-color:#f0f0f0;height:20rpx">
   </view>
 

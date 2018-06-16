@@ -88,6 +88,88 @@ Page({
         })
         //console.log(res.data.id)
         that.data.userid = res.data.id
+
+
+        //已填写的颜色改变1
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 1
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse1: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变2
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 2
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse2: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变3
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 3
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse3: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变4
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 4
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse4: res.data
+            })
+
+          }
+        })
+        //已填写的颜色改变5
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
+          data: {
+            userid: that.data.userid,
+            uploadingtype: 1,
+            pici: 5
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              yanse5: res.data
+            })
+
+          }
+        })
       }
     })
 
@@ -174,7 +256,7 @@ Page({
       url: app.globalData.baseUrl + 'wx/savezhiyuan_pay',
       data: {
         userid: that.data.userid,
-        state: 1,
+       
         pay: 0,
         uploadingtype: 2,
        
