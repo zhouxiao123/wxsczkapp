@@ -9,7 +9,12 @@ Page({
     tag:1,
     oid:'',
     user:{},
-    type:0
+    type:0,
+    disflag:false,
+    c1: true,
+    c2: false,
+    c3: false,
+    ck:0
   },
 
   /**
@@ -88,7 +93,7 @@ Page({
     wx.request({
       url: app.globalData.baseUrl + 'wx/adv_list',
       data: {
-        tag: 17
+        tag:17
       },
       success: function (res) {
         console.log(res.data)
@@ -122,6 +127,32 @@ Page({
     this.setData({
       tag:e.currentTarget.dataset.index
     })
+    if (e.currentTarget.dataset.index==2){
+      this.setData({
+        c2: false,
+        c1:false,
+        c3: true,
+        ck:2
+      })
+    }else{
+      if(this.data.ck==2){
+        this.setData({
+          c2: false,
+          c1: true,
+          c3: false
+        })
+      }
+    }
+  },
+  setTaoCan: function (e) {
+    this.setData({
+      ck: e.detail.value
+    })
+    if (e.detail.value == 2) {
+      this.setData({
+        tag: 2
+      })
+    }
   },
   formSubmit: function (e) {
     //console.log('form发生了submit事件，携带数据为：', e.detail.value)
@@ -129,7 +160,7 @@ wx.showLoading({
   title: '请稍等',
 })
     var that = this;
-    //console.log(e.detail.value.phone)
+    console.log(e.detail.value)
 
     if (!validatePhone(e.detail.value.phone)) {
       wx.hideLoading()
@@ -168,7 +199,7 @@ wx.showLoading({
     } else {
       if (that.data.user.phone){
         wx.request({
-          url: app.globalData.baseUrl + 'wxsign/mini_buy_new',
+          url: app.globalData.baseUrl + 'wxsign/mini_buy_new_2',
           data: e.detail.value,
           success: function (res) {
             wx.hideLoading()
@@ -177,6 +208,19 @@ wx.showLoading({
               wx.showModal({
                 title: '提示',
                 content: '购买失败，请重试',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定')
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            } else if (res.data.result == "less") {
+              wx.showModal({
+                title: '提示',
+                content: res.data.msg,
                 showCancel: false,
                 success: function (res) {
                   if (res.confirm) {
@@ -244,7 +288,7 @@ wx.showLoading({
             } else {
 
               wx.request({
-                url: app.globalData.baseUrl + 'wxsign/mini_buy_new',
+                url: app.globalData.baseUrl + 'wxsign/mini_buy_new_2',
                 data: e.detail.value,
                 success: function (res) {
                   wx.hideLoading()
@@ -253,6 +297,19 @@ wx.showLoading({
                     wx.showModal({
                       title: '提示',
                       content: '购买失败，请重试',
+                      showCancel: false,
+                      success: function (res) {
+                        if (res.confirm) {
+                          console.log('用户点击确定')
+                        } else if (res.cancel) {
+                          console.log('用户点击取消')
+                        }
+                      }
+                    })
+                  } else if (res.data.result == "less") {
+                    wx.showModal({
+                      title: '提示',
+                      content: res.data.msg,
                       showCancel: false,
                       success: function (res) {
                         if (res.confirm) {
@@ -331,6 +388,9 @@ wx.showLoading({
         }
       }
       })
+  },
+  setAble:function(){
+
   },
   goIndex:function(){
     wx.reLaunch({

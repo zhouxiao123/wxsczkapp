@@ -34,13 +34,16 @@
 
 </view>-->
 
-    <swiper  wx:if="{{adv.adv.length!=0}}"
-  autoplay="true" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0">
+  <swiper  wx:if="{{adv.adv.length!=0}}"
+  autoplay="true" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0;z-index:98">
   
     <swiper-item wx:for="{{adv.adv}}">
       <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>
     </swiper-item>
   </swiper>
+
+
+      <image wx:if="{{type==2}}"  src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/tp.jpg" class="slide-image" style="height:130rpx;position:fixed;width:750rpx;bottom:0;z-index:99" mode="widthFix"/>
 
 
 <view style="padding-bottom:130rpx">
@@ -53,17 +56,28 @@
         <input type="text" name="phone" style="border:1px solid #999;width:516rpx;height:60rpx" value="{{user.phone}}"/>
     </view>
 
+    <view class="tag-view">
+        <text style="color:#e51d1d;font-size:26rpx">*请输入正确的手机号，以便接收通知信息</text>  
+    </view>
+
+    <view class="tag-view">
+      <radio-group name="buyType" bindchange='setTaoCan'>
+        <radio value="2" checked="{{c3}}" id="huo" style="display:block;text-align:right"><label for="huo" class="radio-text" style="margin-right:0"><image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/duanwu.png" style="width:640rpx;" mode='widthFix'></image></label></radio>
+        <radio  value="1" checked="{{c1}}" id="li"/><label for="li" class="radio-text" >30元购买</label>
+        <radio  style="margin-left:40rpx"  value="0" checked="{{c2}}"  id="wen"/><label for="wen" class="radio-text" >100积分+20元购买</label>
+      </radio-group>  
+    </view>
     <!--<view class="tag-view">
       <radio-group name="buyType" >
-        <radio value="1" checked="checked" id="li"/><label for="li" class="radio-text">30元购买</label>
-        <radio  style="margin-left:40rpx"  value="0"  id="wen"/><label for="wen" class="radio-text">100积分+20元购买</label>
+        <radio  value="1" checked="checked" id="li"/><label for="li" class="radio-text" >30元购买</label>
+        <radio  style="margin-left:40rpx"  value="0"  id="wen"/><label for="wen" class="radio-text" >100积分+20元购买</label>
       </radio-group>  
     </view>-->
 
     <view class="form-group" style="text-align:center">
-        <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'#46dfc8':'#d4d4d4'}}">1张</button>
-        <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'#46dfc8':'#d4d4d4'}}">2张</button>
-        <button  class="btn" bindtap="clickbutton" data-index="3" style="background:{{tag==3?'#46dfc8':'#d4d4d4'}}">3张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'#46dfc8':'#d4d4d4'}}" disabled='{{disflag}}'>1张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'#46dfc8':'#d4d4d4'}}" disabled='{{disflag}}'>2张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="3" style="background:{{tag==3?'#46dfc8':'#d4d4d4'}}" disabled='{{disflag}}'>3张</button>
     </view>
     <view class="form-group" style="text-align: center;margin-top:60rpx">
         <button formType="submit"  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:666rpx;height:88rpx;border-radius:20rpx">购票</button>

@@ -114,7 +114,7 @@
   </view>
 
   <view >
-  <view style="width:490rpx;display:inline-block;float:left">
+  <view style="width:440rpx;display:inline-block;float:left">
     <view style="width:100rpx;display:inline-block;margin-left:20rpx;margin-top:20rpx;float:left">
       <image src="../../images/calendar/{{m}}@2x.png" style="height:70rpx;width:70rpx" mode="aspectFit"></image>
     </view>
@@ -134,8 +134,9 @@
   
 
   <view style="display:inline-block;margin-top:16rpx;text-align:center;float:left">
-  <text style="display:block;font-family:Microsoft YaHei;font-size:26rpx;height:26rpx;color:#696970">2018年高考倒计时</text>
-  <text style="display:block;margin-top:9rpx;font-family:Microsoft YaHei;font-size:26rpx;color:green;height:26rpx;color:#1b8c5d">{{clock}}</text>
+  <text style="display:block;font-family:Microsoft YaHei;font-size:26rpx;height:26rpx;color:#1b8c5d;">2018年四川省招生咨询会</text>
+  <!--<text style="display:block;margin-top:9rpx;font-family:Microsoft YaHei;font-size:26rpx;color:green;height:26rpx;color:#1b8c5d">{{clock}}</text>-->
+  <text style="display:block;margin-top:9rpx;font-family:Microsoft YaHei;font-size:26rpx;color:green;height:26rpx;color:#1b8c5d;text-decoration: underline;" catchtap='toBuyTicket'>请点击</text>
   </view>
   </view>
 <!--style="position:absolute"<image src="../../images/calendar/ty-1@2x.png" class="slide-image" style="width:100%;" mode="widthFix"/>-->
