@@ -91,6 +91,93 @@ Page({
         })
         //console.log(res.data.id)
         that.data.userid = res.data.id
+        //显示之前填写
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_benketiqianpi',
+          data: {
+            userid: that.data.userid
+          },
+          success: function (res) {
+            console.log(res.data)
+            if (res.data != null && res.data != '') {
+              if (res.data.benketiqianpi_xuanze1 != null && res.data.benketiqianpi_xuanze1 != '' && res.data.benketiqianpi_xuanze1 != "undefined") {
+            //专业调配和定向调配1
+            var diyige = {};
+            diyige.type1 = 0;
+            diyige.type2 = 0;
+ 
+            if (res.data.benketiqianpi_xuanze1.indexOf("1") != -1) {
+              diyige.type1 = 1
+            } if (res.data.benketiqianpi_xuanze1.indexOf("2") != -1) {
+              diyige.type2 = 1
+            } 
+
+            console.log(diyige)
+              } 
+            //专业调配和定向调配2
+            var dierge = 0;
+            if (res.data.benketiqianpi_xuanze2.indexOf("1") != -1) {
+              dierge = 1
+            } 
+            //专业调配和定向调配3
+            var disange = 0;
+            if (res.data.benketiqianpi_xuanze2.indexOf("1") != -1) {
+              disange = 1
+            } 
+            that.setData({
+              benketiqianpi_xuanze1: diyige,
+              benketiqianpi_xuanze2:dierge,
+              benketiqianpi_xuanze3: disange,
+              benketiqian1_yxdm: res.data.benketiqian1_yxdm,
+              benketiqian1_yxmc: res.data.benketiqian1_yxmc,
+              benketiqian1_zydm1: res.data.benketiqian1_zydm1,
+              benketiqian1_zymc1: res.data.benketiqian1_zymc1,
+              benketiqian1_zydm2: res.data.benketiqian1_zydm2,
+              benketiqian1_zymc2: res.data.benketiqian1_zymc2,
+              benketiqian1_zydm3: res.data.benketiqian1_zydm3,
+              benketiqian1_zymc3: res.data.benketiqian1_zymc3,
+              benketiqian1_zydm4: res.data.benketiqian1_zydm4,
+              benketiqian1_zymc4: res.data.benketiqian1_zymc4,
+              benketiqian1_zydm5: res.data.benketiqian1_zydm5,
+              benketiqian1_zymc5: res.data.benketiqian1_zymc5,
+              benketiqian1_zydm6: res.data.benketiqian1_zydm6,
+              benketiqian1_zymc6: res.data.benketiqian1_zymc6,
+              benketiqian2A_yxdm: res.data.benketiqian2A_yxdm,
+              benketiqian2A_yxmc: res.data.benketiqian2A_yxmc,
+              benketiqian2A_zydm1: res.data.benketiqian2A_zydm1,
+              benketiqian2A_zymc1: res.data.benketiqian2A_zymc1,
+              benketiqian2A_zydm2: res.data.benketiqian2A_zydm2,
+              benketiqian2A_zymc2: res.data.benketiqian2A_zymc2,
+              benketiqian2A_zydm3: res.data.benketiqian2A_zydm3,
+              benketiqian2A_zymc3: res.data.benketiqian2A_zymc3,
+              benketiqian2A_zydm4: res.data.benketiqian2A_zydm4,
+              benketiqian2A_zymc4: res.data.benketiqian2A_zymc4,
+              benketiqian2A_zydm5: res.data.benketiqian2A_zydm5,
+              benketiqian2A_zymc5: res.data.benketiqian2A_zymc5,
+              benketiqian2A_zydm6: res.data.benketiqian2A_zydm6,
+              benketiqian2A_zymc6: res.data.benketiqian2A_zymc6,
+              benketiqian2B_yxdm: res.data.benketiqian2B_yxdm,
+              benketiqian2B_yxmc: res.data.benketiqian2B_yxmc,
+              benketiqian2B_zydm1: res.data.benketiqian2B_zydm1,
+              benketiqian2B_zymc1: res.data.benketiqian2B_zymc1,
+              benketiqian2B_zydm2: res.data.benketiqian2B_zydm2,
+              benketiqian2B_zymc2: res.data.benketiqian2B_zymc2,
+              benketiqian2B_zydm3: res.data.benketiqian2B_zydm3,
+              benketiqian2B_zymc3: res.data.benketiqian2B_zymc3,
+              benketiqian2B_zydm4: res.data.benketiqian2B_zydm4,
+              benketiqian2B_zymc4: res.data.benketiqian2B_zymc4,
+              benketiqian2B_zydm5: res.data.benketiqian2B_zydm5,
+              benketiqian2B_zymc5: res.data.benketiqian2B_zymc5,
+              benketiqian2B_zydm6: res.data.benketiqian2B_zydm6,
+              benketiqian2B_zymc6: res.data.benketiqian2B_zymc6,
+
+            })
+          }
+        }
+
+        })
+
+        
       }
     })
   },
@@ -122,11 +209,39 @@ Page({
   * 表单输入
   */
   formSubmit: function (e) {
-    wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
     var that = this
+        var benketiqian1_yxdm=e.detail.value.benketiqian1_yxdm
+        var benketiqian1_yxmc=e.detail.value.benketiqian1_yxmc
+        var benketiqian1_zydm1= e.detail.value.benketiqian1_zydm1
+        var benketiqian1_zymc1= e.detail.value.benketiqian1_zymc1
+        var benketiqian1_zydm2= e.detail.value.benketiqian1_zydm2
+        var benketiqian1_zymc2= e.detail.value.benketiqian1_zymc2
+        var benketiqian1_zydm3=e.detail.value.benketiqian1_zydm3
+        var benketiqian1_zymc3=e.detail.value.benketiqian1_zymc3
+        var benketiqian1_zydm4= e.detail.value.benketiqian1_zydm4
+        var benketiqian1_zymc4=e.detail.value.benketiqian1_zymc4
+        var benketiqian1_zydm5= e.detail.value.benketiqian1_zydm5
+        var benketiqian1_zymc5= e.detail.value.benketiqian1_zymc5
+        var benketiqian1_zydm6=e.detail.value.benketiqian1_zydm6
+        var benketiqian1_zymc6= e.detail.value.benketiqian1_zymc6
+        if (benketiqian1_yxdm == '' && benketiqian1_yxmc == '' && benketiqian1_zydm1 == '' && benketiqian1_zymc1 == '' 
+          && benketiqian1_zydm2 == '' && benketiqian1_zymc2 == '' && benketiqian1_zydm3 == '' && benketiqian1_zymc3 == '' &&
+          benketiqian1_zydm4 == '' && benketiqian1_zymc4 == '' && benketiqian1_zydm5 == '' && benketiqian1_zymc5 == ''
+        && benketiqian1_zydm6 == '' && benketiqian1_zymc6 == '' ) {
+          wx.showModal({
+            title: '提示',
+            content: '至少要填写第一志愿',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+        } else {
+          wx.showLoading({
+            mask: true,
+            title: '加载中'
+          })
+
     console.log(that.data.userid)
       wx.request({
         url: app.globalData.baseUrl + 'wx/zhiyuanshenhe_benketiqianpi',
@@ -192,7 +307,7 @@ Page({
                 if (res.confirm) {
                   console.log('用户点击确定')
                   wx.navigateTo({
-                    url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/shenhe_pici/shenhe_pici'
+                    url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/xuanze_biaodan_pici/xuanze_biaodan_pici'
                   })
                 } else if (res.cancel) {
                   console.log('用户点击取消')
@@ -202,6 +317,7 @@ Page({
           }
         }
       })
+     }
   },
   formReset: function () {
     this.setData({

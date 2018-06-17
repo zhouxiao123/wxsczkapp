@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tongyi:0,
 
   },
 
@@ -15,17 +16,51 @@ Page({
     wx.setNavigationBarTitle({ title: "志愿审核协议" })
   },
   /**
-  * 点击跳转提交方式选择
+  * 点击跳转到支付界面
   */
-  toanswer: function (e) {
+  tongyi: function (e) {
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    if (that.data.tongyi == 1) {
+      wx.redirectTo({
+        url: '/pages/zhiyuan_shenhe/tijiao_fangshi/zhiyuanshenhe_pay/zhiyuanshenhe_pay'
+      })
+    } else {
+      wx.showModal({
+        //title: '请先同意志愿审核协议',
+        content: '请先同意志愿审核协议',
+        showCancel: false,
+        success: function (res) {
+        }
+      })
+    }
+    wx.hideLoading()
+  },
+  /**
+  * 点击返回
+  */
+  fanhui: function (e) {
     wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_xieyi/zhiyuan_shenhe_xieyi'
+      url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi'
     })
     wx.hideLoading()
+  },
+  /**
+* 同意协议
+*/
+  checkboxChange: function (e) {
+    var that = this
+    // console.log('radio发生change事件，携带value值为：', e.detail.value)
+    that.data.tongyi = e.detail.value
+    console.log('同意，携带value值为：', that.data.tongyi)
+
   },
 
   /**

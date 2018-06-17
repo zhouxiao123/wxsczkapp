@@ -1,0 +1,32 @@
+<!--pages/charge_fee/charge_fee.wxml-->
+<view style="height:170rpx;background-color:#59c9b9">
+    <view style="text-align:center">
+      <!--<image style="width:80rpx;height:80rpx" src="../../images/sign/jb1@2x.png"></image>-->
+      <text style="color:gold;font-size:2rem;margin-left:8rpx">{{user.point}}</text>
+    </view>
+    <view style="text-align:center;font-family:黑体;color:#fff">
+      当前积分
+    </view>
+</view>
+
+<view style="text-align:center;margin-top:20rpx;flex-direction:column;align-items: center;">
+<view  class="neirong">500积分+850元现金</view>
+<view  class="neirong1">注：1元=10积分，积分最高可使用500分</view>
+
+   <!--选择支付方式-->
+ <view class="section">
+    <radio-group class="radio-group" bindchange="radioChange">
+        <label>
+          <radio value="1" class="radio"/>900元
+          <radio style="margin-left: 40rpx;" value="2"/>850元+500积分
+        </label>
+    </radio-group>
+</view>
+
+<view>
+<input hidden value="{{feeValue}}" style="width:150rpx;border:1px solid #999;" />
+<button catchtap='charge_fee' class='chongzhi'>支付</button>
+</view>
+</view>
+
+

@@ -284,15 +284,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 42,
 					"name": "志愿审核",
-					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
-					"query": ""
-				},
-				{
-					"id": 43,
-					"name": "测试登录验证码",
-					"pathName": "pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu",
+					"pathName": "pages/zhiyuan_shenhe/tijiao_fangshi/zhiyuanshenhe_pay/zhiyuanshenhe_pay",
 					"query": ""
 				},
 				{
@@ -341,6 +335,18 @@
 					"id": -1,
 					"name": "老师对话",
 					"pathName": "pages/chatroom_teacher/talkpage/talkpage",
+					"query": ""
+				},
+				{
+					"id": 51,
+					"name": "志愿审核",
+					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
+					"query": ""
+				},
+				{
+					"id": 52,
+					"name": "修改",
+					"pathName": "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_fangshi_xuanze/tijiao_fangshi_xuanze",
 					"query": ""
 				}
 			]

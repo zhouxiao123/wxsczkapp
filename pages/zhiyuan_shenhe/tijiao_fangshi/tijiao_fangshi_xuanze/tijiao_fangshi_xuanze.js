@@ -36,7 +36,7 @@ Page({
       title: '加载中'
     })
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/shenhe_pici/shenhe_pici'
+      url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/xuanze_biaodan_pici/xuanze_biaodan_pici'
     })
     wx.hideLoading()
   },

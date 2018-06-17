@@ -63,6 +63,8 @@ Page({
                 wx.setStorageSync('oid', res.data)
                 //继续处理上面的
                 that.setData({ oid: res.data })
+               
+               
               }
             })
           } else {
@@ -83,6 +85,7 @@ Page({
         }
       })
     }
+    console.log(that.data.oid)
   },
 
   /**
@@ -138,6 +141,10 @@ Page({
 
   //提交按钮
   sendMsg: function () {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
     var that = this
     console.log(that.data.msg)
     //选择的图片
@@ -146,6 +153,7 @@ Page({
     console.log(ar)
 
     if (ar.length == 0) {
+      wx.hideLoading()
       wx.showModal({
         title: '提示',
         content: '请添加图片',
@@ -153,6 +161,7 @@ Page({
         success: function (res) {
 
         }
+       
       })
     } else {
       for (var i in ar) {
@@ -174,23 +183,24 @@ Page({
                   //askid: that.data.askid,
                   //answerid: 0,
                   path: that.data.path,
-                  type:1,
+                  pici:1,
                 },
                 success: function (res) {
                   //console.log(res.data)
                   if (res.data == "ok") {
                     wx.showModal({
                       title: '提示',
-                      content: '提交成功',
+                      content: '保存成功',
                       showCancel: false,
                       success: function (res) {
                         wx.hideLoading()
                         var prePage = getCurrentPages()[parseInt(getCurrentPages().length) - 2];
                         //prePage.reload()
-                        wx.navigateBack({
-
+                        wx.redirectTo({
+                          url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici'
                         })
                       }
+                      
                     })
                   } else {
                     wx.showModal({

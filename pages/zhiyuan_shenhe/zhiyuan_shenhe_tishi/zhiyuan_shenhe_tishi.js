@@ -23,7 +23,7 @@ Page({
       title: '加载中'
     })
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_xieyi/zhiyuan_shenhe_xieyi'
+      url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_fangshi_xuanze/tijiao_fangshi_xuanze'
     })
     wx.hideLoading()
   },

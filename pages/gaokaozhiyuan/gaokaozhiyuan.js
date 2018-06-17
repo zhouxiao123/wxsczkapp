@@ -302,6 +302,35 @@ Page({
       disflag3: false,
     });
   },
+  //测试志愿审核
+ /* qiehuan_tupian2: function (event) {
+      var that = this
+      wx.request({
+        url: app.globalData.baseUrl + 'wx/zhiyuanjiemian',
+        data: {
+          oid: that.data.oid
+        },
+        success: function (res) {
+         console.log(res.data)
+          if (res.data.result == "dengdai") {//等待
+            wx.navigateTo({
+              url: '/pages/zhiyuan_shenhe/dengdai_fankui/dengdai_fankui'
+            })
+          } else if (res.data.result == "fankui") {//反馈结果
+            wx.navigateTo({
+              url: '/pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo'
+            })
+          }else{
+          //志愿审核提示
+          wx.navigateTo({
+          url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi'
+          })
+          }
+        wx.hideLoading()
+        
+    }
+  })
+  },*/
 
   /*touchStart: function (e) {
     touchDot = e.touches[0].pageY; // 获取触摸时的原点 
