@@ -17,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: "志愿审核-专科批" })
+    wx.setNavigationBarTitle({ title: "志愿审核" })
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
@@ -27,7 +27,7 @@ Page({
       })
     })
     //that.setData({
-    //askid: options.askid
+      //askid: options.askid
     //})
 
     var value = wx.getStorageSync('oid')
@@ -128,99 +128,101 @@ Page({
       }
     })
   }
-  ,
-  //输入的内容
+  , 
+   //输入的内容
   setValue: function (event) {
     this.setData({
       msg: event.detail.value
     });
   },
 
+
+
+
+
   //提交按钮
   sendMsg: function () {
-    wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
     var that = this
     console.log(that.data.msg)
-    //选择的图片
-    var ar = that.data.array
-    console.log("打印上传图片=========")
-    console.log(ar)
+ 
 
-    if (ar.length == 0) {
-      wx.hideLoading()
-      wx.showModal({
-        title: '提示',
-        content: '请添加图片',
-        showCancel: false,
-        success: function (res) {
 
-        }
-      })
-    } else {
-      for (var i in ar) {
-        wx.uploadFile({
-          url: app.globalData.baseUrl + 'upload/uploadFile',
-          filePath: ar[i],
-          name: 'file',
+
+      //选择的图片
+      var ar = that.data.array
+      console.log("打印上传图片=========")
+      console.log(ar)
+
+      if (ar.length == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '请添加图片',
+          showCancel: false,
           success: function (res) {
-            //console.log(res.data)
-            that.data.path.push(res.data)//先存到服务器的临时文件
-            if (that.data.path.length == ar.length) {
-              //console.log("over")
-              //wx.hideLoading()
-              wx.request({
-                url: app.globalData.baseUrl + 'wx/save_zhiyuan_shenhe_tupian',//存到服务器的正式文件
-                data: {
-                  oid: that.data.oid,
-                  beizhu_content: that.data.msg,//回复的内容
-                  //askid: that.data.askid,
-                  //answerid: 0,
-                  path: that.data.path,
-                  pici: 5,
-                },
-                success: function (res) {
-                  //console.log(res.data)
-                  if (res.data == "ok") {
-                    wx.showModal({
-                      title: '提示',
-                      content: '保存成功',
-                      showCancel: false,
-                      success: function (res) {
-                        wx.hideLoading()
-                        var prePage = getCurrentPages()[parseInt(getCurrentPages().length) - 2];
-                        //prePage.reload()
-                        wx.navigateTo({
-                          url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici'
-                        })
-                      }
-                    })
-                  } else {
-                    wx.showModal({
-                      title: '提示',
-                      content: '请先填写资料',
-                      showCancel: false,
-                      success: function (res) {
-                        wx.navigateTo({
-                          url: '/pages/personal_info/personal_info'
-                        })
-                      }
-                    })
-                  }
-                  wx.hideLoading()
-                }
-              })
-            }
+
           }
         })
+      } else {
+        for (var i in ar) {
+          wx.uploadFile({
+            url: app.globalData.baseUrl + 'upload/uploadFile',
+            filePath: ar[i],
+            name: 'file',
+            success: function (res) {
+              //console.log(res.data)
+              that.data.path.push(res.data)//先存到服务器的临时文件
+              if (that.data.path.length == ar.length) {
+                //console.log("over")
+                //wx.hideLoading()
+                wx.request({
+                  url: app.globalData.baseUrl + 'wx/save_zhiyuan_shenhe',//存到服务器的正式文件
+                  data: {
+                    oid: that.data.oid,
+                    zyshtijiaocontent: that.data.msg,//回复的内容
+                    //askid: that.data.askid,
+                    //answerid: 0,
+                    path: that.data.path
+                  },
+                  success: function (res) {
+                    //console.log(res.data)
+                    if (res.data == "ok") {
+                      wx.showModal({
+                        title: '提示',
+                        content: '提交成功',
+                        showCancel: false,
+                        success: function (res) {
+                          wx.hideLoading()
+                          var prePage = getCurrentPages()[parseInt(getCurrentPages().length) - 2];
+                          //prePage.reload()
+                          wx.navigateBack({
+
+                          })
+                        }
+                      })
+                    } else {
+                      wx.showModal({
+                        title: '提示',
+                        content: '请先填写资料',
+                        showCancel: false,
+                        success: function (res) {
+                          wx.navigateTo({
+                            url: '/pages/personal_info/personal_info'
+                          })
+                        }
+                      })
+                    }
+                    wx.hideLoading()
+                  }
+                })
+              }
+            }
+          })
+        }
       }
-    }
 
 
 
-
+  
   }
   ,
   /**

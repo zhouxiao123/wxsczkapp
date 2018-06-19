@@ -1,2 +1,29 @@
-<!--pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_pici/jieguo_pici.wxml-->
-<text>pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_pici/jieguo_pici.wxml</text>
+
+<view class="classname" style='margin-top:60rpx;'>
+  <button bindtap='benke_tiqianpi'  style="background-color:#66CDAA;font-family:黑体;color:#fff;width:321rpx;">本科提前批</button>
+</view>
+
+<view class="classname" style='margin-top:90rpx;'>
+  <button bindtap='bneke_diyipi'  style="background-color:#66CDAA;font-family:黑体;color:#fff;width:321rpx;">本科第一批</button>
+</view>
+
+<view class="classname" style='margin-top:90rpx;'>
+  <button bindtap='benke_dierpi'  style="background-color:#66CDAA;font-family:黑体;color:#fff;width:321rpx;">本科第二批</button>
+</view>
+
+<view class="classname" style='margin-top:90rpx;'>
+  <button bindtap='zhuanke_tiqianpi'  style="background-color:#66CDAA;font-family:黑体;color:#fff;width:321rpx;">专科提前批</button>
+</view>
+
+<view class="classname" style='margin-top:90rpx;'>
+  <button bindtap='zhuankepi'  style="background-color:#66CDAA;font-family:黑体;color:#fff;width:321rpx;">专科批</button>
+</view>
+
+
+<view style='margin-top:60rpx;margin-left:20rpx;margin-right:20rpx;'>
+<view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>如有疑问，请咨询：</view>
+<view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>座机：028-85064242</view>
+<view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>冯老师：17311248067</view>
+<view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>李老师：15008228412</view>
+<view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>地址：四川省成都市顺城大街306号凯乐广场1502室</view>
+</view>

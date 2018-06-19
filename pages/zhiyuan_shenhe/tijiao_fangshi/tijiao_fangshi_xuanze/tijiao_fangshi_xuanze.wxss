@@ -1,1 +1,11 @@
-/* pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_fangshi_xuanze/tijiao_fangshi_xuanze.wxss */
+.neirong{
+  display:block;
+  padding-top:-10rpx;
+  margin-left:30rpx;
+  margin-right:30rpx;
+  background-color: white;
+  color:#777;
+  font-family:黑体;
+  line-height: 40rpx;
+  font-size:36rpx;
+}

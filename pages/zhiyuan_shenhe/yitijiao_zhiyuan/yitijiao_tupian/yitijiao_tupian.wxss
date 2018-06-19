@@ -1,1 +1,6 @@
-/* pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian.wxss */
+.tupian{
+  align-items:center;
+  flex-direction:column;
+}
+
+

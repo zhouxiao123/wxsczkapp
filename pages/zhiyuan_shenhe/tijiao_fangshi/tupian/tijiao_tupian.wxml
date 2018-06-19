@@ -8,15 +8,15 @@
 
       <view style="margin-top:40rpx;margin-bottom:40rpx;">
         <view class="classname">
-          <view style="color:#f7805B;font-family:黑体;font-size:1.1rem">500积分+850元现金 <view style='font-size:0.9rem;margin-top:40rpx;'>注：1元=10积分，积分最高可使用500分</view></view>
+          <text style="color:#f7805B;font-family:黑体;font-size:1.1rem">*积分 + *现金</text>
         </view>
-        <view class="classname" style='margin-top:250rpx;'>
-          <button bindtap='sendMsg'  style="font-family:黑体;color:#B8860B;width:321rpx;">保存</button>
+        <view class="classname" style='margin-top:300rpx;'>
+          <button bindtap='sendMsg'  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">提交</button>
         </view>
       </view>
-<view  class="neirong1">提示：<text style='color:#B8860B;font-size:28rpx;'>点击保存为保存该批次志愿，请全部需审核批次保存后再点击统一提交，统一提交后不可更改</text></view>
+
       <view style='margin-top:40rpx;'>
-        <button style='background-color:#f7805B;' bindtap='addpic'>添加图片</button>
+        <button bindtap='addpic'>添加图片</button>
         <image src="{{array[0]}}" stye="width:150rpx" mode="widthFix"></image>
         <image src="{{array[1]}}" style="width:150rpx" mode="widthFix"></image>
         <image src="{{array[2]}}" style="width:150rpx" mode="widthFix"></image>

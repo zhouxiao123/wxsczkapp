@@ -1,2 +1,26 @@
-<!--pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici.wxml-->
-<text>pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/xuanze_tupian_pici/xuanze_tupian_pici.wxml</text>
+
+<view class="classname" style='margin-top:60rpx;'>
+  <button bindtap='benke_tiqianpi' style="{{yanse1!=null?'color:red;':''}}"  class="tiqianpi" >本科提前批</button>
+</view>
+
+<view class="classname" style='margin-top:100rpx;'>
+  <button bindtap='bneke_diyipi' style="{{yanse2!=null?'color:red;':''}}"  class="benyi"  >本科第一批</button>
+</view>
+
+<view class="classname" style='margin-top:100rpx;'>
+  <button bindtap='benke_dierpi' style="{{yanse3!=null?'color:red;':''}}" class="bener">本科第二批</button>
+</view>
+
+<view class="classname" style='margin-top:100rpx;'>
+  <button bindtap='zhuanke_tiqianpi' style="{{yanse4!=null?'color:red;':''}}" class="zhaunketiqian" >专科提前批</button>
+</view>
+
+<view class="classname" style='margin-top:100rpx;'>
+  <button bindtap='zhuankepi' style="{{yanse5!=null?'color:red;':''}}" class="zhaunke" >专科批</button>
+</view>
+
+
+<view style='margin-top:80rpx;margin-left:20rpx;margin-right:20rpx;'>
+<view style='color:#B8860B;font-size:28rpx;margin-bottom: 10rpx;'>*每个批次保存后为单独保存该批次志愿，所有需审核批次志愿保存后点击统一提交，统一提交之后不可修改！</view>
+  <button bindtap='tongyi_tijiao'>统一提交</button>
+</view>

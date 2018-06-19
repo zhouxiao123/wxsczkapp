@@ -1,2 +1,116 @@
-<!--pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_bktqp/yitijiao_bktqp.wxml-->
-<text>pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_bktqp/yitijiao_bktqp.wxml</text>
+<text class='class1'>本科提前批</text>
+
+<form  bindsubmit="formSubmit" bindreset="formReset">
+<!--第一志愿-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1'>第一志愿</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="benketiqian1_yxdm" value="{{benketiqian1_yxdm}}" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="benketiqian1_yxmc" value="{{benketiqian1_yxmc}}" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zydm1" value="{{benketiqian1_zydm1}}" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zymc1" value="{{benketiqian1_zymc1}}" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zydm2" value="{{benketiqian1_zydm2}}" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zymc2" value="{{benketiqian1_zymc2}}" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zydm3" value="{{benketiqian1_zydm3}}" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zymc3" value="{{benketiqian1_zymc3}}" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zydm4" value="{{benketiqian1_zydm4}}" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zymc4" value="{{benketiqian1_zymc4}}" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zydm5" value="{{benketiqian1_zydm5}}" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zymc5" value="{{benketiqian1_zymc5}}" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zydm6" value="{{benketiqian1_zydm6}}" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian1_zymc6" value="{{benketiqian1_zymc6}}" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange1">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1" checked="{{benketiqianpi_xuanze1.type1 ==1?true:false}}">专业调配</checkbox>
+    <checkbox class='section_gap' value="2" checked="{{benketiqianpi_xuanze1.type2 ==1?true:false}}">定向调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--第二平行志愿A-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>第二平行志愿A</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="benketiqian2A_yxdm" value="{{benketiqian2A_yxdm}}" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="benketiqian2A_yxmc" value="{{benketiqian2A_yxmc}}" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zydm1" value="{{benketiqian2A_zydm1}}" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zymc1" value="{{benketiqian2A_zymc1}}" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zydm2" value="{{benketiqian2A_zydm2}}" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zymc2" value="{{benketiqian2A_zymc2}}" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zydm3" value="{{benketiqian2A_zydm3}}" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zymc3" value="{{benketiqian2A_zymc3}}" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zydm4" value="{{benketiqian2A_zydm4}}" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zymc4" value="{{benketiqian2A_zymc4}}" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zydm5" value="{{benketiqian2A_zydm5}}" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zymc5" value="{{benketiqian2A_zymc5}}" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zydm6" value="{{benketiqian2A_zydm6}}" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2A_zymc6" value="{{benketiqian2A_zymc6}}" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange2">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1" checked="{{benketiqianpi_xuanze2 ==1?true:false}}">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+
+<!--第二平行志愿B-->
+<view style='border-bottom:1rpx solid #66CDAA;'>
+<text class='margin-left-1' style='margin-top: 50rpx;'>第二平行志愿B</text>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:140rpx;'name="benketiqian2B_yxdm" value="{{benketiqian2B_yxdm}}" placeholder="院校代码" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:3rpx solid #ddd;width:520rpx;'name="benketiqian2B_yxmc" value="{{benketiqian2B_yxmc}}" placeholder="院校名称" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zydm1" value="{{benketiqian2B_zydm1}}" placeholder="专业代码1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zymc1" value="{{benketiqian2B_zymc1}}" placeholder="专业名称1" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zydm2" value="{{benketiqian2B_zydm2}}" placeholder="专业代码2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zymc2" value="{{benketiqian2B_zymc2}}" placeholder="专业名称2" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zydm3" value="{{benketiqian2B_zydm3}}" placeholder="专业代码3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zymc3" value="{{benketiqian2B_zymc3}}" placeholder="专业名称3" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zydm4" value="{{benketiqian2B_zydm4}}" placeholder="专业代码4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zymc4" value="{{benketiqian2B_zymc4}}" placeholder="专业名称4" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view style='display:flex;'>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zydm5" value="{{benketiqian2B_zydm5}}" placeholder="专业代码5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zymc5" value="{{benketiqian2B_zymc5}}" placeholder="专业名称5" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df1"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zydm6" value="{{benketiqian2B_zydm6}}" placeholder="专业代码6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+<view class="df"><input style='border-bottom:1rpx solid #ddd;width:140rpx;'name="benketiqian2B_zymc6" value="{{benketiqian2B_zymc6}}" placeholder="专业名称6" placeholder-style="font-family:黑体;font-size:0.8rem"></input></view>
+</view>
+<view class="section">
+<checkbox-group  bindchange="checkboxChange3">
+  <view style="display:flex;font-family:黑体;color:#333333;font-size:34rpx;" >
+    <checkbox class='section_gap' value="1" checked="{{benketiqianpi_xuanze3 ==1?true:false}}">专业调配</checkbox>
+  </view>
+</checkbox-group>
+</view>
+</view>
+
+ <!--<view hidden="true" class="df"><text>userid:</text><input name="userid" value='{{user.id}}'></input></view>-->
+ <!--<view class="df2" style="display:block;">
+      <view style='color:#B8860B;font-size:28rpx;margin-bottom:60rpx;text-align:center'>*点击保存，仅保存当前批次填报志愿！</view>
+      <button class="subbutton" formType="submit">保存</button>
+      <button class="resetbutton" formType="reset">重置</button>
+ </view>-->
+
+</form>

@@ -1,1 +1,6 @@
-/* pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail.wxss */
+.tupian{
+  align-items:center;
+  flex-direction:column;
+}
+
+
