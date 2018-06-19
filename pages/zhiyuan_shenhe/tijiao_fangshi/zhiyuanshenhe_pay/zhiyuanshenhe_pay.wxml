@@ -16,10 +16,9 @@
    <!--选择支付方式-->
  <view class="section">
     <radio-group class="radio-group" bindchange="radioChange">
-        <label>
-          <radio value="1" class="radio"/>900元
-          <radio style="margin-left: 40rpx;" value="2"/>850元+500积分
-        </label>
+          <radio value="1" class="radio" id="li"/><label for="li" class="radio-text" >900元</label>
+          <radio style="margin-left: 40rpx;" value="2" id="er"/><label for="er" class="radio-text" >850元+500积分</label>
+       
     </radio-group>
 </view>
 
