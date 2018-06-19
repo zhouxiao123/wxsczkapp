@@ -19,6 +19,7 @@ Page({
     oid:'',
     yxid:'',
     user:{},
+    time:0,
     schoolhead:'',
     search_name:'',
     //下拉加载
@@ -129,7 +130,7 @@ Page({
     var res = wx.getSystemInfoSync()
 
     //console.log(res)
-    var he = parseInt(750 * res.windowHeight / res.windowWidth - 260)
+    var he = parseInt(750 * res.windowHeight / res.windowWidth - 180)
     that.setData({
       scrollHeight:he
     })
@@ -143,7 +144,7 @@ Page({
     //连接成功
     wx.onSocketOpen(function () {
       console.log('websocket连接成功！');
-      setInterval(function(){
+      that.data.time = setInterval(function(){
         wx.sendSocketMessage({
           data: '{"msgtype":0}',
         })
@@ -348,6 +349,27 @@ Page({
   }, onUnload:function(){
     
     wx.closeSocket()
+    clearInterval(this.data.time)
+    //console.log("------")
+  },
+  copy:function(e){
+    //console.log(e)
+    wx.showModal({
+      title: '提示',
+      content: '确认复制内容？',
+      showCancel: true,
+      success: function (res) {
+        if(res.confirm){
+        wx.setClipboardData({
+          data: e.currentTarget.dataset.content,
+          success: function (res) {
+
+          }
+        })
+        }
+      }
+    })
+
   },
 
   /**

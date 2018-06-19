@@ -296,10 +296,10 @@
 					"query": "id=95"
 				},
 				{
-					"id": -1,
-					"name": "青云汇---登录",
-					"pathName": "pages/qinyunhui/denglu/gaoxiao_denglu/gaoxiao_denglu",
-					"query": ""
+					"id": 45,
+					"name": "购买门票",
+					"pathName": "pages/zixunhuimenpiao/buy/buy",
+					"query": "type=2"
 				},
 				{
 					"id": -1,

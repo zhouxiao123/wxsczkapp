@@ -2,6 +2,8 @@
 
 <view style="text-align:center">
   
+  <!--<video  style="width:750rpx"  controls src="https://wxsign.sczk.com.cn/wxsczkappback/vd/27a56ab6-afc5-41ae-8eee-24491e8d3394/27a56ab6-afc5-41ae-8eee-24491e8d3394.mp4" ></video>-->
+
 <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1-1.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/普瑞1-1.png"></image>
   <image  style="width:100%" mode="widthFix" src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/1.png" bindtap="bigPic" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/adv/1.png"></image>
 

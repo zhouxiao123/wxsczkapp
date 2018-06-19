@@ -11,10 +11,10 @@
 
 
 <view class="item_class1" style="display:{{tag==0?'block':'none'}}">
-<view class="margin-left">学校选择</view>
+<view class="margin-left">在线找高校</view>
 <view class="main-view">
-   <input bindinput="setValue2" placeholder="请输入你需要咨询的学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:600rpx;margin-left:20rpx;font-family:黑体;font-size:30rpx;"/>
-   <image bindtap='search' src="../../images/school_list/ss-ss@2x.png" style="width:30rpx;height:30rpx;margin-right:22rpx;margin-bottom:10rpx;"/>
+   <input bindinput="setValue2" placeholder="请输入你需要查找咨询的学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:500rpx;margin-left:20rpx;font-family:黑体;font-size:30rpx;"/>
+   <image bindtap='search' src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/dianjisousuo.png" style="width:150rpx;margin-right:20rpx;margin-bottom:10rpx;" mode='widthFix'/>
 </view>
 
 <view class="tag-list">
@@ -33,8 +33,8 @@
       <view class='margin-left-2'>
        <view> {{item.s.yxxz}}</view>
       </view>
-      <view class='margin-left-3' style="color:red">
-       <view>在线</view>
+      <view class='margin-left-3' style="{{item.state==1?'color:red':''}}">
+       <view>{{item.state==1?'在线':'离线'}}</view>
       </view>
  </view>
 </view>
@@ -51,23 +51,22 @@
 
 
 <view style="display:{{tag==1?'block':'none'}};">
-<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:160rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">
+<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">
 <text style="display:block">{{schoolname}}</text>
-<text style="display:block">在线时间14:00到18:00</text>
 </view>
 
-<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:160rpx;height:{{scrollHeight}}rpx">
+<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:80rpx;height:{{scrollHeight}}rpx">
 <view class="a-class">
   <view wx:for="{{list}}" >
 
     <view wx:if="{{item.usertype==0}}" class="chat-student">
-      <view class="chat-text">{{item.content}}</view>
+      <text class="chat-text"  catchtap='copy' data-content='{{item.content}}'>{{item.content}}</text>
       <image class="chat-img" src="{{user.headUrl}}"></image>
     </view>
 
     <view wx:else class="chat-teacher">
           <image class="chat-img" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
-      <view class="chat-text" style="background:#fff">{{item.content}}</view>
+      <text class="chat-text" catchtap='copy' data-content='{{item.content}}' style="background:#fff">{{item.content}}</text>
     </view>
 </view>
   </view>

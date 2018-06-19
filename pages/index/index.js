@@ -315,6 +315,11 @@ if(that.data.oid){
       }
     })
   }*/
+  , toBuyTicket:function(){
+    wx.navigateTo({
+      url: '/pages/zixunhuimenpiao/buy/buy',
+    })
+  }
   , bchange:function(e){
     var that = this
     if (e.detail.current == 0){
@@ -644,8 +649,8 @@ if(that.data.oid){
       title: '加载中'
     })
     wx.navigateTo({
-      url: '../zhizhuzhaosheng/zhizhuzhaosheng'
-      //url: '/pages/chatroom/chatroom'
+      //url: '../zhizhuzhaosheng/zhizhuzhaosheng'
+      url: '/pages/chatroom/chatroom'
     })
     wx.hideLoading()
   },
