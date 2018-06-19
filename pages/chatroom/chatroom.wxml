@@ -66,7 +66,8 @@
 
     <view wx:else class="chat-teacher">
           <image class="chat-img" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
-      <text class="chat-text" catchtap='copy' data-content='{{item.content}}' style="background:#fff">{{item.content}}</text>
+      <text wx:if="{{item.content=='默认'}}" class="chat-text" catchtap='showDialogBtn'  style="background:#fff">点击查看</text>
+      <text wx:else class="chat-text" catchtap='copy' data-content='{{item.content}}' style="background:#fff">{{item.content}}</text>
     </view>
 </view>
   </view>
@@ -89,3 +90,20 @@
  <icon type="download" size="25"/><text style="font-family:黑体;font-size:0.8rem;color:#666">玩命的加载中...</text></view>
  <view style="text-align:center" wx:else><text style="font-family:黑体;font-size:0.8rem;color:#666;">没有更多内容了</text></view>
 </view>-->
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modal-dialog" wx:if="{{showModal}}">
+<text style="position:relative;left:560rpx;top:10rpx;color:red" bindtap="onCancel">X</text>
+  <view class="modal-content">
+    <view class="modal-input" style="height:860rpx;overflow-x:scroll;padding:10rpx">
+        <import src="../../wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+  <!--<view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>-->
+</view>

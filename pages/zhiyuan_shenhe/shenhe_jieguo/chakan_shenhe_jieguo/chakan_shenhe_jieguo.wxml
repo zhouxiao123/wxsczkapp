@@ -1,9 +1,2 @@
-
-
-<view style="text-align:center;padding-top:400rpx;width:100%;" >
-  <button bindtap='toanswer' class='jieguo'>查看评估结果</button>
- </view>
-
- <view style="text-align:center;padding-top:200rpx;width:100%;" >
-  <button bindtap='wodezhiyuan' class='jieguo'>查看之前提交的志愿</button>
- </view>
+<!--pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo.wxml-->
+<text>pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo.wxml</text>

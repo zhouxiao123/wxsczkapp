@@ -1,8 +1,1 @@
-.jieguo{
-height:100rpx;
-font-size:1rem;
-width:400rpx;
-background-color: #66CDAA;
-line-height: 100rpx;
-color:white;
-}
+/* pages/zhiyuan_shenhe/shenhe_jieguo/chakan_shenhe_jieguo/chakan_shenhe_jieguo.wxss */

@@ -127,7 +127,7 @@ Page({
     this.setData({
       tag:e.currentTarget.dataset.index
     })
-    if (e.currentTarget.dataset.index==2){
+    /*if (e.currentTarget.dataset.index==2){
       this.setData({
         c2: false,
         c1:false,
@@ -142,17 +142,17 @@ Page({
           c3: false
         })
       }
-    }
+    }*/
   },
   setTaoCan: function (e) {
-    this.setData({
+    /*this.setData({
       ck: e.detail.value
     })
     if (e.detail.value == 2) {
       this.setData({
         tag: 2
       })
-    }
+    }*/
   },
   formSubmit: function (e) {
     //console.log('form发生了submit事件，携带数据为：', e.detail.value)

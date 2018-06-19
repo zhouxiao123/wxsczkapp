@@ -1,23 +1,2 @@
-<view style="flex-direction: column;" >
-
-<view style=" font-size:44rpx; color:#4b4c4c;"  class="biaoti">您的志愿正在审核中......</view>
-
-<view  class="neirong1" style='margin-top:80rpx;'>审核结果预计将在12小时之后反馈，请耐心等待</view>
-<view  class="neirong1">如果你提交的格式有问题，我们将会尽快与你联系，请保持电话通畅</view>
-<view  class="neirong1">座机：028-85064242</view>
-<view  class="neirong1">冯老师：17311248067</view>
-<view  class="neirong1">李老师：15008228412</view>
-<view  class="neirong1">地址：四川省成都市顺城大街306号凯乐广场1502室</view>
-</view>
-
-  <view style="text-align:center;padding-top:160rpx;padding-bottom:80rpx;width:100%;" >
-  <button bindtap='wodetianxie' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:350rpx;">查看我已填写的志愿</button>
- </view>
-
-
-
- <view style="text-align:center;padding-top:20rpx;padding-bottom:60rpx;width:100%;" >
-  <button bindtap='toanswer' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:350rpx;">返回主页</button>
- </view>
-
-
+<!--pages/zhiyuan_shenhe/dengdai_fankui/dengdai_fankui.wxml-->
+<text>pages/zhiyuan_shenhe/dengdai_fankui/dengdai_fankui.wxml</text>

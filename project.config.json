@@ -209,7 +209,7 @@
 					"id": 29,
 					"name": "直播课程详情",
 					"pathName": "pages/live_video/live_video",
-					"query": "id=80&from=1"
+					"query": "id=102&from=1"
 				},
 				{
 					"id": -1,

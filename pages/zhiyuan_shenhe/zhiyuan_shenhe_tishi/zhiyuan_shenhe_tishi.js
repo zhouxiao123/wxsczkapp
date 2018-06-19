@@ -1,4 +1,4 @@
-var app = getApp()
+// pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi.js
 Page({
 
   /**
@@ -12,20 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: "志愿填报方案评估功能使用提示" })
-  },
-   /**
-   * 点击跳转提交方式选择
-   */
-  toanswer: function (e) {
-    wx.showLoading({
-      mask: true,
-      title: '加载中'
-    })
-    wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_fangshi_xuanze/tijiao_fangshi_xuanze'
-    })
-    wx.hideLoading()
+  
   },
 
   /**

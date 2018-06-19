@@ -61,10 +61,10 @@
     </view>
 
     <view class="tag-view">
-      <radio-group name="buyType" bindchange='setTaoCan'>
-        <radio value="2" checked="{{c3}}" id="huo" style="display:block;text-align:right"><label for="huo" class="radio-text" style="margin-right:0"><image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/duanwu.png" style="width:640rpx;" mode='widthFix'></image></label></radio>
-        <radio  value="1" checked="{{c1}}" id="li"/><label for="li" class="radio-text" >30元购买</label>
-        <radio  style="margin-left:40rpx"  value="0" checked="{{c2}}"  id="wen"/><label for="wen" class="radio-text" >100积分+20元购买</label>
+      <radio-group name="buyType" >
+        <!--bindchange='setTaoCan'<radio value="2" checked="{{c3}}" id="huo" style="display:block;text-align:right"><label for="huo" class="radio-text" style="margin-right:0"><image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/duanwu.png" style="width:640rpx;" mode='widthFix'></image></label></radio>-->
+        <radio  value="1" checked="checked" id="li"/><label for="li" class="radio-text" >30元购买</label>
+        <radio  style="margin-left:40rpx"  value="0"   id="wen"/><label for="wen" class="radio-text" >100积分+20元购买</label>
       </radio-group>  
     </view>
     <!--<view class="tag-view">

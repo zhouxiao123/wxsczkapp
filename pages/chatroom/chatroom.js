@@ -1,6 +1,7 @@
 // pages/chatroom/chatroom.js
 //获取应用实例
 var app = getApp()
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -27,6 +28,7 @@ Page({
     pageOffset: 0,
     pageSize: 20,
     opacityflag: 0,
+    showModal: false,
   },
 
   /**
@@ -239,6 +241,10 @@ Page({
     wx.onSocketClose(function(){
       console.log('websocket连接关闭！');
     })
+
+    
+
+    
   },
   //模糊查询
   setValue2: function (event) {
@@ -399,5 +405,50 @@ Page({
    */
   onReachBottom: function () {
   
+  },
+  /**
+   * 弹窗
+   */
+  showDialogBtn: function () {
+    var that = this
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/school_detail',
+      data: {
+        id: that.data.yxid
+      },
+      success: function (res) {
+
+        WxParse.wxParse('article', 'html', res.data.desc, that, 5);
+        that.setData({
+          showModal: true
+        })
+      }
+    })
+
+  },
+  /**
+   * 弹出框蒙层截断touchmove事件
+   */
+  preventTouchMove: function () {
+  },
+  /**
+   * 隐藏模态对话框
+   */
+  hideModal: function () {
+    this.setData({
+      showModal: false
+    });
+  },
+  /**
+   * 对话框取消按钮点击事件
+   */
+  onCancel: function () {
+    this.hideModal();
+  },
+  /**
+   * 对话框确认按钮点击事件
+   */
+  onConfirm: function () {
+    this.hideModal();
   }
 })
