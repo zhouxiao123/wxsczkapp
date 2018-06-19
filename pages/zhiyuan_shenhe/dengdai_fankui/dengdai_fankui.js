@@ -23,7 +23,7 @@ Page({
       mask: true,
       title: '加载中'
     })
-    wx.redirectTo({
+    wx.reLaunch({
       url: '/pages/index/index'
     })
     wx.hideLoading()

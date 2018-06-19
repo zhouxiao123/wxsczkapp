@@ -34,14 +34,14 @@
     </view>
 
     <view>
-      <view class="first-icon" bindtap="online">
+      <!--<view class="first-icon" bindtap="online">
         <image src="../../images/circle4.png" class="icon-pic"></image>
         <text class="icon-text">职业详解</text>
-      </view>
-      <!--<view class="third-icon" bindtap="toZhiyuanpingu">
+      </view>-->
+      <view class="third-icon" bindtap="toZhiyuanpingu">
         <image src="../../images/zypg.png" class="icon-pic"></image>
         <text class="icon-text">志愿评估</text>
-      </view>-->
+      </view>
       <view class="second-icon" bindtap="ask">
         <image src="../../images/xz-7@2x.png" class="icon-pic"></image>
         <text class="icon-text" >语音答疑</text>
