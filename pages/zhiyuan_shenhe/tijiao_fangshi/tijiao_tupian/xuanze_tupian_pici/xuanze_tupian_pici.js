@@ -105,6 +105,7 @@ Page({
             pici:1
           },
           success: function (res) {
+            console.log('打印第一个-----------')
             console.log(res.data)
             that.setData({
               yanse1: res.data
@@ -121,6 +122,7 @@ Page({
             pici: 2
           },
           success: function (res) {
+            console.log('打印第2个-----------')
             console.log(res.data)
             that.setData({
               yanse2: res.data
@@ -137,6 +139,7 @@ Page({
             pici: 3
           },
           success: function (res) {
+            console.log('打印第3个-----------')
             console.log(res.data)
             that.setData({
               yanse3: res.data
@@ -153,6 +156,7 @@ Page({
             pici: 4
           },
           success: function (res) {
+            console.log('打印第4个-----------')
             console.log(res.data)
             that.setData({
               yanse4: res.data
@@ -169,6 +173,7 @@ Page({
             pici: 5
           },
           success: function (res) {
+            console.log('打印第5个-----------')
             console.log(res.data)
             that.setData({
               yanse5: res.data
@@ -261,7 +266,7 @@ Page({
       url: app.globalData.baseUrl + 'wx/savezhiyuan_pay',
       data: {
         userid: that.data.userid,
-        pay:0,
+        //pay:0,
         uploadingtype:1,
         
       },
@@ -277,7 +282,12 @@ Page({
 
             }
           })
-        } else if (res.data.result == "ok"){
+        } else if (res.data.result == "yijiao"){
+          wx.redirectTo({
+            url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_jichuxinxi/zhiyuan_shenhe_jichuxinxi'
+          })
+        }
+        else if (res.data.result == "ok"){
           wx.showModal({
             title: '提交',
             //content: '提交',

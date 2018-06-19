@@ -36,7 +36,7 @@ Page({
       mask: true,
       title: '加载中'
     })
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_pici/yitijiao_pici'
     })
     wx.hideLoading()

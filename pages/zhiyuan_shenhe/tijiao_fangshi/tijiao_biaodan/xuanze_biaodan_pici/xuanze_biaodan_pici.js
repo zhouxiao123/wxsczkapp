@@ -95,7 +95,7 @@ Page({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
           data: {
             userid: that.data.userid,
-            uploadingtype: 1,
+            uploadingtype: 2,
             pici: 1
           },
           success: function (res) {
@@ -111,7 +111,7 @@ Page({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
           data: {
             userid: that.data.userid,
-            uploadingtype: 1,
+            uploadingtype: 2,
             pici: 2
           },
           success: function (res) {
@@ -127,7 +127,7 @@ Page({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
           data: {
             userid: that.data.userid,
-            uploadingtype: 1,
+            uploadingtype: 2,
             pici: 3
           },
           success: function (res) {
@@ -143,7 +143,7 @@ Page({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
           data: {
             userid: that.data.userid,
-            uploadingtype: 1,
+            uploadingtype: 2,
             pici: 4
           },
           success: function (res) {
@@ -159,7 +159,7 @@ Page({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
           data: {
             userid: that.data.userid,
-            uploadingtype: 1,
+            uploadingtype: 2,
             pici: 5
           },
           success: function (res) {
@@ -257,7 +257,7 @@ Page({
       data: {
         userid: that.data.userid,
        
-        pay: 0,
+        //pay: 0,
         uploadingtype: 2,
        
       },
@@ -273,7 +273,13 @@ Page({
 
             }
           })
-        } else if (res.data.result == "ok") {
+        } else if (res.data.result == "yijiao") {
+          wx.redirectTo({
+            url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_jichuxinxi/zhiyuan_shenhe_jichuxinxi'
+          })
+        }
+        
+         else if (res.data.result == "ok") {
           wx.showModal({
             title: '提交',
             //content: '提交',
