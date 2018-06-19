@@ -1,4 +1,5 @@
 // pages/chatroom_teacher/chatroom_teacher.js
+var app = getApp()
 Page({
 
   /**
@@ -21,7 +22,41 @@ Page({
   onReady: function () {
   
   },
+  zhuce:function(){
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: 'https://wxsign.sczk.com.cn/chatroom/service/main',
+      data: {
+        username:'bjjtdx'
+      },
+      success: function (res) {
+        //console.log(res.data)
+        wx.hideLoading()
+        if (res.data.result == "ok") {
 
+              wx.navigateTo({
+                url: '/pages/chatroom_teacher/setting/setting'
+              })
+      
+   
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '登录失败',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+
+
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
