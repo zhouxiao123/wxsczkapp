@@ -278,7 +278,6 @@ Page({
             url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_jichuxinxi/zhiyuan_shenhe_jichuxinxi'
           })
         }
-        
          else if (res.data.result == "ok") {
           wx.showModal({
             title: '提交',
