@@ -10,9 +10,9 @@
     <view class="tag-view {{tag==0?'on t-on':''}}" data-current="0" bindtap="swichNav" >
       填报一对一
     </view> 
-    <view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
+    <!--<view class="tag-view {{tag==1?'on t-on':''}}" data-current="1" bindtap="swichNav" >
       志愿审核
-    </view>
+    </view>-->
     <view class="tag-view {{tag==2?'on t-on':''}}" data-current="2" bindtap="swichNav" >
       普通高考
     </view>

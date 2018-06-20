@@ -49,7 +49,11 @@
 
 <view style="position:fixed;bottom:10rpx;text-align:center;width:750rpx">
     <view class="df" style='margin-top:30rpx;'>
-      <button class="subbutton" formType="submit">设置</button>
-      <button class="resetbutton" formType="reset">退出</button>
+      <button class="subbutton" catchtap='setWindow'>设置</button>
+      <button class="resetbutton" >退出</button>
     </view>
 </view>
+
+
+
+
