@@ -60,7 +60,7 @@
         <text class="icon-text">高考志愿</text>
       </view>-->
       <view class="fours-icon" bindtap="toGaokaozhiyuan">
-        <image src="../../images/专家一对一.png" class="icon-pic"></image>
+        <image src="../../images/zjydy.png" class="icon-pic"></image>
         <text class="icon-text">专家一对一</text>
       </view>
     </view>

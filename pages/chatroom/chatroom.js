@@ -251,6 +251,10 @@ Page({
     this.setData({
       search_name: event.detail.value
     });
+  }, toTop:function(){
+wx.reLaunch({
+  url: '/pages/index/index',
+})
   },
   search: function (event) {
     //console.log(this.data.search_name)

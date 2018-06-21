@@ -85,6 +85,7 @@
     </view>
     <view class="form-group" style="text-align: center;margin-top: 30px">
         <!--<button  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:160px;">查看已购买门票</button>-->
+        <view catchtap='toOnline' style="color:#59c9b9;font-size:26rpx;border-bottom:1px solid #999999;position:absolute;right:20rpx;">在线咨询会入口</view>
         <view catchtap='toList' style="color:#999999;font-size:26rpx;border-bottom:1px solid #999999">查看已购买门票</view>
 
     </view>

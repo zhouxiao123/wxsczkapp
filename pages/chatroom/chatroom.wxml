@@ -11,7 +11,11 @@
 
 
 <view class="item_class1" style="display:{{tag==0?'block':'none'}}">
+        <view catchtap='toTop' style="color:#999999;font-size:30rpx;border-bottom:1px solid #999999;position:absolute;right:40rpx;">返回首页</view>
 <view class="margin-left">在线找高校</view>
+
+
+
 <view class="main-view">
    <input bindinput="setValue2" placeholder="请输入你需要查找咨询的学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:500rpx;margin-left:20rpx;font-family:黑体;font-size:30rpx;"/>
    <image bindtap='search' src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/dianjisousuo.png" style="width:150rpx;margin-right:20rpx;margin-bottom:10rpx;" mode='widthFix'/>

@@ -1,0 +1,13 @@
+/* pages/chatroom_select/chatroom_select.wxss */
+.biaoti{
+font-weight:bold;
+font-size:60rpx;
+ color:#4b4c4c;
+ display:block;
+ padding-top:30rpx;
+ margin-left:20rpx;
+ margin-right:20rpx;
+ background-color: white;
+ font-family:黑体;
+ text-align: center;
+}

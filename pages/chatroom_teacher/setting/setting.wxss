@@ -1,5 +1,7 @@
 /* pages/chatroom_teacher/setting/setting.wxss */
 .modal-footer {
+  margin-top:30rpx;
+  padding-bottom:500rpx;
   display: flex;
   flex-direction: row;
   height: 86rpx;

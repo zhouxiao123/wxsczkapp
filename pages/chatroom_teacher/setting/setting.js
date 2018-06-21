@@ -7,7 +7,8 @@ Page({
   data: {
     askSchool: {},
     oq: [],
-    oa: []
+    oa: [],
+    yxid:'0'
   },
 
   /**
@@ -15,14 +16,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    wx.showLoading({
+    that.setData({
+      yxid:options.yxid
+    })
+    /*wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.request({
       url: 'https://wxsign.sczk.com.cn/chatroom/service/yxDetail',
       data: {
-        yxid: '0004'
+        yxid: that.data.yxid
       },
       success: function (res) {
         //console.log(res.data)
@@ -37,30 +41,55 @@ Page({
 
 
       }
-    })
+    })*/
 
-  },
+  }
+  ,
   onCancel:function(){
-    wx.redirectTo({
-      url: '/pages/chatroom_teacher/list/list',
+    wx.navigateTo({
+      url: '/pages/chatroom_teacher/list/list?yxid=' + this.data.yxid,
     })
   },
-  onConfirm:function(){
+  formSubmit:function(e){
+    var that = this
+    var ask = 
+      e.detail.value.askcontent1 + "^"
+      + e.detail.value.askcontent2 + "^"
+      + e.detail.value.askcontent3 + "^"
+      + e.detail.value.askcontent4 + "^"
+      + e.detail.value.askcontent5 + "^"
+      + e.detail.value.askcontent6
+
+    var answer =
+      e.detail.value.answercontent1 + "^"
+      + e.detail.value.answercontent2 + "^"
+      + e.detail.value.answercontent3 + "^"
+      + e.detail.value.answercontent4 + "^"
+      + e.detail.value.answercontent5 + "^"
+      + e.detail.value.answercontent6
+
+    //console.log(ask)
+    //console.log(answer)
     wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.request({
-      url: 'https://wxsign.sczk.com.cn/chatroom/service/saveDetail',
+      url: 'https://wxsign.sczk.com.cn/chatroom/service/saveAsk',
       data: {
-        yxid: '0004'
+        yxid: that.data.yxid,
+        firstcontent: e.detail.value.firstcontent,
+        onlinetime: e.detail.value.onlinetime,
+        question:ask,
+        answer:answer
       },
       success: function (res) {
         //console.log(res.data)
         wx.hideLoading()
 
-        wx.redirectTo({
-          url: '/pages/chatroom_teacher/list/list',
+        wx.navigateTo({
+          
+          url: '/pages/chatroom_teacher/list/list?yxid='+that.data.yxid,
         })
 
 
@@ -78,7 +107,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.request({
+      url: 'https://wxsign.sczk.com.cn/chatroom/service/yxDetail',
+      data: {
+        yxid: that.data.yxid
+      },
+      success: function (res) {
+        //console.log(res.data)
+        wx.hideLoading()
+
+        that.setData({
+          showModal: true,
+          askSchool: res.data.askSchool,
+          oq: res.data.oq,
+          oa: res.data.oa
+        })
+
+
+      }
+    })
   },
 
   /**
