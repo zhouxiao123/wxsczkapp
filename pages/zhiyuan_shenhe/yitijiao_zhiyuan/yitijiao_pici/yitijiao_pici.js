@@ -102,7 +102,8 @@ Page({
           
             })
             that.data.uploadingtype = res.data.uploadingtype
-           
+            console.log('上传的方式-----')
+            console.log(that.data.uploadingtype)
           }
         })
       }
@@ -119,7 +120,7 @@ Page({
     })
     if (that.data.uploadingtype==1){
       wx.navigateTo({
-        url: '/pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail?&pici=' + 1
+        url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian?&pici=' + 1
       })
     }
     if (that.data.uploadingtype ==2) {
@@ -140,7 +141,7 @@ Page({
     })
     if (that.data.uploadingtype == 1) {
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail?&pici=' + 2
+      url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian?&pici=' + 2
     })
     }
     if (that.data.uploadingtype == 2) {
@@ -161,7 +162,7 @@ Page({
     })
     if (that.data.uploadingtype == 1) {
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail?&pici=' + 3
+      url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian?&pici=' + 3
     })
     }
     if (that.data.uploadingtype == 2) {
@@ -182,7 +183,7 @@ Page({
     })
     if (that.data.uploadingtype == 1) {
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail?&pici=' + 4
+      url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian?&pici=' + 4
     })
     }
     if (that.data.uploadingtype == 2) {
@@ -204,7 +205,7 @@ Page({
     })
     if (that.data.uploadingtype == 1) {
     wx.navigateTo({
-      url: '/pages/zhiyuan_shenhe/shenhe_jieguo/jieguo_detail/jieguo_detail?&pici=' + 5
+      url: '/pages/zhiyuan_shenhe/yitijiao_zhiyuan/yitijiao_tupian/yitijiao_tupian?&pici=' + 5
     })
     }
     if (that.data.uploadingtype == 2) {
