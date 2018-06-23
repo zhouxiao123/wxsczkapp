@@ -105,6 +105,7 @@ Page({
             pici:1
           },
           success: function (res) {
+            console.log('第一个')
             console.log(res.data)
             that.setData({
               yanse1: res.data
@@ -248,9 +249,9 @@ Page({
     wx.hideLoading()
   },
 
-/**
-*统一提交,图片 
-*/
+  /**
+  *统一提交,表单
+  */
   tongyi_tijiao: function (e) {
     wx.showLoading({
       mask: true,
@@ -261,9 +262,10 @@ Page({
       url: app.globalData.baseUrl + 'wx/savezhiyuan_pay',
       data: {
         userid: that.data.userid,
-        pay:0,
-        uploadingtype:1,
-        
+
+        //pay: 0,
+        uploadingtype: 1,
+
       },
       success: function (res) {
         //console.log(res.data)
@@ -271,13 +273,18 @@ Page({
         if (res.data.result == "kong") {
           wx.showModal({
             title: '提示',
-            content: '请选择至少一个或以上批次,填写并保存',
+            content: '请选择至少一个或以上批次,添加图片并保存',
             showCancel: false,
             success: function (res) {
 
             }
           })
-        } else if (res.data.result == "ok"){
+        } else if (res.data.result == "yijiao") {
+          wx.redirectTo({
+            url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_jichuxinxi/zhiyuan_shenhe_jichuxinxi'
+          })
+        }
+        else if (res.data.result == "ok") {
           wx.showModal({
             title: '提交',
             //content: '提交',
@@ -291,7 +298,7 @@ Page({
                 console.log('用户点击取消')
               }
             }
-          }) 
+          })
         }
       }
     })

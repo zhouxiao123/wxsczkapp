@@ -94,7 +94,7 @@ Page({
 
         //显示审核结果图片
         wx.request({
-          url: app.globalData.baseUrl + 'wx/shenhejieguo_fankui',
+          url: app.globalData.baseUrl + 'wx/yitijiaotupian_fankui',
           data: {
             userid: that.data.userid,
             pici: that.data.pici
@@ -102,7 +102,7 @@ Page({
           success: function (res) {
             console.log(res.data)
             that.setData({
-              shenhejieguo: res.data.shenhejieguo
+              yitijiaotupian: res.data.yitijiaotupian
             })
           }
         })

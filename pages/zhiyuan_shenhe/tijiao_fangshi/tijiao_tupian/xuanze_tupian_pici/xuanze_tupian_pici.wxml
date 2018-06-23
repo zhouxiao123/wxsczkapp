@@ -1,22 +1,22 @@
 
 <view class="classname" style='margin-top:60rpx;'>
-  <button bindtap='benke_tiqianpi' style="{{yanse1!=null?'color:red;':''}}"  class="tiqianpi" >本科提前批</button>
+  <button bindtap='benke_tiqianpi' style="{{yanse1!=''?'color:red;':''}}"  class="tiqianpi" >本科提前批</button>
 </view>
 
 <view class="classname" style='margin-top:100rpx;'>
-  <button bindtap='bneke_diyipi' style="{{yanse2!=null?'color:red;':''}}"  class="benyi"  >本科第一批</button>
+  <button bindtap='bneke_diyipi' style="{{yanse2!=''?'color:red;':''}}"  class="benyi"  >本科第一批</button>
 </view>
 
 <view class="classname" style='margin-top:100rpx;'>
-  <button bindtap='benke_dierpi' style="{{yanse3!=null?'color:red;':''}}" class="bener">本科第二批</button>
+  <button bindtap='benke_dierpi' style="{{yanse3!=''?'color:red;':''}}" class="bener">本科第二批</button>
 </view>
 
 <view class="classname" style='margin-top:100rpx;'>
-  <button bindtap='zhuanke_tiqianpi' style="{{yanse4!=null?'color:red;':''}}" class="zhaunketiqian" >专科提前批</button>
+  <button bindtap='zhuanke_tiqianpi' style="{{yanse4!=''?'color:red;':''}}" class="zhaunketiqian" >专科提前批</button>
 </view>
 
 <view class="classname" style='margin-top:100rpx;'>
-  <button bindtap='zhuankepi' style="{{yanse5!=null?'color:red;':''}}" class="zhaunke" >专科批</button>
+  <button bindtap='zhuankepi' style="{{yanse5!=''?'color:red;':''}}" class="zhaunke" >专科批</button>
 </view>
 
 
