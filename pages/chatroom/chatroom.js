@@ -22,6 +22,7 @@ Page({
     user:{},
     time:0,
     schoolhead:'',
+    ser:0,
     search_name:'',
     //下拉加载
     hasMore: true,
@@ -29,6 +30,10 @@ Page({
     pageSize: 20,
     opacityflag: 0,
     showModal: false,
+    adv:{},
+    adv2:{},
+    adv11:1,
+    adv22: 0,
   },
 
   /**
@@ -129,13 +134,48 @@ Page({
       } 
     })
 
-    var res = wx.getSystemInfoSync()
 
-    //console.log(res)
-    var he = parseInt(750 * res.windowHeight / res.windowWidth - 180)
-    that.setData({
-      scrollHeight:he
+    var ress = wx.getSystemInfoSync()
+
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/adv_list',
+      data: {
+        tag: 99
+      },
+      success: function (res) {
+        //console.log(res.data)
+        that.setData({
+          adv: res.data
+        })
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/adv_list',
+          data: {
+            tag: 98
+          },
+          success: function (res) {
+            //console.log(res.data)
+            that.setData({
+              adv2: res.data
+            })
+            //console.log(that.data.adv2.adv.length)
+            var num = that.data.adv2.adv.length!=0 ? 310 : 180
+            //console.log(num)
+            var he = parseInt(750 * ress.windowHeight / ress.windowWidth - num)
+            that.setData({
+              scrollHeight: he
+            })
+            //wx.hideLoading()
+          }
+        })
+        //wx.hideLoading()
+      }
     })
+
+    
+
+    
+
+    
     //console.log(he)
 
     //建立连接
@@ -164,9 +204,11 @@ Page({
       //console.log(json)
       var content = "";
       if (json.msgtype == 1) {
+        if(that.data.ser==0){
         that.setData({
           askschool: json.askschool
         })
+        }
 
       } else if (json.msgtype == 2){
 
@@ -200,7 +242,9 @@ Page({
         that.setData({
           tag: 1,
           toUser: json.toUser,
-          list:json.tc
+          list:json.tc,
+          adv11:0,
+          adv22:1
         })
         wx.createSelectorQuery().select('.a-class').boundingClientRect(function (rect) {
 
@@ -217,7 +261,12 @@ Page({
 
         }).exec()
 
-      } else if (json.msgtype == -1) {
+      } else if (json.msgtype == 7) {
+        that.setData({
+          askschool: json.askschool
+        })
+
+      }  else if (json.msgtype == -1) {
         wx.showModal({
           title: '提示',
           content: '对方已下线',
@@ -251,10 +300,26 @@ Page({
     this.setData({
       search_name: event.detail.value
     });
+  }, toTop:function(){
+wx.reLaunch({
+  url: '/pages/index/index',
+})
   },
   search: function (event) {
     //console.log(this.data.search_name)
-    
+    var msg = '{"msgtype":7,"toUser":"all","usertype":0,"search_name":"' + this.data.search_name+'"}'
+    if (this.data.search_name==""){
+      this.setData({
+        ser: 0
+      })
+    } else {
+      this.setData({
+        ser:1
+      })
+    }
+    wx.sendSocketMessage({
+      data: msg,
+    })
 
   }, setValue: function (event) {
 
@@ -292,7 +357,9 @@ Page({
   }, goOut:function(){
     this.setData({
       tag: 0,
-      list:[]
+      list:[],
+      adv11: 1,
+      adv22: 0
     })
     var msg = '{"msgtype":3,"toUser":"' + this.data.toUser + '","usertype":0}'
     wx.sendSocketMessage({

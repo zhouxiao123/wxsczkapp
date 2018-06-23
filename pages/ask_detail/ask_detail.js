@@ -716,7 +716,7 @@ Page({
     return {
       title: that.data.item.ask.askContent,
       path: 'pages/ask_detail/ask_detail?id=' + that.data.item.ask.askId,
-      imageUrl: '../../images/logo.jpg',
+      imageUrl: 'https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/logo.jpg',
       success: function (res) {
         // 转发成功
       },

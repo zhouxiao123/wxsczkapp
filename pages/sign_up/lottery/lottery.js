@@ -394,7 +394,7 @@ Page({
     return {
       title: '四川招考网',
       path: 'pages/index/index',
-      imageUrl: '/images/logo.jpg',
+      imageUrl: 'https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/logo.jpg',
       success: function (res) {
         // 转发成功
         wx.request({

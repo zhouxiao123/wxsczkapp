@@ -1,45 +1,65 @@
 <!--pages/chatroom_teacher/setting/setting.wxml-->
+<form bindsubmit="formSubmit">
 <view style="width:700rpx;margin-left:25rpx;text-align:center;font-size:28rpx;font-weight:bold;margin-top:40rpx">第十一届普通高校招生及志愿填报在线咨询会管理系统</view>
-<view style="display:flex;margin-top:40rpx"> 
+<view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">欢迎语</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">你好，欢迎您咨询，如果长时间未回复，您可拨打028-86701255进行电话咨询(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="firstcontent" value="{{askSchool.firstcontent}}"></textarea>
 </view>
-
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">在线时间</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">14:00到18:00在线(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="onlinetime" value="{{askSchool.onlinetime}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题1</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">院校介绍(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent1" value="{{oq[0].askcontent}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题1回答</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">学校的回答1(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent1" value="{{oa[0].content}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题2</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">在川招生计划(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent2" value="{{oq[1].askcontent}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题2回答</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">学校的回答2(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent2" value="{{oa[1].content}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题3</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">录取分数(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent3" value="{{oq[2].askcontent}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题3回答</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">学校的回答3(可自定义)</textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent3" value="{{oa[2].content}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
-  <text style="width:200rpx;text-align:right;font-size:30rpx">自定义</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">自定义问题</textarea>
+  <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题4</text>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent4" value="{{oq[3].askcontent}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
-  <text style="width:200rpx;text-align:right;font-size:30rpx">自定义回答</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx">自定义回答</textarea>
+  <text style="width:200rpx;text-align:right;font-size:30rpx">问题4回答</text>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent4" value="{{oa[3].content}}"></textarea>
 </view>
+<view style="display:flex;margin-top:20rpx"> 
+  <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题5</text>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent5" value="{{oq[4].askcontent}}"></textarea>
+</view>
+<view style="display:flex;margin-top:20rpx"> 
+  <text style="width:200rpx;text-align:right;font-size:30rpx">问题5回答</text>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent5" value="{{oa[4].content}}"></textarea>
+</view>
+<view style="display:flex;margin-top:20rpx"> 
+  <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题6</text>
+  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent6" value="{{oq[5].askcontent}}"></textarea>
+</view>
+<view style="display:flex;margin-top:20rpx"> 
+  <text style="width:200rpx;text-align:right;font-size:30rpx">问题6回答</text>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent6" value="{{oa[5].content}}"></textarea>
+</view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">跳过</view>
+    <button class="btn-confirm" formType="submit" data-status="confirm">保存</button>
+  </view>
 
-
+</form>

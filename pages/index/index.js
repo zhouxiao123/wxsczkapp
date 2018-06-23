@@ -849,6 +849,17 @@ var that = this
     wx.navigateTo({
       url: '../check_point/check_point'
     })
+  },
+    //跳转测录取
+  tiaozhuanceluqu: function (e) {
+    wx.showLoading({
+      mask: true,
+      title: '加载中'
+    })
+    wx.navigateTo({
+      url: '/pages/qinyunhui/celuqu/celuqu',
+    })
+    wx.hideLoading()
   }
 })
 function transDate(mescStr) {

@@ -4,7 +4,7 @@
 <image  wx:if="{{isOpen==1}}" style="position:absolute;width:100rpx;left:600rpx;top:100rpx" mode='widthFix' src="../../images/xhb.png" bindtap='toLottery'></image>
 
 <view  style="padding-bottom:130rpx">
-  <image src="../../images/personal/jx-1-kb@2x.png" style="width:100%;position:absolute;left:0;top:0;z-index:-1"/>
+  <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/jx-1-kb@2x.png" style="width:100%;position:absolute;left:0;top:0;z-index:-1"/>
   <view  class="userinfo">
     <image wx:if="{{userInfo.nickName}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <button wx:else open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" style="height:60rpx;line-height:60rpx;margin-top:40rpx;margin-bottom:40rpx">设置头像</button>

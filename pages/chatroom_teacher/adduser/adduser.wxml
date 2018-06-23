@@ -1,0 +1,27 @@
+<!--pages/chatroom_teacher/adduser/adduser.wxml-->
+<view style="font-size:33rpx;text-align:center">账号列表</view>
+  <view style="width:300rpx"><button style="line-height:60rpx;height:60rpx;width:200rpx;font-size:26rpx" catchtap='addUser'>添加用户</button></view>
+<view wx:for="{{userList}}" class="df" >
+  <view style="width:300rpx;margin-left:40rpx">{{item.loginName}}</view>
+  <view style="width:200rpx">{{item.name}}</view>
+  <view style="width:200rpx"><button style="line-height:60rpx;height:60rpx;width:100rpx;font-size:26rpx" data-id="{{item.id}}" catchtap='delRecord'>删除</button></view>
+</view>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modal-dialog" wx:if="{{showModal}}">
+
+  <view class="modal-content">
+    <label style="font-size:26rpx;margin-left:50rpx">电话</label>
+    <input placeholder-class="input-holder" type="number" maxlength="11"  class="input" bindinput='setPhone' value="{{phone}}" placeholder="手机号"></input>
+  </view>
+  <view class="modal-content-sub">
+    <label style="font-size:26rpx;margin-left:50rpx">姓名</label>
+    <input placeholder-class="input-holder" value="{{name}}"  bindinput='setName'  class="input" placeholder="姓名"></input>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

@@ -8,10 +8,20 @@
       </view> 
  </view>
 </view>-->
-
+    <swiper 
+  autoplay="true" wx:if="{{adv.adv.length&&adv11==1}}" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0">
+  
+    <swiper-item wx:for="{{adv.adv}}">
+      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
 
 <view class="item_class1" style="display:{{tag==0?'block':'none'}}">
+        <view catchtap='toTop' style="color:#999999;font-size:30rpx;border-bottom:1px solid #999999;position:absolute;right:40rpx;">返回首页</view>
 <view class="margin-left">在线找高校</view>
+
+
+
 <view class="main-view">
    <input bindinput="setValue2" placeholder="请输入你需要查找咨询的学校" type="text" placeholder-style="font-family:黑体;"  style="color:#a5a6a6;display:inline-block;width:500rpx;margin-left:20rpx;font-family:黑体;font-size:30rpx;"/>
    <image bindtap='search' src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/dianjisousuo.png" style="width:150rpx;margin-right:20rpx;margin-bottom:10rpx;" mode='widthFix'/>
@@ -24,7 +34,7 @@
 </view>
 
 <!--列表-->
- <view style="">
+ <view style="padding-bottom:150rpx">
   <!--第一条-->
   <view wx:for="{{askschool}}" style="border-bottom:1rpx solid #e5e5e5;padding-bottom:20rpx;margin-top:20rpx;" data-id='{{item.yxid}}' data-name='{{item.yxname}}' data-head="{{item.path}}" catchtap="gotoText">
       <view class='margin-left-1'>
@@ -51,11 +61,20 @@
 
 
 <view style="display:{{tag==1?'block':'none'}};">
+
 <view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">
+    
 <text style="display:block">{{schoolname}}</text>
 </view>
+<swiper 
+  autoplay="true" wx:if="{{adv2.adv.length&&adv22==1}}" interval="5000" duration="500" style="height:130rpx;width:750rpx;position:fixed;top:80rpx;z-index:9">
+  
+    <swiper-item wx:for="{{adv2.adv}}">
+      <image data-id="{{item.id}}" data-type="{{item.linktype}}" data-link="{{item.link}}" catchtap='changePage' src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.picurl}}" class="slide-image" style="width:750rpx;" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
 
-<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:80rpx;height:{{scrollHeight}}rpx">
+<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:{{adv2.adv.length&&adv22==1?'200rpx':'80rpx'}};height:{{scrollHeight}}rpx">
 <view class="a-class">
   <view wx:for="{{list}}" >
 

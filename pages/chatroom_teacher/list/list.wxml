@@ -1,55 +1,68 @@
 <!--pages/chatroom_teacher/list/list.wxml-->
-<view style="margin-left:40rpx;margin-right:40rpx;border-bottom:1px solid #aaa;margin-top:20rpx;display:flex;align-items: center;padding-bottom:20rpx;justify-content: space-between">
-<view style="display:flex;align-items: center">
-  <image src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoK6yaq7CstdTZWXuLCc2qicn4EhGxdLia0icJz4pvOUh9yzBKiceJLweO5cv0n4Wup7ia4CX9wqIsI9rQ/132" class="chat-img"></image>
+<view style="display:{{tag==0?'block':'none'}}">
+<view wx:for="{{list}}" class="title" data-oid="{{item.oid}}" catchtap='gotoTalk'>
+<view style="display:flex;align-items: center" >
+  <image src="{{item.head}}" class="chat-img"></image>
   <view  style="margin-left:20rpx;display:flex;flex-direction:column;">
-    <text>学生1</text>
-    <text style="font-size:30rpx;color:red;margin-top:15rpx">在线</text>
+    <text>{{item.nickname}}</text>
+    <text style="font-size:30rpx;color:{{item.online=='在线'?'red':'#999'}};margin-top:15rpx">{{item.online}}</text>
     </view>
   </view>
 
   <view style="display:flex;flex-direction:column;text-align:center">
-    <text style="color:#aaa;font-size:26rpx">12:30</text>
-    <text style="background:#59c8b8;display:inline-block;width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">3</text>
+    <text style="color:#aaa;font-size:26rpx">{{item.createtime}}</text>
+    <text style="background:#59c8b8;display:{{item.count==0?'none':'inline-block'}};width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">{{item.count==0?'':item.count}}</text>
   </view>
 </view>
-
-<view style="margin-left:40rpx;margin-right:40rpx;border-bottom:1px solid #aaa;margin-top:20rpx;display:flex;align-items: center;padding-bottom:20rpx;justify-content: space-between">
-<view style="display:flex;align-items: center">
-  <image src="https://wx.qlogo.cn/mmopen/vi_32/fxk7AgnIPGcjRMK89PK78EMRicKzvDYkNcuKCmjKicJKbX5icDicHqS5t4GzWy1U3fYbg3ia91ia98HltZHd56SsvCew/132" class="chat-img"></image>
-  <view  style="margin-left:20rpx;display:flex;flex-direction:column;">
-    <text>学生2</text>
-    <text style="font-size:30rpx;color:red;margin-top:15rpx">在线</text>
-    </view>
-  </view>
-
-  <view style="display:flex;flex-direction:column;text-align:center">
-    <text style="color:#aaa;font-size:26rpx">12:30</text>
-    <text style="background:#59c8b8;display:inline-block;width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">2</text>
-  </view>
 </view>
 
-<view style="margin-left:40rpx;margin-right:40rpx;border-bottom:1px solid #aaa;margin-top:20rpx;display:flex;align-items: center;padding-bottom:20rpx;justify-content: space-between">
-<view style="display:flex;align-items: center">
-  <image src="https://wx.qlogo.cn/mmopen/vi_32/laweeD9yYaa6BgKhMfgaj4Y28uP2ricichJphbmRBGs1N63GO9LI43BZTHUmQVXC1picCC3OWpaASqbVRdqB3Yujw/132" class="chat-img"></image>
-  <view  style="margin-left:20rpx;display:flex;flex-direction:column;">
-    <text>学生3</text>
-    <text style="font-size:30rpx;color:red;margin-top:15rpx">在线</text>
-    </view>
-  </view>
 
-  <view style="display:flex;flex-direction:column;text-align:center">
-    <text style="color:#aaa;font-size:26rpx">12:30</text>
-    <text style="background:#59c8b8;display:inline-block;width:40rpx;height:40rpx;color:#fff;font-size:26rpx;border-radius: 50%;line-height:40rpx">4</text>
-  </view>
-</view>
 
 
 
 
 <view style="position:fixed;bottom:10rpx;text-align:center;width:750rpx">
     <view class="df" style='margin-top:30rpx;'>
-      <button class="subbutton" formType="submit">设置</button>
-      <button class="resetbutton" formType="reset">退出</button>
+      <button class="subbutton" catchtap='setWindow'>设置</button>
+      <button class="resetbutton" catchtap='adduser'>添加用户</button>
     </view>
 </view>
+
+
+<view style="display:{{tag==1?'block':'none'}}">
+<view style="text-align:center;font-size:30rpx;color:#999;background:#fff;height:80rpx;line-height:80rpx;position:fixed;top:0;z-index:999;width:750rpx">
+<text style="display:block">{{nickName}}</text>
+
+</view>
+
+<scroll-view  scroll-top="{{scroll}}" scroll-y="true" id="text-page"  style="margin-top:80rpx;height:{{scrollHeight}}rpx">
+<view class="a-class">
+  <view   wx:for="{{talkList}}">
+    <view wx:if="{{item.usertype==0}}" class="chat-teacher">
+          <image class="chat-img" src="{{head}}"></image>
+      <view class="chat-text" >{{item.content}}</view>
+    </view>
+
+    <view wx:else  class="chat-student">
+      <view class="chat-text" style="background:#fff">{{item.content}}</view>
+      <image class="chat-img"  src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{askSchool.path}}"></image>
+    </view>
+
+</view>
+  </view>
+
+</scroll-view>
+
+<view  class="talk_back">
+      <view class="talk_box">
+          
+        <input bindinput="setValue" value="{{msg}}"  type="text" placeholder-style="font-family:黑体;" maxlength="500"  style="color:#333;display:inline-block;width:400rpx;margin-left:30rpx;font-family:黑体;font-size:0.8rem"/>
+        <button bindtap='sendMsg' style="height:60rpx;font-size:0.8rem;line-height:60rpx;background:#59c9b9;color:#fff;border:none">发送</button>
+        <button bindtap='goOut' style="height:60rpx;font-size:0.8rem;line-height:60rpx;background:red;color:#fff;border:none">退出</button>
+      </view>
+    </view>
+</view>
+
+
+
+

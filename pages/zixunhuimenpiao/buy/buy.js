@@ -143,6 +143,10 @@ Page({
         })
       }
     }*/
+  }, toOnline:function(){
+    wx.navigateTo({
+      url: '/pages/chatroom_select/chatroom_select',
+    })
   },
   setTaoCan: function (e) {
     /*this.setData({

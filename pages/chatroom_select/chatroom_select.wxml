@@ -1,0 +1,5 @@
+<!--pages/chatroom_select/chatroom_select.wxml-->
+<view class='biaoti'>第十一届普通高校招生及志愿填报在线咨询会</view>
+        <button catchtap='goStudent'  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:666rpx;height:88rpx;border-radius:20rpx;margin-top:180rpx">学生入口</button>
+
+<button catchtap='goTeacher'  style="background-color:#eee;font-family:黑体;color:#59c9b9;width:666rpx;height:88rpx;border-radius:20rpx;margin-top:200rpx">教师入口</button>

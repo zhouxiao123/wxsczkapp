@@ -425,7 +425,7 @@
     </view>
     <view  style="position:fixed;top:750rpx;left:165rpx">
 
-    <image catchtap='getPoint'  style="width:420rpx;height:100rpx" src="../../images/qdlhb_an.png" />
+    <image catchtap='getPoint'  style="width:420rpx;height:100rpx" src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/qdlhb_an.png" />
     </view>
   </view>
 

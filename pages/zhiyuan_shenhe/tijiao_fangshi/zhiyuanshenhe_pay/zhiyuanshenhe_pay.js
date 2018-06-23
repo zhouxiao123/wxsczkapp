@@ -135,7 +135,7 @@ Page({
     //判断积分是否够500
     //console.log('当前积分，携带value值为：', that.data.point)
     var that = this
-      if (that.data.zhifufangshi != 1 && that.data.zhifufangshi != 2) {
+      if (that.data.zhifufangshi==0) {
         wx.showModal({
           title: '提示',
           content: '请选择支付方式',
@@ -147,6 +147,38 @@ Page({
         wx.showModal({
           title: '提示',
           content: '积分不足500',
+          showCancel: false,
+          success: function (res) {
+          }
+        })
+      } else if (that.data.zhifufangshi == 3 && that.data.point < 400) {
+        wx.showModal({
+          title: '提示',
+          content: '积分不足400',
+          showCancel: false,
+          success: function (res) {
+          }
+        })
+      } else if (that.data.zhifufangshi == 4 && that.data.point < 300) {
+        wx.showModal({
+          title: '提示',
+          content: '积分不足300',
+          showCancel: false,
+          success: function (res) {
+          }
+        })
+      } else if (that.data.zhifufangshi == 5 && that.data.point < 200) {
+        wx.showModal({
+          title: '提示',
+          content: '积分不足200',
+          showCancel: false,
+          success: function (res) {
+          }
+        })
+      } else if (that.data.zhifufangshi == 6 && that.data.point < 100) {
+        wx.showModal({
+          title: '提示',
+          content: '积分不足100',
           showCancel: false,
           success: function (res) {
           }

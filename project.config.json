@@ -320,16 +320,16 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 48,
 					"name": "登陆后设置",
 					"pathName": "pages/chatroom_teacher/setting/setting",
-					"query": ""
+					"query": "yxid=0004"
 				},
 				{
-					"id": -1,
+					"id": 49,
 					"name": "登陆后列表",
 					"pathName": "pages/chatroom_teacher/list/list",
-					"query": ""
+					"query": "yxid=0004"
 				},
 				{
 					"id": -1,
@@ -347,6 +347,18 @@
 					"id": 52,
 					"name": "修改",
 					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_jichuxinxi/zhiyuan_shenhe_jichuxinxi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加用户",
+					"pathName": "pages/chatroom_teacher/adduser/adduser",
+					"query": "yxid=0004"
+				},
+				{
+					"id": -1,
+					"name": "选择在线咨询会入口",
+					"pathName": "pages/chatroom_select/chatroom_select",
 					"query": ""
 				}
 			]

@@ -29,7 +29,7 @@
       </view>
       <view class="fours-icon" bindtap="zzzs">
         <image src="../../images/zzzs.png" class="icon-pic"></image>
-        <text class="icon-text">自主招生</text>
+        <text class="icon-text">在线咨询会</text>
       </view>
     </view>
 
@@ -38,23 +38,31 @@
         <image src="../../images/circle4.png" class="icon-pic"></image>
         <text class="icon-text">职业详解</text>
       </view>-->
-      <view class="third-icon" bindtap="toZhiyuanpingu">
-        <image src="../../images/zypg.png" class="icon-pic"></image>
-        <text class="icon-text">志愿评估</text>
-      </view>
       <view class="second-icon" bindtap="ask">
         <image src="../../images/xz-7@2x.png" class="icon-pic"></image>
         <text class="icon-text" >语音答疑</text>
       </view>
-      <view class="third-icon" bindtap="testTypeList">
+
+      <view class="second-icon" bindtap="tiaozhuanceluqu">
+        <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
+        <text class="icon-text" >测录取</text>
+      </view>
+      <!--<view class="third-icon" bindtap="testTypeList">
         <image src="../../images/zypc.png" class="icon-pic"></image>
         <text class="icon-text">职业测评</text>
+      </view>-->
+      <view class="third-icon" bindtap="toZhiyuanpingu">
+        <image src="../../images/zypg.png" class="icon-pic"></image>
+        <text class="icon-text">志愿评估</text>
       </view>
-      <view class="fours-icon" bindtap="toGaokaozhiyuan">
+      <!--<view class="fours-icon" bindtap="toGaokaozhiyuan">
         <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
         <text class="icon-text">高考志愿</text>
+      </view>-->
+      <view class="fours-icon" bindtap="toGaokaozhiyuan">
+        <image src="../../images/zjydy.png" class="icon-pic"></image>
+        <text class="icon-text">专家一对一</text>
       </view>
-
     </view>
   </view>
 
@@ -83,7 +91,7 @@
         <image src="../../images/xz-7@2x.png" class="icon-pic"></image>
         <text class="icon-text">语音答疑</text>
       </view>
-      <view class="second-icon" bindtap="ask">
+      <view class="second-icon" bindtap="tiaozhuanceluqu">
         <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
         <text class="icon-text" >测录取</text>
       </view>
@@ -118,9 +126,9 @@
   </view>
 
   <view >
-  <view style="width:440rpx;display:inline-block;float:left">
+  <view style="width:460rpx;display:inline-block;float:left">
     <view style="width:100rpx;display:inline-block;margin-left:20rpx;margin-top:20rpx;float:left">
-      <image src="../../images/calendar/{{m}}@2x.png" style="height:70rpx;width:70rpx" mode="aspectFit"></image>
+      <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/{{m}}@2x.png" style="height:70rpx;width:70rpx" mode="aspectFit"></image>
     </view>
     <view style="margin-top:24rpx;display:inline-block;float:left">
       <view style="display:inline-block;float:left">
@@ -131,16 +139,16 @@
       <text style="color:#7e7e80;font-family:Microsoft YaHei;margin-left:10rpx;font-size:44rpx;float:left">{{month}}</text>
 
       <!--<button style="color:red;font-family:Microsoft YaHei;margin-left:10rpx;font-size:26rpx;float:left;display:inline-block" data-m="{{m}}" catchtap='mpoint'>重点关注</button>-->
-      <image style="margin-left:10rpx;margin-top:5rpx;float:left;display:inline-block;width:160rpx" mode="widthFix" data-m="{{m}}" catchtap='mpoint' src="../../images/zdgz.png"></image>
+      <image style="margin-left:10rpx;margin-top:5rpx;float:left;display:inline-block;width:140rpx" mode="widthFix" data-m="{{m}}" catchtap='mpoint' src="../../images/zdgz.png"></image>
     </view>
 
   </view>
   
 
   <view style="display:inline-block;margin-top:16rpx;text-align:center;float:left">
-  <text style="display:block;font-family:Microsoft YaHei;font-size:26rpx;height:26rpx;color:#1b8c5d;">2018年四川省招生咨询会</text>
+  <text style="display:block;font-family:Microsoft YaHei;font-size:26rpx;height:26rpx;color:#1b8c5d;">2018年四川招生咨询会</text>
   <!--<text style="display:block;margin-top:9rpx;font-family:Microsoft YaHei;font-size:26rpx;color:green;height:26rpx;color:#1b8c5d">{{clock}}</text>-->
-  <text style="display:block;margin-top:9rpx;font-family:Microsoft YaHei;font-size:26rpx;color:green;height:26rpx;color:#1b8c5d;text-decoration: underline;" catchtap='toBuyTicket'>请点击</text>
+  <text style="display:block;margin-top:9rpx;font-family:Microsoft YaHei;font-size:26rpx;color:green;height:26rpx;color:#1b8c5d;text-decoration: underline;" catchtap='toBuyTicket'>购票请点击</text>
   </view>
   </view>
 <!--style="position:absolute"<image src="../../images/calendar/ty-1@2x.png" class="slide-image" style="width:100%;" mode="widthFix"/>-->
