@@ -1,65 +1,65 @@
 <!--pages/chatroom_teacher/setting/setting.wxml-->
-<form bindsubmit="formSubmit">
+<view>
 <view style="width:700rpx;margin-left:25rpx;text-align:center;font-size:28rpx;font-weight:bold;margin-top:40rpx">第十一届普通高校招生及志愿填报在线咨询会管理系统</view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">欢迎语</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="firstcontent" value="{{askSchool.firstcontent}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setFirstcontent' value="{{firstcontent}}" ></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">在线时间</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="onlinetime" value="{{askSchool.onlinetime}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setOnlinetime' value="{{onlinetime}}" ></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题1</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent1" value="{{oq[0].askcontent}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAsk1' value="{{askcontent1}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题1回答</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent1" value="{{oa[0].content}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAnswer1' value="{{answercontent1}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题2</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent2" value="{{oq[1].askcontent}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAsk2' value="{{askcontent2}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题2回答</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent2" value="{{oa[1].content}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAnswer2' value="{{answercontent2}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题3</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent3" value="{{oq[2].askcontent}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAsk3' value="{{askcontent3}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题3回答</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent3" value="{{oa[2].content}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAnswer3' value="{{answercontent3}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题4</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent4" value="{{oq[3].askcontent}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAsk4' value="{{askcontent4}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题4回答</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent4" value="{{oa[3].content}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAnswer4' value="{{answercontent4}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题5</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent5" value="{{oq[4].askcontent}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAsk5' value="{{askcontent5}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题5回答</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent5" value="{{oa[4].content}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAnswer5' value="{{answercontent5}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">预设问题6</text>
-  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="askcontent6" value="{{oq[5].askcontent}}"></textarea>
+  <textarea style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" bindinput='setAsk6' value="{{askcontent6}}"></textarea>
 </view>
 <view style="display:flex;margin-top:20rpx"> 
   <text style="width:200rpx;text-align:right;font-size:30rpx">问题6回答</text>
-  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx" name="answercontent6" value="{{oa[5].content}}"></textarea>
+  <textarea  style="width:500rpx;border:1px solid #000;margin-left:20rpx;padding:5rpx;font-size:26rpx;height:100rpx"   bindinput='setAnswer6' value="{{answercontent6}}"></textarea>
 </view>
   <view class="modal-footer">
     <view class="btn-cancel" bindtap="onCancel" data-status="cancel">跳过</view>
-    <button class="btn-confirm" formType="submit" data-status="confirm">保存</button>
+    <button class="btn-confirm" bindtap="onSave" data-status="confirm">保存</button>
   </view>
 
-</form>
+</view>

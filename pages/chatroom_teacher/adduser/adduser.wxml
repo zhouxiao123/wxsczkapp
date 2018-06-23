@@ -1,6 +1,6 @@
 <!--pages/chatroom_teacher/adduser/adduser.wxml-->
 <view style="font-size:33rpx;text-align:center">账号列表</view>
-  <view style="width:300rpx"><button style="line-height:60rpx;height:60rpx;width:200rpx;font-size:26rpx" catchtap='addUser'>添加用户</button></view>
+  <view style="width:700rpx"><button style="display:inline-block;line-height:60rpx;height:60rpx;width:200rpx;font-size:26rpx" catchtap='addUser'>添加用户</button><button style="display:inline-block;line-height:60rpx;height:60rpx;width:200rpx;font-size:26rpx;margin-left:300rpx" catchtap='backUrl'>返回</button></view>
 <view wx:for="{{userList}}" class="df" >
   <view style="width:300rpx;margin-left:40rpx">{{item.loginName}}</view>
   <view style="width:200rpx">{{item.name}}</view>

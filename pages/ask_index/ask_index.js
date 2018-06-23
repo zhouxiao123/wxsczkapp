@@ -369,6 +369,43 @@ wx.request({
         
     
   },
+  gototeacher:function(){
+    var that = this
+    that.setData({
+      disflag: "block"
+    });
+    wx.request({
+      url: app.globalData.baseUrl + 'wx/lecturer_list',
+      data: {
+
+      },
+      success: function (res) {
+        //console.log(res.data)
+        that.setData({
+          lecturerList: res.data,
+          tag: 2
+        })
+        that.setData({
+          disflag: "none"
+        });
+        wx.request({
+          url: app.globalData.baseUrl + 'wx/adv_list',
+          data: {
+            tag: 7
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              adv: res.data
+            })
+
+            wx.hideLoading()
+          }
+        })
+      }
+    })
+
+  },
   setValue: function (event) {
     this.setData({
       search_name: event.detail.value
@@ -496,7 +533,7 @@ wx.request({
             }
           })
           
-        }else if (res.data.point < 10) {
+        }else if (res.data.point < 50) {
           wx.showModal({
             title: '提示',
             content: '积分不足,是否进行充值?',
@@ -517,13 +554,13 @@ wx.request({
         } else {
           wx.showModal({
             title: '提示',
-            content: '积分充足,是否直接10积分购买?',
+            content: '积分充足,是否直接50积分购买?',
             showCancel: true,
             success: function (res) {
               if (res.confirm) {
                 console.log('用户点击确定')
                 wx.request({
-                  url: app.globalData.baseUrl+'wx/save_ask',
+                  url: app.globalData.baseUrl+'wx/save_ask_new',
                   data: e.detail.value,
                   success: function (res) {
                     //console.log(res.data);
@@ -550,7 +587,7 @@ wx.request({
                       //成功支付
                       wx.showModal({
                         title: '提示',
-                        content: '提问成功,专家将在24小时内进行答复。',
+                        content: '提问成功,专家将尽快进行答复。',
                         showCancel: false,
                         success: function (res) {
                           if (res.confirm) {

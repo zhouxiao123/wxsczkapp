@@ -16,11 +16,11 @@
   <view class="label-view" >
     <view>
       <view class="first-icon" bindtap="school_list">
-        <image src="../../images/circle1@2x.png" class="icon-pic" ></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/circle1@2x.png" class="icon-pic" ></image>
         <text class="icon-text">院校大全</text>
       </view>
       <view class="second-icon" bindtap="pro_list">
-        <image src="../../images/jx-5@2x.png" class="icon-pic"></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/jx-5@2x.png" class="icon-pic"></image>
         <text class="icon-text">专业大全</text>
       </view>
       <view class="third-icon" bindtap="lesson">
@@ -28,7 +28,7 @@
         <text class="icon-text">云课堂</text>
       </view>
       <view class="fours-icon" bindtap="zzzs">
-        <image src="../../images/zzzs.png" class="icon-pic"></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/zzzs.png" class="icon-pic"></image>
         <text class="icon-text">在线咨询会</text>
       </view>
     </view>
@@ -39,12 +39,12 @@
         <text class="icon-text">职业详解</text>
       </view>-->
       <view class="second-icon" bindtap="ask">
-        <image src="../../images/xz-7@2x.png" class="icon-pic"></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/xz-7@2x.png" class="icon-pic"></image>
         <text class="icon-text" >语音答疑</text>
       </view>
 
       <view class="second-icon" bindtap="tiaozhuanceluqu">
-        <image src="../../images/xz-5@2x.png" class="icon-pic"></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/xz-5@2x.png" class="icon-pic"></image>
         <text class="icon-text" >测录取</text>
       </view>
       <!--<view class="third-icon" bindtap="testTypeList">
@@ -52,7 +52,7 @@
         <text class="icon-text">职业测评</text>
       </view>-->
       <view class="third-icon" bindtap="toZhiyuanpingu">
-        <image src="../../images/zypg.png" class="icon-pic"></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/zypg.png" class="icon-pic"></image>
         <text class="icon-text">志愿评估</text>
       </view>
       <!--<view class="fours-icon" bindtap="toGaokaozhiyuan">
@@ -60,7 +60,7 @@
         <text class="icon-text">高考志愿</text>
       </view>-->
       <view class="fours-icon" bindtap="toGaokaozhiyuan">
-        <image src="../../images/zjydy.png" class="icon-pic"></image>
+        <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/zjydy.png" class="icon-pic"></image>
         <text class="icon-text">专家一对一</text>
       </view>
     </view>

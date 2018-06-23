@@ -1,20 +1,34 @@
 // pages/chatroom_teacher/list/list.js
 var app = getApp()
-/*const recorderManager = wx.getRecorderManager()
+const recorderManager = wx.getRecorderManager()
 const options = {
   duration: 600000,
   sampleRate: 44100,
   numberOfChannels: 1,
   encodeBitRate: 192000,
   format: 'mp3'
-}*/
+}
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    img_url: [
+      'yy@2x2.png',
+      'yy@2x2.png'
+    ],
+    def_img_url: [
+      'yy@2x2.png',
+      'yy@2x2.png'
+    ],
+    j: 0,//帧动画初始图片 
+    isSpeaking: false,//是否正在说话 
+    voiceUrl: '',
+    src: '',
     msg: '',
+    bot:0,
+    imgtag:0,
 tag:0,
 yxid:'0',
 list:[],
@@ -91,9 +105,20 @@ askSchool:{},
     wx.onSocketMessage(function (data) {
       //var ta = document.getElementById('responseText');
       var json = JSON.parse(data.data);
-      //console.log(json)
+      console.log(json)
       var content = "";
-      if (json.msgtype == 2) {
+      if (json.msgtype == 1) {
+        that.data.list=json.rjs
+        for (var i in that.data.list){
+          that.data.list[i].online="离线"
+          that.data.list[i].count=0
+          that.data.list[i].createtime = that.data.list[i].createtime.split(" ")[1]
+        }
+        that.setData({
+          list: that.data.list
+        })
+      }
+      else if (json.msgtype == 2) {
         //console.log(json)
         json.online="在线"
         json.createtime = json.createtime.split(" ")[1]
@@ -108,14 +133,19 @@ askSchool:{},
           for (var i = 0 ;i<that.data.list.length;i++){
             if (that.data.list[i].oid == json.oid){
               flag=true
-              if (that.data.oid != json.oid)
-                that.data.list[i].count++
+              if (that.data.oid != json.oid){
+                 var con = that.data.list[i]
+                 that.data.list.splice(i, 1)
+                 con.count++
+                 con.online="在线"
+                 that.data.list.splice(0,0, con)
+              }
               break; 
             }
           }
           if(!flag){
             json.count = 1
-            that.data.list.push(json)
+            that.data.list.splice(0,0,json)
           }
           that.setData({
             list: that.data.list
@@ -130,9 +160,9 @@ askSchool:{},
             if (that.data.oid == json.oid) {
               if (json.usertype==0)
                 that.data.talkList=json.tc
-              else
+              else{                
                 that.data.talkList.push(json.tc[0])
-          
+              }
             }
             console.log(that.data.talkList)
           that.setData({
@@ -293,9 +323,185 @@ askSchool:{},
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
+  //手指按下 
+  touchdown: function () {
+    console.log("手指按下了...")
+    console.log("new date : " + new Date)
+
+    this.audioCtx.seek(0);
+    this.audioCtx.pause();
+    var _this = this;
+    speaking.call(this);
+    this.setData({
+      isSpeaking: true
+    })
+    //开始录音 
+    recorderManager.start(options)
+    recorderManager.onError((res) => {
+      //console.log('recorder stop', res)
+      wx.showModal({
+        title: '错误',
+        content: res,
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    })
+    
+  },
+  //手指抬起 
+  touchup: function () {
+    console.log("手指抬起了...")
+    this.setData({
+      isSpeaking: false,
+    })
+    clearInterval(this.timer)
+    var _this = this;
+    _this.setData({
+      sec: parseInt(_this.data.j) + parseInt(_this.data.sec),
+      j: 0
+    })
+    recorderManager.stop()
+    recorderManager.onStop((res) => {
+      console.log('recorder stop', res)
+
+      //临时路径,下次进入小程序时无法正常使用 
+      var tempFilePath = res.tempFilePath
+      //console.log("tempFilePath: " + tempFilePath)
+
+      wx.showLoading({
+        mask: true,
+        title: '加载中'
+      })
+
+      wx.uploadFile({
+        url: 'https://wxsign.sczk.com.cn/chatroom/service/uploadMp3Voice',
+        //app.globalData.baseUrl + 'upload/uploadMp3Voice',
+        filePath: tempFilePath,
+        name: 'file',
+        success: function (res) {
+          console.log(res.data)
+          var msg = { msgtype: 2, toUser: '', usertype: 1, content: res.data, contenttype: 1, oid: _this.data.oid, yxid: _this.data.yxid }
+
+          var m = JSON.stringify(msg)
+          wx.sendSocketMessage({
+            data: m,
+          })
+
+          /*_this.setData({
+            src: res.data
+          })
+          _this.setData({
+            voiceUrl: app.globalData.baseUrl + 'temp/' + _this.data.src
+          })
+          _this.audioCtx.setSrc(_this.data.voiceUrl)*/
+          wx.hideLoading()
+        }
+      })
+    })
+    
+  }, selectPic:function(){
+    var _this = this
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        wx.showLoading({
+          mask: true,
+          title: '加载中'
+        })
+
+        wx.uploadFile({
+          url: 'https://wxsign.sczk.com.cn/chatroom/service/uploadImg',
+          
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          success: function (res) {
+            console.log(res.data)
+            var msg = { msgtype: 2, toUser: '', usertype: 1, content: res.data, contenttype: 2, oid: _this.data.oid, yxid: _this.data.yxid }
+
+            var m = JSON.stringify(msg)
+            wx.sendSocketMessage({
+              data: m,
+            })
+
+            wx.hideLoading()
+          }
+        })
+
+
+
+        //console.log(tempFilePaths)
+      }
+    })
+  },
+  toBig:function(e){
+wx.previewImage({
+  urls: [e.currentTarget.dataset.src],
+})
+  },
+  listen: function (event) {
+    var ids = event.currentTarget.dataset.id;
+
+    var this_t = this
+    this.audioCtx.seek(0);
+    this.audioCtx.pause();
+    this_t.setData({
+      imgtag:ids
+    })
+    this_t.audioCtx.setSrc(app.globalData.baseUrl + 'vi/' + event.currentTarget.dataset.src)
+    this_t.audioCtx.play();
+    /*if (this.data.src == event.currentTarget.dataset.src) {
+      this.audioCtx.seek(0);
+      this.audioCtx.pause();
+      
+        
+
+    } else {
+      console.log("34234")
+      this.audioCtx.seek(0);
+      this.audioCtx.pause();
+      this.setData({
+        img_url: this.data.def_img_url
+      })
+      this.data.img_url[ids] = 'yy.gif';
+      this.setData({
+        src: event.currentTarget.dataset.src,
+        voiceUrl: app.globalData.baseUrl + 'vi/' + event.currentTarget.dataset.src
+      })
+      this_t.audioCtx.setSrc(this_t.data.voiceUrl)
+
+      this_t.audioCtx.play();
+
+
+
+    }*/
+  },
+  voiceEnd:function () {
+
+    
+    this.setData({
+      imgtag: 0
+    })
+    this.audioCtx.seek(0);
+    this.audioCtx.pause();
+  }, changeBar:function(){
+    if(this.data.bot==1){
+      this.setData({
+        bot:0
+      })
+    }else{
+      this.setData({
+        bot: 1
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -368,3 +574,16 @@ askSchool:{},
     this.hideModal();
   }
 })
+//麦克风帧动画 
+function speaking() {
+  var _this = this;
+  //话筒帧动画 
+  var i = 0;
+  this.timer = setInterval(function () {
+    i++;
+    //i = i % 5;
+    _this.setData({
+      j: i
+    })
+  }, 1000);
+}

@@ -8,6 +8,7 @@
       </view> 
  </view>
 </view>-->
+<audio id="myAudio" bindended="voiceEnd"  src="{{voiceUrl}}"></audio>
     <swiper 
   autoplay="true" wx:if="{{adv.adv.length&&adv11==1}}" interval="5000" duration="500" style="height:130rpx;position:fixed;width:750rpx;bottom:0">
   
@@ -74,7 +75,7 @@
     </swiper-item>
   </swiper>
 
-<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:{{adv2.adv.length&&adv22==1?'200rpx':'80rpx'}};height:{{scrollHeight}}rpx">
+<scroll-view scroll-top="{{scroll}}"  scroll-y="true" id="text-page"  style="margin-top:{{adv2.adv.length&&adv22==1?'160rpx':'40rpx'}};height:{{scrollHeight}}rpx">
 <view class="a-class">
   <view wx:for="{{list}}" >
 
@@ -82,12 +83,36 @@
       <text class="chat-text"  catchtap='copy' data-content='{{item.content}}'>{{item.content}}</text>
       <image class="chat-img" src="{{user.headUrl}}"></image>
     </view>
-
-    <view wx:else class="chat-teacher">
+<!--文字回复-->
+    <view wx:if="{{item.usertype==1&&item.contenttype!=1&&item.contenttype!=2}}" class="chat-teacher">
           <image class="chat-img" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
       <text wx:if="{{item.content=='默认'}}" class="chat-text" catchtap='showDialogBtn'  style="background:#fff">点击查看</text>
       <text wx:else class="chat-text" catchtap='copy' data-content='{{item.content}}' style="background:#fff">{{item.content}}</text>
     </view>
+
+<!--语音回复-->
+<view wx:if="{{item.usertype==1&&item.contenttype!=null&&item.contenttype==1}}"  class="chat-teacher" catchtap='listen' data-src="{{item.content}}" data-id="{{item.id}}">
+
+     <image class="chat-img"  src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
+      <text style="background:#f6B37F;display:inline-block;width:340rpx;height:80rpx;color:#fff;font-size:26rpx;border-radius: 40rpx;line-height:80rpx;margin-left:10rpx;text-align:center" ></text>
+     <view class="center-text">
+          <text class="img-text">点击收听</text>
+          <image src="/images/{{imgtag==item.id?'yy.gif':'yy@2x2.png'}}" class="img-img"style="width:21rpx;height:27rpx"></image>
+      </view>
+      
+ 
+    </view>
+
+<!--图片回复-->
+    <view wx:if="{{item.usertype==1&&item.contenttype!=null&&item.contenttype==2}}"  class="chat-teacher"  >
+
+          <image class="chat-img"  src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
+      <image style="width:240rpx;margin-left:10rpx" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.content}}" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.content}}" catchtap='toBig' mode='widthFix'></image>
+      
+
+    </view>
+
+
 </view>
   </view>
 

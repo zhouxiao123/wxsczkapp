@@ -149,9 +149,9 @@ text-align: center
 .talk_box{
   height:60rpx;
   
-  margin-left:40rpx;
+  margin-left:10rpx;
   
-  background-color:#f0f0f0; 
+   
   display: flex;
   align-items: center;
 }
@@ -167,6 +167,7 @@ justify-content: flex-start;
 margin:20rpx;
 display:flex;
 justify-content: flex-end;
+align-items: center
 }
 .chat-img{
 width:90rpx;
@@ -385,4 +386,118 @@ input-holder {
   width: 50%;
   color: #ec5300;
   text-align: center;
+}
+
+.speak-style{ 
+    position: fixed; 
+
+    height: 240rpx; 
+    width: 240rpx; 
+    border-radius: 20rpx; 
+    bottom:320rpx;
+    left:260rpx;
+    background: #eee;
+    border:1px solid #eee 
+} 
+.item-style{ 
+    margin-top: 30rpx; 
+    margin-bottom: 30rpx; 
+} 
+.text-style{ 
+    text-align: center; 
+   
+} 
+.record-style{ 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    height: 350rpx; 
+    width: 100%; 
+    background-color:#fff
+} 
+.btn-style{ 
+  margin-left: 30rpx; 
+  margin-right: 30rpx; 
+  height:60rpx;
+  line-height:60rpx
+} 
+
+.btn-style-2{ 
+  margin-right: 30rpx; 
+  height:60rpx;
+  line-height:60rpx
+} 
+   
+.sound-style{ 
+  position: absolute; 
+  width: 150rpx; 
+  height:150rpx; 
+  margin-top: 20rpx; 
+  margin-left: 45rpx; 
+} 
+   
+   
+.board { 
+  overflow: hidden; 
+  border-bottom: 2rpx solid #26A5FF;   
+} 
+/*列布局*/ 
+.cell{ 
+    display: flex; 
+    margin: 20rpx; 
+} 
+.cell-hd{ 
+    margin-left: 10rpx; 
+    color: #885A38; 
+} 
+.cell .cell-bd{ 
+    flex:1; 
+    position: relative; 
+      
+} 
+/**只显示一行*/ 
+.date{ 
+    font-size: 30rpx; 
+    text-overflow: ellipsis;  
+    white-space:nowrap; 
+    overflow:hidden;  
+}
+
+.answer-content{
+  margin-top:40rpx;
+  margin-bottom:260rpx;
+  display:flex;
+  align-items:center;
+  margin-left:100rpx
+}
+
+.listen-content{
+  display:flex;
+  align-items: center
+}
+
+.time-text{
+  margin-left:20rpx;
+  font-size: 0.6rem; 
+  font-family:Microsoft YaHei;
+  color:#a7a6a6;
+}
+
+.center-text{
+  position: absolute;
+  left :360rpx;
+  width:240rpx;
+  height:50rpx;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.img-text{
+  font-size: 0.76rem; 
+  font-family:Microsoft YaHei;
+  color:#fff;
+}
+.img-img{
+  margin-right:30rpx
+  
 }

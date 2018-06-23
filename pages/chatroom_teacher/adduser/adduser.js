@@ -107,6 +107,10 @@ Page({
         })
 
 
+  }, backUrl:function(){
+      wx.redirectTo({
+        url: '/pages/chatroom_teacher/list/list?yxid='+this.data.yxid,
+      })
   },
   /**
    * 弹出框蒙层截断touchmove事件

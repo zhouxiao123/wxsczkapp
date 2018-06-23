@@ -15,6 +15,7 @@ Page({
     toUser:'',
     schoolname:'',
     scroll:0,
+    imgtag: 0,
     scrollHeight:0,
     scrollid:'',
     oid:'',
@@ -150,7 +151,7 @@ Page({
         wx.request({
           url: app.globalData.baseUrl + 'wx/adv_list',
           data: {
-            tag: 98
+            tag: 8
           },
           success: function (res) {
             //console.log(res.data)
@@ -418,7 +419,7 @@ wx.reLaunch({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.audioCtx = wx.createAudioContext('myAudio')
   }, onUnload:function(){
     
     wx.closeSocket()
@@ -443,6 +444,32 @@ wx.reLaunch({
       }
     })
 
+  }, toBig: function (e) {
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.src],
+    })
+  },
+  listen: function (event) {
+    var ids = event.currentTarget.dataset.id;
+
+    var this_t = this
+    this.audioCtx.seek(0);
+    this.audioCtx.pause();
+    this_t.setData({
+      imgtag: ids
+    })
+    this_t.audioCtx.setSrc(app.globalData.baseUrl + 'vi/' + event.currentTarget.dataset.src)
+    this_t.audioCtx.play();
+    
+  },
+  voiceEnd: function () {
+
+
+    this.setData({
+      imgtag: 0
+    })
+    this.audioCtx.seek(0);
+    this.audioCtx.pause();
   },
 
   /**

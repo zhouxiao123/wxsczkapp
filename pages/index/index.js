@@ -34,7 +34,7 @@ Page({
     flag:0,
     positionHeight:0,
     zhibo:0,
-    zhibologo:'/images/xz-2@2x.png',
+    zhibologo:'https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/xz-2@2x.png',
     zhiboUrl:''
   },
   //事件处理函数
