@@ -8,13 +8,13 @@
     </view>
     <view class="center-tag" bindtap="signUpIndex">
       <!--<image src="../../images/wen@2x.png" background-size="cover" style="display:block;width:98rpx;height:98rpx"/>-->
-            <image src="/images/xz-5@2x.png" background-size="cover" style="display:block;width:130rpx;" mode='widthFix'/>
+            <image src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/xz-5@2x.png" background-size="cover" style="display:block;width:130rpx;" mode='widthFix'/>
       <text class="bottom-text mt10">签到</text>
       <!--<image src="/images/在线咨询.png" background-size="cover" style="display:block;width:130rpx;" mode='widthFix'/>
       <text class="bottom-text mt10">在线咨询会</text>-->
     </view>
     <view class="right-tag" bindtap="personalIndex">
-          <image  src="/images/1(1).png" background-size="cover" style="width:48rpx;position:absolute;right:70rpx;bottom:40rpx" mode='widthFix'/>
+          <!--<image  src="/images/1(1).png" background-size="cover" style="width:48rpx;position:absolute;right:70rpx;bottom:40rpx" mode='widthFix'/>-->
       <image wx:if="{{condition==3}}" src="../../images/xz-10@2x.png" background-size="cover" style="width:48rpx;height:46rpx"/>
       <image wx:if="{{condition!=3}}" src="../../images/xz-10@2x2.png" background-size="cover" style="width:48rpx;height:46rpx"/>
       <text class="bottom-text">我的</text>

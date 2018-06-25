@@ -1,5 +1,5 @@
 <!--pages/my_product/my_product.wxml-->
-<view class="title" catchtap='myTickets'>
+<!--<view class="title" catchtap='myTickets'>
   <view class="title-l">
     <image style="width:34rpx" mode='widthFix' src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/门票icon.png"></image>
     <text style="margin-left:10rpx;font-size:34rpx;color:#333333;font-family:微软雅黑;font-weight:580">已购门票</text>
@@ -7,7 +7,7 @@
   <view>
     <image style="width:16rpx" mode='widthFix' src="https://wxsign.sczk.com.cn/wxsczkappback/img/backimg/箭头.png"></image>
   </view>
-</view>
+</view>-->
 
 <!--<view class="title" catchtap='huikan'>
   <view class="title-l">

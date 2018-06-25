@@ -75,9 +75,9 @@
     </view>-->
 
     <view class="form-group" style="text-align:center">
-        <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'#46dfc8':'#d4d4d4'}}" disabled='{{disflag}}'>1张</button>
-        <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'#46dfc8':'#d4d4d4'}}" disabled='{{disflag}}'>2张</button>
-        <button  class="btn" bindtap="clickbutton" data-index="3" style="background:{{tag==3?'#46dfc8':'#d4d4d4'}}" disabled='{{disflag}}'>3张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="1" style="background:{{tag==1?'#46dfc8':'#d4d4d4'}}" >1张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="2" style="background:{{tag==2?'#46dfc8':'#d4d4d4'}}" >2张</button>
+        <button  class="btn" bindtap="clickbutton" data-index="3" style="background:{{tag==3?'#46dfc8':'#d4d4d4'}}" >3张</button>
     </view>
     <view class="form-group" style="text-align: center;margin-top:60rpx">
         <button formType="submit"  style="background-color:#59c9b9;font-family:黑体;color:#fff;width:666rpx;height:88rpx;border-radius:20rpx">购票</button>

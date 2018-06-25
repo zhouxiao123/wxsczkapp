@@ -323,7 +323,7 @@
 					"id": 48,
 					"name": "登陆后设置",
 					"pathName": "pages/chatroom_teacher/setting/setting",
-					"query": "yxid=0004"
+					"query": "yxid=6171"
 				},
 				{
 					"id": 49,
