@@ -95,7 +95,8 @@ Page({
         })
         //console.log(res.data.id)
         that.data.userid = res.data.id
-
+        console.log('打印用户id')
+        console.log(that.data.userid)
         //已填写的颜色改变1
         wx.request({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
