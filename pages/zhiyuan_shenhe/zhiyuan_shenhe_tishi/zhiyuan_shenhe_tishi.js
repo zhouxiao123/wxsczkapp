@@ -13,6 +13,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: "志愿填报方案评估功能使用提示" })
+
   },
    /**
    * 点击跳转提交方式选择
