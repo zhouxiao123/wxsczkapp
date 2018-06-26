@@ -360,6 +360,12 @@
 					"name": "选择在线咨询会入口",
 					"pathName": "pages/chatroom_select/chatroom_select",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改",
+					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
+					"query": ""
 				}
 			]
 		}
