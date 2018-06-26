@@ -27,7 +27,7 @@
   <view style="display:flex;flex-direction: column">
    <view catchtap='qiehuan_tupian1'  hidden="{{disflag}}"><image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/主治疑难杂症.png" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image></view>
   
-  <view hidden="{{disflag1}}"><image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/预约方式.png" style="width:750rpx" mode='widthFix'></image></view>
+  <view hidden="{{disflag1}}"><image animation="{{animationData}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/预约方式.png?id=1" style="width:750rpx" mode='widthFix'></image></view>
 
 
 </view>
@@ -76,7 +76,7 @@
 
 
   <view style="display:flex;flex-direction: column">
-  <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(1).jpg" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image>
+  <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(1).jpg?id=1" style="width:750rpx;" mode='widthFix' bindload="imageLoad"></image>
 
   <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(2).jpg" style="width:750rpx" mode='widthFix'></image>
     <image animation="{{animationData3}}" src="https://wxsign.sczk.com.cn/wxsczkappback/img/zhiyuan/putong1(3).jpg" style="width:750rpx" mode='widthFix'></image>

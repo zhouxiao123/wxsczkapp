@@ -10,7 +10,6 @@
   
   </swiper>
 
-  
   <view class="label-view" >
     <view>
       <view class="first-icon" bindtap="school_list">
