@@ -206,6 +206,11 @@ Page({
       }
     })
   },
+  gotoCeShi:function(){
+    wx.navigateTo({
+      url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

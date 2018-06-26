@@ -87,7 +87,8 @@
     <view wx:if="{{item.usertype==1&&item.contenttype!=1&&item.contenttype!=2}}" class="chat-teacher">
           <image class="chat-img" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{schoolhead}}"></image>
       <text wx:if="{{item.content=='默认'}}" class="chat-text" catchtap='showDialogBtn'  style="background:#fff">点击查看</text>
-      <text wx:else class="chat-text" catchtap='copy' data-content='{{item.content}}' style="background:#fff">{{item.content}}</text>
+      <text wx:if="{{item.content!='默认' && item.clicktype!=1}}" class="chat-text" catchtap="copy" data-content='{{item.content}}' style="background:#fff">{{item.content}}</text>
+      <text wx:if="{{item.content!='默认' && item.clicktype==1}}" class="chat-text" catchtap="gotoCeShi" data-content='{{item.content}}' style="background:#fff">{{item.content}}<text style="color:red;border-bottom:1px solid red">点击跳转</text></text>
     </view>
 
 <!--语音回复-->

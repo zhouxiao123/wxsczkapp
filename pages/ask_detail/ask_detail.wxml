@@ -75,7 +75,7 @@
   
   -->
 
-  <view wx:for="{{item.answer}}" class="ask-bar" data-id="{{item.id}}" data-askid="{{item.askid}}" bindtap="{{item.lectureranswer==1?'answer_detail':''}}">
+  <view wx:for="{{item.answer}}" class="ask-bar" data-id="{{item.id}}" data-askid="{{item.askid}}" bindtap="{{item.lectureranswer==1?'answer_detail':item.answerstatus!=1?'':'gotoCeShi'}}">
   <view wx:if="{{item.lectureranswer!=1}}">
         <view class="answer-content">
           <image src="{{item.u.isLecturer==1?'https://wxsign.sczk.com.cn/wxsczkappback/img/'+item.u.l.headUrl:issecret==1&&item.u.id==author?'../../images/personal/-rtx@2x.png':item.u.headUrl}}" style="width:80rpx;height:80rpx;border-radius: 50%;"></image>
@@ -85,7 +85,8 @@
           <button wx:if="{{user.isLecturer==1 && user.id==item.u.id}}" data-id="{{item.id}}" style="line-height:60rpx;font-size:30rpx;display:inline-block" catchtap="editAnswer">编辑</button>
           <button wx:if="{{user.isLecturer==1}}" data-id="{{item.id}}" style="line-height:60rpx;font-size:30rpx;display:inline-block" catchtap="deleteAnswer">删除</button>
         </view>
-        <text class="ask-text" style="display:block;margin-top:30rpx">{{item.answercontent}}</text>
+        <text wx:if="{{item.answerstatus!=1}}" class="ask-text" style="display:block;margin-top:30rpx">{{item.answercontent}}</text>
+        <text wx:else catchtap="{{gotoCeShi}}" class="ask-text" style="display:block;margin-top:30rpx">{{item.answercontent}}<text style="color:red;border-bottom:1px solid red">点击跳转</text></text>
 
         <image wx:for="{{item.ai}}" style="width:160rpx;margin-right:10rpx;margin-left:10rpx" src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.path}}" data-src="https://wxsign.sczk.com.cn/wxsczkappback/img/{{item.path}}" mode="widthFix" bindtap="bigPic"></image>
 

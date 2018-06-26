@@ -1,4 +1,5 @@
 // pages/adv/gongzhonghao/gongzhonghao.js
+const app = getApp();
 Page({
 
   /**
@@ -13,31 +14,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.request({
-      url: app.globalData.baseUrl + 'wx/getSignCount',
+      url: app.globalData.baseUrl + 'wx/adv_detail',
       data: {
-        oid: that.data.oid
+        id: options.id
       },
       success: function (res) {
         //console.log(res.data)
         wx.hideLoading()
-        if (res.data.result == "fail") {
+        that.setData({
+          id: options.id,
+          src: res.data.adv.link
+        })
 
-        } else {
-
-
-        }
       }
     })
-
-    this.setData({
-      id: options.id,
-      src: 'https://wxsign.sczk.com.cn/wxsczkappback/wx/adv_detail_page?id=' + options.id
+    //测试
+    /*that.setData({
+      src: 'https://mp.weixin.qq.com/s/_5AMhYcE00v3wzJUIbmxAA'
     })
+    wx.hideLoading()*/
   },
 
   /**

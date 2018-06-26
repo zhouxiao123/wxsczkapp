@@ -366,6 +366,12 @@
 					"name": "修改",
 					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
 					"query": ""
+				},
+				{
+					"id": 56,
+					"name": "公众号文章",
+					"pathName": "pages/adv/gongzhonghao/gongzhonghao",
+					"query": "id=52"
 				}
 			]
 		}

@@ -448,6 +448,10 @@ wx.reLaunch({
     wx.previewImage({
       urls: [e.currentTarget.dataset.src],
     })
+  }, gotoCeShi: function () {
+    wx.navigateTo({
+      url: '/pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi',
+    })
   },
   listen: function (event) {
     var ids = event.currentTarget.dataset.id;

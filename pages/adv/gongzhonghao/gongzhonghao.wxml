@@ -1,2 +1,2 @@
 <!--pages/adv/gongzhonghao/gongzhonghao.wxml-->
-<text>pages/adv/gongzhonghao/gongzhonghao.wxml</text>
+<web-view src="{{src}}"></web-view>

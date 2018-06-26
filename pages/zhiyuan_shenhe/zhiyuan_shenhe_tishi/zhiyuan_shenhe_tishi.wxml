@@ -1,4 +1,4 @@
-<view style="flex-direction: column;height:2630rpx;" >
+<view style="flex-direction: column;height:2780rpx;" >
 
 <view style=" font-size:44rpx; color:#4b4c4c;"  class="biaoti">志愿填报方案评估功能使用提示</view>
 <view  class="neirong1" style="color:red"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;为了更好的帮助广大考生和家长进行志愿填报，请大家阅读志愿评估使用提示后点击下一页，拍照提交志愿审核。</text></view>
@@ -39,5 +39,5 @@
 </view>
 
  <view style="text-align:center;padding-bottom:120rpx;width:100%;" >
-  <button bindtap='toanswer' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;">下一页</button>
+  <button bindtap='toanswer' style="height:60rpx;font-size:0.8rem;line-height:60rpx;width:300rpx;">下一步</button>
  </view>
