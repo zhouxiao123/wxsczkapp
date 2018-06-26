@@ -674,6 +674,10 @@ if(that.data.oid){
       wx.navigateTo({
         url: '/pages/adv/adv?id=' + e.currentTarget.dataset.id
       })
+    } else if (e.currentTarget.dataset.type == 5) {
+      wx.navigateTo({
+        url: '/pages/adv/gongzhonghao/gongzhonghao?id=' + e.currentTarget.dataset.id
+      })
     }
     
   },

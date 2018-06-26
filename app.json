@@ -127,7 +127,8 @@
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/zhuanke_tiqianpi/zhuanke_tiqianpi",
     "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_biaodan/zhuankepi/zhuankepi",
     "pages/chatroom_teacher/adduser/adduser",
-    "pages/chatroom_select/chatroom_select"
+    "pages/chatroom_select/chatroom_select",
+    "pages/adv/gongzhonghao/gongzhonghao"
   ],
   "window": {
     "backgroundTextStyle": "light",
