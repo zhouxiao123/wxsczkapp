@@ -107,7 +107,10 @@ Page({
             userid: that.data.userid
           },
           success: function (res) {
+            if (res.data != null && res.data != '') {
             console.log(res.data)
+
+            if (res.data.shouxiandaimaI != null && res.data.shouxiandaimaI != '' && res.data.shouxiandaimaI != "undefined") {
             //首先代码I
             var diyige = {};
             diyige.type1 = 0;
@@ -129,8 +132,10 @@ Page({
             }  if (res.data.shouxiandaimaI.indexOf("6") != -1) {
               diyige.type6 = 1
             }
+            }
             //console.log(diyige)
             //首先代码II
+            if (res.data.shouxiandaimaII != null && res.data.shouxiandaimaII != '' && res.data.shouxiandaimaII != "undefined") {
             var dierge = {};
             dierge.type1 = 0;
             dierge.type2 = 0;
@@ -149,8 +154,10 @@ Page({
             } if (res.data.shouxiandaimaII.indexOf("5") != -1) {
               dierge.type5 = 1
             }
+            }
             //console.log(dierge)
             //首先代码III
+            if (res.data.shouxiandaimaIII != null && res.data.shouxiandaimaIII != '' && res.data.shouxiandaimaIII != "undefined") {
             var disange = {};
             disange.type1 = 0;
             disange.type2 = 0;
@@ -169,7 +176,7 @@ Page({
             } if (res.data.shouxiandaimaIII.indexOf("5") != -1) {
               disange.type5 = 1
             }
-
+            }
             //专业调配和定向调配6
             var yuzhong1 = 0;
             if (res.data.yuzhong.indexOf("1") != -1) {
@@ -219,6 +226,7 @@ Page({
 
             })
           }
+        }
         })
       }
     })
