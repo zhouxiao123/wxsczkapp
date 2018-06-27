@@ -160,6 +160,10 @@ Page({
         //console.log(res.data)
         }
       })
+  }, ZhixunhuiRukou:function(){
+    wx.navigateTo({
+      url: '/pages/chatroom_teacher/chatroom_teacher',
+    })
   }   
   ,changePage: function (e) {
     //console.log(e.currentTarget.dataset.id)

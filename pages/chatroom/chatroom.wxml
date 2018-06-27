@@ -31,7 +31,7 @@
 <view class="tag-list">
   <view class="tag-view ">推荐学校</view> 
   <view class="tag-view " style='margin-left:80px;'>院校性质</view> 
-  <view class="tag-view ">在线</view> 
+  <view class="tag-view ">操作</view> 
 </view>
 
 <!--列表-->
@@ -45,7 +45,7 @@
        <view> {{item.s.yxxz}}</view>
       </view>
       <view class='margin-left-3' style="{{item.state==1?'color:red':''}}">
-       <view>{{item.state==1?'在线':'离线'}}</view>
+       <view>提问</view>
       </view>
  </view>
 </view>

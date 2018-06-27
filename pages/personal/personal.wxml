@@ -139,6 +139,18 @@
   </view>
 
 
+      <view class="tag-list" wx:if="{{isLecturer==1}}"  bindtap="ZhixunhuiRukou">
+    <view class="tag-view">
+      <image src="../../images/personal/jx-5@2x.png" style="width:20rpx;height:20rpx"/>
+      <text class="tag-list-text">在线咨询会老师入口</text>
+    </view> 
+
+    <view class="tag-view">
+      <image src="../../images/personal/jx-11@2x.png" style="width:10rpx;height:20rpx;margin-left:12rpx"/>
+    </view>
+  </view>
+
+
 
 </view>
 
