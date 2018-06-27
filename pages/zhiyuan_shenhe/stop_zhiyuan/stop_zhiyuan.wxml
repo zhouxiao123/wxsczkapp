@@ -1,0 +1,7 @@
+<view style="flex-direction: column;margin-top:400rpx;" >
+
+<view  class="neirong1"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;本科批次评估将于（2018.6.27日 20：00）结束</text></view>
+<view  class="neirong1" style='margin-top:60rpx;'><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;专科批次评估将于（2018.6.28日 12：00）开始</text></view>
+
+</view>
+
