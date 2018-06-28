@@ -81,7 +81,7 @@
 
       <view style="margin-top:200rpx">
         <view class="classname" style="float:left;line-height:92rpx;display:inline-block;width:200rpx">
-          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">50积分</text>
+          <text style="color:#f7805B;font-family:黑体;font-size:1.3rem">10积分</text>
         </view>
         <view class="classname" style="float:left;display:inline-block;width:400rpx;text-align:center">
           <button formType="submit"  style="background-color:#f7805B;font-family:黑体;color:#fff;width:321rpx;">立即提问</button>
@@ -93,7 +93,7 @@
 
       </form>
       <view style="clear:both"></view>
-      <text catchtap='gototeacher' style="margin-left:40rpx;margin-right:40rpx;margin-top:20rpx;display:block;color:red;font-size:26rpx">注:现在是咨询高峰期，指定专家提问可获得更快回复<text style="border-bottom:1px solid red">点击问专家</text></text>
+      <!--<text catchtap='gototeacher' style="margin-left:40rpx;margin-right:40rpx;margin-top:20rpx;display:block;color:red;font-size:26rpx">注:现在是咨询高峰期，指定专家提问可获得更快回复<text style="border-bottom:1px solid red">点击问专家</text></text>-->
 <view style="display:{{showLecturer}};">
   <view style="margin-top:40rpx;margin-left:40rpx;display:flex;justify-content: flex-start;">
     <view style="width:80rpx;height:80rpx">
