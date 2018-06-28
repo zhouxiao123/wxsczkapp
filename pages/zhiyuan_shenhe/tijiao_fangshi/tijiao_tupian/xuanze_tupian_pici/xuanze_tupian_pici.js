@@ -187,40 +187,66 @@ Page({
 * 点击跳转到本科提前批
 */
   benke_tiqianpi: function (e) {
-    wx.showLoading({
+    /*wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.navigateTo({
       url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bktqp/tupian_bktqp'
     })
-    wx.hideLoading()
+    wx.hideLoading()*/
+    wx.showModal({
+      //title: '提示',
+      content: '本科提前批评估已结束',
+      showCancel: false,
+      success: function (res) {
+
+      }
+    })
+
   },
   /**
 * 点击跳转到本科第一批
 */
   bneke_diyipi: function (e) {
-    wx.showLoading({
+    /*wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.navigateTo({
       url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bkdyp/tupian_bkdyp'
     })
-    wx.hideLoading()
+    wx.hideLoading()*/
+    wx.showModal({
+      //title: '提示',
+      content: '本科第一批评估已结束',
+      showCancel: false,
+      success: function (res) {
+
+      }
+    })
   },
+
   /**
 * 点击跳转到本科第二批
 */
   benke_dierpi: function (e) {
-    wx.showLoading({
+    /*wx.showLoading({
       mask: true,
       title: '加载中'
     })
     wx.navigateTo({
       url: '/pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_tupian/tupian_bkderp/tupian_bkderp'
     })
-    wx.hideLoading()
+    wx.hideLoading()*/
+    wx.showModal({
+      //title: '提示',
+      content: '本科第二批评估已结束',
+      showCancel: false,
+      success: function (res) {
+
+      }
+    })
   },
   /**
 * 点击跳转到专科提前批

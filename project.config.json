@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 55,
 			"list": [
 				{
 					"id": -1,
@@ -362,9 +362,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 55,
 					"name": "修改",
-					"pathName": "pages/zhiyuan_shenhe/zhiyuan_shenhe_tishi/zhiyuan_shenhe_tishi",
+					"pathName": "pages/zhiyuan_shenhe/tijiao_fangshi/tijiao_fangshi_xuanze/tijiao_fangshi_xuanze",
 					"query": ""
 				},
 				{
