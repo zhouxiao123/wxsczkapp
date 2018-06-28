@@ -533,7 +533,7 @@ wx.request({
             }
           })
           
-        }else if (res.data.point < 50) {
+        }else if (res.data.point < 10) {
           wx.showModal({
             title: '提示',
             content: '积分不足,是否进行充值?',
@@ -554,13 +554,13 @@ wx.request({
         } else {
           wx.showModal({
             title: '提示',
-            content: '积分充足,是否直接50积分购买?',
+            content: '积分充足,是否直接10积分购买?',
             showCancel: true,
             success: function (res) {
               if (res.confirm) {
                 console.log('用户点击确定')
                 wx.request({
-                  url: app.globalData.baseUrl+'wx/save_ask_new',
+                  url: app.globalData.baseUrl+'wx/save_ask',
                   data: e.detail.value,
                   success: function (res) {
                     //console.log(res.data);
