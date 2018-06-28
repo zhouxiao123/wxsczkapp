@@ -91,7 +91,7 @@ Page({
 
 
         //已填写的颜色改变1
-        wx.request({
+       /*wx.request({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
           data: {
             userid: that.data.userid,
@@ -137,7 +137,8 @@ Page({
             })
 
           }
-        })
+        })*/
+
         //已填写的颜色改变4
         wx.request({
           url: app.globalData.baseUrl + 'wx/get_zhiyuanshenhe_main_table',
